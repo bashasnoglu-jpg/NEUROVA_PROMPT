@@ -1,0 +1,8 @@
+﻿NEUROVA Optimize Summary | 20251218-173726
+Root: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
+Log: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\NV_OPTIMIZE_20251218-173726.log
+Changed files (git status): 3
+Changed list:
+?? _audit/NV_OPTIMIZE_20251218-173700.log
+?? _audit/NV_OPTIMIZE_20251218-173726.log
+?? _tmp_nv_optimize.ps1
