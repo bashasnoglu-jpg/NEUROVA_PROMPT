@@ -1,0 +1,6 @@
+NV_AUDIT v1.0
+Root: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
+Files: 74 (html=13, js=38, css=2)
+Missing required: 0
+HTML missing refs: 0
+Duplicate filenames: 4

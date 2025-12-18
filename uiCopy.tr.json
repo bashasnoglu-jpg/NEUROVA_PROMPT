@@ -1,0 +1,86 @@
+{
+  "app": {
+    "brand": "NEUROVA OPS",
+    "tagline": "Log tabanlı doğrulama • Kişisel veri yok"
+  },
+  "nav": {
+    "today": "Bugün",
+    "tasks": "Görevler",
+    "restroom": "WC Kontrol",
+    "logs": "Kayıtlar (Logs)",
+    "plans": "Planlar",
+    "settings": "Ayarlar"
+  },
+  "common": {
+    "openTask": "Görevi Aç",
+    "start": "Görevi Başlat",
+    "doneOk": "Tamamlandı (OK)",
+    "submit": "Gönder",
+    "close": "Kapat",
+    "refresh": "Yenile",
+    "back": "Geri",
+    "filter": "Filtre",
+    "redFlags": "Kırmızı Bayraklar",
+    "optionalNote": "Kısa not (opsiyonel)"
+  },
+  "taskCard": {
+    "title": {
+      "wc30": "WC 30dk Kontrol",
+      "generic": "Görev"
+    },
+    "meta": {
+      "time": "Saat",
+      "run": "Tur",
+      "zone": "Bölge"
+    },
+    "checklist": {
+      "paperSoapSanitizer": "Kağıt / Sabun / Dezenfektan",
+      "toiletSink": "Klozet / Lavabo",
+      "floorTrash": "Zemin / Çöp",
+      "odorVent": "Koku / Havalandırma"
+    },
+    "actions": {
+      "ok": "OK (Tamamlandı)",
+      "e1": "E1 Stok",
+      "e2": "E2 Yoğun kir",
+      "e3": "E3 Arıza",
+      "e4": "E4 Koku / Derin"
+    },
+    "status": {
+      "receivedLogged": "Alındı ✅ Log’a işlendi.",
+      "offlineQueued": "Bağlantı yok. Kuyruğa alındı.",
+      "submitFailedRetry": "Gönderim başarısız. Tekrar dene.",
+      "taskClosed": "Bu tur kapatıldı."
+    }
+  },
+  "logs": {
+    "columns": {
+      "time": "Zaman",
+      "eventName": "Event",
+      "dryRun": "DRY_RUN",
+      "recipients": "Alıcı",
+      "template": "Şablon",
+      "runId": "Run ID",
+      "durationMs": "Süre (ms)",
+      "status": "Durum"
+    },
+    "flags": {
+      "missed": "Cevapsız",
+      "duplicate": "Tekrarlı Çalışma",
+      "error": "Hata"
+    },
+    "modes": {
+      "dryRun": "Dry Run",
+      "live": "Canlı"
+    }
+  },
+  "zones": {
+    "header": "WC Kontrol",
+    "scanToOpen": "Scan → Task Card",
+    "codesHint": "✅ OK  |  ⚠ E1 Stok  E2 Kir  E3 Arıza  E4 Koku",
+    "z1": "Z1 — Lobby WC",
+    "z2": "Z2 — Spa WC",
+    "z3": "Z3 — Gym WC",
+    "z4": "Z4 — Pool WC"
+  }
+}

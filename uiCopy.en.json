@@ -1,0 +1,86 @@
+{
+  "app": {
+    "brand": "NEUROVA OPS",
+    "tagline": "Log-based verification • No personal data"
+  },
+  "nav": {
+    "today": "Today",
+    "tasks": "Tasks",
+    "restroom": "Restroom",
+    "logs": "Logs",
+    "plans": "Plans",
+    "settings": "Settings"
+  },
+  "common": {
+    "openTask": "Open Task",
+    "start": "Start",
+    "doneOk": "Done (OK)",
+    "submit": "Submit",
+    "close": "Close",
+    "refresh": "Refresh",
+    "back": "Back",
+    "filter": "Filter",
+    "redFlags": "Red Flags",
+    "optionalNote": "Short note (optional)"
+  },
+  "taskCard": {
+    "title": {
+      "wc30": "Restroom 30-min Check",
+      "generic": "Task"
+    },
+    "meta": {
+      "time": "Time",
+      "run": "Run",
+      "zone": "Zone"
+    },
+    "checklist": {
+      "paperSoapSanitizer": "Paper / Soap / Sanitizer",
+      "toiletSink": "Toilet / Sink",
+      "floorTrash": "Floor / Trash",
+      "odorVent": "Odor / Ventilation"
+    },
+    "actions": {
+      "ok": "OK (Done)",
+      "e1": "E1 Stock",
+      "e2": "E2 Heavy soil",
+      "e3": "E3 Maintenance",
+      "e4": "E4 Odor / Deep clean"
+    },
+    "status": {
+      "receivedLogged": "Received ✅ Logged.",
+      "offlineQueued": "Offline. Queued.",
+      "submitFailedRetry": "Submit failed. Retry.",
+      "taskClosed": "This run is closed."
+    }
+  },
+  "logs": {
+    "columns": {
+      "time": "Time",
+      "eventName": "Event",
+      "dryRun": "DRY_RUN",
+      "recipients": "Recipients",
+      "template": "Template",
+      "runId": "Run ID",
+      "durationMs": "Duration (ms)",
+      "status": "Status"
+    },
+    "flags": {
+      "missed": "Missed",
+      "duplicate": "Duplicate",
+      "error": "Error"
+    },
+    "modes": {
+      "dryRun": "Dry Run",
+      "live": "Live"
+    }
+  },
+  "zones": {
+    "header": "Restroom Check",
+    "scanToOpen": "Scan → Task Card",
+    "codesHint": "✅ OK  |  ⚠ E1 Stock  E2 Soil  E3 Maintenance  E4 Odor",
+    "z1": "Z1 — Lobby WC",
+    "z2": "Z2 — Spa WC",
+    "z3": "Z3 — Gym WC",
+    "z4": "Z4 — Pool WC"
+  }
+}

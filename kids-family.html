@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Kids & Family — NEUROVA</title>
+  <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="stylesheet" href="./assets/kids-family.css" />
+</head>
+
+<body data-page="kids-family">
+  <div id="nv-nav-slot"></div>
+
+  <main>
+    <section class="kids-hero">
+      <div data-lang="tr">
+        <p>Kids & Family deneyimleri; çocukların kontrol ve izinle rahatlamasını, ebeveynlerin ise aynı anda sakin bir uyum alanında bulunmasını sağlar.</p>
+      </div>
+      <div data-lang="en" class="lang-hidden">
+        <p>Kids & Family experiences help children relax with choice and consent while parents share a calm moment together.</p>
+      </div>
+      <h1>Quiet Luxury for Little Bodies</h1>
+      <p>Soft lighting, gentle scheduling, and a respectful pace make every step feel premium yet safe.</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h3>Kids Relax Ritual</h3>
+        <p>Soft touch flow where choice leads every touch.</p>
+        <ul>
+          <li>Gentle welcome + permission</li>
+          <li>Slow breathing, quiet guidance</li>
+          <li>Short aftercare suggestion</li>
+        </ul>
+        <p><strong>Duration:</strong> 30–45 dk</p>
+        <p><strong>Ideal for:</strong> Sensitive children, first-time spa visits.</p>
+      </article>
+      <article class="card">
+        <h3>Kids Premium Ritual</h3>
+        <p>Quiet luxury layering: choice, minimal speech, thoughtful pacing.</p>
+        <ul>
+          <li>Premium welcome + selection</li>
+          <li>Breath slow-down + calming rhythm</li>
+          <li>Soft integration + hydration cue</li>
+        </ul>
+        <p><strong>Duration:</strong> 45–60 dk</p>
+        <p><strong>Ideal for:</strong> Families craving ritualized downtime.</p>
+      </article>
+      <article class="card">
+        <h3>Signature Family Harmony</h3>
+        <p>Child-centered premium ritual supported by gentle parent presence.</p>
+        <ul>
+          <li>Consent-laden flow</li>
+          <li>Family breath sync + teen corner</li>
+          <li>Mini FAQ + aftercare recap</li>
+        </ul>
+        <p><strong>Duration:</strong> 60 dk</p>
+        <p><strong>Ideal for:</strong> Premium family moments & teen comfort.</p>
+      </article>
+    </section>
+
+    <section class="cta">
+      <button type="button" data-nv-open-reservation>Rezervasyon</button>
+    </section>
+
+    <section class="faq">
+      <details>
+        <summary>Çocuk/teen programlarında güvenlik nasıl sağlanıyor?</summary>
+        <p>Her adım izin + seçimle ilerler ve çocuk istediği an durdurabilir. Dokunuşlar ayarlanabilir yoğunluktadır.</p>
+      </details>
+      <details>
+        <summary>Ebeveyn yakını nerede olur?</summary>
+        <p>Ebeveyn sessiz destek rolünde kalır; el tutma veya sadece yakın durma çocuğun tercihlerine bağlıdır.</p>
+      </details>
+      <details>
+        <summary>Rezervasyon nasıl yapılır?</summary>
+        <p>Buton sizi WhatsApp rezervasyonuna götürür. Veya NV_OPEN_RESERVATION fonksiyonunu bağlayın.</p>
+      </details>
+    </section>
+  </main>
+
+  <script>
+  (async function () {
+    const slot = document.getElementById('nv-nav-slot');
+    if (!slot) return;
+    const res = await fetch('./partials/nav.html', { cache: 'no-store' });
+    slot.innerHTML = await res.text();
+  })();
+  </script>
+  <script src="./assets/nav.js" defer></script>
+</body>
+
+</html>
