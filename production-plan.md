@@ -5,7 +5,7 @@ Bu doküman, önceki briefing'e (shot list, SAFE notlar, kategori çalışmalar�
 ## Temel Kural: 4-Kare Sistemi her kategori için işlesin
 
 | Açıklama | Hedef |
-|-|-|
+| --- | --- |
 | STORY | İnsan/ritüel odaklı kare (terapist + misafir). En az 1 per kategori. |
 | ATMOSPHERE | Mekân ruhunu yansıtan geniş açı (insansız). En az 1 per kategori. |
 | DETAIL | Obje/doku/el hareketine odaklı macro. En az 1 per kategori. |
@@ -16,7 +16,7 @@ Bu dört kareyi bir araya getirerek kategori başına 4 temel asset elde edilir.
 ## Kategori bazlı minimum kare hedefleri
 
 | Kategori | Minimum kare | Ek hero varyasyon önerisi |
-|-|-|-|
+| --- | --- | --- |
 | Recovery & Performance | 4 (REC_STORY_01/ATM/DET/SAFE) | +1 hero (REC_STORY_01 hero hero); +1 detay (FOREARM focus) |
 | Deep Relax & Anti-Stress | 4 (RELAX_* serisi) | +1 wellness hero (RELAX_STORY hero + bataniye) |
 | Ayurveda & Holistic Balance | 4 (AYU_* serisi) | +1 ritüel beat (shirodhara/abhyanga hybrid) |
