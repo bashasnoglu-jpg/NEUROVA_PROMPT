@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2025-12-16T22:09:26.746Z",
+  "source": "nv-guard-packs",
+  "meta": {
+    "sha": "",
+    "ref": "",
+    "refName": "",
+    "runId": "",
+    "runNumber": "",
+    "workflow": "",
+    "actor": "",
+    "repo": ""
+  },
+  "root": "C:\\Users\\tourg\\OneDrive\\Masaüstü\\NEUROVA_PROMPT",
+  "manifestPacks": 6,
+  "parsedPacks": 6,
+  "coverage": 100,
+  "totals": {
+    "totalPrompts": 36,
+    "bigPacks": 0,
+    "promptHeavyPacks": 0,
+    "parseMiss": 0
+  },
+  "budgets": {
+    "mode": "warn",
+    "maxPackPrompts": 200,
+    "maxTotalPrompts": 2000,
+    "maxPackBytes": 200000,
+    "requireParseCoverage": false
+  },
+  "packs": {
+    "packs/pack.ayurveda.js": {
+      "bytes": 1206,
+      "prompts": 2,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    },
+    "packs/pack.hamam.js": {
+      "bytes": 4961,
+      "prompts": 8,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    },
+    "packs/pack.kids.js": {
+      "bytes": 3404,
+      "prompts": 6,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    },
+    "packs/pack.recovery.js": {
+      "bytes": 4210,
+      "prompts": 8,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    },
+    "packs/pack.signature-family-teen.js": {
+      "bytes": 2597,
+      "prompts": 4,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    },
+    "packs/pack.kids.premium.js": {
+      "bytes": 4830,
+      "prompts": 8,
+      "ms": 0,
+      "errors": 0,
+      "parseOk": true
+    }
+  }
+}

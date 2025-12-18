@@ -1,0 +1,34 @@
+NEUROVA MEGA SCAN REPORT
+Date: 12/18/2025 10:07:58
+Root: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
+==============================
+
+[1] NODE & NPM CHECK
+
+[2] PACKAGE.JSON
+? package.json JSON OK
+
+[3] NPM SCRIPTS
+
+[4] SERVER FILES
+
+[5] JS FILES SYNTAX
+
+[6] HTML INLINE SCRIPT CHECK
+Script found in prompt-library.html
+Script found in kids-family.html
+Script found in diagnostics.html
+Script found in kids-family.html
+Script found in prompt-library-app.html
+Script found in prompt-library.html
+
+[7] COMMON ERROR PATTERNS
+C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\root-merge-report.ps1:228 -> W "Altin kural: prompt-library.html icin bir root sec; o HTML'in referans verdigi app.js / prompts-loader.js / health-check.js / tools/* ayni root'tan gelsin (karisik olursa Unexpected token < / undefined export hatasi olur)."
+
+[8] EXPRESS HEALTH CHECK
+ server/index.cjs exists
+
+==============================
+SCAN COMPLETED
+Report saved to:
+C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_MEGA_SCAN_REPORT.txt

@@ -1,0 +1,15 @@
+{
+  "name": "neurova-prompts",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "nv:guard": "node tools/nv-guard-packs.mjs",
+    "quality:gate": "node tools/quality-gate.mjs",
+    "export:prompts": "node tools/export-prompts.mjs",
+    "check:syntax": "node --check app.js main.js",
+    "dev": "node server/index.cjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

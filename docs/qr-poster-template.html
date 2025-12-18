@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>NEUROVA QR Poster</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f2f2f7;
+    }
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 14mm;
+      box-sizing: border-box;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 8mm;
+    }
+    h1 {
+      text-align: center;
+      font-size: 22pt;
+      margin-bottom: 2mm;
+      letter-spacing: .08em;
+    }
+    .grid {
+      display: grid;
+      gap: 10mm;
+      grid-template-columns: repeat(auto-fit, minmax(90mm, 1fr));
+    }
+    .card {
+      border: 1px solid #d9d9dd;
+      padding: 10px;
+      border-radius: 8px;
+      background: #fbfbff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    }
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .qr {
+      width: 90px;
+      height: 90px;
+      background: #fff;
+      padding: 6px;
+      margin: 0 auto 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ededf2;
+    }
+    .note {
+      font-size: 10pt;
+      color: #555;
+    }
+    footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 9pt;
+      color: #555;
+    }
+    img.qr-icon {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+    <div class="sheet">
+    <h1>NEUROVA İstek Kütüphanesi QR Kartı</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>NEUROVA İstek Kütüphanesi</h2>
+        <div class="qr">
+          <img class="qr-icon" src="../printed-guides/prompt_library.png" alt="QR Prompt Library">
+        </div>
+        <p class="note">
+          Günlük kullanım için bu QR’ı tara; link her zaman `prompt-library.html` ve NEUROVA İstek Kütüphanesi içeriğine gider.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Staff Guide (TR)</h2>
+        <div class="qr">
+          <img class="qr-icon" src="../printed-guides/staff_tr.png" alt="QR TR Guide">
+        </div>
+        <p class="note">
+          Türkçe rehberi açar: TR personel için rol, safe rules, approvals.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Staff Guide (EN)</h2>
+        <div class="qr">
+          <img class="qr-icon" src="../printed-guides/staff_en.png" alt="QR EN Guide">
+        </div>
+        <p class="note">
+          İngilizce rehberi açar, TR ↔ EN kurallarını hatırlatır; laminatlı kart olarak panolarda tut.
+        </p>
+      </div>
+    </div>
+    <section class="card">
+      <h2>Paylaşım önerileri</h2>
+      <p class="note">1. Resepsiyon panosu  2. Personel odası  3. WhatsApp/Slack sabit mesaj</p>
+      <p class="note">QR kenarlarına “TR guide – günlük rutin” ve “EN guide – same workflow” küçük etiketleri ekleyin.</p>
+    </section>
+    <footer>Poster v1.0 • Prompt Library sistem • NEUROVA Management</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+NV MOVE PLAN v1.0
+Suggestions: 15
+
+- NEUROVA_PROMPT/packs  ->  NEUROVA_PROMPT/assets/packs   [structure_align]
+- health-check.js  ->  NEUROVA_PROMPT/health-check.js   [structure_align]
+- packs/manifest.json  ->  NEUROVA_PROMPT/assets/manifest.json   [structure_align]
+- packs/pack.ayurveda.js  ->  NEUROVA_PROMPT/packs/pack.ayurveda.js   [structure_align]
+- packs/pack.flow.v1.js  ->  NEUROVA_PROMPT/packs/pack.flow.v1.js   [structure_align]
+- packs/pack.hamam.js  ->  NEUROVA_PROMPT/packs/pack.hamam.js   [structure_align]
+- packs/pack.kids.js  ->  NEUROVA_PROMPT/packs/pack.kids.js   [structure_align]
+- packs/pack.kids.premium.js  ->  NEUROVA_PROMPT/packs/pack.kids.premium.js   [structure_align]
+- packs/pack.recovery.js  ->  NEUROVA_PROMPT/packs/pack.recovery.js   [structure_align]
+- packs/pack.signature-family-teen.js  ->  NEUROVA_PROMPT/packs/pack.signature-family-teen.js   [structure_align]
+- packs/pack.teen.js  ->  NEUROVA_PROMPT/packs/pack.teen.js   [structure_align]
+- prompt-export.js  ->  NEUROVA_PROMPT/prompt-export.js   [domain_align]
+- prompt-library.html  ->  NEUROVA_PROMPT/prompt-library.html   [structure_align]
+- prompts-data.js  ->  NEUROVA_PROMPT/prompts-data.js   [domain_align]
+- prompts-loader.js  ->  NEUROVA_PROMPT/prompts-loader.js   [structure_align]

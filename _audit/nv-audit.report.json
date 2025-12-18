@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-12-16T18:09:20.558Z",
+  "root": "C:\\Users\\tourg\\OneDrive\\Masaüstü\\NEUROVA_PROMPT",
+  "mustHave": [
+    {
+      "path": "NEUROVA_SITE/index.html",
+      "ok": true
+    },
+    {
+      "path": "NEUROVA_PROMPT/prompt-library.html",
+      "ok": true
+    },
+    {
+      "path": "NEUROVA_PROMPT/app.js",
+      "ok": true
+    },
+    {
+      "path": "NEUROVA_PROMPT/packs",
+      "ok": true
+    }
+  ],
+  "counts": {
+    "totalFiles": 74,
+    "html": 13,
+    "js": 38,
+    "css": 2
+  },
+  "problems": [],
+  "duplicatesByName": [
+    {
+      "name": "pack.ayurveda.js",
+      "paths": [
+        "NEUROVA_PROMPT/packs/pack.ayurveda.js",
+        "packs/pack.ayurveda.js"
+      ]
+    },
+    {
+      "name": "pack.hamam.js",
+      "paths": [
+        "NEUROVA_PROMPT/packs/pack.hamam.js",
+        "packs/pack.hamam.js"
+      ]
+    },
+    {
+      "name": "pack.kids.js",
+      "paths": [
+        "NEUROVA_PROMPT/packs/pack.kids.js",
+        "packs/pack.kids.js"
+      ]
+    },
+    {
+      "name": "pack.recovery.js",
+      "paths": [
+        "NEUROVA_PROMPT/packs/pack.recovery.js",
+        "packs/pack.recovery.js"
+      ]
+    }
+  ],
+  "htmlRefMissing": [],
+  "promptPackSignals": [
+    {
+      "file": "NEUROVA_PROMPT/prompt-library.html",
+      "hasPackList": false,
+      "hasManifest": false
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+NEUROVA MEGA SCAN v1.1
+ROOT: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
+TIME: 2025-12-18T14:24:34
+
+== 0) BASIC CHECKS ==
+package.json: True
+server\index.cjs: True
+server\webhook.cjs: True
+
+== 1) NPM SCRIPTS ==
+nv:guard = node tools/nv-guard-packs.mjs
+quality:gate = node tools/quality-gate.mjs
+export:prompts = node tools/export-prompts.mjs
+check:syntax = node --check app.js main.js
+dev = node server/index.cjs
+
+== 2) NODE SYNTAX CHECK (node --check) ==
+Node --check tamamlandÄ±.
+
+== 3) JSON FILE PARSE CHECK ==
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bind-apply-helpers\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bound\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\dunder-proto\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-define-property\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-errors\tsconfig.json
+   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (27): {
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+		/* Projects */
+
+		/* Language and Environment */
+		"target": "es5",																	/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+		// "lib": [],																				/* Specify a set of bundled library declaration files that describe the target runtime environment. */
+		// "noLib": true,																		/* Disable including any library files, including the default lib.d.ts. */
+		"useDefineForClassFields": true,										 /* Emit ECMAScript-standard-compliant class fields. */
+		// "moduleDetection": "auto",												/* Control what method is used to detect module-format JS files. */
+
+		/* Modules */
+		"module": "commonjs",																/* Specify what module code is generated. */
+		// "rootDir": "./",																	/* Specify the root folder within your source files. */
+		// "moduleResolution": "node",											 /* Specify how TypeScript looks up a file from a given module specifier. */
+		// "baseUrl": "./",																	/* Specify the base directory to resolve non-relative module names. */
+		// "paths": {},																			/* Specify a set of entries that re-map imports to additional lookup locations. */
+		// "rootDirs": [],																	 /* Allow multiple folders to be treated as one when resolving modules. */
+		// "typeRoots": ["types"],													 /* Specify multiple folders that act like `./node_modules/@types`. */
+		"resolveJsonModule": true,													 /* Enable importing .json files. */
+		// "allowArbitraryExtensions": true,								 /* Enable importing files with any extension, provided a declaration file is present. */
+
+		/* JavaScript Support */
+		"allowJs": true,																		 /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
+		"checkJs": true,																		 /* Enable error reporting in type-checked JavaScript files. */
+		"maxNodeModuleJsDepth": 1,													 /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
+
+		/* Emit */
+		"declaration": true,																 /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+		"declarationMap": true,															/* Create sourcemaps for d.ts files. */
+		"noEmit": true,																			/* Disable emitting files from a compilation. */
+
+		/* Interop Constraints */
+		"allowSyntheticDefaultImports": true,								/* Allow `import x from y` when a module doesn't have a default export. */
+		"esModuleInterop": true,														 /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
+		"forceConsistentCasingInFileNames": true,						/* Ensure that casing is correct in imports. */
+
+		/* Type Checking */
+		"strict": true,																			/* Enable all strict type-checking options. */
+
+		/* Completeness */
+		// "skipLibCheck": true															/* Skip type checking all .d.ts files. */
+	},
+	"exclude": [
+		"coverage",
+	],
+}
+
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-object-atoms\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-proto\tsconfig.json
+   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (59): {
+	"extends": "@ljharb/tsconfig",
+	"compilerOptions": {
+		//"target": "es2021",
+	},
+	"exclude": [
+		"coverage",
+	],
+}
+
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\gopd\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-symbols\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\hasown\tsconfig.json
+   Geçersiz dizi geçirildi, fazladan izleyen ',' var. (69): {
+  "extends": "@ljharb/tsconfig",
+  "exclude": [
+    "coverage",
+  ],
+}
+
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\math-intrinsics\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-list\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-map\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-weakmap\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\package-lock.json
+   Cannot process argument because the value of argument "name" is not valid. Change the value of the "name" argument and run the operation again.
+JSON parse check tamamlandÄ±.
+
+== 4) HTML ASSET LINK CHECK (src/href exists) ==
+HTML asset check tamamlandÄ±.
+
+== 5) PACK METRICS ==
+packs count = 10
+total prompts = 53
+  ./packs/pack.ayurveda.js â†’ prompts=2 ids=2
+  ./packs/pack.brand-look.js â†’ prompts=3 ids=3
+  ./packs/pack.face-sothys.js â†’ prompts=4 ids=4
+  ./packs/pack.hamam.js â†’ prompts=10 ids=10
+  ./packs/pack.kids.js â†’ prompts=6 ids=6
+  ./packs/pack.kids.premium.js â†’ prompts=8 ids=8
+  ./packs/pack.recovery.js â†’ prompts=8 ids=8
+  ./packs/pack.seasonal-detox.js â†’ prompts=4 ids=4
+  ./packs/pack.signature-family-teen.js â†’ prompts=4 ids=4
+  ./packs/pack.signature.js â†’ prompts=4 ids=4
+
+== 5) COMMON OOPS PATTERNS ==
+[HIT] NV_PACK_LIST  (6)
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-audit.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-build-pack-index.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\app.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\health-check.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompt-library.html
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
+[HIT] manifest.json  (6)
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\export-prompts.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\mega-metrics.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-guard-packs.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\quality-gate.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-move-plan.preview.txt
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
+
+== 6) SUMMARY ==
+Rapor Ã¼retildi: NV_MEGA_REPORT.txt
+Ã–ncelik: [OK] node --check [OK] assets
+

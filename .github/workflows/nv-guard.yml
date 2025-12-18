@@ -1,0 +1,53 @@
+name: NV Guard
+on: [push, pull_request]
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm run nv:guard
+        # NV Budget Gate Rollout Notes (v1.5)
+        # Stage 1 (ACTIVE): Coverage lock
+        # - Goal: prevent "blind" packs. If a pack can't be parsed, CI must fail.
+        # - Env: NV_BUDGET_MODE=fail + NV_BUDGET_REQUIRE_PARSE_COVERAGE=1
+        #
+        # Stage 2 (ENABLE WHEN STABLE): Size budget
+        # - Goal: stop pack bloat early (large packs slow down loading/reviews, increase risk of duplicated data).
+        # - Suggested start: NV_BUDGET_MAX_PACK_BYTES=250000  (~250KB)
+        #   Conservative alternative (first week): 300000
+        #
+        # Stage 3 (ENABLE WHEN STABLE): Prompt budgets
+        # - Goal: keep content growth controlled and reviewable; prevent single-pack "mega dumps".
+        # - Suggested start:
+        #   - NV_BUDGET_MAX_PACK_PROMPTS=250  (per-pack ceiling)
+        #   - NV_BUDGET_MAX_TOTAL_PROMPTS=3000 (repo ceiling)
+        # - Tighten later only after observing 2–3 PRs of clean passes + stable metrics artifact.
+        #
+        # Readiness checklist before enabling Stage 2/3:
+        # - coverage=100% for 2–3 PRs
+        # - no recurring "big pack" warnings (or clearly understood + intentional)
+        # - nv-metrics artifact is consistently produced (NV_METRICS_EXPORT=1)
+        env:
+          # --- v1.6 metrics metadata ---
+          NV_METRICS_META_SHA: ${{ github.sha }}
+          NV_METRICS_META_REF: ${{ github.ref }}
+          NV_METRICS_META_REF_NAME: ${{ github.ref_name }}
+          NV_METRICS_META_RUN_ID: ${{ github.run_id }}
+          NV_METRICS_META_RUN_NUMBER: ${{ github.run_number }}
+          NV_METRICS_META_WORKFLOW: ${{ github.workflow }}
+          NV_METRICS_META_ACTOR: ${{ github.actor }}
+          NV_METRICS_META_REPO: ${{ github.repository }}
+          NV_METRICS_EXPORT: "1"
+          NV_BUDGET_MODE: "fail"
+          NV_BUDGET_REQUIRE_PARSE_COVERAGE: "1"
+          # Uncomment for stage 2 (bytes): NV_BUDGET_MAX_PACK_BYTES: "250000"
+          # Uncomment for stage 3 (prompts): NV_BUDGET_MAX_PACK_PROMPTS: "250"
+          # Uncomment for stage 3 (total): NV_BUDGET_MAX_TOTAL_PROMPTS: "3000"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nv-metrics
+          path: PROMT NV/NEUROVA_PROMPT/packs/metrics.json
