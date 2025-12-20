@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
+<script src="./tools/obs-test-harness.js"></script>
+Array.from(document.scripts).map(s => s.src).filter(Boolean).slice(-30)
+
+typeof window.NV_OBS_SELFTEST_RUN
+window.__NV_SELFTEST_OK__
 
 <head>
-    <base href="./">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>NEUROVA Prompt Kütüphanesi</title>
-    <link rel="icon" href="data:,">
-
-    <script>
-        const qs = new URLSearchParams(location.search);
-        window.NV_ALLOW_DEBUG = qs.get("debug") === "1";
-        window.NV_WANT_SELFTEST = qs.get("selftest") === "1";
-    </script>
-
-    <script>
-        if (window.NV_ALLOW_DEBUG || window.NV_WANT_SELFTEST) {
-            const s = document.createElement("script");
-            s.src = "./tools/obs-test-harness.js";
-            document.head.appendChild(s);
-        }
-    </script>
 
     <style>
         :root {
@@ -60,30 +49,11 @@
             color: var(--ink)
         }
 
-        .library-heading {
-            font-size: 32px;
-        }
-
-        .library-subtitle {
-            text-align: center;
-            font-size: 12px;
-            color: var(--muted2);
-            margin-top: -4px;
-            letter-spacing: 0.05em;
-        }
-
         .muted {
             font-size: 12px;
             color: var(--muted);
             text-align: center;
             margin-bottom: 14px
-        }
-
-        .mode {
-            font-size: 13px;
-            color: var(--muted2);
-            text-align: center;
-            margin: -2px 0 12px;
         }
 
         code {
@@ -129,11 +99,6 @@
             border-radius: 12px;
             font-size: 12px;
             cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .nv-btn:hover {
@@ -156,21 +121,6 @@
             flex-direction: column;
             gap: 10px;
             margin: 0 auto 14px
-        }
-
-        .staff-resources {
-            text-align: center;
-            font-size: 13px;
-            color: var(--muted2);
-            margin: 0 auto 16px;
-        }
-
-        .staff-links {
-            margin-top: 6px;
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            flex-wrap: wrap;
         }
 
         .filterRow {
@@ -320,372 +270,67 @@
         .health .bad {
             color: #b00020
         }
-    
-/* === NAV LAYOUT PATCH v1.0 (Prompt Library) === */
-.nvTopbar {
-  position: sticky; top: 0; z-index: 60;
-  background: rgba(245,245,245,.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
-
-.nvTopbarInner{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 14px 18px;
-  display:flex; align-items:center; gap:14px;
-}
-
-.nvTopbarTitle{
-  font-weight: 700;
-  letter-spacing: .3px;
-  white-space: nowrap;
-}
-
-.nvTopbarSearch{
-  flex: 1;
-  min-width: 260px;
-}
-
-.nvTopbarRight{
-  display:flex; align-items:center; gap:10px;
-  white-space: nowrap;
-}
-
-.nvLangControls{
-  display:flex; gap:4px;
-}
-
-.nvPillRow{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 10px 18px 14px;
-  display:flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.04);
-}
-
-.pillGroup{
-  display:flex;
-  align-items:center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.nvTagsWrap.isCollapsed{
-  display:none;
-}
-
-
-
-.nvReference{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 12px 18px 18px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.06);
-  color: #2f2f2f;
-  font-size: 13px;
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-.nvReference h3{
-  margin: 0 0 6px;
-  font-size: 14px;
-  letter-spacing: .4px;
-  text-transform: uppercase;
-}
-
-@media (max-width: 900px){
-  .nvTopbarInner{ flex-wrap: wrap; }
-  .nvTopbarRight{ width: 100%; justify-content: space-between; }
-  .nvTopbarSearch{ width: 100%; }
-}
-
-</style>
+    </style>
 </head>
 
 <body>
     <div class="wrap">
-                <h1 class="library-heading">NEUROVA İstek Kütüphanesi</h1>
-        <p class="library-subtitle">
-            Prompt Library<br />
-            <small>Request Library (Prompt Library)</small>
-        </p>
-<div class="muted">Kaynak: <b>pack dosyaları</b> → <code>window.NV_PROMPTS</code></div>
+        <h1>NEUROVA Prompt Veritabanı</h1>
+        <div class="muted">Kaynak: <b>pack dosyaları</b> → <code>window.NV_PROMPTS</code></div>
 
-        <p id="nv-mode" class="mode">Normal mod</p>
+        <div class="toolbar">
+            <input id="nv-q" class="search" type="search" placeholder="Ara: kategori / rol / tag / başlık / TR / EN…" />
+            <span id="nv-count" class="count">0/0</span>
 
-        <header class="nvTopbar" id="nvTopbar">
-            <div class="nvTopbarInner">
-                <div class="nvTopbarTitle">NEUROVA Prompt Kütüphanesi</div>
-                <div class="nvTopbarSearch">
-                    <input id="nv-q" class="search" type="search" placeholder="Ara: kategori / rol / tag / başlık / TR / EN..." />
-                </div>
-                <div class="nvTopbarRight">
-                    <span id="nv-count" class="count">0/0</span>
-                    <div class="nvLangControls">
-                        <button class="nv-btn" data-nv-lang="all">ALL</button>
-                        <button class="nv-btn" data-nv-lang="tr">TR</button>
-                        <button class="nv-btn" data-nv-lang="en">EN</button>
-                    </div>
-                    <button id="nv-export-visible-md" class="nv-btn">Görünenleri MD indir</button>
-                    <button id="nv-export-visible-json" class="nv-btn nv-btn--gold">Görünenleri JSON indir</button>
-                    <button id="nv-run-selftest" class="nv-btn">Debug</button>
-                </div>
+            <span class="nv-sep" aria-hidden="true"></span>
+
+            <button class="nv-btn" data-nv-lang="all">ALL</button>
+            <button class="nv-btn" data-nv-lang="tr">TR</button>
+            <button class="nv-btn" data-nv-lang="en">EN</button>
+
+            <span class="nv-sep" aria-hidden="true"></span>
+
+            <button id="nv-export-visible-md" class="nv-btn">Görünenleri MD indir</button>
+            <button id="nv-export-visible-json" class="nv-btn nv-btn--gold">Görünenleri JSON indir</button>
+        </div>
+
+        <div class="filters">
+            <div class="filterRow">
+                <span class="label">Kategori</span>
+                <div id="nv-cat"></div>
             </div>
-            <div class="nvPillRow" id="nvMove_Staff">
-                <div class="staff-resources">
-                    <span>Staff Resources</span>
-                    <div class="staff-links">
-                        <a class="nv-btn nv-btn--gold" href="./docs/NEUROVA_Staff_Quick_Guide_TR_A4.html" target="_blank" rel="noopener">Staff Guide (TR)</a>
-                        <a class="nv-btn" href="./docs/NEUROVA_Staff_Quick_Guide_EN_A4.html" target="_blank" rel="noopener">Staff Guide (EN)</a>
-                        <a class="nv-btn" href="./docs/reception-quick-use-a4.html" target="_blank" rel="noopener">Reception Quick Use</a>
-                        <a class="nv-btn" href="./docs/reception-sales-playbook-v1.html" target="_blank" rel="noopener">Reception Sales Playbook (TR/EN)</a>
-                    </div>
-                </div>
+            <div class="filterRow">
+                <span class="label">Rol</span>
+                <div id="nv-role"></div>
             </div>
-            <div class="nvPillRow">
-                <div id="nvMove_Category" class="pillGroup">
-                    <span class="label">Kategori</span>
-                    <div id="nv-cat"></div>
-                </div>
-                <div id="nvMove_Role" class="pillGroup">
-                    <span class="label">Rol</span>
-                    <div id="nv-role"></div>
-                    <button id="nvToggleTags" type="button" class="chip">Tag’ler</button>
-                </div>
+            <div class="filterRow">
+                <span class="label">Tag</span>
+                <div id="nv-tag"></div>
             </div>
-            <div class="nvPillRow nvTagsWrap isCollapsed" id="nvTagsWrap">
-                <div class="pillGroup">
-                    <span class="label">Tag</span>
-                    <div id="nv-tag"></div>
-                </div>
-            </div>
-        </header>
-        <section class="nvReference">
-            <h3>NEUROVA Referans</h3>
-            <p>Quiet luxury, marble / brass accents, amber light, and breathable silence. Hamam close-up kese odaklı, Kids & Family’te guardian + consent, Face – Sothys’ta claim-free cilt dili.</p>
-        </section>
+        </div>
+
         <div id="nv-grid" class="grid"></div>
     </div>
 
-    <div id="nv-health" class="health">
-        <div id="nv-health-main"></div>
-        <div id="nv-health-selftest"></div>
-    </div>
+    <div id="nv-health" class="health"></div>
 
     <script>
-        // NEUROVA - Pack list (gerçek dosya adlarıyla)
-        // Core JS (defer) çalışmadan önce tanımlanmalı
+        // NEUROVA – Pack list (gerçek dosya adlarıyla)
+        // Core JS (defer) çalışmadan önce tanımlı olmalı
         window.NV_PACK_LIST = [
             "./packs/pack.hamam.js",
-            "./packs/pack.face-sothys.js",
-            "./packs/pack.kids.family.ascii.js",
             "./packs/pack.kids.js",
-            "./packs/pack.kids.premium.js",
-            "./packs/pack.teen.js",
-
-            "./packs/pack.signature.js",
-            "./packs/pack.massage.js",
-            "./packs/pack.recovery.js",
-
             "./packs/pack.ayurveda.js",
-            "./packs/pack.seasonal-detox.js",
-            "./packs/pack.signature-family-teen.js",
-            "./packs/pack.brand-look.js"
+            "./packs/pack.recovery.js"
         ];
     </script>
 
     <!-- Core JS (order matters) -->
-    <script src="./prompts-loader.js?v=20251217" defer></script>
-    <script src="./prompt-export.js?v=20251217" defer></script>
-    <script src="./health-check.js?v=20251217" defer></script>
-    <script src="./app.js?v=20251217" defer></script>
+    <script src="./prompts-loader.js" defer></script>
+    <script src="./prompt-export.js" defer></script>
+    <script src="./health-check.js" defer></script>
+    <script src="./app.js" defer></script>
 
-    <!-- QA / Selftest harness (must be after core scripts) -->
-    <script src="./tools/obs-test-harness.js?v=20251217"></script>
-
-    <script>
-        (function () {
-            const healthEl = document.getElementById("nv-health");
-            const panel = document.getElementById("nv-health-selftest") || healthEl;
-            if (!healthEl || !panel) return;
-
-            function renderHealth() {
-                const last = window.__NV_SELFTEST_LAST__;
-                if (!last) {
-                    panel.innerHTML = "";
-                    return;
-                }
-
-                const ok = !!window.__NV_SELFTEST_OK__;
-                const checks = last.checks || {};
-                const failing = Object.keys(checks).filter((k) => !checks[k]);
-                const packErrors = window.__NV_PACK_ERRORS__ || {};
-                const packErrEntries = Object.entries(packErrors);
-                const packMetrics = window.__NV_PACK_METRICS__ || {};
-                const packMetricEntries = Object.entries(packMetrics);
-                const prevErrLog = Array.isArray(window.__NV_PACK_ERRORS_LOG__) ? window.__NV_PACK_ERRORS_LOG__ : [];
-                const lastErrSnapshot = prevErrLog.length ? prevErrLog[prevErrLog.length - 1] : null;
-                const isQa = new URLSearchParams(location.search || "").get("qa") === "1";
-
-                let html = "";
-                html += `<div><b>Selftest:</b> <span class="${ok ? "ok" : "bad"}">${ok ? "OK" : "FAIL"}</span></div>`;
-                if (last.ts) html += `<div><small>${last.ts}</small></div>`;
-                if (!ok && failing.length) {
-                    html += `<div><b>Failing checks:</b> ${failing.join(", ")}</div>`;
-                }
-                if (packErrEntries.length) {
-                    html += "<div><b>Pack errors:</b></div><ul>";
-                    packErrEntries.forEach(([pack, val]) => {
-                        html += `<li>${pack}: ${JSON.stringify(val)}</li>`;
-                    });
-                    html += "</ul>";
-                }
-                if (isQa && !packErrEntries.length && lastErrSnapshot && lastErrSnapshot.errors && Object.keys(lastErrSnapshot.errors).length) {
-                    html += "<div style=\"margin-top:6px;\"><b>Previous pack errors (last run):</b></div><ul>";
-                    Object.entries(lastErrSnapshot.errors).forEach(([pack, val]) => {
-                        html += `<li>${pack}: ${JSON.stringify(val)}</li>`;
-                    });
-                    html += "</ul>";
-                    html += `<button type="button" id="nv-clear-pack-error-log" style="margin-top:6px;">Geçmişi temizle</button>`;
-                }
-                if (packMetricEntries.length) {
-                    html += "<div><b>Pack metrics:</b></div><ul>";
-                    packMetricEntries.forEach(([pack, metrics]) => {
-                        const prompts = metrics && typeof metrics === "object" ? metrics.prompts : undefined;
-                        html += `<li>${pack}: ${prompts !== undefined ? prompts : "?"} prompts</li>`;
-                    });
-                    html += "</ul>";
-                }
-
-                panel.innerHTML = html;
-                healthEl.style.display = "block";
-
-                const clearBtn = document.getElementById("nv-clear-pack-error-log");
-                if (clearBtn) {
-                    clearBtn.addEventListener("click", () => {
-                        window.__NV_PACK_ERRORS_LOG__ = [];
-                        renderHealth();
-                    }, { once: true });
-                }
-            }
-
-            window.addEventListener("nv:selftest:render", renderHealth);
-            window.addEventListener("load", renderHealth, { once: true });
-        })();
-    </script>
-
-    <script>
-        (function () {
-            const modeEl = document.getElementById("nv-mode");
-            const params = new URLSearchParams(window.location.search || "");
-            const hasQa = params.has("qa");
-            const qaValue = hasQa ? params.get("qa") : null;
-
-            const messages = {
-                qaOn: "QA modu acik",
-                qaMissing: "Normal mod (qa parametresi yok)",
-                qaEmpty: "Normal mod (qa parametresi bos)",
-                qaInvalid: (val) => `Normal mod (gecersiz qa: ${val})`,
-                fallback: "Durum gosterilemiyor"
-            };
-
-            if (!modeEl) {
-                console.warn("nv-mode bulunamadi; QA durumu guncellenemedi.");
-                const host = document.querySelector(".wrap") || document.body;
-                if (host) {
-                    const fallback = document.createElement("p");
-                    fallback.className = "mode";
-                    fallback.textContent = messages.fallback;
-                    host.insertBefore(fallback, host.firstChild || null);
-                }
-                return;
-            }
-
-            let message = messages.qaMissing;
-            if (hasQa) {
-                if (qaValue === "1") {
-                    message = messages.qaOn;
-                } else if (qaValue === "" || qaValue === null) {
-                    message = messages.qaEmpty;
-                } else {
-                    message = messages.qaInvalid(qaValue);
-                }
-            }
-
-            modeEl.textContent = message;
-        })();
-    </script>
-
-
-    <script>
-    (() => {
-      const qs = new URLSearchParams(location.search);
-      const isDebug = qs.get("debug") === "1" || qs.get("selftest") === "1";
-      if (!isDebug) return;
-
-      window.NV_STATUS = function NV_STATUS() {
-        const packs = Array.isArray(window.NV_PACK_LIST) ? window.NV_PACK_LIST.length : null;
-        const prompts = Array.isArray(window.NV_PROMPTS) ? window.NV_PROMPTS.length : null;
-        const packErrors = window.__NV_PACK_ERRORS__ ? Object.keys(window.__NV_PACK_ERRORS__).length : 0;
-        const packMetrics = window.__NV_PACK_METRICS__ ? Object.keys(window.__NV_PACK_METRICS__).length : 0;
-
-        const ok = !!prompts && packErrors === 0;
-        const status = {
-          ok,
-          packs,
-          prompts,
-          packErrors,
-          packMetrics,
-          href: location.href
-        };
-
-        console.log("NV_STATUS:", status);
-        return status;
-      };
-
-      const badge = document.createElement("div");
-      badge.id = "nv-mini-health";
-      badge.style.cssText = [
-        "position:fixed",
-        "left:12px",
-        "bottom:12px",
-        "z-index:99999",
-        "padding:8px 10px",
-        "border-radius:999px",
-        "font:12px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-        "background:rgba(10,10,10,.75)",
-        "color:#fff",
-        "border:1px solid rgba(255,255,255,.15)",
-        "backdrop-filter: blur(10px)",
-        "cursor:pointer",
-        "user-select:none"
-      ].join(";");
-
-      function render() {
-        const s = window.NV_STATUS();
-        const txt = s.ok
-          ? `OK - prompts:${s.prompts} - packs:${s.packs}`
-          : `ERR - prompts:${s.prompts} - packErrors:${s.packErrors}`;
-        badge.textContent = txt;
-      }
-
-      badge.addEventListener("click", () => {
-        badge.style.opacity = badge.style.opacity === "0.25" ? "1" : "0.25";
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.appendChild(badge);
-        render();
-        setTimeout(render, 500);
-        setTimeout(render, 1500);
-      });
-    })();
-    </script>
 
 </body>
 
