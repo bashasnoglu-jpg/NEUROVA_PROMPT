@@ -84,7 +84,7 @@
   (async function () {
     const slot = document.getElementById('nv-nav-slot');
     if (!slot) return;
-    const res = await fetch('./partials/nav.html', { cache: 'no-store' });
+    const res = await fetch('./nav.html', { cache: 'no-store' });
     slot.innerHTML = await res.text();
   })();
   </script>
