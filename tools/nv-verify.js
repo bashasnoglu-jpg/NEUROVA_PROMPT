@@ -9,8 +9,12 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = process.cwd();
-const PACKS_DIR = path.join(ROOT, "packs");
+const PACKS_DIR_CANDIDATES = [
+  path.join(ROOT, "NEUROVA_PROMPT", "packs"),
+  path.join(ROOT, "packs"),
+];
 const ENTRY_CANDIDATES = [
+  path.join(ROOT, "NEUROVA_PROMPT", "prompt-library.html"),
   path.join(ROOT, "prompt-library.html"),
   path.join(ROOT, "index.html"),
   path.join(ROOT, "public", "prompt-library.html"),
@@ -30,12 +34,18 @@ function read(p) {
   return fs.readFileSync(p, "utf8");
 }
 
-function listPackFiles() {
-  if (!exists(PACKS_DIR)) return [];
+function resolvePacksDir() {
+  for (const d of PACKS_DIR_CANDIDATES) if (exists(d)) return d;
+  return null;
+}
+
+function listPackFiles(packsDir) {
+  if (!packsDir) return [];
   return fs
-    .readdirSync(PACKS_DIR)
+    .readdirSync(packsDir)
     .filter((f) => f.toLowerCase().endsWith(".js"))
-    .map((f) => path.join(PACKS_DIR, f));
+    .filter((f) => f.toLowerCase() !== "pack-index.js") // auto-generated, skip
+    .map((f) => path.join(packsDir, f));
 }
 
 function findEntryHtml() {
@@ -80,10 +90,11 @@ function scanPackText(packPath, text) {
 
 function main() {
   const problems = [];
-  const packFiles = listPackFiles();
+  const packsDir = resolvePacksDir();
+  const packFiles = listPackFiles(packsDir);
 
   if (packFiles.length === 0) {
-    problems.push({ where: "packs/", issue: "No pack files found under /packs. Expected packs/*.js" });
+    problems.push({ where: "packs/", issue: "No pack files found under NEUROVA_PROMPT/packs or /packs. Expected pack.*.js" });
   }
 
   // Scan packs

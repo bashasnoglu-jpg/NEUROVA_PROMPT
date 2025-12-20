@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Paketler — NEUROVA</title>
-  <link rel="stylesheet" href="./assets/nav.css" />
-  <link rel="stylesheet" href="./assets/paketler.css" />
+  <link rel="stylesheet" href="../../NEUROVA_SITE/assets/nav.css" />
+  <link rel="stylesheet" href="./paketler.css" />
 </head>
 <body data-page="paketler">
   <div id="nv-nav-slot"></div>
@@ -329,18 +329,18 @@
     (async function () {
       const slot = document.getElementById('nv-nav-slot');
       if (!slot) return;
-      const res = await fetch('./nav.html', { cache: 'no-store' });
+      const res = await fetch('../../NEUROVA_SITE/nav.html', { cache: 'no-store' });
       slot.innerHTML = await res.text();
     })();
   </script>
-  <script src="./pricing-config.js"></script>
-  <script src="./pricing-linker.js"></script>
-  <script src="./wa-config.js"></script>
-  <script src="./wa-linker.js"></script>
-  <script defer src="./assets/js/wa-click-tracker.js"></script>
+  <script src="../../NEUROVA_SITE/pricing-config.js"></script>
+  <script src="../../NEUROVA_SITE/pricing-linker.js"></script>
+  <script src="../../NEUROVA_SITE/wa-config.js"></script>
+  <script src="../../NEUROVA_SITE/wa-linker.js"></script>
+  <script defer src="./wa-click-tracker.js"></script>
   <script defer src="./heatmap-overlay.js"></script>
-  <script src="./heatmap.js"></script>
-  <script src="./slot-macro.js"></script>
-  <script src="./assets/nav.js" defer></script>
+  <script src="../../NEUROVA_SITE/heatmap.js"></script>
+  <script src="../../NEUROVA_SITE/slot-macro.js"></script>
+  <script src="../../NEUROVA_SITE/assets/nav.js" defer></script>
 </body>
 </html>
