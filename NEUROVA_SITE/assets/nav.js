@@ -14,6 +14,7 @@ const map = {
   "products.html": "urunler",
   "about.html": "about",
   "team.html": "team",
+  "packages.html": "paketler",
   "paketler.html": "paketler",
   "prompt-library.html": "prompt"
 };

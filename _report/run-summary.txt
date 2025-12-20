@@ -1,0 +1,3 @@
+﻿PWD: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
+Files scanned: 107
+Signals found: 289
