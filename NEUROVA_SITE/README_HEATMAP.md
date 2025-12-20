@@ -20,7 +20,7 @@
 ### Teknik Sözleşme
 - **LocalStorage**: `nv_wa_click_<source>_<tier>` (tier yoksa `N/A`), `nv_heat_overlay_collapsed`, `nv_heat_overlay_pos`, `nv_heat_overlay_size`, `nv_debug` (opsiyonel).
 - **DOM id/class**: `#nv-heat-overlay`, `#nv-heat-panel`, `#nv-heat-head`, `#nv-heat-kpis`, `#nv-heat-data`, `#nv-heat-body`, `#nv-heat-resize`, `#nv-heat-close`.
-- **Dosyalar**: `NEUROVA_SITE/heatmap-overlay.js` (UI + logic), `NEUROVA_SITE/assets/paketler.css` (layout + scroll + styling).
+- **Dosyalar**: `NEUROVA_SITE/heatmap-overlay.js` (UI + logic), `NEUROVA_SITE/assets/heatmap.css` (heatmap styles), `NEUROVA_SITE/assets/paketler.css` (page layout).
 
 ### Nice-to-have (opsiyonel)
 - CSV’ye toplam satırı ekleme (`TOTAL,,<n>`).
