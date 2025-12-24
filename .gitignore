@@ -25,3 +25,18 @@ coverage/
 Thumbs.db
 .vscode/
 .idea/
+# --- NEUROVA FE cleanup ---
+node_modules/
+_archive/
+_audit/
+_report/
+tmp/
+*.log
+*.bak
+.DS_Store
+desktop.ini
+
+# local inventories
+dosya-listesi.txt
+git-dosyalari.txt
+
