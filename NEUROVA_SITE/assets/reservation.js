@@ -367,6 +367,38 @@
     updatePreview();
   }
 
+  function resetReservationModalState(modalEl) {
+    if (!modalEl) return;
+
+    const form = modalEl.querySelector("form");
+    if (form) form.reset();
+
+    modalEl.querySelectorAll("input, select, textarea").forEach((el) => {
+      if (el.closest("form")) return;
+      if (el.type === "checkbox" || el.type === "radio") el.checked = false;
+      else if (!["button", "submit"].includes(el.type)) el.value = "";
+    });
+
+    modalEl.querySelectorAll("[data-nv-lang]").forEach((chip) => {
+      chip.classList.remove("is-on", "is-active", "active", "selected");
+      chip.setAttribute("aria-pressed", "false");
+    });
+
+    const defaultChip = modalEl.querySelector('[data-nv-lang="tr"]');
+    if (defaultChip) {
+      defaultChip.classList.add("is-on");
+      defaultChip.setAttribute("aria-pressed", "true");
+    }
+
+    modalEl.querySelectorAll("[data-nv-preview], [data-nv-reservation-preview], #nv-res-preview").forEach((el) => {
+      el.textContent = "";
+    });
+
+    if (window.__NV_RES__ && typeof window.__NV_RES__.updatePreview === "function") {
+      window.__NV_RES__.updatePreview();
+    }
+  }
+
   function openModal(payload) {
     ensureModal();
 
@@ -411,6 +443,7 @@
   function closeModal() {
     const overlay = document.getElementById("nv-reservation-overlay");
     if (!overlay) return;
+    resetReservationModalState(overlay);
     overlay.classList.remove("is-open");
     document.documentElement.classList.remove("nv-modal-open");
     document.body.classList.remove("nv-modal-open");
