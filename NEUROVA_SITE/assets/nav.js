@@ -8,9 +8,9 @@ const map = {
   "index.html": "home",
   "hamam.html": "hamam",
   "masajlar.html": "masajlar",
-  "kids-family.html": "kids-family",
   "face-sothys.html": "face",
-  "yoga.html": "yoga",
+  "kids-family.html": "kids-family",
+  "galeri.html": "galeri",
   "products.html": "urunler",
   "about.html": "about",
   "team.html": "team",
@@ -47,6 +47,7 @@ const setLock = (on) => {
 
 const toggle = qs("[data-nv-mobile-toggle]");
 const panel = qs("[data-nv-mobile-panel]");
+const overlay = qs("[data-nv-mobile-overlay]");
 const OPEN_CLASS = "is-open";
 const BURGER_CLASS = "is-open";
 
@@ -56,6 +57,10 @@ const open = () => {
   toggle.classList.add(BURGER_CLASS);
   panel.hidden = false;
   panel.classList.add(OPEN_CLASS);
+  if (overlay) {
+    overlay.hidden = false;
+    overlay.classList.add(OPEN_CLASS);
+  }
   setLock(true);
 };
 
@@ -67,6 +72,10 @@ const close = () => {
   const delay = prefersReduced ? 0 : 180;
   window.setTimeout(() => { panel.hidden = true; }, delay);
   setLock(false);
+  if (overlay) {
+    overlay.classList.remove(OPEN_CLASS);
+    window.setTimeout(() => { overlay.hidden = true; }, delay);
+  }
 };
 
 if (toggle && panel) {
@@ -81,6 +90,9 @@ if (toggle && panel) {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
   });
+  if (overlay) {
+    overlay.addEventListener("click", close);
+  }
 }
 
 const openReservation = () => {
@@ -94,6 +106,12 @@ const openReservation = () => {
   console.log("[NEUROVA] Reservation CTA clicked (no handler found).");
 };
 
-qsa("[data-nv-open-reservation]").forEach(btn => {
-  btn.addEventListener("click", openReservation);
-});
+function wireReservationTriggers(root = document) {
+  root.querySelectorAll("[data-nv-open-reservation]").forEach((el) => {
+    if (el.dataset.nvReservationWired === "1") return;
+    el.dataset.nvReservationWired = "1";
+    el.addEventListener("click", openReservation);
+  });
+}
+
+wireReservationTriggers(document);
