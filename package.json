@@ -9,9 +9,14 @@
     "check:syntax": "node --check app.js main.js",
     "dev": "node server/index.cjs",
     "nv:verify": "node tools/nv-verify.js",
-    "nv:selftest": "node tools/nv-selftest.js"
+    "nv:selftest": "node tools/nv-selftest.js",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }

@@ -179,45 +179,49 @@
   function wire() {
     const lang = getLang();
 
-    const links = Array.from(document.querySelectorAll('a[href="#nv-wa"], a[data-wa="1"], .nv-cta[data-wa="1"]'));
-    links.forEach((a) => {
-      a.addEventListener("click", (e) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-        e.preventDefault();
+    // --- Delegated WA click handler (slot-safe) ---
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href="#nv-wa"], a[data-wa="1"], .nv-cta[data-wa="1"], .nv-mcta[data-wa="1"]');
+      if (!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 
-        const card = a.closest(".nv-card, .nv-product-card");
-        const isProducts = (location.pathname || "").toLowerCase().includes("products");
-        const pack = !isProducts && card ? inferPackFromCard(card) : "";
-        const tier = !isProducts ? (inferTierFromCard(card) || inferTierFromLink(a)) : "";
-        const duration = card ? inferDurationFromCard(card) : "";
-        const products = isProducts ? inferProducts(a, card) : [];
+      e.preventDefault();
 
-        const msgParts = buildMessageParts({ lang, tier, pack, duration, products });
-        bumpHeat(msgParts.srcLabel, msgParts.tierTag);
+      const card = a.closest(".nv-card, .nv-product-card");
+      const isProducts = (location.pathname || "").toLowerCase().includes("products");
+      const pack = !isProducts && card ? inferPackFromCard(card) : "";
+      const tier = !isProducts ? (inferTierFromCard(card) || inferTierFromLink(a)) : "";
+      const duration = card ? inferDurationFromCard(card) : "";
+      const products = isProducts ? inferProducts(a, card) : [];
 
-        const url = waUrl(msgParts.text);
-        const w = window.open(url, "_blank", "noopener,noreferrer");
-        if (!w) {
-          window.location.href = url;
-        }
-      });
+      const msgParts = buildMessageParts({ lang, tier, pack, duration, products });
+      bumpHeat(msgParts.srcLabel, msgParts.tierTag);
+
+      const url = waUrl(msgParts.text);
+      const w = window.open(url, "_blank", "noopener,noreferrer");
+      if (!w) window.location.href = url;
     });
 
+    // Optional: delegated handler for nv-wa-link too
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a.nv-wa-link");
+      if (!a) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      e.preventDefault();
+
+      const tier = inferTierFromLink(a);
+      const msgParts = buildMessageParts({ lang, tier, pack: "", duration: "" });
+      bumpHeat(msgParts.srcLabel, msgParts.tierTag);
+
+      const url = waUrl(msgParts.text);
+      const w = window.open(url, "_blank", "noopener,noreferrer");
+      if (!w) window.location.href = url;
+    });
+
+    // Progressive enhancement for old waLinks can still be useful
     const waLinks = Array.from(document.querySelectorAll("a.nv-wa-link"));
     waLinks.forEach((a) => {
-      a.addEventListener("click", (e) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-        e.preventDefault();
-        const tier = inferTierFromLink(a);
-        const msgParts = buildMessageParts({ lang, tier, pack: "", duration: "" });
-        bumpHeat(msgParts.srcLabel, msgParts.tierTag);
-        const url = waUrl(msgParts.text);
-        const w = window.open(url, "_blank", "noopener,noreferrer");
-        if (!w) {
-          window.location.href = url;
-        }
-      });
-
       // keep href for progressive enhancement
       const tier = inferTierFromLink(a);
       const msgParts = buildMessageParts({ lang, tier, pack: "", duration: "" });

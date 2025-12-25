@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>NEUROVA - Galeri</title>
+
+  <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="stylesheet" href="./assets/paketler.css" />
+  <link rel="stylesheet" href="./assets/gallery.css" />
+</head>
+
+<body data-lang="tr" data-page="galeri" data-tier="na" data-year="2025">
+  <div id="nv-nav-slot" data-nav-fallback></div>
+  <noscript>
+    <div style="padding:16px">
+      Navigasyon için JavaScript gerekli. Lütfen tarayıcınızda JavaScript'i açın.
+    </div>
+  </noscript>
+
+  <main class="nv-page nv-gallery-page">
+
+    <!-- HERO -->
+    <section class="nv-hero nv-hero--gallery">
+      <div class="nv-hero-bg" aria-hidden="true"></div>
+
+      <div class="nv-hero-inner">
+        <h1>Galeri</h1>
+        <p>Hamam, masaj, Face – Sothys ve mekân detaylarından sessiz bir seçki.</p>
+
+        <div class="nv-hero-actions">
+          <a class="nv-cta" href="#nv-wa" data-wa="1">WhatsApp Rezervasyon</a>
+          <a class="nv-cta nv-cta-ghost" href="./paketler.html">Paketleri Gör</a>
+        </div>
+
+        <div class="nv-hero-chips" aria-label="Kategoriler">
+          <button class="nv-chip" type="button" data-filter="hamam" aria-pressed="false">Hamam</button>
+          <button class="nv-chip" type="button" data-filter="masaj" aria-pressed="false">Masaj</button>
+          <button class="nv-chip" type="button" data-filter="face" aria-pressed="false">Face</button>
+          <button class="nv-chip" type="button" data-filter="kids" aria-pressed="false">Kids</button>
+          <button class="nv-chip" type="button" data-filter="mekan" aria-pressed="false">Mekân</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA ROW (YouTube + Reels + Before/After) -->
+    <section class="nv-media-row" aria-label="Medya">
+      <header class="nv-sec-head">
+        <h2>Medya</h2>
+        <p>Video tur + kısa anlar + önce/sonra. Tek sayfada net seçki.</p>
+      </header>
+
+      <div class="nv-media-grid">
+        <a class="nv-media-card nv-media-card--yt" href="#" data-yt="LXb3EKWsInQ"
+          data-title="NEUROVA | Genel Tur (60sn)">
+          <div class="nv-media-thumb">
+            <img src="https://img.youtube.com/vi/LXb3EKWsInQ/hqdefault.jpg" alt="NEUROVA genel tur video"
+              loading="lazy" />
+            <span class="nv-play" aria-hidden="true">▶</span>
+          </div>
+          <div class="nv-media-meta">
+            <span class="nv-media-title">NEUROVA | Genel Tur</span>
+            <span class="nv-media-sub">Mekân | Akış | Detay</span>
+          </div>
+        </a>
+
+        <div class="nv-reels">
+          <a class="nv-reel" href="#" data-yt="LXb3EKWsInQ" data-title="Hamam | Akış (Short)">
+            <span class="nv-reel-badge">Short</span>
+            <span class="nv-reel-title">Hamam | Akış</span>
+            <span class="nv-reel-sub">Isınma + Köpük + Arınma</span>
+          </a>
+
+          <a class="nv-reel" href="#" data-yt="LXb3EKWsInQ" data-title="Masaj | Recovery (Short)">
+            <span class="nv-reel-badge">Short</span>
+            <span class="nv-reel-title">Masaj | Recovery</span>
+            <span class="nv-reel-sub">Toparlanma + Nefes</span>
+          </a>
+
+          <a class="nv-reel" href="#" data-yt="LXb3EKWsInQ" data-title="Face – Sothys | Glow (Short)">
+            <span class="nv-reel-badge">Short</span>
+            <span class="nv-reel-title">Face – Sothys | Glow</span>
+            <span class="nv-reel-sub">Nem + Işıltı + Konfor</span>
+          </a>
+        </div>
+
+        <div class="nv-before-after" aria-label="Önce Sonra">
+          <div class="nv-ba-head">
+            <h3>Önce / Sonra</h3>
+            <p>Detoks & glow etkisini görmek için kaydır.</p>
+          </div>
+
+          <div class="nv-ba-frame" data-ba>
+            <img class="nv-ba-img nv-ba-img--before" src="https://placehold.co/1200x600/a9a9a9/white?text=Önce"
+              alt="Önce" loading="lazy" />
+            <div class="nv-ba-after" data-ba-after>
+              <img class="nv-ba-img nv-ba-img--after" src="https://placehold.co/1200x600/696969/white?text=Sonra"
+                alt="Sonra" loading="lazy" />
+            </div>
+
+            <input class="nv-ba-range" type="range" min="0" max="100" value="50" aria-label="Önce Sonra Kaydırıcı"
+              data-ba-range />
+            <div class="nv-ba-handle" data-ba-handle aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <section class="nv-filterbar" aria-label="Galeri Filtreleri">
+      <div class="nv-filterbar-left">
+        <h2>Seçkiler</h2>
+        <p>Kategoriye göre filtrele.</p>
+      </div>
+
+      <div class="nv-filterbar-right" role="tablist" aria-label="Kategori Filtreleri">
+        <button class="nv-chip is-active" role="tab" type="button" data-filter="all" aria-selected="true">Tümü</button>
+        <button class="nv-chip" role="tab" type="button" data-filter="hamam" aria-selected="false">Hamam</button>
+        <button class="nv-chip" role="tab" type="button" data-filter="masaj" aria-selected="false">Masaj</button>
+        <button class="nv-chip" role="tab" type="button" data-filter="face" aria-selected="false">Face</button>
+        <button class="nv-chip" role="tab" type="button" data-filter="kids" aria-selected="false">Kids</button>
+        <button class="nv-chip" role="tab" type="button" data-filter="mekan" aria-selected="false">Mekân</button>
+      </div>
+    </section>
+
+    <!-- EDITORIAL GRID -->
+    <section class="nv-gallery-grid" aria-label="Galeri">
+      <a class="nv-gitem span-6" href="https://placehold.co/800x600/1a1a1a/white?text=Hamam" data-cat="hamam"
+        data-caption="Hamam | Mermer & Köpük">
+        <figure>
+          <img src="https://placehold.co/800x600/1a1a1a/white?text=Hamam" alt="Hamam mermer detayı" loading="lazy" />
+          <figcaption>
+            <span class="t">Hamam | Mermer</span>
+            <span class="m">Arınma ritmi</span>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="nv-gitem span-3" href="https://placehold.co/600x800/2a2a2a/white?text=Mekan" data-cat="mekan"
+        data-caption="Mekân | Işık & doku">
+        <figure>
+          <img src="https://placehold.co/600x800/2a2a2a/white?text=Mekan" alt="Mekan detay" loading="lazy" />
+          <figcaption><span class="t">Mekân</span><span class="m">Işık & doku</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="nv-gitem span-3" href="https://placehold.co/600x800/3a3a3a/white?text=Face" data-cat="face"
+        data-caption="Face – Sothys | Konfor">
+        <figure>
+          <img src="https://placehold.co/600x800/3a3a3a/white?text=Face" alt="Sothys atmosfer" loading="lazy" />
+          <figcaption><span class="t">Face</span><span class="m">Nem & konfor</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="nv-gitem span-4" href="https://placehold.co/600x400/4a4a4a/white?text=Masaj" data-cat="masaj"
+        data-caption="Masaj | Recovery">
+        <figure>
+          <img src="https://placehold.co/600x400/4a4a4a/white?text=Masaj" alt="Masaj" loading="lazy" />
+          <figcaption><span class="t">Masaj</span><span class="m">Toparlanma</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="nv-gitem span-4" href="https://placehold.co/600x400/5a5a5a/white?text=Kids" data-cat="kids"
+        data-caption="Kids & Family | Güvenli ritim">
+        <figure>
+          <img src="https://placehold.co/600x400/5a5a5a/white?text=Kids" alt="Kids & Family" loading="lazy" />
+          <figcaption><span class="t">Kids</span><span class="m">Güvenli ritim</span></figcaption>
+        </figure>
+      </a>
+
+      <a class="nv-gitem span-4" href="https://placehold.co/600x400/6a6a6a/white?text=Mekan" data-cat="mekan"
+        data-caption="Mekân | Sessizlik">
+        <figure>
+          <img src="https://placehold.co/600x400/6a6a6a/white?text=Mekan" alt="Mekan" loading="lazy" />
+          <figcaption><span class="t">Mekân</span><span class="m">Sessizlik</span></figcaption>
+        </figure>
+      </a>
+    </section>
+
+    <!-- WhatsApp anchor -->
+    <section id="nv-wa" class="nv-wa">
+      <div>
+        <h2>WhatsApp ile Rezervasyon</h2>
+        <p>Program + süre + opsiyonlar + onay.</p>
+      </div>
+      <a class="nv-cta nv-wa-link" href="#" data-wa="1">WhatsApp'tan Yaz</a>
+    </section>
+  </main>
+
+  <a class="nv-float-cta" href="#nv-wa" data-wa="1">Rezervasyon</a>
+
+  <!-- YouTube Lightbox -->
+  <div class="nv-ytbox" id="nvYtbox" aria-hidden="true">
+    <div class="nv-ytbox__backdrop" data-yt-close></div>
+    <div class="nv-ytbox__panel" role="dialog" aria-modal="true" aria-label="Video">
+      <button class="nv-ytbox__close" type="button" aria-label="Kapat" data-yt-close>×</button>
+      <div class="nv-ytbox__frame">
+        <div id="nvYtMount"></div>
+      </div>
+      <p class="nv-ytbox__cap" id="nvYtCap"></p>
+    </div>
+  </div>
+
+  <!-- Image Lightbox (minimal) -->
+  <div class="nv-imgbox" id="nvImgbox" aria-hidden="true">
+    <div class="nv-imgbox__backdrop" data-img-close></div>
+    <div class="nv-imgbox__panel" role="dialog" aria-modal="true" aria-label="Görsel">
+      <button class="nv-imgbox__close" type="button" aria-label="Kapat" data-img-close>×</button>
+      <figure class="nv-imgbox__figure">
+        <img id="nvImgboxImg" alt="" loading="eager" />
+        <figcaption id="nvImgboxCap"></figcaption>
+      </figure>
+
+      <button class="nv-imgbox__nav nv-imgbox__nav--prev" type="button" aria-label="Önceki" data-img-prev>‹</button>
+      <button class="nv-imgbox__nav nv-imgbox__nav--next" type="button" aria-label="Sonraki" data-img-next>›</button>
+    </div>
+  </div>
+
+  <script>
+    // NAV SLOT (with fallback)
+    (async function () {
+      const slot = document.getElementById('nv-nav-slot');
+      if (!slot) return;
+
+      const fallbackNav = `
+        <header class="nv-header nv-header--fallback" data-nv-header>
+          <div class="nv-shell">
+            <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
+              <span class="nv-brand__word">NEUROVA</span>
+              <span class="nv-brand__sub">Spa & Wellness</span>
+            </a>
+
+            <div class="nv-nav-row">
+              <nav class="nv-nav" aria-label="Primary">
+                <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
+                <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
+                <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+                <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+                <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+                <a class="nv-link" data-nav="paketler" href="./paketler.html">Paketler</a>
+                <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
+              </nav>
+
+              <div class="nv-dropdown" data-nv-dropdown>
+                <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                  Kurumsal ▾
+                </button>
+
+                <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
+                  <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
+                  <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
+                  <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nv-actions">
+              <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+              <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+                <span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nv-mpanel" data-nv-mobile-panel hidden>
+            <div class="nv-mpanel__inner">
+              <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
+              <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
+              <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+              <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+              <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+              <a class="nv-mlink" data-nav="paketler" href="./paketler.html">Paketler</a>
+              <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
+
+              <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
+              <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
+              <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
+
+              <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+            </div>
+          </div>
+        </header>
+      `;
+
+      try {
+        const res = await fetch('./nav.html', { cache: 'no-store' });
+        if (!res.ok) throw new Error('nav fetch failed');
+        const html = await res.text();
+        if (!html.trim()) throw new Error('nav empty');
+        slot.innerHTML = html;
+      } catch (e) {
+        slot.innerHTML = fallbackNav;
+      }
+    })();
+
+    // FILTER (a11y + keyboard)
+    (function () {
+      const bar = document.querySelector('.nv-filterbar');
+      const filterButtons = bar ? Array.from(bar.querySelectorAll('[data-filter]')) : [];
+      const heroButtons = Array.from(document.querySelectorAll('.nv-hero-chips [data-filter]'));
+      const items = Array.from(document.querySelectorAll('.nv-gitem'));
+      if (!filterButtons.length || !items.length) return;
+
+      function setActive(btn) {
+        const key = btn.getAttribute('data-filter') || 'all';
+        filterButtons.forEach(b => {
+          const on = (b === btn);
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+          b.tabIndex = on ? 0 : -1;
+        });
+        heroButtons.forEach(h => {
+          const on = (h.getAttribute('data-filter') || '') === key;
+          h.classList.toggle('is-active', on);
+          h.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+
+      function applyFilter(key) {
+        items.forEach(el => {
+          const cat = el.getAttribute('data-cat') || '';
+          const show = (key === 'all' || cat === key);
+          el.classList.toggle('is-hidden', !show);
+          el.toggleAttribute('hidden', !show);
+          el.setAttribute('aria-hidden', show ? 'false' : 'true');
+        });
+        if (window.nvGalleryAutoflow) window.nvGalleryAutoflow();
+      }
+
+      function onPick(btn) {
+        const key = btn.getAttribute('data-filter') || 'all';
+        setActive(btn);
+        applyFilter(key);
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => onPick(btn));
+      });
+
+      heroButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-filter');
+          const target = filterButtons.find(b => (b.getAttribute('data-filter') || '') === key);
+          if (target) onPick(target);
+          else applyFilter(key);
+        });
+      });
+
+      if (filterButtons.length) {
+        const tablist = filterButtons[0].parentElement;
+        if (tablist) {
+          tablist.addEventListener('keydown', (e) => {
+            const i = filterButtons.findIndex(b => b.classList.contains('is-active'));
+            if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              const n = filterButtons[(i + 1) % filterButtons.length];
+              n.focus(); onPick(n);
+            }
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const p = filterButtons[(i - 1 + filterButtons.length) % filterButtons.length];
+              p.focus(); onPick(p);
+            }
+          });
+        }
+        setActive(filterButtons[0]);
+      }
+      applyFilter('all');
+    })();
+
+    // YT MODAL (lazy + safe DOM)
+    (function () {
+      const box = document.getElementById('nvYtbox');
+      const mount = document.getElementById('nvYtMount');
+      const cap = document.getElementById('nvYtCap');
+      if (!box || !mount) return;
+
+      function openYT(id, title) {
+        const safeId = String(id || '').trim();
+        if (!safeId) return;
+        const src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(safeId)
+          + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        mount.innerHTML = '';
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = title || 'YouTube';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.loading = 'eager';
+        mount.appendChild(iframe);
+        if (cap) cap.textContent = title || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.documentElement.classList.add('nv-modal-open');
+      }
+
+      function closeYT() {
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('nv-modal-open');
+        mount.innerHTML = '';
+        if (cap) cap.textContent = '';
+      }
+
+      document.querySelectorAll('[data-yt]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          if (el.tagName.toLowerCase() === 'a') e.preventDefault();
+          const id = el.getAttribute('data-yt');
+          openYT(id, el.getAttribute('data-title') || '');
+        });
+      });
+
+      box.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t && (t.matches('[data-yt-close]') || t.closest('[data-yt-close]'))) closeYT();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && box.classList.contains('is-open')) closeYT();
+      });
+    })();
+
+    // BEFORE/AFTER
+    (function () {
+      const frame = document.querySelector('[data-ba]');
+      if (!frame) return;
+      const afterWrap = frame.querySelector('[data-ba-after]');
+      const range = frame.querySelector('[data-ba-range]');
+      const handle = frame.querySelector('[data-ba-handle]');
+      if (!afterWrap || !range || !handle) return;
+
+      function apply(val) {
+        const pct = Math.max(0, Math.min(100, Number(val)));
+        afterWrap.style.width = pct + '%';
+        handle.style.left = pct + '%';
+      }
+
+      function snapToCenter() {
+        const v = Number(range.value);
+        if (v > 45 && v < 55) {
+          range.value = 50;
+          afterWrap.style.transition = 'width .18s ease';
+          handle.style.transition = 'left .18s ease';
+          apply(50);
+          setTimeout(() => {
+            afterWrap.style.transition = '';
+            handle.style.transition = '';
+          }, 200);
+        }
+      }
+
+      apply(range.value);
+      range.addEventListener('input', () => apply(range.value));
+      range.addEventListener('input', () => frame.classList.add('is-used'), { once: true });
+      range.addEventListener('change', () => apply(range.value));
+
+      let dragging = false;
+      range.addEventListener('pointerdown', () => { dragging = true; });
+      window.addEventListener('pointerup', () => {
+        if (!dragging) return;
+        dragging = false;
+        snapToCenter();
+      });
+    })();
+
+    // IMAGE LIGHTBOX (minimal, editorial)
+    (function () {
+      const box = document.getElementById('nvImgbox');
+      const img = document.getElementById('nvImgboxImg');
+      const cap = document.getElementById('nvImgboxCap');
+      const items = Array.from(document.querySelectorAll('.nv-gitem'));
+      if (!box || !img || !items.length) return;
+
+      let index = -1;
+
+      function openAt(i) {
+        index = Math.max(0, Math.min(items.length - 1, i));
+        const el = items[index];
+        const href = el.getAttribute('href') || '';
+        const caption = el.getAttribute('data-caption') || '';
+        img.src = href;
+        img.alt = caption || (el.querySelector('img')?.alt || '');
+        cap.textContent = caption;
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.documentElement.classList.add('nv-modal-open');
+      }
+
+      function close() {
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('nv-modal-open');
+        img.removeAttribute('src');
+        cap.textContent = '';
+        index = -1;
+      }
+
+      function next() {
+        if (index < 0) return;
+        openAt((index + 1) % items.length);
+      }
+
+      function prev() {
+        if (index < 0) return;
+        openAt((index - 1 + items.length) % items.length);
+      }
+
+      items.forEach((el, i) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          openAt(i);
+        });
+      });
+
+      box.addEventListener('click', (e) => {
+        const t = e.target;
+        if (!t) return;
+        if (t.matches('[data-img-close]') || t.closest('[data-img-close]')) close();
+        if (t.matches('[data-img-next]') || t.closest('[data-img-next]')) next();
+        if (t.matches('[data-img-prev]') || t.closest('[data-img-prev]')) prev();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (!box.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') next();
+        if (e.key === 'ArrowLeft') prev();
+      });
+    })();
+
+    // CATEGORY-BASED EDITORIAL SPAN AUTOFLOW — NEUROVA Gallery
+    (function () {
+      const grid = document.querySelector('.nv-gallery-grid');
+      if (!grid) return;
+
+      const ALLOWED = [6, 4, 3];
+      const SPAN_CLASS_RE = /\bspan-(3|4|6)\b/g;
+
+      const patterns = [
+        [6, 3, 3],
+        [4, 4, 4],
+        [3, 3, 3, 3],
+        [3, 3, 6],
+        [6, 6],
+        [4, 4, 4],
+        [6, 3, 3],
+      ];
+
+      const clamp = (n) => (n === 6 || n === 4 || n === 3) ? n : 4;
+
+      const cleanSetSpan = (el, span) => {
+        if (el.hasAttribute('data-span-lock')) return;
+        el.className = el.className.replace(SPAN_CLASS_RE, '').trim();
+        el.classList.add('span-' + span);
+      };
+
+      const seedFrom = (items) => items.reduce((acc, el) => {
+        const t = (el.getAttribute('data-caption') || '') + (el.getAttribute('href') || '');
+        for (let i = 0; i < t.length; i++) acc = (acc * 31 + t.charCodeAt(i)) >>> 0;
+        return acc;
+      }, 2166136261);
+
+      const nextGapFactory = (seed) => {
+        let s = seed ^ 0x9e3779b9;
+        return () => (s = (s * 1664525 + 1013904223) >>> 0, 7 + (s % 3));
+      };
+
+      const pickRemainder = (rem, last) => {
+        const opts = ALLOWED.filter(s => s <= rem);
+        if (!opts.length) return null;
+        if (last && opts.length > 1) {
+          const alt = opts.find(s => s !== last);
+          if (alt) return alt;
+        }
+        return opts[0];
+      };
+
+      function layout() {
+        const visible = Array.from(grid.querySelectorAll('.nv-gitem:not([hidden])'));
+        if (!visible.length) return;
+
+        // KATEGORİLERE AYIR
+        const groups = {};
+        visible.forEach(el => {
+          const cat = el.getAttribute('data-cat') || '_';
+          (groups[cat] ||= []).push(el);
+        });
+
+        // HER KATEGORİ İÇİN AYRI RİTİM
+        Object.values(groups).forEach(items => {
+          if (!items.length) return;
+
+          const seed = seedFrom(items);
+          const offset = seed % patterns.length;
+          const nextGap = nextGapFactory(seed);
+          let nextFeatureAt = nextGap();
+
+          let row = 0, col = 0, pIdx = 0, lastSpan = null;
+
+          const pattern = () => patterns[(row + offset) % patterns.length];
+
+          for (let i = 0; i < items.length; i++) {
+            const el = items[i];
+            if (el.hasAttribute('data-span-lock')) continue;
+
+            if (col === 12) { row++; col = 0; pIdx = 0; }
+
+            let span;
+
+            // FEATURE (7–9)
+            if (i === nextFeatureAt && lastSpan === 6) nextFeatureAt++;
+            if (i === nextFeatureAt) {
+              span = 6;
+              nextFeatureAt += nextGap();
+            } else {
+              const pat = pattern();
+              span = (pIdx < pat.length)
+                ? pat[pIdx]
+                : pickRemainder(12 - col, lastSpan) ?? 4;
+
+              if (span > (12 - col)) {
+                span = pickRemainder(12 - col, lastSpan);
+                if (!span) { row++; col = 0; pIdx = 0; span = pat[0] || 4; }
+              }
+            }
+
+            span = clamp(span);
+            cleanSetSpan(el, span);
+
+            col += span;
+            lastSpan = span;
+            pIdx++;
+
+            if (col > 12) { row++; col = 0; pIdx = 0; }
+          }
+        });
+      }
+
+      window.nvGalleryAutoflow = layout;
+      layout();
+    })();
+  </script>
+
+  <!-- Projedeki WA + nav scriptleri -->
+  <script src="./wa-config.js"></script>
+  <script defer src="./wa-linker.js"></script>
+  <script src="./slot-macro.js"></script>
+  <script defer src="./assets/nav.js"></script>
+</body>
+
+</html>
