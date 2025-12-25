@@ -1,34 +1,8 @@
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  margin: 0;
-  background: #f4f4f4;
-  color: #111;
-}
-
-.kids-hero {
-  padding: 140px 24px 48px;
-  text-align: center;
-}
-
-.kids-hero h1 {
-  font-size: 36px;
-  margin-bottom: 12px;
-  letter-spacing: .06em;
-}
-
-.kids-hero p {
-  max-width: 720px;
-  margin: 0 auto;
-  color: #444;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
   gap: 16px;
-  padding: 0 24px 40px;
+  padding: 0 0 8px;
 }
 
 .card {

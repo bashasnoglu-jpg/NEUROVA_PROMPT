@@ -15,8 +15,8 @@ const map = {
   "about.html": "about",
   "team.html": "team",
   "packages.html": "paketler",
-  "paketler.html": "paketler",
-  "prompt-library.html": "prompt"
+  "paketler.html": "paketler"
+  // prompt-library.html intentionally omitted from nav mapping (Prompt is hidden)
 };
 
 const normalizePath = () => {
@@ -103,6 +103,11 @@ const openReservation = () => {
     null;
 
   if (typeof fn === "function") return fn();
+
+  // Fallback: sayfada #nv-wa varsa oraya kaydır
+  const anchor = document.getElementById("nv-wa");
+  if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+
   console.log("[NEUROVA] Reservation CTA clicked (no handler found).");
 };
 
@@ -114,4 +119,125 @@ function wireReservationTriggers(root = document) {
   });
 }
 
+// Keep existing behavior (doesn't hurt)…
 wireReservationTriggers(document);
+
+/* --- NV Dropdown (Kurumsal) - Delegated Toggle Patch v1.0 --- */
+(function () {
+  const DROPDOWN_SEL = "[data-nv-dropdown]";
+  const TOGGLE_SEL = "[data-nv-dropdown-toggle]";
+  const MENU_SEL = "[data-nv-dropdown-menu]";
+
+  function getParts(toggleEl) {
+    const dd = toggleEl.closest(DROPDOWN_SEL);
+    if (!dd) return null;
+    const menu = dd.querySelector(MENU_SEL);
+    return menu ? { dd, menu } : null;
+  }
+
+  function isOpen(toggleEl, menuEl) {
+    return !menuEl.hasAttribute("hidden") && toggleEl.getAttribute("aria-expanded") === "true";
+  }
+
+  function closeAll(exceptDropdown) {
+    document.querySelectorAll(DROPDOWN_SEL).forEach((dd) => {
+      if (exceptDropdown && dd === exceptDropdown) return;
+      const toggle = dd.querySelector(TOGGLE_SEL);
+      const menu = dd.querySelector(MENU_SEL);
+      if (!toggle || !menu) return;
+      toggle.setAttribute("aria-expanded", "false");
+      menu.setAttribute("hidden", "");
+    });
+  }
+
+  function openDD(toggleEl, menuEl, ddEl) {
+    closeAll(ddEl);
+    toggleEl.setAttribute("aria-expanded", "true");
+    menuEl.removeAttribute("hidden");
+  }
+
+  function closeDD(toggleEl, menuEl) {
+    toggleEl.setAttribute("aria-expanded", "false");
+    menuEl.setAttribute("hidden", "");
+  }
+
+  document.addEventListener("click", (e) => {
+    const toggle = e.target.closest(TOGGLE_SEL);
+    if (toggle) {
+      e.preventDefault();
+      const parts = getParts(toggle);
+      if (!parts) return;
+
+      const { dd, menu } = parts;
+      if (isOpen(toggle, menu)) closeDD(toggle, menu);
+      else openDD(toggle, menu, dd);
+
+      e.stopPropagation();
+      return;
+    }
+
+    if (!e.target.closest(DROPDOWN_SEL)) {
+      closeAll();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+
+  document.addEventListener("click", (e) => {
+    const item = e.target.closest(`${DROPDOWN_SEL} ${MENU_SEL} a`);
+    if (item) closeAll();
+  });
+})();
+
+/* --- NV Reservation - Delegated Click Patch v1.0 (slot-safe) --- */
+(function () {
+  const RES_SEL = "[data-nv-open-reservation]";
+  const DROPDOWN_SEL = "[data-nv-dropdown]";
+  const MOBILE_PANEL_SEL = "[data-nv-mobile-panel]";
+  const MOBILE_TOGGLE_SEL = "[data-nv-mobile-toggle]";
+
+  function closeMobilePanelIfOpen() {
+    const panel = document.querySelector(MOBILE_PANEL_SEL);
+    const btn = document.querySelector(MOBILE_TOGGLE_SEL);
+    if (!panel || panel.hasAttribute("hidden")) return;
+
+    // reuse existing close behavior if available
+    panel.classList.remove("is-open");
+    const delay = prefersReduced ? 0 : 180;
+    window.setTimeout(() => { panel.hidden = true; }, delay);
+
+    if (btn) {
+      btn.setAttribute("aria-expanded", "false");
+      btn.classList.remove("is-open");
+    }
+
+    document.documentElement.classList.remove("nv-lock");
+    document.body.classList.remove("nv-lock");
+  }
+
+  function closeDropdownIfOpen() {
+    const dd = document.querySelector(DROPDOWN_SEL);
+    if (!dd) return;
+    const t = dd.querySelector("[data-nv-dropdown-toggle]");
+    const m = dd.querySelector("[data-nv-dropdown-menu]");
+    if (!t || !m) return;
+    t.setAttribute("aria-expanded", "false");
+    m.setAttribute("hidden", "");
+  }
+
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest(RES_SEL);
+    if (!el) return;
+    if (el && el.hasAttribute("data-wa")) return; // WA linker yönetsin
+
+    // UX: close open UI layers
+    closeDropdownIfOpen();
+    closeMobilePanelIfOpen();
+
+    // Slot-safe: always work even if nav injected later
+    e.preventDefault();
+    openReservation();
+  });
+})();

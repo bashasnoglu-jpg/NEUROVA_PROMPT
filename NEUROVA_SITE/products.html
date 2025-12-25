@@ -1,92 +1,79 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Products — NEUROVA</title>
+  <title>Ürünler — NEUROVA</title>
   <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="stylesheet" href="./assets/home.css" />
   <link rel="stylesheet" href="./assets/paketler.css" />
-  <link rel="stylesheet" href="./assets/heatmap.css" />
 </head>
-<body data-page="urunler">
-  <div id="nv-nav-slot"></div>
+
+<body data-lang="tr" data-page="products" data-tier="entry" data-year="2025">
+  <div id="nv-nav-slot" data-nav-fallback></div>
 
   <main>
+    <!-- HERO -->
     <section class="nv-hero">
-      <h1>Products</h1>
-      <p>Quiet Luxury Skin Bar — Ritüel sonrası 3 premium dokunuş, resepsiyondan hemen teslim.</p>
-      <div class="nv-products-cta nv-cta-row">
-        <a
-          href="https://wa.me/905348350169?text=Merhaba%20%F0%9F%91%8B%0ASize%20en%20uygun%20paketi%20%C3%B6nerebilmem%20i%C3%A7in%20birka%C3%A7%20k%C4%B1sa%20soru%20sorabilir%20miyim%3F"
-          class="nv-cta nv-cta--primary"
-          data-source="urunler"
-          data-tier="value"
-        >
-          Kişisel paket önerisi al
-        </a>
-        <a
-          href="https://wa.me/905348350169?text=Merhaba%20%F0%9F%91%8B%0APaketler%20hakk%C4%B1nda%20k%C4%B1sa%20bilgi%20almak%20istiyorum."
-          class="nv-cta nv-cta--secondary"
-          data-source="urunler"
-          data-tier="entry"
-        >
-          Hızlı bilgi al
-        </a>
-      </div>
-      <p class="nv-meta">Danışmanlık + aynı gün teslim / kurye.</p>
-      <p class="nv-meta">En çok tercih edilenler: Premium bakım ve Signature ritüeller.</p>
-    </section>
+      <h1>Ürünler</h1>
+      <p>Seçili bakım ürünleri, hediye setleri ve ev bakımı için kürasyon. Quiet luxury çizgisinde, claim-free.</p>
 
-    <section class="nv-pack-section" id="premium-trio">
-      <header class="nv-pack-header">
-        <h2>Premium Üçlü</h2>
-        <p>Katalog değil, uzman rafı: claim-free, glow ve nem odaklı.</p>
-      </header>
-      <div class="nv-product-grid">
-        <article class="nv-product-card" data-product="Secrets de Sothys Prestige Cream">
-          <h3>Secrets de Sothys Prestige Cream</h3>
-          <p>Kadife doku, sessiz ışıltı; akşam finali için.</p>
-          <a class="nv-wa-inline" data-wa="1" data-product="Secrets de Sothys Prestige Cream" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
-        </article>
-        <article class="nv-product-card" data-product="Youth Intensive Serum">
-          <h3>Youth Intensive Serum</h3>
-          <p>Nem + pürüzsüzlük hissi, hafif doku.</p>
-          <a class="nv-wa-inline" data-wa="1" data-product="Youth Intensive Serum" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
-        </article>
-        <article class="nv-product-card" data-product="Eye Contour Soothing Gel">
-          <h3>Eye Contour Soothing Gel</h3>
-          <p>Serinletici roll-on, ekran yorgunluğuna nazik.</p>
-          <a class="nv-wa-inline" data-wa="1" data-product="Eye Contour Soothing Gel" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
-        </article>
+      <div class="nv-hero-actions">
+        <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+        <a class="nv-cta nv-cta-ghost" href="#urun-listesi">Setlere İn</a>
       </div>
     </section>
 
-    <section class="nv-pack-section" id="match">
+    <!-- PRODUCT GRID PLACEHOLDER -->
+    <section class="nv-pack-section" id="urun-listesi" data-family="Ürünler">
       <header class="nv-pack-header">
-        <h2>Ritüel + Ürün Eşleşmeleri</h2>
-        <p>Satış destekleyici, karar yorgunluğu olmadan.</p>
+        <h2>Seçili Ürünler</h2>
+        <p>Hediye setleri, ev bakımı ve destekleyici ürünler için kürasyonlu liste.</p>
       </header>
-      <ul class="nv-match-list">
-        <li>Seasonal Detox &amp; Glow + Youth Intensive Serum — duştan sonra 2 pompa, gün içinde nem desteği.</li>
-      </ul>
-    </section>
+      <div class="nv-card-grid">
+        <article class="nv-card nv-tier-entry">
+          <h3><span class="nv-badge">SET</span> Ev Bakım Starter</h3>
+          <p class="nv-meta">Temel temizlik + nem + rahatlatıcı yağ.</p>
+          <ul class="nv-list">
+            <li>Nazik temizleyici</li>
+            <li>Nem serumu</li>
+            <li>Rahatlatıcı body oil</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
+        </article>
 
-    <section class="nv-pack-section" id="assurance">
-      <header class="nv-pack-header">
-        <h2>Kullanım / Güvence</h2>
-        <p>Medikal vaat yok; koku hassasiyeti için tester sorabilirsiniz.</p>
-      </header>
-      <div class="nv-assurance">
-        Aynı gün resepsiyon teslimi, isterseniz kurye. Claim-free dil; sakin, premium anlatım.
+        <article class="nv-card nv-tier-value">
+          <h3><span class="nv-badge">GLOW</span> Glow Touch</h3>
+          <p class="nv-meta">Işıltı odaklı serum + hafif peeling + nemlendirici.</p>
+          <ul class="nv-list">
+            <li>Glow serum</li>
+            <li>Hafif peeling</li>
+            <li>Nem kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
+        </article>
+
+        <article class="nv-card nv-tier-premium">
+          <h3><span class="nv-badge">PREMIUM</span> Quiet Luxury Gift</h3>
+          <p class="nv-meta">Sessiz lüks hediye: mum, body oil, premium cream.</p>
+          <ul class="nv-list">
+            <li>Premium mum</li>
+            <li>Silk body oil</li>
+            <li>Rich face cream</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
+        </article>
       </div>
     </section>
 
+    <!-- WhatsApp anchor -->
     <section id="nv-wa" class="nv-wa">
       <div>
-        <h2>WhatsApp ile sipariş oluştur</h2>
-        <p>Hızlı: Ürün seç → sorular → resepsiyon teslim veya kurye.</p>
+        <h2>WhatsApp ile Rezervasyon</h2>
+        <p>Ürün danışmanlığı veya hediye seçimi için bize yazın; stok ve teslimat opsiyonlarını paylaşalım.</p>
       </div>
-      <a class="nv-cta nv-wa-link" href="#">WhatsApp'tan sipariş oluştur</a>
+      <a class="nv-cta nv-wa-link" href="#" data-wa="1" data-nv-open-reservation>WhatsApp'tan yaz</a>
     </section>
   </main>
 
@@ -94,16 +81,80 @@
     (async function () {
       const slot = document.getElementById('nv-nav-slot');
       if (!slot) return;
-      const res = await fetch('./nav.html', { cache: 'no-store' });
-      slot.innerHTML = await res.text();
+
+      const fallbackNav = `
+        <header class="nv-header nv-header--fallback" data-nv-header>
+          <div class="nv-shell">
+            <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
+              <span class="nv-brand__word">NEUROVA</span>
+              <span class="nv-brand__sub">Spa & Wellness</span>
+            </a>
+
+            <div class="nv-nav-row">
+              <nav class="nv-nav" aria-label="Primary">
+                <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
+                <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
+                <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+                <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+                <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+                <a class="nv-link" data-nav="paketler" href="./paketler.html">Paketler</a>
+                <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
+              </nav>
+
+              <div class="nv-dropdown" data-nv-dropdown>
+                <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                  Kurumsal ▾
+                </button>
+
+                <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
+                  <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
+                  <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
+                  <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nv-actions">
+              <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+              <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+                <span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nv-mpanel" data-nv-mobile-panel hidden>
+            <div class="nv-mpanel__inner">
+              <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
+              <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
+              <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+              <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+              <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+              <a class="nv-mlink" data-nav="paketler" href="./paketler.html">Paketler</a>
+              <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
+
+              <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
+              <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
+              <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
+
+              <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+            </div>
+          </div>
+        </header>
+      `;
+
+      try {
+        const res = await fetch('./nav.html', { cache: 'no-store' });
+        if (!res.ok) throw new Error('nav fetch failed');
+        const html = await res.text();
+        if (!html.trim()) throw new Error('nav empty');
+        slot.innerHTML = html;
+      } catch (e) {
+        slot.innerHTML = fallbackNav;
+      }
     })();
   </script>
-  <script src="./wa-config.js"></script>
-  <script defer src="./wa-linker.js"></script>
-  <script defer src="./assets/js/wa-click-tracker.js"></script>
-  <script defer src="./heatmap-overlay.js"></script>
-  <script src="./heatmap.js"></script>
-  <script src="./slot-macro.js"></script>
-  <script src="./assets/nav.js" defer></script>
+
+  <script defer src="./assets/nav.js"></script>
 </body>
+
 </html>

@@ -1,10 +1,199 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+
 <head>
-  <meta charset="utf-8">
-  <title>index.html</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>NEUROVA — Spa & Wellness</title>
+  <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="stylesheet" href="./assets/paketler.css" />
+  <link rel="stylesheet" href="./assets/home.css" />
+  <!-- varsa home.css kullanıyorsan ekle -->
 </head>
-<body>
-  <p>Placeholder for index.html</p>
+
+<body data-lang="tr" data-page="home" data-tier="entry" data-year="2025">
+  <div id="nv-nav-slot" data-nav-fallback></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="nv-hero">
+      <h1>NEUROVA Spa &amp; Wellness</h1>
+      <p>Hamam, masaj ve cilt bakımı — karar yorgunluğu olmadan doğru ritüeli seçin. Tek tıkla WhatsApp rezervasyon.</p>
+
+      <div class="nv-hero-actions">
+        <a class="nv-cta" href="#nv-wa" data-wa="1">Rezervasyon</a>
+        <a class="nv-cta nv-cta-ghost" href="./packages.html">Paketleri Gör</a>
+      </div>
+    </section>
+
+    <!-- QUICK SHORTCUTS -->
+    <section class="nv-home-grid" aria-label="Hızlı Kısayollar">
+      <a class="nv-card" href="./hamam.html">
+        <h2>Hamam</h2>
+        <p>Mermer, köpük, kese — arınma ve yeniden başlama.</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+
+      <a class="nv-card" href="./masajlar.html">
+        <h2>Masajlar</h2>
+        <p>Klasik • Spor &amp; Terapi • Asya • Ayurveda</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+
+      <a class="nv-card" href="./kids-family.html">
+        <h2>Kids &amp; Family</h2>
+        <p>Çocuk/teen/aile için güvenli, rıza-odaklı ritim.</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+
+      <a class="nv-card" href="./face-sothys.html">
+        <h2>Face – Sothys</h2>
+        <p>Nem, glow, youth — ihtiyaca göre Sothys bakımı.</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+
+      <a class="nv-card" href="./packages.html">
+        <h2>Paketler</h2>
+        <p>Entry / Value / Premium — en doğru kombin, en az karar.</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+
+      <a class="nv-card" href="./urunler.html">
+        <h2>Ürünler</h2>
+        <p>Ev bakımı, hediye setleri ve seçili bakım ürünleri.</p>
+        <span class="nv-link">Keşfet</span>
+      </a>
+    </section>
+
+    <!-- FEATURE BLOCKS -->
+    <section class="nv-home-feature">
+      <header>
+        <h2>Hamam Ritüelleri</h2>
+        <p>Akış net: ısınma → köpük → arınma → sakin kapanış.</p>
+      </header>
+      <a class="nv-cta" href="./hamam.html">Hamamı İncele</a>
+    </section>
+
+    <section class="nv-home-feature">
+      <header>
+        <h2>Masajlar</h2>
+        <p>Hedefe göre seç: rahatlama, toparlanma, jet lag, denge.</p>
+      </header>
+      <a class="nv-cta" href="./masajlar.html">Masajları İncele</a>
+    </section>
+
+    <section class="nv-home-feature">
+      <header>
+        <h2>Face – Sothys</h2>
+        <p>İddiasız, cilt odaklı dil: nem, canlı görünüm, konfor.</p>
+      </header>
+      <a class="nv-cta" href="./face-sothys.html">Yüz Bakımlarını İncele</a>
+    </section>
+
+    <!-- PACKAGES STRIP -->
+    <section class="nv-home-pack-strip" aria-label="Paketler">
+      <div>
+        <h2>En çok seçilen akış</h2>
+        <p><b>Entry</b> hızlı başlangıç · <b>Value</b> ideal denge · <b>Premium</b> daha uzun ve özel.</p>
+      </div>
+      <a class="nv-cta" href="./packages.html">Paketlere Git</a>
+    </section>
+
+    <!-- WhatsApp anchor (opsiyonel) -->
+    <section id="nv-wa" class="nv-wa">
+      <div>
+        <h2>WhatsApp ile Rezervasyon</h2>
+        <p>Program → süre → 15 dk opsiyon → onay.</p>
+      </div>
+      <a class="nv-cta nv-wa-link" href="#" data-wa="1">WhatsApp’tan Yaz</a>
+    </section>
+  </main>
+
+  <!-- Floating CTA -->
+  <a class="nv-float-cta" href="#nv-wa" data-wa="1">Rezervasyon</a>
+
+  <script>
+    (async function () {
+      const slot = document.getElementById('nv-nav-slot');
+      if (!slot) return;
+
+      const fallbackNav = `
+        <header class="nv-header nv-header--fallback" data-nv-header>
+          <div class="nv-shell">
+            <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
+              <span class="nv-brand__word">NEUROVA</span>
+              <span class="nv-brand__sub">Spa & Wellness</span>
+            </a>
+
+            <div class="nv-nav-row">
+              <nav class="nv-nav" aria-label="Primary">
+                <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
+                <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
+                <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+                <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+                <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+                <a class="nv-link" data-nav="paketler" href="./paketler.html">Paketler</a>
+                <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
+              </nav>
+
+              <div class="nv-dropdown" data-nv-dropdown>
+                <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+                  Kurumsal ▾
+                </button>
+
+                <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
+                  <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
+                  <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
+                  <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nv-actions">
+              <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+              <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+                <span></span><span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nv-mpanel" data-nv-mobile-panel hidden>
+            <div class="nv-mpanel__inner">
+              <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
+              <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
+              <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+              <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+              <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+              <a class="nv-mlink" data-nav="paketler" href="./paketler.html">Paketler</a>
+              <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
+
+              <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
+              <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
+              <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
+
+              <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+            </div>
+          </div>
+        </header>
+      `;
+
+      try {
+        const res = await fetch('./nav.html', { cache: 'no-store' });
+        if (!res.ok) throw new Error('nav fetch failed');
+        const html = await res.text();
+        if (!html.trim()) throw new Error('nav empty');
+        slot.innerHTML = html;
+      } catch (e) {
+        slot.innerHTML = fallbackNav;
+      }
+    })();
+  </script>
+
+  <!-- Mevcut projendeki scriptler (varsa) burada kalsın -->
+  <script src="./wa-config.js"></script>
+  <script defer src="./wa-linker.js"></script>
+  <script src="./slot-macro.js"></script>
+  <script defer src="./assets/nav.js"></script>
 </body>
+
 </html>

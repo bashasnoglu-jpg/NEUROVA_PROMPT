@@ -16,10 +16,11 @@
   background: rgba(244, 244, 244, .86);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--nv-line);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .nv-shell {
-  max-width: 1100px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 12px 18px;
   display: flex;
@@ -143,11 +144,14 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity .18s ease-out;
+  z-index: 9999;
+  visibility: hidden;
 }
 
 .nv-mpanel.is-open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .nv-mpanel__inner {
@@ -161,6 +165,7 @@
   gap: 8px;
   transform: translateX(10px);
   transition: transform .18s ease-out;
+  pointer-events: auto;
 }
 
 .nv-mpanel.is-open .nv-mpanel__inner {
@@ -227,4 +232,119 @@
   .nv-burger span {
     transition: none !important;
   }
+}
+
+.nv-nav-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.nv-nav {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.nv-actions {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.nv-link,
+.nv-cta {
+  white-space: nowrap;
+}
+
+.nv-dropdown {
+  position: relative;
+}
+
+.nv-link--dropdown {
+  position: relative;
+}
+
+.nv-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 12px;
+  background: var(--nv-card);
+  border: 1px solid var(--nv-line);
+  box-shadow: var(--nv-shadow);
+  padding: 8px 0;
+  min-width: 180px;
+  z-index: 10001;
+}
+
+.nv-dropdown__menu[hidden] {
+  display: none;
+}
+
+.nv-dropdown__menu .nv-link {
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  display: block;
+  line-height: 1.4;
+}
+
+.nv-dropdown__menu .nv-link:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ===== NAV CLICK PRIORITY — NEUROVA ===== */
+#nv-nav-slot,
+#nv-nav-slot * {
+  pointer-events: auto !important;
+}
+
+#nv-nav-slot,
+.nv-header,
+nav,
+.nv-nav {
+  position: relative;
+  z-index: 10000 !important;
+}
+
+#nv-nav-slot .nv-nav-cta,
+.nv-nav-cta {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 10002;
+}
+
+/* nav üstüne hiçbir şey binemez */
+body::before,
+.nv-page::before,
+.nv-page::after,
+.nv-hero-bg,
+.nv-hero::before,
+.nv-hero::after {
+  pointer-events: none !important;
+}
+
+/* ===== NUCLEAR NAV INTERACTION FIX — NEUROVA ===== */
+
+/* Nav ve içindeki HER ŞEY daima tıklanabilir */
+.nv-header,
+.nv-header * {
+  pointer-events: auto !important;
+}
+
+#nv-nav-slot {
+  pointer-events: auto !important;
+}
+
+/* Nav en üstte, tartışmasız */
+.nv-header {
+  position: sticky;
+  top: 0;
+  z-index: 2147483647 !important;
 }
