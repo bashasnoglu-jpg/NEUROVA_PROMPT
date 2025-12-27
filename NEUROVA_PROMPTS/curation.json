@@ -1,0 +1,36 @@
+{
+    "sets": [
+        {
+            "id": "set_calm_01",
+            "title": "Modern Calm Başlangıç Seti",
+            "description": "Lavanta tütsüsü ve seramik tutucu.",
+            "price": 450.00,
+            "tags": [
+                "calm",
+                "relax",
+                "budget"
+            ]
+        },
+        {
+            "id": "set_focus_02",
+            "title": "Deep Focus Ritüeli",
+            "description": "Biberiye yağı, not defteri ve odak çayı.",
+            "price": 850.00,
+            "tags": [
+                "focus",
+                "work"
+            ]
+        },
+        {
+            "id": "set_luxury_03",
+            "title": "Amber Ritual Premium",
+            "description": "El yapımı mumlar, banyo tuzları ve ipek göz bandı.",
+            "price": 2500.00,
+            "tags": [
+                "luxury",
+                "calm",
+                "gift"
+            ]
+        }
+    ]
+}

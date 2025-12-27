@@ -1,0 +1,149 @@
+/* NEUROVA THEME SYSTEM v1.2 - Modern Spa Update */
+
+:root {
+    /* --- PALETTE: MODERN SPA (Architectural) --- */
+    --spa-bg: #F4F2EF;
+    /* Stone White */
+    --spa-surface: #E8E4DF;
+    /* Warm Concrete */
+    --spa-text: #5D5A56;
+    /* Deep Taupe */
+    --spa-heading: #2B2A29;
+    /* Soft Black */
+    --spa-accent: #9A8C7D;
+    /* Clay */
+    --spa-hover: #7A6E63;
+    /* Earth */
+
+    /* --- PALETTE: MODERN CALM --- */
+    --calm-bg: #F9F9F8;
+    /* Porcelain_White */
+    --calm-surface: #D4D2CF;
+    /* Soft_Stone */
+    --calm-text: #A7A8AA;
+    /* Platinum_Gray */
+    --calm-hover: #8D99AE;
+    /* Slate_Blue */
+    --calm-heading: #2B2D42;
+    /* Graphite_Black */
+
+    /* --- PALETTE: AMBER RITUAL --- */
+    --amber-bg: #F8EBDD;
+    /* Honey_Cream */
+    --amber-surface: #D9B89C;
+    /* Soft_Clay */
+    --amber-btn: #B37556;
+    /* Burnt_Amber */
+    --amber-heading: #6E4C3A;
+    /* Brown_Sugar */
+    --amber-spacing: #FAF7F3;
+    /* Ivory_White */
+
+    /* --- PALETTE: MIDNIGHT SERENITY --- */
+    --midnight-bg: #1E1E1E;
+    /* Charcoal_Black */
+    --midnight-text: #8B8581;
+    /* Ash_Taupe */
+    --midnight-btn: #B8A89A;
+    /* Soft_Mocha */
+    --midnight-surface: #EAE6E2;
+    /* Mist_White */
+    --midnight-hover: #C19A6B;
+    /* Bronze_Glow */
+
+    /* --- DEFAULTS (Modern Spa Base) --- */
+    --color-background: var(--spa-bg);
+    --color-surface: var(--spa-surface);
+    --color-text: var(--spa-text);
+    --color-heading: var(--spa-heading);
+    --color-accent: var(--spa-accent);
+    --color-hover: var(--spa-hover);
+}
+
+/* --- THEME MAPPINGS --- */
+
+/* Modern Spa Mapping */
+[data-theme="modern-spa"] {
+    --color-background: var(--spa-bg);
+    --color-surface: var(--spa-surface);
+    --color-text: var(--spa-text);
+    --color-heading: var(--spa-heading);
+    --color-accent: var(--spa-accent);
+    --color-hover: var(--spa-hover);
+}
+
+/* Modern Calm Mapping */
+[data-theme="modern-calm"] {
+    --color-background: var(--calm-bg);
+    --color-surface: var(--calm-surface);
+    --color-text: var(--calm-heading);
+    /* Adjusted for contrast */
+    --color-heading: var(--calm-heading);
+    --color-accent: var(--calm-text);
+    --color-hover: var(--calm-hover);
+}
+
+/* Amber Ritual Mapping */
+[data-theme="amber-ritual"] {
+    --color-background: var(--amber-bg);
+    --color-surface: var(--amber-surface);
+    --color-text: var(--amber-heading);
+    /* Using Brown Sugar for text for better readability */
+    --color-heading: var(--amber-heading);
+    --color-accent: var(--amber-btn);
+    --color-hover: var(--amber-btn);
+    /* Fallback or specific hover */
+}
+
+/* Midnight Serenity Mapping */
+[data-theme="midnight-serenity"] {
+    --color-background: var(--midnight-bg);
+    --color-surface: var(--midnight-surface);
+    /* Note: High contrast surface */
+    --color-text: var(--midnight-text);
+    --color-heading: var(--midnight-surface);
+    /* Light heading on dark bg */
+    --color-accent: var(--midnight-btn);
+    --color-hover: var(--midnight-hover);
+}
+
+/* --- UTILITY CLASSES --- */
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+}
+
+.card,
+.panel {
+    background-color: var(--color-surface);
+    color: var(--color-heading);
+    /* Ensure text is visible on surface */
+}
+
+a,
+.btn {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover,
+.btn:hover {
+    color: var(--color-hover);
+}
+
+/* Specific Section Override Example (for SPA page) */
+.section-evening {
+    --color-background: var(--midnight-bg);
+    --color-text: var(--midnight-text);
+    --color-heading: var(--midnight-surface);
+}

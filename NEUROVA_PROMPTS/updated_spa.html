@@ -1,0 +1,47 @@
+<!-- Theme applied: Midnight Serenity (Evening) | Generated via NEUROVA_THEME_APPLICATOR -->
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NEUROVA - SPA</title>
+    <link rel="stylesheet" href="themes.css">
+</head>
+
+<body data-theme="modern-calm"> <!-- Default base -->
+
+    <!-- Night Mode Toggle -->
+    <button id="theme-toggle"
+        style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; cursor: pointer; z-index: 9999;">Gece
+        Modu</button>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'midnight-serenity') {
+                body.setAttribute('data-theme', 'modern-calm');
+                this.textContent = 'Gece Modu';
+            } else {
+                body.setAttribute('data-theme', 'midnight-serenity');
+                this.textContent = 'Gündüz Modu';
+            }
+        });
+    </script>
+
+    <section id="daytime-spa">
+        <h1>Gündüz Bakımı</h1>
+        <p>Standart sakinleştirici tema.</p>
+    </section>
+
+    <!-- Evening Section Override -->
+    <section id="evening-spa" class="section-evening"
+        style="background-color: var(--color-background); color: var(--color-text); padding: 20px;">
+        <h2>Gece Terapisi</h2>
+        <p>Bu bölüm Midnight Serenity temasını kullanır.</p>
+        <div class="card" style="background-color: var(--midnight-surface); color: var(--midnight-bg);">
+            Özel Gece Kartı
+        </div>
+    </section>
+
+</body>
+
+</html>

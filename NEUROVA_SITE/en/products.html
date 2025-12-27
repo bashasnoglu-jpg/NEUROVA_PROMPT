@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='NEUROVA Spa & Wellness online store: gifts, home care, Sothys skin solutions. Same-day courier or reception pickup.' />
+  <meta property='og:title' content='NEUROVA – Spa & Wellness' />
+  <meta property='og:description' content='Designed rituals for an elegant reset. Curated products with same-day delivery.' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='https://neurova.site/assets/og-banner.jpg' />
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='theme-color' content='#eee9e4' />
+  <link rel='icon' href='../assets/favicon.png' />
+  <link rel='manifest' href='../manifest.webmanifest' />
+  <title>NEUROVA – Products</title>
+
+  <link rel='stylesheet' href='../assets/nav.css' />
+  <link rel='stylesheet' href='../assets/products-store.css' />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
+  <noscript>
+    <style>
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body data-lang='en' data-page='products'>
+  <div class='background-layer' aria-hidden='true'>
+    <video autoplay muted loop playsinline preload="none">
+      <source src='https://cdn.pixabay.com/video/2023/11/20/191445-889081177_large.mp4' type='video/mp4'>
+      Your browser does not support the video tag.
+    </video>
+    <div class='overlay'></div>
+  </div>
+
+  <div class='lang-switch' aria-label='Language switch'>
+    <a href='../index.html'>TR</a> / <a href='./products.html' class='active'>EN</a>
+  </div>
+
+  <div id='nv-nav-slot' data-nav-fallback></div>
+
+  <main>
+    <section class='store-hero' data-reveal>
+      <div class='hero-copy'>
+        <p class='eyebrow'>Online Store</p>
+        <h1>Care, gifts, courier. Same day.</h1>
+        <p>Reception pickup or courier for curated sets. Gift note + box included; therapist-picked blends.</p>
+        <div class='hero-actions'>
+          <a class='nv-cta' href='#nv-wa' data-wa='1'>Ask a specialist</a>
+          <a class='nv-cta nv-cta-ghost' href='#store-grid'>Browse collection</a>
+        </div>
+        <div class='hero-chips'>
+          <span>Ready in 30 min</span>
+          <span>Gift note / box</span>
+          <span>Sothys &amp; spa formulas</span>
+        </div>
+      </div>
+      <div class='hero-meta'>
+        <div class='stat-card'>
+          <h3 data-cart-count>Cart: 0</h3>
+          <p>We prep and stage your order at reception.</p>
+        </div>
+        <div class='stat-card'>
+          <h3>Curation</h3>
+          <p>Share budget and vibe; we suggest a trio.</p>
+        </div>
+        <div class='stat-card'>
+          <h3>Courier / Pickup</h3>
+          <p>Same-day courier around Maslak and nearby districts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class='store-shell' data-reveal>
+      <div class='filter-bar'>
+        <div class='filter-buttons' role='tablist' aria-label='Product filters'>
+          <button class='is-active' type='button' data-filter='all'>All</button>
+          <button type='button' data-filter='gift'>Gift sets</button>
+          <button type='button' data-filter='home'>Home care</button>
+          <button type='button' data-filter='face'>Face &amp; Sothys</button>
+          <button type='button' data-filter='calm'>Rest &amp; reset</button>
+        </div>
+        <div class='filter-hint'>Same-day courier / pickup · Gift note included</div>
+      </div>
+
+      <div class='store-layout'>
+        <div class='product-grid' data-product-grid id='store-grid'></div>
+
+        <aside class='cart-panel' id='store-cart'>
+          <div class='cart-header'>
+            <div>
+              <p class='eyebrow'>Cart</p>
+              <h3 class='cart-title'>We prep it</h3>
+            </div>
+            <span class='pill' data-cart-count>Cart: 0</span>
+          </div>
+
+          <div class='cart-items' data-cart-items></div>
+
+          <div class='cart-summary'>
+            <div class='summary-row'>
+              <span>Subtotal</span>
+              <span data-cart-total>0 TL</span>
+            </div>
+            <p class='summary-note'>Tell us pickup vs courier in WhatsApp.</p>
+            <p class='summary-note'>Add gift note, budget and delivery preference to your message.</p>
+            <div class='cart-actions'>
+              <button class='nv-cta' type='button' data-checkout>Order via WhatsApp</button>
+              <button class='nv-cta nv-cta-ghost' type='button' data-curation>Curate for me</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class='assurance' data-reveal>
+      <div class='assurance-card'>
+        <h4>Courier / Pickup</h4>
+        <p>Same-day courier around Maslak. Reception pickup in ~30 minutes.</p>
+      </div>
+      <div class='assurance-card'>
+        <h4>Gift note + box</h4>
+        <p>Personalized card and box. Oil + candle blends carrying the spa scent.</p>
+      </div>
+      <div class='assurance-card'>
+        <h4>Face by Sothys</h4>
+        <p>Clinical line; ask for your skin type. Options for scent sensitivity.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class='nv-footer'>
+    <div class='nv-footer-inner'>
+      <div class='nv-footer-brand'>
+        <span class='brand-name'>NEUROVA</span>
+        <span class='brand-sub'>Spa &amp; Wellness</span>
+      </div>
+
+      <nav class='nv-footer-links' aria-label='Footer navigation'>
+        <a href='../packages.html'>Packages</a>
+        <a href='../hamam.html'>Hammam</a>
+        <a href='../masajlar.html'>Massages</a>
+        <a href='../face-sothys.html'>Face</a>
+        <a href='../about.html'>About</a>
+      </nav>
+
+      <div class='nv-footer-lang' aria-label='Language switch'>
+        <a href='../index.html'>TR</a> / <a href='./products.html' class='active'>EN</a>
+      </div>
+
+      <div class='nv-footer-contact'>
+        <a href='https://wa.me/905555555555' target='_blank' rel='noopener'>WhatsApp</a>
+        <span>© 2025 NEUROVA</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id='nv-wa' aria-hidden='true'></div>
+
+  <script>
+    (function () {
+      const slot = document.getElementById('nv-nav-slot');
+      if (!slot) return;
+
+      const fallbackNav = `
+<header class="nv-header nv-header--fallback" data-nv-header>
+  <div class="nv-shell">
+    <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
+      <span class="nv-brand__word">NEUROVA</span>
+      <span class="nv-brand__sub">Spa &amp; Wellness</span>
+    </a>
+
+    <div class="nv-nav-row">
+      <nav class="nv-nav" aria-label="Primary">
+        <a class="nv-link" data-nav="home" href="./index.html">Home</a>
+        <a class="nv-link" data-nav="hamam" href="./hamam.html">Hammam</a>
+        <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Massages</a>
+        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+        <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+        <a class="nv-link" data-nav="paketler" href="./packages.html">Packages</a>
+        <a class="nv-link" data-nav="urunler" href="./products.html">Products</a>
+      </nav>
+
+      <div class="nv-dropdown" data-nv-dropdown>
+        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+          Corporate &#9662;</button>
+
+        <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
+          <a class="nv-link" data-nav="galeri" href="./galeri.html">Gallery</a>
+          <a class="nv-link" data-nav="about" href="./about.html">About</a>
+          <a class="nv-link" data-nav="team" href="./team.html">Team</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nv-actions">
+      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
+      <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nv-mpanel" data-nv-mobile-panel hidden>
+    <div class="nv-mpanel__inner">
+      <a class="nv-mlink" data-nav="home" href="./index.html">Home</a>
+      <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hammam</a>
+      <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Massages</a>
+      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+      <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Packages</a>
+      <a class="nv-mlink" data-nav="urunler" href="./products.html">Products</a>
+
+      <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Gallery</a>
+      <a class="nv-mlink" data-nav="about" href="./about.html">About</a>
+      <a class="nv-mlink" data-nav="team" href="./team.html">Team</a>
+
+      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
+    </div>
+  </div>
+</header>
+      `;
+
+      slot.innerHTML = fallbackNav;
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      els.forEach((el) => obs.observe(el));
+    })();
+  </script>
+
+  <script src='../wa-config.js'></script>
+  <script defer src='../wa-linker.js'></script>
+  <script defer src='../assets/products-store.js'></script>
+  <script defer src='../assets/NEUROVA_STORE_INTERACTIVE_FIX.js'></script>
+  <script src='../slot-macro.js'></script>
+  <script defer src='../assets/nav.js'></script>
+</body>
+
+</html>

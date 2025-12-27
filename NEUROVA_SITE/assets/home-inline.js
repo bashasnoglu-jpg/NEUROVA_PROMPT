@@ -1,9 +1,13 @@
-<!-- Canonical NEUROVA Global Nav -->
-<header class="nv-header" data-nv-header>
+(function () {
+  const slot = document.getElementById('nv-nav-slot');
+  if (!slot) return;
+
+  const fallbackNav = `
+<header class="nv-header nv-header--fallback" data-nv-header>
   <div class="nv-shell">
     <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
       <span class="nv-brand__word">NEUROVA</span>
-      <span class="nv-brand__sub">Spa & Wellness</span>
+      <span class="nv-brand__sub">Spa &amp; Wellness</span>
     </a>
 
     <div class="nv-nav-row">
@@ -11,18 +15,15 @@
         <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
         <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
         <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
-        <a class="nv-link" data-nav="face" href="./face-sothys.html">Face – Sothys</a>
-        <a class="nv-link" data-nav="paketler" href="./paketler.html">Paketler</a>
+        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+        <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+        <a class="nv-link" data-nav="paketler" href="./packages.html">Paketler</a>
         <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
       </nav>
 
-      <!-- Single dropdown: Kurumsal -->
       <div class="nv-dropdown" data-nv-dropdown>
-        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true"
-          aria-expanded="false">
-          Kurumsal ▾
-        </button>
+        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+          Kurumsal &#9662;</button>
 
         <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
           <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
@@ -33,7 +34,7 @@
     </div>
 
     <div class="nv-actions">
-      <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
       <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -45,12 +46,11 @@
       <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
       <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
       <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
-      <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face – Sothys</a>
-      <a class="nv-mlink" data-nav="paketler" href="./paketler.html">Paketler</a>
+      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+      <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Paketler</a>
       <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
 
-      <!-- Mobile secondary (Kurumsal items) -->
       <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
       <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
       <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
@@ -59,3 +59,36 @@
     </div>
   </div>
 </header>
+  `;
+
+  slot.innerHTML = fallbackNav;
+})();
+
+(function () {
+  const els = Array.from(document.querySelectorAll('[data-reveal]'));
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  els.forEach((el) => obs.observe(el));
+})();
+
+(function () {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js').catch((err) =>
+        console.warn('Service worker kayıt hatası:', err)
+      );
+    });
+  }
+})();

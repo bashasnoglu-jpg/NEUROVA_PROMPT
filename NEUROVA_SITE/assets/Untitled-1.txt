@@ -1,0 +1,136 @@
+(() => {
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  const grid = $("#grid");
+  if (!grid) return;
+
+  const cards = $$(".nv-card", grid);
+  const chips = $$(".nv-chip");
+  const q = $("#q");
+  const countEl = $("#count");
+
+  const lb = $("#lightbox");
+  const lbImg = $("#lbImg");
+  const lbCap = $("#lbCap");
+
+  const topBtn = document.querySelector("[data-nv-top]");
+  const yearEl = $("#y");
+
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  let activeFilter = "all";
+  let activeQuery = "";
+
+  function normalize(s) {
+    return (s || "")
+      .toString()
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, " ");
+  }
+
+  function apply() {
+    let shown = 0;
+
+    for (const card of cards) {
+      const f = card.getAttribute("data-filter") || "";
+      const tags = normalize(card.getAttribute("data-tags") || "");
+      const text = `${f} ${tags}`;
+
+      const filterOK = activeFilter === "all" ? true : f === activeFilter;
+      const queryOK = !activeQuery ? true : text.includes(activeQuery);
+
+      const ok = filterOK && queryOK;
+      card.hidden = !ok;
+      if (ok) shown++;
+    }
+
+    if (countEl) {
+      countEl.textContent = `${shown} görsel`;
+    }
+  }
+
+  function setActiveChip(next) {
+    for (const b of chips) {
+      const is = b === next;
+      b.classList.toggle("is-active", is);
+      b.setAttribute("aria-selected", is ? "true" : "false");
+    }
+  }
+
+  chips.forEach((b) => {
+    b.addEventListener("click", () => {
+      activeFilter = b.getAttribute("data-filter") || "all";
+      setActiveChip(b);
+      apply();
+    });
+  });
+
+  if (q) {
+    q.addEventListener("input", () => {
+      activeQuery = normalize(q.value);
+      apply();
+    });
+  }
+
+  // Lightbox open
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest(".nv-card__btn");
+    if (!btn) return;
+
+    const full = btn.getAttribute("data-full");
+    const alt = btn.getAttribute("data-alt") || "";
+    const cap = btn.getAttribute("data-caption") || "";
+
+    if (!full || !lb || !lbImg) return;
+
+    lbImg.src = full;
+    lbImg.alt = alt;
+    if (lbCap) lbCap.textContent = cap;
+
+    lb.classList.add("is-open");
+    lb.setAttribute("aria-hidden", "false");
+    document.documentElement.style.overflow = "hidden";
+  });
+
+  // Lightbox close
+  function closeLB() {
+    if (!lb) return;
+    lb.classList.remove("is-open");
+    lb.setAttribute("aria-hidden", "true");
+    document.documentElement.style.overflow = "";
+    if (lbImg) lbImg.src = "";
+  }
+
+  if (lb) {
+    lb.addEventListener("click", (e) => {
+      if (e.target.matches("[data-lb-close]")) closeLB();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lb && lb.classList.contains("is-open")) closeLB();
+  });
+
+  // Back to top
+  if (topBtn) {
+    window.addEventListener("scroll", () => {
+      topBtn.classList.toggle("is-show", window.scrollY > 700);
+    });
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Reservation open hook (sizde global handler varsa bunu o yakalayacak)
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-nv-open-reservation]");
+    if (!t) return;
+    // Eğer global reservation modalınız varsa burada event yayınlayın:
+    window.dispatchEvent(new CustomEvent("nv:openReservation"));
+  });
+
+  // Init
+  apply();
+})();

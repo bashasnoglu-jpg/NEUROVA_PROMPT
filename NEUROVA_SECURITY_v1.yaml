@@ -1,0 +1,134 @@
+
+# NEUROVA SECURITY & COMPLIANCE LAYER - v1.0
+# Protocol: PROTU v1.0
+# Document ID: NEUROVA_SECURITY_v1.yaml
+
+# 1. ROLLER VE YETKİ KONTROLÜ (RBAC - Role-Based Access Control)
+rbac:
+  # Roller, kullanıcılara atanabilen genel yetki gruplarıdır.
+  roles:
+    - name: Guest
+      description: "Sisteme giriş yapmamış veya standart misafir."
+      permissions:
+        - read:product:public
+        - create:booking
+
+    - name: AuthenticatedGuest
+      description: "Sisteme giriş yapmış misafir."
+      inherits: Guest
+      permissions:
+        - read:guest:self
+        - update:guest:self
+        - read:booking:self
+
+    - name: Concierge
+      description: "Misafir hizmetleri personeli."
+      permissions:
+        - read:guest:all
+        - update:guest:notes
+        - read:booking:all
+        - read:pii:decrypted # PII verilerini görme yetkisi
+
+    - name: SpaTherapist
+      description: "Spa terapisti."
+      permissions:
+        - read:guest:assigned
+        - read:booking:assigned
+
+    - name: SystemAdmin
+      description: "Tüm sistem yöneticisi."
+      permissions:
+        - crud:all # Tüm CRUD operasyonları
+
+  # İzinler, belirli bir eylem için atomik yetkilerdir.
+  # Format: {eylem}:{kaynak}:{kapsam}
+  # Eylem: create, read, update, delete, crud (tümü)
+  # Kaynak: guest, product, booking, system, pii
+  # Kapsam: public, self, assigned, all
+  permissions:
+    - crud:all
+    - read:product:public
+    - create:booking
+    - read:guest:self
+    - update:guest:self
+    - read:booking:self
+    - read:guest:all
+    - update:guest:notes
+    - read:booking:all
+    - read:pii:decrypted
+    - read:guest:assigned
+    - read:booking:assigned
+
+# 2. VERİ ŞİFRELEME VE ANAHTAR YÖNETİMİ
+encryption:
+  # Veritabanında hassas verilerin şifrelenmesi
+  atRest:
+    algorithm: AES-256-GCM
+    piiColumns: # Şifrelenecek PII içeren alanlar
+      - guests.first_name
+      - guests.last_name
+      - guests.email
+      - guests.phone_number
+    keyManagement:
+      provider: AWS KMS (Key Management Service)
+      keyRotationPolicy: "Her 365 günde bir otomatik rotasyon."
+
+  # Verinin ağ üzerinde taşınması
+  inTransit:
+    protocol: TLS 1.3
+    enforcement: "Tüm API endpoint'leri ve veritabanı bağlantıları için zorunlu."
+
+  # Parola Güvenliği
+  passwords:
+    hashingAlgorithm: bcrypt
+    saltRounds: 12 # Güvenlik ve performans dengesi
+
+# 3. YASAL UYUMLULUK (KVKK / GDPR)
+compliance:
+  gdpr:
+    dataProcessingOfficer: "dpo@neurova.com"
+    rightToBeForgotten:
+      protocol: "1. Misafir 'Hesabımı Sil' talebi gönderir. 2. Talep loglanır. 3. PII verileri 30 gün içinde anonimleştirilir (istatistiksel bütünlük için silinmez). 4. Misafire onay e-postası gönderilir."
+  kvkk:
+    explicitConsent:
+      protocol: "Tüm PII toplama formlarında (kayıt, rezervasyon) 'Açık Rıza Metni' onayı zorunludur. Onay durumu `guest_consents` tablosunda saklanır."
+
+# 4. GÜVENLİK OLAYI MÜDAHALE PROTOKOLÜ
+incidentResponseProtocol:
+  # Faz 1: Tespit ve Raporlama
+  detection:
+    sources:
+      - AI Anomaly Detection Engine (örn: "Çok sayıda başarısız giriş denemesi")
+      - Firewall logları
+      - Manuel olarak personel tarafından (incident@neurova.com adresine e-posta)
+    severityLevels:
+      - 1_Critical: (Veri sızıntısı, sistemin tamamen durması)
+      - 2_High: (Servis kesintisi, yetkisiz erişim denemesi)
+      - 3_Medium: (Performans düşüşü, şüpheli aktivite)
+      - 4_Low: (Küçük bug'lar, politika ihlalleri)
+
+  # Faz 2: Sınırlama ve Analiz
+  containment:
+    "Severity 1-2 için": "Etkilenen sistem veya servis derhal izole edilir. Network segmentasyonu uygulanır. Snapshot alınır."
+    "Severity 3-4 için": "Aktivite logları analiz edilir, ilgili servisler izlemeye alınır."
+
+  # Faz 3: Yok Etme ve Kurtarma
+  eradicationAndRecovery:
+    action: "Güvenlik açığı yamalanır, etkilenen veriler yedekten geri yüklenir, sistemler tekrar online duruma getirilir."
+    postMortem: "Olay sonrası analiz raporu hazırlanır ve gelecekte benzer olayların önlenmesi için aksiyon planı oluşturulur."
+
+# 5. LOGLAMA VE DENETİM İZİ (AUDIT TRAIL)
+audit:
+  # Loglanacak kritik olaylar
+  loggedEvents:
+    - user_login_success
+    - user_login_fail
+    - pii_data_access
+    - permission_change
+    - system_config_update
+    - transaction_failed
+  # Logların saklanması
+  logStorage:
+    tool: ELK Stack (Elasticsearch, Logstash, Kibana)
+    retentionPolicy: "Tüm denetim logları en az 2 yıl boyunca değişmez (immutable) olarak saklanır."
+

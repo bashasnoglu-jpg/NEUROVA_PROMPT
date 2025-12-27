@@ -1,22 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="tr" data-lang="tr">
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
 
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name="description" content="NEUROVA Spa & Wellness � hamam, masaj, y�z bak�m� ve zarif rit�eller. Dinginlik, hijyen ve estetik denge." />
-  <meta property='og:title' content='NEUROVA � Spa & Wellness' />
-  <meta property="og:description" content="Rit�el tasar�m� ile beden ve zihin i�in zarif bir reset." />
-  <meta property='og:type' content='website' />
-  <meta property='og:image' content='https://neurova.site/assets/og-banner.jpg' />
-  <meta name='twitter:card' content='summary_large_image' />
-  <meta name='theme-color' content='#eee9e4' />
-  <link rel='icon' href='./assets/favicon.png' />
-  <link rel='manifest' href='./manifest.webmanifest' />
-  <title>NEUROVA � Ekibimiz</title>
-
-  <link rel='stylesheet' href='./assets/nav.css' />
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Packages | NEUROVA</title>
+  <meta name="description" content="Entry, Value, Premium — the right combo without decision fatigue. Hammam + massage + facial care packages." />
+  <meta property="og:title" content="NEUROVA | Packages" />
+  <meta property="og:description" content="Entry, Value, Premium: balanced hammam + massage + facial care combinations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://neurova.site/assets/og-banner.jpg" />
+  <meta name="theme-color" content="#eee9e4" />
+  <link rel="icon" href="../assets/favicon.png" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="stylesheet" href="../assets/nav.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
@@ -25,12 +22,11 @@
     body {
       margin: 0;
       font-family: 'Poppins', 'Inter', sans-serif;
-      background-color: #eee9e4;
+      background: #eee9e4;
       color: #7a6e63;
       overflow-x: hidden;
       min-height: 100vh;
     }
-
     main {
       position: relative;
       z-index: 2;
@@ -39,7 +35,6 @@
       gap: 8vh;
       padding: 14vh 10vw 12vh;
     }
-
     .lang-switch {
       position: fixed;
       top: 1rem;
@@ -57,15 +52,9 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       backdrop-filter: blur(4px);
     }
-
-    .lang-switch a {
-      color: #b3aba1;
-      text-decoration: none;
-      transition: color 0.2s ease, text-shadow 0.2s ease;
-    }
-
+    .lang-switch a { color: #b3aba1; text-decoration: none; transition: color .2s ease, text-shadow .2s ease; }
     .lang-switch a.active { font-weight: 600; color: #7a6e63; }
-    .lang-switch a:hover { color: #a3b09a; text-shadow: 0 1px 4px rgba(163, 176, 154, 0.2); }
+    .lang-switch a:hover { color: #a3b09a; text-shadow: 0 1px 4px rgba(163,176,154,.2); }
 
     .page-hero {
       background: linear-gradient(135deg, rgba(17,17,17,0.06), transparent 40%), #fdfbf7;
@@ -75,24 +64,9 @@
       position: relative;
       overflow: hidden;
     }
-
-    .page-hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(36px, 5vw, 56px);
-      letter-spacing: 0.08em;
-      font-weight: 200;
-    }
-
-    .page-hero p {
-      margin: 0 0 24px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #b3aba1;
-      max-width: 720px;
-    }
-
+    .page-hero h1 { margin: 0 0 12px; font-size: clamp(36px, 5vw, 56px); letter-spacing: 0.08em; font-weight: 200; }
+    .page-hero p { margin: 0 0 24px; font-size: 1.1rem; line-height: 1.7; color: #b3aba1; max-width: 720px; }
     .page-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
     .nv-cta {
       display: inline-flex;
       align-items: center;
@@ -101,7 +75,6 @@
       padding: 12px 18px;
       border-radius: 999px;
       font-size: 16px;
-      line-height: 1.3;
       text-decoration: none;
       border: 1px solid rgba(0,0,0,0.14);
       background: #a3b09a;
@@ -109,27 +82,22 @@
       box-shadow: 0 16px 34px rgba(0,0,0,0.08);
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
     }
-
     .nv-cta:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 22px 48px rgba(0,0,0,0.12); }
-
-    .nv-cta-ghost {
-      background: rgba(255,255,255,0.7);
-      color: #7a6e63;
-      border: 1px solid rgba(0,0,0,0.12);
-      box-shadow: none;
-    }
-
+    .nv-cta-ghost { background: rgba(255,255,255,0.7); color: #7a6e63; border: 1px solid rgba(0,0,0,0.12); box-shadow: none; }
     .nv-cta-ghost:hover { background: rgba(255,255,255,0.9); }
 
-    .nv-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
-
+    .nv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
     .nv-card {
       aspect-ratio: 4/5;
       border-radius: 16px;
       background: linear-gradient(145deg, #d9d2c6, #eee9e4, #b3aba1);
       padding: 1.6rem;
       position: relative;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
       transition: all 0.35s ease;
       backdrop-filter: blur(4px);
       display: flex;
@@ -137,9 +105,7 @@
       justify-content: space-between;
       border: 1px solid rgba(122, 110, 99, 0.2);
       overflow: hidden;
-      will-change: transform, filter;
     }
-
     .nv-card:hover { backdrop-filter: blur(10px); border-color: rgba(122,110,99,0.6); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
     .nv-card h2 { margin: 0; font-weight: 200; letter-spacing: 0.06em; font-size: 1.2rem; }
     .nv-card p { margin: 0; color: #7a6e63; line-height: 1.5; font-size: 0.95rem; }
@@ -150,17 +116,24 @@
       background: #f5f3f0;
       border-radius: 18px;
       padding: 2.6rem;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.06);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
       display: grid;
-      grid-template-columns: repeat(12, minmax(0,1fr));
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 1.5rem;
       align-items: center;
     }
-
     .nv-feature-lite h3 { margin: 0; grid-column: 1 / span 5; font-weight: 300; letter-spacing: 0.05em; }
     .nv-feature-lite p { margin: 0; grid-column: 6 / span 7; color: #7a6e63; line-height: 1.6; }
 
-    .nv-footer { background: #d6d0c8; padding: 5vh 8vw; font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #7a6e63; position: relative; border-top: 1px solid #b3aba1; }
+    .nv-footer {
+      background: #d6d0c8;
+      padding: 5vh 8vw;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #7a6e63;
+      position: relative;
+      border-top: 1px solid #b3aba1;
+    }
     .nv-footer-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; }
     .nv-footer-brand .brand-name { font-weight: 600; letter-spacing: 0.1em; font-size: 1.4rem; color: #7a6e63; }
     .nv-footer-brand .brand-sub { font-size: 0.95rem; color: #b3aba1; }
@@ -178,12 +151,11 @@
 
     @media (max-width: 960px) {
       main { padding: 12vh 7vw 10vh; }
-      .nv-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .nv-feature-lite { grid-template-columns: repeat(6, minmax(0,1fr)); }
+      .nv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nv-feature-lite { grid-template-columns: repeat(6, minmax(0, 1fr)); }
       .nv-feature-lite h3 { grid-column: 1 / span 6; }
       .nv-feature-lite p { grid-column: 1 / span 6; }
     }
-
     @media (max-width: 768px) {
       .nv-grid { grid-template-columns: 1fr; }
       .page-hero { padding: 10vh 1.4rem 8vh; }
@@ -196,94 +168,93 @@
   </style>
   <noscript>
     <style>
-      [data-reveal] {
-        opacity: 1 !important;
-        transform: none !important;
-      }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
 </head>
 
-<body data-lang='tr' data-page='ekibimiz'>
-  <div class='background-layer' aria-hidden='true'>
+<body data-lang="en" data-page="packages" data-tier="entry" data-year="2025">
+  <div class="background-layer" aria-hidden="true">
     <video autoplay muted loop playsinline preload="none">
-      <source src='https://cdn.pixabay.com/video/2023/11/20/191445-889081177_large.mp4' type='video/mp4'>
-      Taray&#305;c&#305;n&#305;z video etiketini desteklemiyor.
+      <source src="https://cdn.pixabay.com/video/2023/11/20/191445-889081177_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
-    <div class='overlay'></div>
+    <div class="overlay"></div>
   </div>
 
-  <div class='lang-switch' aria-label="Dil se&#231;imi">
-    <a href='./index.html' class='active'>TR</a> / <a href='./en/team.html'>EN</a>
+  <div class="lang-switch" aria-label="Language selection">
+    <a href="../index.html">TR</a> /
+    <a href="./packages.html" class="active">EN</a>
   </div>
 
-  <div id='nv-nav-slot' data-nav-fallback></div>
+  <div id="nv-nav-slot" data-nav-fallback></div>
 
-    <main>
+  <main>
     <section class="page-hero" data-reveal>
-      <h1>Ekibimiz</h1>
-      <p>Uzman terapistler, hijyen ve etik standartlarla.</p>
+      <h1>Packages</h1>
+      <p>Entry, Value, Premium &mdash; the right combo without decision fatigue.</p>
       <div class="page-actions">
-        <a class="nv-cta" href="#nv-wa" data-wa="1">Rezervasyon</a>
-        <a class="nv-cta nv-cta-ghost" href="./about.html">Hakk&#305;m&#305;zda</a>
+        <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
+        <a class="nv-cta nv-cta-ghost" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp</a>
       </div>
     </section>
 
-    <section class="nv-grid" aria-label="Kısayollar">
+    <section class="nv-grid" aria-label="Package cards">
       <div class="nv-card" data-reveal>
-        <h2>Terapistler</h2>
-        <p>Deneyim, sertifikalar, uzmanlık.</p>
-        <a href="#nv-wa" class="nv-explore" data-wa="1">Rezervasyon</a>
+        <h2>Entry</h2>
+        <p>Quick reset: hammam + short massage.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Select</a>
       </div>
 
       <div class="nv-card" data-reveal>
-        <h2>Hijyen</h2>
-        <p>Standart prosedür ve eğitim.</p>
-        <a href="./about.html" class="nv-explore">Detay</a>
+        <h2>Value</h2>
+        <p>Balanced: hammam + 60 min massage.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Select</a>
       </div>
 
       <div class="nv-card" data-reveal>
-        <h2>Geri Bildirim</h2>
-        <p>Memnuniyet ve iyileştirme döngüsü.</p>
-        <a href="./contact.html" class="nv-explore">Paylaş</a>
+        <h2>Premium</h2>
+        <p>Deep relaxation + facial care.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Select</a>
       </div>
     </section>
 
     <section class="nv-feature-lite" data-reveal>
-      <h3>Ekibimiz &ndash; NEUROVA</h3>
-      <p>Uzman terapistler, hijyen ve etik standartlarla.</p>
+      <h3>Packages &ndash; NEUROVA</h3>
+      <p>Entry, Value, Premium &mdash; the right combo without decision fatigue.</p>
     </section>
   </main>
 
-  <footer class='nv-footer'>
-    <div class='nv-footer-inner'>
-      <div class='nv-footer-brand'>
-        <span class='brand-name'>NEUROVA</span>
-        <span class='brand-sub'>Spa &amp; Wellness</span>
+  <footer class="nv-footer">
+    <div class="nv-footer-inner">
+      <div class="nv-footer-brand">
+        <span class="brand-name">NEUROVA</span>
+        <span class="brand-sub">Spa &amp; Wellness</span>
       </div>
 
-      <nav class='nv-footer-links' aria-label='Alt gezinme'>
-        <a href='./packages.html'>Packages</a>
-        <a href='./hamam.html'>Hamam</a>
-        <a href='./masajlar.html'>Masajlar</a>
-        <a href='./face-sothys.html'>Face</a>
-        <a href='./about.html'>Hakk&#305;m&#305;zda</a>
+      <nav class="nv-footer-links" aria-label="Footer navigation">
+        <a href="./packages.html">Packages</a>
+        <a href="./hamam.html">Hammam</a>
+        <a href="./masajlar.html">Massages</a>
+        <a href="./face-sothys.html">Face</a>
+        <a href="./about.html">About</a>
       </nav>
 
-      <div class='nv-footer-lang' aria-label='Dil se�imi'>
-        <a href='./index.html' class='active'>TR</a> / <a href='./en/team.html'>EN</a>
+      <div class="nv-footer-lang" aria-label="Language selection">
+        <a href="../index.html">TR</a> /
+        <a href="./packages.html" class="active">EN</a>
       </div>
 
-      <div class='nv-footer-contact'>
-        <a href='https://wa.me/905555555555' target='_blank' rel='noopener'>WhatsApp</a>
-        <span>� 2025 NEUROVA</span>
+      <div class="nv-footer-contact">
+        <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+        <span>&copy; 2025 NEUROVA</span>
       </div>
     </div>
   </footer>
 
-  <div id='nv-wa' aria-hidden='true'></div>
+  <div id="nv-wa" aria-hidden="true"></div>
 
-                <script>
+  <script>
     (function () {
       const slot = document.getElementById('nv-nav-slot');
       if (!slot) return;
@@ -298,29 +269,30 @@
 
     <div class="nv-nav-row">
       <nav class="nv-nav" aria-label="Primary">
-        <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
-        <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
-        <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+        <a class="nv-link" data-nav="home" href="./index.html">Home</a>
+        <a class="nv-link" data-nav="hamam" href="./hamam.html">Hammam</a>
+        <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Massages</a>
+        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
         <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
-        <a class="nv-link" data-nav="paketler" href="./packages.html">Paketler</a>
-        <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
+        <a class="nv-link" data-nav="paketler" href="./packages.html">Packages</a>
+        <a class="nv-link" data-nav="urunler" href="./products.html">Products</a>
       </nav>
 
       <div class="nv-dropdown" data-nv-dropdown>
         <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
-          Kurumsal &#9662;</button>
+          Corporate &#9662;
+        </button>
 
         <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
-          <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
-          <a class="nv-link" data-nav="about" href="./about.html">Hakk&#305;m&#305;zda</a>
-          <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
+          <a class="nv-link" data-nav="galeri" href="./galeri.html">Gallery</a>
+          <a class="nv-link" data-nav="about" href="./about.html">About</a>
+          <a class="nv-link" data-nav="team" href="./team.html">Team</a>
         </div>
       </div>
     </div>
 
     <div class="nv-actions">
-      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
       <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -329,19 +301,19 @@
 
   <div class="nv-mpanel" data-nv-mobile-panel hidden>
     <div class="nv-mpanel__inner">
-      <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
-      <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
-      <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
+      <a class="nv-mlink" data-nav="home" href="./index.html">Home</a>
+      <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hammam</a>
+      <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Massages</a>
+      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
       <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
-      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Paketler</a>
-      <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
+      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Packages</a>
+      <a class="nv-mlink" data-nav="urunler" href="./products.html">Products</a>
 
-      <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
-      <a class="nv-mlink" data-nav="about" href="./about.html">Hakk&#305;m&#305;zda</a>
-      <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
+      <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Gallery</a>
+      <a class="nv-mlink" data-nav="about" href="./about.html">About</a>
+      <a class="nv-mlink" data-nav="team" href="./team.html">Team</a>
 
-      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
     </div>
   </div>
 </header>
@@ -372,24 +344,10 @@
     })();
   </script>
 
-  <script src='./wa-config.js'></script>
-  <script defer src='./wa-linker.js'></script>
-  <script src='./slot-macro.js'></script>
-  <script defer src='./assets/nav.js'></script>
+  <script src="../wa-config.js"></script>
+  <script defer src="../wa-linker.js"></script>
+  <script src="../slot-macro.js"></script>
+  <script defer src="../assets/nav.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

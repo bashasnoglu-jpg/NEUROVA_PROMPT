@@ -1,0 +1,19 @@
+NEUROVA THEME BUILD VALIDATION
+==============================
+
+1. products.html
+   - Theme: Amber Ritual
+   - Status: Applied via data-theme="amber-ritual"
+   - Contrast Check: Brown Sugar text on Honey Cream bg (PASS)
+
+2. ritual.html & contact.html
+   - Theme: Modern Calm
+   - Status: Applied via data-theme="modern-calm"
+
+3. spa.html
+   - Theme: Mixed
+   - Status: Base Modern Calm, Evening section overrides with Midnight Serenity variables.
+
+---
+BUILD STATUS: SUCCESS
+GENERATED FILES: 7

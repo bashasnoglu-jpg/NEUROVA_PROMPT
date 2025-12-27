@@ -80,14 +80,14 @@ body[data-page="about"] .nv-hero::after {
   pointer-events: none;
 }
 
-body[data-page="home"] .nv-hero > *,
-body[data-page="hamam"] .nv-hero > *,
-body[data-page="masajlar"] .nv-hero > *,
-body[data-page="kids-family"] .nv-hero > *,
-body[data-page="face-sothys"] .nv-hero > *,
-body[data-page="paketler"] .nv-hero > *,
-body[data-page="products"] .nv-hero > *,
-body[data-page="about"] .nv-hero > * {
+body[data-page="home"] .nv-hero>*,
+body[data-page="hamam"] .nv-hero>*,
+body[data-page="masajlar"] .nv-hero>*,
+body[data-page="kids-family"] .nv-hero>*,
+body[data-page="face-sothys"] .nv-hero>*,
+body[data-page="paketler"] .nv-hero>*,
+body[data-page="products"] .nv-hero>*,
+body[data-page="about"] .nv-hero>* {
   position: relative;
   grid-column: 1 / span 6;
 }
@@ -338,6 +338,7 @@ body[data-page="about"] .nv-wa .nv-wa-link {
 
 /* Responsive */
 @media (max-width: 1024px) {
+
   body[data-page="home"] main,
   body[data-page="hamam"] main,
   body[data-page="masajlar"] main,
@@ -354,11 +355,11 @@ body[data-page="about"] .nv-wa .nv-wa-link {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
-  body[data-page="home"] .nv-hero > *,
-  body[data-page="hamam"] .nv-hero > *,
-  body[data-page="masajlar"] .nv-hero > *,
-  body[data-page="kids-family"] .nv-hero > *,
-  body[data-page="face-sothys"] .nv-hero > * {
+  body[data-page="home"] .nv-hero>*,
+  body[data-page="hamam"] .nv-hero>*,
+  body[data-page="masajlar"] .nv-hero>*,
+  body[data-page="kids-family"] .nv-hero>*,
+  body[data-page="face-sothys"] .nv-hero>* {
     grid-column: 1 / span 8;
   }
 
@@ -372,6 +373,7 @@ body[data-page="about"] .nv-wa .nv-wa-link {
 }
 
 @media (max-width: 768px) {
+
   body[data-page="home"] main,
   body[data-page="hamam"] main,
   body[data-page="masajlar"] main,
@@ -393,11 +395,11 @@ body[data-page="about"] .nv-wa .nv-wa-link {
     padding: 64px 28px;
   }
 
-  body[data-page="home"] .nv-hero > *,
-  body[data-page="hamam"] .nv-hero > *,
-  body[data-page="masajlar"] .nv-hero > *,
-  body[data-page="kids-family"] .nv-hero > *,
-  body[data-page="face-sothys"] .nv-hero > * {
+  body[data-page="home"] .nv-hero>*,
+  body[data-page="hamam"] .nv-hero>*,
+  body[data-page="masajlar"] .nv-hero>*,
+  body[data-page="kids-family"] .nv-hero>*,
+  body[data-page="face-sothys"] .nv-hero>* {
     grid-column: 1 / span 4;
   }
 

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEUROVA Premium Renk Paletleri</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f6f5;
+      --text: #333;
+      --card: #ffffff;
+      --accent: #6f665c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 32px auto;
+      max-width: 1200px;
+      padding: 0 16px 48px;
+    }
+    h1 {
+      text-align: center;
+      letter-spacing: 1px;
+      font-weight: 650;
+      margin: 0 0 28px;
+    }
+    .lead {
+      text-align: center;
+      color: #6f665c;
+      margin: 0 0 32px;
+      font-size: 15px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      border: 1px solid rgba(0,0,0,0.12);
+      background: var(--card);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+      background: #f0ede8;
+    }
+    .palette {
+      margin-bottom: 44px;
+      padding: 20px;
+      border-radius: 16px;
+      background: #fbfaf9;
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.04);
+    }
+    .palette h2 {
+      border-bottom: 2px solid #d7d1c9;
+      padding-bottom: 8px;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      color: #6f665c;
+      font-size: 16px;
+    }
+    .colors {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .color-box {
+      width: 152px;
+      height: 110px;
+      border-radius: 12px;
+      position: relative;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform .12s ease, box-shadow .12s ease, border .12s ease;
+      text-align: center;
+      padding: 10px;
+    }
+    .color-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+      border-color: rgba(0,0,0,0.1);
+    }
+    .color-box.dark { color: #f7f6f5; }
+    .label {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.92;
+    }
+    .copy-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.18);
+      color: #fff;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .2s ease, transform .2s ease;
+      pointer-events: none;
+    }
+    .color-box:hover .copy-hint,
+    .color-box.copied .copy-hint {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .status {
+      text-align: center;
+      font-size: 13px;
+      color: #4c5a55;
+      min-height: 18px;
+      margin-bottom: 12px;
+    }
+    pre#exportOutput {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.5;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+  <h1>NEUROVA Premium Renk Paletleri</h1>
+  <p class="lead">Sessiz lüks, doğal zen ve modern sakinlik için kürasyonlu paletler. Renk kutucuklarına tıklayarak hex kodunu kopyalayabilir, tüm paleti CSS değişkeni olarak dışa aktarabilirsiniz.</p>
+
+  <div class="actions">
+    <button class="btn" id="exportCss">CSS değişkenlerini kopyala</button>
+    <button class="btn" id="exportJson">Paletleri JSON olarak kopyala</button>
+  </div>
+  <div class="status" id="status"></div>
+  <pre id="exportOutput"></pre>
+
+  <div id="palettes"></div>
+
+  <script>
+    const palettes = [
+      {
+        name: "Quiet Luxury Nude",
+        slug: "quiet-luxury-nude",
+        colors: [
+          { hex: "#F6F4F1", label: "Arka Plan" },
+          { hex: "#D7CFC4", label: "İkincil Zemin" },
+          { hex: "#A9A59C", label: "Metin" },
+          { hex: "#7C7B71", label: "Düğmeler" },
+          { hex: "#4A3B31", label: "Başlık" },
+        ],
+      },
+      {
+        name: "Natural Zen",
+        slug: "natural-zen",
+        colors: [
+          { hex: "#F3F2EE", label: "Zemin" },
+          { hex: "#C6C2BA", label: "Kartlar" },
+          { hex: "#9DA793", label: "Vurgu" },
+          { hex: "#8A6E56", label: "Başlık" },
+          { hex: "#4D5744", label: "Footer / Menü" },
+        ],
+      },
+      {
+        name: "Modern Calm",
+        slug: "modern-calm",
+        colors: [
+          { hex: "#F9F9F8", label: "Arka Plan" },
+          { hex: "#D4D2CF", label: "Kart" },
+          { hex: "#A7A8AA", label: "Metin" },
+          { hex: "#8D99AE", label: "Link / Hover" },
+          { hex: "#2B2D42", label: "Başlık" },
+        ],
+      },
+      {
+        name: "Amber Ritual",
+        slug: "amber-ritual",
+        colors: [
+          { hex: "#F8EBDD", label: "Arka Plan" },
+          { hex: "#D9B89C", label: "Kart" },
+          { hex: "#B37556", label: "Buton" },
+          { hex: "#6E4C3A", label: "Başlık" },
+          { hex: "#FAF7F3", label: "Boşluk" },
+        ],
+      },
+      {
+        name: "Midnight Serenity",
+        slug: "midnight-serenity",
+        colors: [
+          { hex: "#1E1E1E", label: "Arka Plan" },
+          { hex: "#8B8581", label: "Yazı" },
+          { hex: "#B8A89A", label: "Düğme" },
+          { hex: "#EAE6E2", label: "Kart" },
+          { hex: "#C19A6B", label: "Hover" },
+        ],
+      },
+    ];
+
+    const palettesEl = document.getElementById("palettes");
+    const statusEl = document.getElementById("status");
+    const exportOutput = document.getElementById("exportOutput");
+
+    function isDark(hex) {
+      const value = hex.replace("#", "");
+      if (value.length !== 6) return false;
+      const r = parseInt(value.slice(0, 2), 16);
+      const g = parseInt(value.slice(2, 4), 16);
+      const b = parseInt(value.slice(4, 6), 16);
+      const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+      return lum < 150;
+    }
+
+    function buildPalettes() {
+      palettesEl.innerHTML = palettes
+        .map((p) => {
+          const colors = p.colors
+            .map((c) => {
+              const darkClass = isDark(c.hex) ? "dark" : "";
+              return `
+                <div class="color-box ${darkClass}" data-hex="${c.hex}" data-label="${c.label}" data-palette="${p.slug}">
+                  ${c.hex}
+                  <div class="label">${c.label}</div>
+                  <span class="copy-hint">Kopyala</span>
+                </div>
+              `;
+            })
+            .join("");
+          return `
+            <div class="palette">
+              <h2>${p.name}</h2>
+              <div class="colors">
+                ${colors}
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    function copyText(text) {
+      if (!navigator.clipboard) {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        return;
+      }
+      navigator.clipboard.writeText(text).catch(() => {});
+    }
+
+    function setStatus(msg) {
+      statusEl.textContent = msg || "";
+      if (msg) {
+        clearTimeout(setStatus._t);
+        setStatus._t = setTimeout(() => (statusEl.textContent = ""), 1800);
+      }
+    }
+
+    function wireBoxes() {
+      document.querySelectorAll(".color-box").forEach((box) => {
+        box.addEventListener("click", () => {
+          const hex = box.dataset.hex;
+          copyText(hex);
+          box.classList.add("copied");
+          setTimeout(() => box.classList.remove("copied"), 600);
+          setStatus(`${hex} kopyalandı`);
+        });
+      });
+    }
+
+    function exportCssVars() {
+      const lines = [":root {"];
+      palettes.forEach((p) => {
+        p.colors.forEach((c, idx) => {
+          lines.push(`  --${p.slug}-${idx + 1}: ${c.hex}; /* ${c.label} */`);
+        });
+      });
+      lines.push("}");
+      const css = lines.join("\n");
+      exportOutput.textContent = css;
+      copyText(css);
+      setStatus("CSS değişkenleri kopyalandı.");
+    }
+
+    function exportJsonVars() {
+      const json = JSON.stringify(palettes, null, 2);
+      exportOutput.textContent = json;
+      copyText(json);
+      setStatus("Paletler JSON olarak kopyalandı.");
+    }
+
+    function init() {
+      buildPalettes();
+      wireBoxes();
+      document.getElementById("exportCss").addEventListener("click", exportCssVars);
+      document.getElementById("exportJson").addEventListener("click", exportJsonVars);
+      exportOutput.textContent = ":root { /* CSS değişkenlerini kopyalamak için butona tıklayın */ }";
+    }
+
+    init();
+  </script>
+</body>
+</html>

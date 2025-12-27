@@ -24,7 +24,7 @@
         "abhyanga",
         "denge"
       ],
-      "safeNote": "Non-medical wellness; fully draped; respectful, non-sexual service.",
+      "safeNote": "Tıbbi olmayan wellness; tamamen örtülü; saygılı, cinsel olmayan hizmet.",
       "lang": {
         "tr": "Sıcak yağla uzun ve akışkan hareketlerle dengeyi destekleyen bir uygulama yapıyoruz.",
         "en": "We apply a balancing flow with warm oil and long, grounding strokes."
@@ -41,7 +41,7 @@
         "anti-stress",
         "rituel"
       ],
-      "safeNote": "Non-medical; calm/relax focus; fully draped.",
+      "safeNote": "Tıbbi olmayan; sakinlik/rahatlama odaklı; tamamen örtülü.",
       "lang": {
         "tr": "Ritmik akış ve sessiz ortamla zihni sakinleştirmeye odaklanıyoruz.",
         "en": "We focus on calming the mind through rhythmic flow and a quiet setting."
@@ -53,7 +53,7 @@
       "category": "NEUROVA Look",
       "role": "Designer",
       "title": "Quiet Luxury Mood",
-      "safeNote": "Reference language; describes style, no procedural claims.",
+      "safeNote": "Referans dili; stili tanımlar, prosedürel iddia yok.",
       "prompt": "Spell out the quiet luxury mood: marble plateaus, brushed brass, and soft diffusion that keeps light warm.",
       "lang": {
         "tr": "NEUROVA sessiz lüksünü mermer, fırçalanmış pirinç ve yumuşak ışıklarla tanımlıyoruz.",
@@ -73,7 +73,7 @@
       "category": "NEUROVA Look",
       "role": "Designer",
       "title": "NEUROVA Palette",
-      "safeNote": "Reference language only.",
+      "safeNote": "Sadece referans dili.",
       "prompt": "Frame the palette as warm neutrals with charcoal contrast, pairing soft textures with reflective surfaces.",
       "lang": {
         "tr": "Paleti sıcak nötrlerle koyu kontrastlar bir araya getirir; yumuşak dokularla yansıtıcı yüzeyleri dengeler.",
@@ -92,7 +92,7 @@
       "category": "NEUROVA Look",
       "role": "Photographer",
       "title": "Atmospheric Quiet",
-      "safeNote": "Reference imagery only.",
+      "safeNote": "Sadece referans görselleri.",
       "prompt": "Suggest capturing atmospheric quiet with steam echoes, low light, and close-up marble details.",
       "lang": {
         "tr": "Atmosferi, buhar izleri, loş ışık ve close-up mermer detaylarla yakalayın.",
@@ -111,7 +111,7 @@
       "category": "Face – Sothys",
       "role": "Therapist",
       "title": "Skin Safety Check",
-      "safeNote": "Face – Sothys; non-medical skincare language; no before/after promises or medical claims.",
+      "safeNote": "Face – Sothys; tıbbi olmayan cilt bakımı dili; öncesi/sonrası vaatleri veya tıbbi iddialar yok.",
       "prompt": "Frame the face consultation as a calm check-in: ask about sensitivity, note hydration, and keep language rooted in nurture without claims.",
       "lang": {
         "tr": "Cilt danışmanlığında hassasiyet, hidrasyon ve konfor ön planda; hiçbir tıbbi iddia veya before-after vurgusu yok.",
@@ -130,7 +130,7 @@
       "category": "Face – Sothys",
       "role": "Therapist",
       "title": "Hydration + Soothe",
-      "safeNote": "Gentle hydration focus; no medical claims; full consent.",
+      "safeNote": "Nazik nemlendirme odaklı; tıbbi iddia yok; tam rıza.",
       "prompt": "Describe the hydration sequence using lightweight touches and cellular-respect cues, mentioning cool marble bowls and soft towels.",
       "lang": {
         "tr": "Hidrasyon bölümünde hafif dokunuşlar, soğuk mermer kaseler ve yumuşak havlular eşlik eder.",
@@ -149,7 +149,7 @@
       "category": "Face – Sothys",
       "role": "Therapist",
       "title": "Calm Radiance Pause",
-      "safeNote": "Relaxing pause; no acceleration, no claims of reversing aging.",
+      "safeNote": "Rahatlatıcı mola; hızlandırma yok, yaşlanmayı tersine çevirme iddiası yok.",
       "prompt": "Highlight the calm radiance pause as a breath-friendly moment where the skin rests beneath slow, rhythmic palms and quiet lighting.",
       "lang": {
         "tr": "Cildin sessizce nefes aldığı an; eller yavaşça palpe edilirken ışık düşük tutulur.",
@@ -168,7 +168,7 @@
       "category": "Face – Sothys",
       "role": "Reception",
       "title": "Skin Reminder",
-      "safeNote": "Non-medical aftercare; hints to keep skin calm and hydrated.",
+      "safeNote": "Tıbbi olmayan bakım sonrası; cildi sakin ve nemli tutmak için ipuçları.",
       "prompt": "Close the face moment with a reminder about cool water, gentle movement, and a quiet, hydrated pause before makeup.",
       "lang": {
         "tr": "Cilt kapanışında serin su ve yumuşak hareketlerle sakin kalmasını öneriyoruz.",
@@ -186,7 +186,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Nazik Karşılama & Akış",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Hoş geldiniz. Bugünkü ritüel ısınma, kontrollü kese, köpük ve dinlenme akışında ilerleyecek. Basınç ve sıcaklığı tercihlerinize göre ayarlayacağım.",
         "en": "Welcome. Today’s ritual follows a warm-up, measured exfoliation, foam cleanse, and rest. I’ll adjust pressure and heat to your preference."
@@ -205,7 +205,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Isınma & Nefes Ayarı",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Isınma bölümündeyiz. Nefesi yavaşlatıp omuzları bırakıyoruz. Isıyı bedeninizin verdiği sinyallere göre ayarlayacağım.",
         "en": "We’re in the warming phase. We’ll slow the breath and soften the shoulders. I’ll adjust the heat based on your body’s signals."
@@ -224,7 +224,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Kese Öncesi Onay",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Kese öncesi küçük bir ayar yapalım. Basıncı hafif, orta ya da daha derin tercih edebilirsiniz. Hassas bir alan varsa bana bildirmeniz yeterli.",
         "en": "Before exfoliation, let’s set the tone. You can choose light, medium, or deeper pressure. Tell me if any area feels sensitive."
@@ -243,7 +243,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Köpük & Temizlenme",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Şimdi köpük temizliğine geçiyoruz. Köpüğü yumuşak bir katman gibi uygulayıp ritmi bilinçli olarak yavaşlatacağım.",
         "en": "We’re moving into the foam cleanse. I’ll apply the foam as a soft layer and intentionally slow the rhythm."
@@ -261,7 +261,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Reception",
       "title": "Ritüel Sonrası Öneri",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Ritüel sonrası su tüketimini artırmanızı öneririm. Dilerseniz dinlenme alanında biraz daha kalabilirsiniz.",
         "en": "After the ritual, I recommend increasing hydration. You’re welcome to spend more time in the resting area if you wish."
@@ -279,7 +279,7 @@
       "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Nazik Kapanış",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Kapanışta beden ısısını dengeliyorum. Kısa ve yumuşak dokunuşlarla ritüeli tamamlıyoruz.",
         "en": "In the closing phase I balance body temperature and finish with brief, gentle grounding touches."
@@ -297,7 +297,7 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "Signature Hamam – Sessiz Başlangıç",
-      "safeNote": "Non-medical hammam ritual; silence on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; isteğe bağlı sessizlik; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Bu ritüeli sakin ve mümkün olduğunca sessiz yöneteceğim. Sessizlik isterseniz, dokunuş ve ritim konuşmanın yerini alır.",
         "en": "I’ll guide this ritual calmly and as quietly as you prefer. If you choose silence, touch and rhythm will speak instead."
@@ -316,7 +316,7 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "Çiftler için Senkron Akış",
-      "safeNote": "Non-medical hammam ritual; synchronized touch; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; senkronize dokunuş; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Şimdi ritmi senkronluyorum. Dokunuşlar aynı anda başlar; nefes ve ısı dengesiyle birlikte ilerler.",
         "en": "I’m synchronizing the rhythm now. Touch begins together and moves with breath and temperature in balance."
@@ -332,13 +332,13 @@
     },
     {
       "id": "HAMAM_09",
-      "category": "Hamam RitǬelleri",
+      "category": "Hamam Ritüelleri",
       "role": "Therapist",
       "title": "Close-up Kese Detay",
-      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "safeNote": "Tıbbi olmayan hamam ritüeli; basınç/ısı isteğe göre ayarlanır; misafir konforu önceliklidir.",
       "prompt": "Describe the close-up kese texture, the warmth of marble, and the filtered steam hovering around the shoulder line.",
       "lang": {
-        "tr": "Close-up kese annda yumu�Yak ama net dokunu�Ylarla ciltteki gǬveni sǬfǬra indiriyoruz.",
+        "tr": "Close-up kese anında yumuşak ama net dokunuşlarla ciltteki gerginliği sıfıra indiriyoruz.",
         "en": "In this close-up moment we slow the motion, letting the kese glide over marble while the steam gently wraps the shoulders."
       },
       "tags": [
@@ -355,10 +355,10 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "NEUROVA Close-up Kese",
-      "safeNote": "Non-medical signature ritual; silence and comfort paired; guest preference leads the flow.",
+      "safeNote": "Tıbbi olmayan imza ritüeli; sessizlik ve konfor bir arada; akışı misafir tercihi belirler.",
       "prompt": "Capture the quiet luxury of a close-up kese shot where hands, steam, and marble meet in perfect stillness.",
       "lang": {
-        "tr": "NEUROVA sessizli�Yiyle close-up kese dokunu�Yunu anlatıyoruz; eller, buhar ve mermer bir araya gelerek ritmi belirliyor.",
+        "tr": "NEUROVA sessizliğiyle close-up kese dokunuşunu anlatıyoruz; eller, buhar ve mermer bir araya gelerek ritmi belirliyor.",
         "en": "We narrate the NEUROVA quiet luxury in a close-up kese sequence, where hands, steam, and marble choreograph a soft rhythm."
       },
       "tags": [
@@ -376,7 +376,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Nazik Karşılama",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Welcome. Everything here moves slowly and gently. You can look around first, and we’ll begin only when you feel ready.",
       "lang": {
         "tr": "Hoş geldin. Burada her şey yavaş ve yumuşak ilerler. İstersen önce etrafa bakabilir, hazır olduğunda başlayabiliriz.",
@@ -396,7 +396,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Dokunuş Öncesi İzin",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Before we start, I’ll ask you. Would you like the touch to be very light, or a little bit more noticeable?",
       "lang": {
         "tr": "Başlamadan önce sana soracağım. Dokunuşun çok hafif mi yoksa biraz daha belirgin mi olsun istersin?",
@@ -416,7 +416,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Rahatlatıcı Nefes",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Now we’ll breathe slowly together. Imagine filling a balloon, then gently letting it float away.",
       "lang": {
         "tr": "Şimdi birlikte yavaşça nefes alıyoruz. Nefesini balon gibi şişirip, sonra yavaşça bırakabilirsin.",
@@ -436,7 +436,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Yumuşak Dokunuş Akışı",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "The touches will be very gentle. If you want me to stop anywhere, just tell me right away.",
       "lang": {
         "tr": "Dokunuşlar çok yumuşak olacak. Bir yerde durmamı istersen bana hemen söyleyebilirsin.",
@@ -456,7 +456,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Ebeveynle Birlikte Güven",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Your parent is here with you. They can hold your hand or simply stay close—whichever you prefer.",
       "lang": {
         "tr": "Anne ya da baban burada seninle. İstersen elini tutabilir ya da sadece yanında durabilir.",
@@ -476,7 +476,7 @@
       "role": "Reception",
       "kidsOnly": true,
       "title": "Nazik Kapanış",
-      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; her zaman rıza isteyin; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "We’re finishing slowly now. Drinking some water and taking a short rest can feel really nice.",
       "lang": {
         "tr": "Şimdi yavaşça bitiriyoruz. Biraz su içmek ve kısa bir dinlenme iyi hissettirebilir.",
@@ -496,7 +496,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Premium Karşılama – Yumuşak Başlangıç",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Welcome. Everything here moves slowly and with care. You can take a moment to settle in, and we’ll begin when you’re ready.",
       "lang": {
         "tr": "Hoş geldin. Burada her şey yavaş ve özenle ilerler. İstersen önce alanı tanıyıp hazır olduğunda başlayabiliriz.",
@@ -517,7 +517,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "İzin & Seçim – Kontrol Sende",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "I’ll ask you at each step. Would you like the touch very light, or a bit more noticeable? We can pause anytime.",
       "lang": {
         "tr": "Her adımda sana soracağım. Dokunuş çok hafif mi olsun, yoksa biraz daha belirgin mi? İstersen durabiliriz.",
@@ -538,7 +538,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Dingin Nefes – Ritmi Yavaşlatma",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Now we slow the rhythm. As you breathe softly, your shoulders may start to relax on their own.",
       "lang": {
         "tr": "Şimdi ritmi yavaşlatıyoruz. Nefesini yumuşakça alıp verirken omuzların kendiliğinden gevşeyebilir.",
@@ -559,7 +559,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Nazik Dokunuş Akışı – Güvenli Çerçeve",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Touch will stay gentle and safe. If you prefer, we can stay shorter on an area, or skip it entirely.",
       "lang": {
         "tr": "Dokunuşlar yumuşak ve güvenli kalacak. İstersen bir bölgede daha kısa kalır, istersen atlarız.",
@@ -580,7 +580,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Aileyle Premium Uyum",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "Your parent can stay close. They can hold your hand, or simply remain nearby in quiet support.",
       "lang": {
         "tr": "Anne/baban yanında kalabilir. İstersen elini tutar, istersen sadece sessizce yakınında durur.",
@@ -601,7 +601,7 @@
       "role": "Reception",
       "kidsOnly": true,
       "title": "Premium Kapanış – Yumuşak Entegrasyon",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "We’re finishing slowly now. A little water and a short rest help the body keep this good feeling.",
       "lang": {
         "tr": "Şimdi yavaşça bitiriyoruz. Biraz su ve kısa bir dinlenme, bedenin bu güzel hissi korumasına yardımcı olur.",
@@ -622,7 +622,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Mini Signature Family – Senkron Başlangıç",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "We’re starting softly together with the family. Touch begins at the same time; pace and intensity follow the child’s signals.",
       "lang": {
         "tr": "Şimdi aileyle birlikte yumuşak bir başlangıç yapıyoruz. Dokunuşlar aynı anda başlar; hız ve yoğunluk çocuğun verdiği sinyallere göre ayarlanır.",
@@ -643,7 +643,7 @@
       "role": "Therapist",
       "kidsOnly": true,
       "title": "Sessiz Premium Kapanış",
-      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "safeNote": "Çocuk & Aile; önce rıza; ebeveyn bulunabilir; tıbbi olmayan, invaziv olmayan.",
       "prompt": "In closing, we keep conversation low. We leave a quiet space for the body to settle the rhythm.",
       "lang": {
         "tr": "Kapanışta konuşmayı azaltıyoruz. Bedenin ritmi sakinleştirmesine sessizce alan bırakıyoruz.",
@@ -766,7 +766,7 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "Signature Recovery – Derin Reset",
-      "safeNote": "Non-medical; calm, deep recovery focus; guest comfort first.",
+      "safeNote": "Tıbbi olmayan; sakin, derin toparlanma odaklı; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Niyet performans değil; sinir sistemine derin bir reset alanı açmak. Dokunuşlar yavaş, net ve topraklayıcı olacak.",
         "en": "The intention isn’t performance; it’s space for a deep nervous-system reset. Touch will be slow, clear, and grounding."
@@ -785,7 +785,7 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "Premium Kapanış – Sessiz Entegrasyon",
-      "safeNote": "Non-medical; calm closing; guest comfort first.",
+      "safeNote": "Tıbbi olmayan; sakin kapanış; misafir konforu önceliklidir.",
       "lang": {
         "tr": "Kapanışta konuşmayı azaltıyoruz. Bedenin çalışmayı sindirmesi için sessiz bir entegrasyon alanı bırakıyorum.",
         "en": "In the closing phase, we reduce conversation. I’ll leave a quiet space for the body to integrate the work."
@@ -804,7 +804,7 @@
       "category": "Seasonal Detox",
       "role": "Therapist",
       "title": "Seasonal Intake",
-      "safeNote": "Detox language stays non-medical; focus on warmth, hydration, and seasonal cues.",
+      "safeNote": "Detoks dili tıbbi değildir; sıcaklık, hidrasyon ve mevsimsel ipuçlarına odaklanılır.",
       "prompt": "Introduce the seasonal detox through warm notes, citrus steam, and a gentle request for current stress points.",
       "lang": {
         "tr": "Mevsimsel detoksu sıcak notalar, turunçgil buharı ve güncel gerilim noktalarını sorarak açıyoruz.",
@@ -823,7 +823,7 @@
       "category": "Seasonal Detox",
       "role": "Therapist",
       "title": "Water Balance Rhythm",
-      "safeNote": "Focus on hydration cues; non-medical.",
+      "safeNote": "Hidrasyon ipuçlarına odaklanın; tıbbi değildir.",
       "prompt": "Describe the water balance step as a slow, fluid sweep that encourages gentle movement and cool glass vessels.",
       "lang": {
         "tr": "Su denge bölümünde yavaş, akışkan hareketler ve serin cam kaseler kullanıyoruz.",
@@ -842,7 +842,7 @@
       "category": "Seasonal Detox",
       "role": "Therapist",
       "title": "Purifying Breath Focus",
-      "safeNote": "Breath guidance only; no claims of purification beyond experience.",
+      "safeNote": "Sadece nefes rehberliği; deneyimin ötesinde arınma iddiası yok.",
       "prompt": "Highlight breathing as the channel to flush warmth through limbs, pairing it with textured towels and neutral lighting.",
       "lang": {
         "tr": "Nefes odaklı bölümde dokulu havlular eşlik ederken ışık nötr kalarak alanı sakinleştirir.",
@@ -861,7 +861,7 @@
       "category": "Seasonal Detox",
       "role": "Reception",
       "title": "Seasonal Aftercare",
-      "safeNote": "Gentle, non-medical aftercare suggestions only.",
+      "safeNote": "Sadece nazik, tıbbi olmayan bakım sonrası öneriler.",
       "prompt": "Suggest a quiet pause with herbal water, describing how the seasonal shift invites slowing down.",
       "lang": {
         "tr": "Mevsimsel değişimde sakin kalmak için bitki suları ve kısa bir dinlenme öneriyoruz.",
@@ -879,7 +879,7 @@
       "category": "Signature & Family",
       "role": "Therapist",
       "title": "Signature Karşılama – Güvenli Alan",
-      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "safeNote": "İmza & Aile; önce genç rızası; saygılı, tıbbi olmayan, cinsel olmayan.",
       "lang": {
         "tr": "Bu ritüel, birlikte ama saygılı bir alanda ilerler. Her adım, teen’in konforuna göre ayarlanır; kontrol her zaman onda.",
         "en": "This ritual unfolds together, in a respectful shared space. Every step adjusts to the teen’s comfort; control always stays with them."
@@ -898,7 +898,7 @@
       "category": "Signature & Family",
       "role": "Therapist",
       "title": "Senkron Başlangıç – Yumuşak Uyum",
-      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "safeNote": "İmza & Aile; önce genç rızası; saygılı, tıbbi olmayan, cinsel olmayan.",
       "lang": {
         "tr": "Şimdi ritmi yumuşakça senkronluyoruz. Dokunuşlar aynı anda başlar; yoğunluk teen’in verdiği sinyallere göre şekillenir.",
         "en": "We now gently synchronize the rhythm. Touch begins together, with intensity shaped by the teen’s signals."
@@ -917,7 +917,7 @@
       "category": "Signature & Family",
       "role": "Therapist",
       "title": "Teen Odaklı Premium Akış",
-      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "safeNote": "İmza & Aile; önce genç rızası; saygılı, tıbbi olmayan, cinsel olmayan.",
       "lang": {
         "tr": "Bu bölüm teen’e ayrılmıştır. Dokunuşlar yavaş, ölçülü ve sade ilerler; konuşma minimumda tutulur.",
         "en": "This section is dedicated to the teen. Touch moves slowly, measured, and minimal, with conversation kept low."
@@ -936,7 +936,7 @@
       "category": "Signature & Family",
       "role": "Reception",
       "title": "Sessiz Kapanış – Birlikte Entegrasyon",
-      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "safeNote": "İmza & Aile; önce genç rızası; saygılı, tıbbi olmayan, cinsel olmayan.",
       "lang": {
         "tr": "Kapanışta ritmi yavaşlatıyoruz. Aileyle birlikte, konuşmadan, bedenin çalışmayı sindirmesine alan açıyoruz.",
         "en": "In the closing phase, we slow the rhythm further. Together, in silence, we allow the body to integrate the work."
@@ -955,7 +955,7 @@
       "category": "Signature",
       "role": "Therapist",
       "title": "Quiet Luxury Welcome",
-      "safeNote": "Signature ritual; non-medical, comfort-first language; flow slows at guest request.",
+      "safeNote": "İmza ritüeli; tıbbi olmayan, konfor öncelikli dil; akış misafir isteğiyle yavaşlar.",
       "prompt": "Frame the NEUROVA quiet-luxury welcome as a slow inhale, marble steps, and gentle lighting that envelopes the guest.",
       "lang": {
         "tr": "Bu Signature karşılama, mermer zemin, sıcak tonlar ve sakin ışıklarla yavaşça kabullenilir. Konforunuz her adımda sorulur.",
@@ -975,7 +975,7 @@
       "category": "Signature",
       "role": "Therapist",
       "title": "Synchronized Breath Path",
-      "safeNote": "Non-medical, calming breath focus; pressure always adjustable.",
+      "safeNote": "Tıbbi olmayan, sakinleştirici nefes odaklı; basınç her zaman ayarlanabilir.",
       "prompt": "Guide synchronized breath cues as choreography: hands, marble columns, and a slow rhythm that mirrors the guest's own inhale.",
       "lang": {
         "tr": "Nefeslerimizi senkronize ediyoruz; eller mermer sütunlara nazikçe değiyor, ritim sizin nefesinizle uyumlanıyor.",
@@ -995,7 +995,7 @@
       "category": "Signature & Couples",
       "role": "Therapist",
       "title": "Premium Couples Pause",
-      "safeNote": "Non-medical couple focus; comfortable silence honored; fully draped.",
+      "safeNote": "Tıbbi olmayan çift odaklı; konforlu sessizliğe saygı duyulur; tamamen örtülü.",
       "prompt": "Describe the couples pause as a mirrored stillness where marble benches and soft steam cradle both bodies in sync.",
       "lang": {
         "tr": "Çiftler için bu an, mermer banklarda sessizlikte senkronludur; yavaş buhar ve dokunuşlar birlikte uyumlanır.",
@@ -1015,7 +1015,7 @@
       "category": "Signature",
       "role": "Reception",
       "title": "Grounding Departure",
-      "safeNote": "Quiet aftercare reminder; hydration and rest suggested without claims.",
+      "safeNote": "Sessiz bakım sonrası hatırlatma; iddia olmaksızın hidrasyon ve dinlenme önerilir.",
       "prompt": "Wrap the signature finish with marble fountain reflections, whispering reminders to hydrate and pause before stepping back into daylight.",
       "lang": {
         "tr": "Signature kapanışta mermer havuzun yansıması eşliğinde suyunuzu tamamlamanızı ve güneş öncesi kısa bir dinlenme yapmanızı öneriyoruz.",

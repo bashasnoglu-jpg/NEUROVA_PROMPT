@@ -4,327 +4,552 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Paketler — NEUROVA</title>
+  <title>Paketler | NEUROVA</title>
+  <meta name="description"
+    content="Entry, Value, Premium — karar yorgunluğu olmadan doğru kombin. Hamam + masaj + yüz bakımı paketleri." />
+  <meta property="og:title" content="NEUROVA | Paketler" />
+  <meta property="og:description"
+    content="Entry, Value, Premium: karar yorgunluğu olmadan doğru kombin. Hamam + masaj + yüz bakımı." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://neurova.site/assets/og-banner.jpg" />
+  <meta name="theme-color" content="#eee9e4" />
+  <link rel="icon" href="./assets/favicon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="stylesheet" href="./assets/nav.css" />
-  <link rel="stylesheet" href="./assets/home.css" />
-  <link rel="stylesheet" href="./assets/paketler.css" />
-  <link rel="stylesheet" href="./assets/heatmap.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@200;400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: #eee9e4;
+      color: #7a6e63;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 8vh;
+      padding: 14vh 10vw 12vh;
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      color: #7a6e63;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 6px 10px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(4px);
+    }
+
+    .lang-switch a {
+      color: #b3aba1;
+      text-decoration: none;
+      transition: color .2s ease, text-shadow .2s ease;
+    }
+
+    .lang-switch a.active {
+      font-weight: 600;
+      color: #7a6e63;
+    }
+
+    .lang-switch a:hover {
+      color: #a3b09a;
+      text-shadow: 0 1px 4px rgba(163, 176, 154, .2);
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, rgba(17, 17, 17, 0.06), transparent 40%), #fdfbf7;
+      border-radius: 20px;
+      padding: 12vh clamp(24px, 6vw, 64px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: 0.08em;
+      font-weight: 200;
+    }
+
+    .page-hero p {
+      margin: 0 0 24px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #b3aba1;
+      max-width: 720px;
+    }
+
+    .page-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nv-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 16px;
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      background: #a3b09a;
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+    }
+
+    .nv-cta:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
+    }
+
+    .nv-cta-ghost {
+      background: rgba(255, 255, 255, 0.7);
+      color: #7a6e63;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: none;
+    }
+
+    .nv-cta-ghost:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .nv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .nv-card {
+      aspect-ratio: 4/5;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #d9d2c6, #eee9e4, #b3aba1);
+      padding: 1.6rem;
+      position: relative;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+      transition: all 0.35s ease;
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(122, 110, 99, 0.2);
+      overflow: hidden;
+    }
+
+    .nv-card:hover {
+      backdrop-filter: blur(10px);
+      border-color: rgba(122, 110, 99, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .nv-card h2 {
+      margin: 0;
+      font-weight: 200;
+      letter-spacing: 0.06em;
+      font-size: 1.2rem;
+    }
+
+    .nv-card p {
+      margin: 0;
+      color: #7a6e63;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .nv-explore {
+      position: absolute;
+      bottom: 1.1rem;
+      right: 1.2rem;
+      font-style: italic;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #a3b09a;
+    }
+
+    .nv-explore:hover {
+      text-decoration: underline;
+    }
+
+    .nv-feature-lite {
+      background: #f5f3f0;
+      border-radius: 18px;
+      padding: 2.6rem;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nv-feature-lite h3 {
+      margin: 0;
+      grid-column: 1 / span 5;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .nv-feature-lite p {
+      margin: 0;
+      grid-column: 6 / span 7;
+      color: #7a6e63;
+      line-height: 1.6;
+    }
+
+    .nv-footer {
+      background: #d6d0c8;
+      padding: 5vh 8vw;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #7a6e63;
+      position: relative;
+      border-top: 1px solid #b3aba1;
+    }
+
+    .nv-footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .nv-footer-brand .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      font-size: 1.4rem;
+      color: #7a6e63;
+    }
+
+    .nv-footer-brand .brand-sub {
+      font-size: 0.95rem;
+      color: #b3aba1;
+    }
+
+    .nv-footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nv-footer-links a {
+      text-decoration: none;
+      color: #7a6e63;
+      transition: opacity 0.3s ease;
+    }
+
+    .nv-footer-links a:hover {
+      opacity: 0.7;
+    }
+
+    .nv-footer-lang {
+      font-size: 0.9rem;
+      color: #b3aba1;
+    }
+
+    .nv-footer-lang a {
+      color: #7a6e63;
+      text-decoration: none;
+      margin: 0 0.3rem;
+    }
+
+    .nv-footer-lang a.active {
+      font-weight: bold;
+    }
+
+    .nv-footer-contact a {
+      text-decoration: none;
+      color: #a3b09a;
+      font-weight: 500;
+    }
+
+    .nv-footer-contact span {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #b3aba1;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
+      main {
+        padding: 12vh 7vw 10vh;
+      }
+
+      .nv-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nv-feature-lite {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .nv-feature-lite h3 {
+        grid-column: 1 / span 6;
+      }
+
+      .nv-feature-lite p {
+        grid-column: 1 / span 6;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nv-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 10vh 1.4rem 8vh;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .page-hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .page-actions {
+        flex-direction: column;
+      }
+
+      .nv-cta,
+      .nv-cta-ghost {
+        width: 100%;
+        text-align: center;
+      }
+
+      .lang-switch {
+        top: 0.8rem;
+        right: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+  <noscript>
+    <style>
+      [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body data-lang="tr" data-page="paketler" data-tier="entry" data-year="2025">
+  <div class="background-layer" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="none">
+      <source src="https://cdn.pixabay.com/video/2023/11/20/191445-889081177_large.mp4" type="video/mp4">
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <div class="lang-switch" aria-label="Dil seçimi">
+    <a href="./index.html" class="active">TR</a> /
+    <a href="./en/paketler.html">EN</a>
+  </div>
+
   <div id="nv-nav-slot" data-nav-fallback></div>
 
   <main>
-    <!-- HERO -->
-    <section class="nv-hero">
+    <section class="page-hero" data-reveal>
       <h1>Paketler</h1>
-      <p>Entry / Value / Premium — karar yorgunluğu olmadan doğru ritüel. Her kart WhatsApp kapanışına hazır.</p>
-      <div class="nv-hero-actions">
-        <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        <a class="nv-cta nv-cta-ghost" href="#hamam-masaj">Hamam + Masaj</a>
+      <p>Entry, Value, Premium &mdash; karar yorgunluğu olmadan doğru kombin.</p>
+      <div class="page-actions">
+        <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+        <a class="nv-cta nv-cta-ghost" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp</a>
       </div>
     </section>
 
-    <section class="packages-intro-copy">
-      <p class="lead">Hangi paket sizin için doğru?</p>
-      <p>
-        <strong>Entry</strong> hızlı bir başlangıçtır.<br>
-        <strong>Value</strong> en çok tercih edilen; çoğu misafir için ideal süre/etki dengesi sunar.<br>
-        <strong>Premium</strong> ise kişisel planlama ve premium ayrıcalıklar içerir.
-      </p>
-      <p class="note">Kararsızsanız, WhatsApp'tan yazın — size en uygun paketi birlikte belirleyelim.</p>
-    </section>
+    <section class="nv-grid" aria-label="Paket kartları">
+      <div class="nv-card" data-reveal>
+        <h2>Entry</h2>
+        <p>Hızlı reset: hamam + kısa masaj.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Seç</a>
+      </div>
 
-    <!-- Hamam + Masaj -->
-    <section class="nv-pack-section" id="hamam-masaj" data-family="Hamam + Masaj">
-      <header class="nv-pack-header">
-        <h2>Hamam + Masaj</h2>
-        <p>Mermer, köpük ve masaj: kısa resetten tam yenilenmeye.</p>
-      </header>
-      <div class="nv-card-grid">
-        <article class="nv-card nv-tier-entry" data-tier="Entry">
-          <h3><span class="nv-badge">ENTRY</span> Classic Relax</h3>
-          <p class="nv-meta"><b>Kimler için:</b> İlk kez gelen, kısa ama etkili rahatlama.</p>
-          <p class="nv-meta"><b>Hissi:</b> Beden hafifler, zihin sakinleşir.</p>
-          <ul class="nv-list">
-            <li>Klasik Osmanlı hamam</li>
-            <li>60 dk İsveç masajı</li>
-            <li>Sıcak peştamal</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Head Massage / Hot Stone</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
+      <div class="nv-card" data-reveal>
+        <h2>Value</h2>
+        <p>Dengeli: hamam + 60 dk masaj.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Seç</a>
+      </div>
 
-        <article class="nv-card nv-tier-value" data-tier="Value">
-          <h3><span class="nv-badge">VALUE</span> Deep Balance</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Stresli, yoğun tempo.</p>
-          <p class="nv-meta"><b>Hissi:</b> Kaslar çözülür, nefes derinleşir.</p>
-          <ul class="nv-list">
-            <li>Arındırıcı hamam</li>
-            <li>90 dk derin doku / relax masaj</li>
-            <li>Bitki çayı kapanışı</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Aroma seçimi + sıcak taş</p>
-          <p class="nv-meta"><b>Premium farkı:</b> Daha uzun süre + özel suite konforu.</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-premium" data-tier="Premium">
-          <h3><span class="nv-badge">PREMIUM</span> Royal Restore</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Tam reset, özel gün.</p>
-          <p class="nv-meta"><b>Hissi:</b> Beden &amp; zihin tamamen yenilenir.</p>
-          <ul class="nv-list">
-            <li>Özel köpük + kese</li>
-            <li>120 dk Signature masaj</li>
-            <li>Sessiz dinlenme</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Private Suite / Couple versiyon</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
+      <div class="nv-card" data-reveal>
+        <h2>Premium</h2>
+        <p>Uzun rahatlama + yüz bakımı.</p>
+        <a href="#nv-wa" class="nv-explore" data-wa="1" data-nv-open-reservation>Seç</a>
       </div>
     </section>
 
-    <!-- Hamam + Spor Recovery -->
-    <section class="nv-pack-section" id="hamam-spor" data-family="Hamam + Spor Recovery">
-      <header class="nv-pack-header">
-        <h2>Hamam + Spor Recovery</h2>
-        <p>Isıtmalı mermer ve hedefli dokunuşlarla toparlanma.</p>
-      </header>
-      <div class="nv-card-grid">
-        <article class="nv-card nv-tier-entry" data-tier="Entry">
-          <h3><span class="nv-badge">ENTRY</span> Quick Recovery</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Hafif spor sonrası.</p>
-          <p class="nv-meta"><b>Hissi:</b> Kaslar rahatlar.</p>
-          <ul class="nv-list">
-            <li>Köpük + kese</li>
-            <li>45 dk hedefli masaj (sırt/omuz)</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Soğuk havlu + mini hot stone</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-value" data-tier="Value">
-          <h3><span class="nv-badge">VALUE</span> Athlete Reset</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Koşu/ağırlık günü sonrası.</p>
-          <p class="nv-meta"><b>Hissi:</b> Derin çözülme.</p>
-          <ul class="nv-list">
-            <li>Arındırıcı hamam</li>
-            <li>75 dk sports / deep tissue</li>
-            <li>Mobilite germe</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Magnesium balm</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-premium" data-tier="Premium">
-          <h3><span class="nv-badge">PREMIUM</span> Performance Suite</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Yoğun sporcular.</p>
-          <p class="nv-meta"><b>Hissi:</b> Kontrollü güçlü toparlama.</p>
-          <ul class="nv-list">
-            <li>Isıtmalı mermerde köpük</li>
-            <li>90 dk sports + sıcak taş kontrastı</li>
-            <li>Soğuk jel &amp; mobilite</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Buz banyo / magnesium rub</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Face / Glow / Youth -->
-    <section class="nv-pack-section" id="face" data-family="Face / Glow / Youth">
-      <header class="nv-pack-header">
-        <h2>Face / Glow / Youth</h2>
-        <p>Konfor, nem, canlı görünüm — Sothys odaklı yüz akışları.</p>
-      </header>
-      <div class="nv-card-grid">
-        <article class="nv-card nv-tier-entry" data-tier="Entry">
-          <h3><span class="nv-badge">ENTRY</span> Calm &amp; Glow</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Hassasiyet / matlık.</p>
-          <p class="nv-meta"><b>Hissi:</b> Sakin ve taze.</p>
-          <ul class="nv-list">
-            <li>Nazik temizleme + maske</li>
-            <li>45 dk yüz masajı</li>
-            <li>Nem kapanışı</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Göz çevresi soğutucu jel</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-value" data-tier="Value">
-          <h3><span class="nv-badge">VALUE</span> Active Revive</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Şehir yorgunluğu.</p>
-          <p class="nv-meta"><b>Hissi:</b> Doku pürüzsüzleşir.</p>
-          <ul class="nv-list">
-            <li>Youth Intensive serum + masaj</li>
-            <li>50 dk bakım</li>
-            <li>Koku hassasiyeti için tester</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Boyun &amp; dekolte ekle</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-premium" data-tier="Premium">
-          <h3><span class="nv-badge">PREMIUM</span> Prestige Ritual</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Akşam/özel davet.</p>
-          <p class="nv-meta"><b>Hissi:</b> Sessiz ışıltı, kadife doku.</p>
-          <ul class="nv-list">
-            <li>Secrets de Sothys Prestige krem</li>
-            <li>60 dk ritüel</li>
-            <li>Serin taş masajı</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Ampul uygulama</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Signature & Prestige / Couples -->
-    <section class="nv-pack-section" id="signature" data-family="Signature & Prestige / Couples">
-      <header class="nv-pack-header">
-        <h2>Signature &amp; Prestige / Couples</h2>
-        <p>Suite hissi, düşük konuşma, senkron ritim.</p>
-      </header>
-      <div class="nv-card-grid">
-        <article class="nv-card nv-tier-entry" data-tier="Entry">
-          <h3><span class="nv-badge">ENTRY</span> Quiet Suite 60</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Premium ilk deneyim.</p>
-          <p class="nv-meta"><b>Hissi:</b> Sessiz rahatlama.</p>
-          <ul class="nv-list">
-            <li>60 dk signature relax</li>
-            <li>Düşük konuşma</li>
-            <li>Pamuk havlu</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Mum ışı</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-value" data-tier="Value">
-          <h3><span class="nv-badge">VALUE</span> Candlelight Relax 90</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Çift kutlaması.</p>
-          <p class="nv-meta"><b>Hissi:</b> Senkron, yavaş ritim.</p>
-          <ul class="nv-list">
-            <li>90 dk senkron masaj</li>
-            <li>Mum ışığı</li>
-            <li>Bitki çayı finali</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> 20 dk hamam ısısı</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-
-        <article class="nv-card nv-tier-premium" data-tier="Premium">
-          <h3><span class="nv-badge">PREMIUM</span> Signature Suite 120</h3>
-          <p class="nv-meta"><b>Kimler için:</b> Tam premium kaçış.</p>
-          <p class="nv-meta"><b>Hissi:</b> Derin reset + suite konforu.</p>
-          <ul class="nv-list">
-            <li>120 dk signature + aroma katman</li>
-            <li>Sessiz private suite</li>
-            <li>Sıcak taş + soğuk havlu kontrastı</li>
-          </ul>
-          <p class="nv-upgrade"><b>Upgrade:</b> Çift foto-safe kapanış</p>
-          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp’tan ayırt</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- WhatsApp anchor -->
-    <section id="nv-wa" class="nv-wa">
-      <div>
-        <h2>WhatsApp ile Rezervasyon</h2>
-        <p>Hızlı seçim: Entry / Value / Premium → saat → 15 dk hold → onay.</p>
-      </div>
-      <a class="nv-cta nv-wa-link" href="#" data-wa="1" data-nv-open-reservation>WhatsApp'tan yaz</a>
+    <section class="nv-feature-lite" data-reveal>
+      <h3>Paketler &ndash; NEUROVA</h3>
+      <p>Entry, Value, Premium &mdash; karar yorgunluğu olmadan doğru kombin.</p>
     </section>
   </main>
 
-  <div id="nv-footer-slot"></div>
+  <footer class="nv-footer">
+    <div class="nv-footer-inner">
+      <div class="nv-footer-brand">
+        <span class="brand-name">NEUROVA</span>
+        <span class="brand-sub">Spa &amp; Wellness</span>
+      </div>
+
+      <nav class="nv-footer-links" aria-label="Alt gezinme">
+        <a href="./packages.html">Paketler</a>
+        <a href="./hamam.html">Hamam</a>
+        <a href="./masajlar.html">Masajlar</a>
+        <a href="./face-sothys.html">Face</a>
+        <a href="./about.html">Hakkımızda</a>
+      </nav>
+
+      <div class="nv-footer-lang" aria-label="Dil seçimi">
+        <a href="./index.html" class="active">TR</a> /
+        <a href="./en/paketler.html">EN</a>
+      </div>
+
+      <div class="nv-footer-contact">
+        <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+        <span>&copy; 2025 NEUROVA</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="nv-wa" aria-hidden="true"></div>
 
   <script>
-    (async function () {
+    (function () {
+      const slot = document.getElementById('nv-nav-slot');
+      if (!slot) return;
+
       const fallbackNav = `
-        <header class="nv-header nv-header--fallback" data-nv-header>
-          <div class="nv-shell">
-            <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
-              <span class="nv-brand__word">NEUROVA</span>
-              <span class="nv-brand__sub">Spa & Wellness</span>
-            </a>
+<header class="nv-header nv-header--fallback" data-nv-header>
+  <div class="nv-shell">
+    <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
+      <span class="nv-brand__word">NEUROVA</span>
+      <span class="nv-brand__sub">Spa &amp; Wellness</span>
+    </a>
 
-            <div class="nv-nav-row">
-              <nav class="nv-nav" aria-label="Primary">
-                <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
-                <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
-                <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-                <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
-                <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
-                <a class="nv-link" data-nav="paketler" href="./paketler.html">Paketler</a>
-                <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
-              </nav>
+    <div class="nv-nav-row">
+      <nav class="nv-nav" aria-label="Primary">
+        <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
+        <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
+        <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+        <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
+        <a class="nv-link" data-nav="paketler" href="./packages.html">Paketler</a>
+        <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
+      </nav>
 
-              <div class="nv-dropdown" data-nv-dropdown>
-                <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
-                  Kurumsal ▾
-                </button>
+      <div class="nv-dropdown" data-nv-dropdown>
+        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+          Kurumsal &#9662;
+        </button>
 
-                <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
-                  <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
-                  <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
-                  <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
-                </div>
-              </div>
-            </div>
+        <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
+          <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
+          <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
+          <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
+        </div>
+      </div>
+    </div>
 
-            <div class="nv-actions">
-              <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
-              <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
-                <span></span><span></span>
-              </button>
-            </div>
-          </div>
+    <div class="nv-actions">
+      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+      <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
 
-          <div class="nv-mpanel" data-nv-mobile-panel hidden>
-            <div class="nv-mpanel__inner">
-              <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
-              <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
-              <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-              <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
-              <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
-              <a class="nv-mlink" data-nav="paketler" href="./paketler.html">Paketler</a>
-              <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
+  <div class="nv-mpanel" data-nv-mobile-panel hidden>
+    <div class="nv-mpanel__inner">
+      <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
+      <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
+      <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
+      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids &amp; Family</a>
+      <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
+      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Paketler</a>
+      <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
 
-              <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
-              <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
-              <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
+      <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
+      <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
+      <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
 
-              <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
-            </div>
-          </div>
-        </header>
+      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+    </div>
+  </div>
+</header>
       `;
 
-      const load = async (id, url, fallback) => {
-        const s = document.getElementById(id);
-        if (!s) return;
-        try {
-          const res = await fetch(url, { cache: 'no-store' });
-          if (!res.ok) throw new Error('fetch failed');
-          const html = await res.text();
-          if (!html.trim()) throw new Error('empty');
-          s.innerHTML = html;
-        } catch (e) {
-          if (fallback) s.innerHTML = fallback;
-        }
-      };
-
-      await Promise.all([
-        load('nv-nav-slot', './nav.html', fallbackNav),
-        load('nv-footer-slot', './footer.html')
-      ]);
+      slot.innerHTML = fallbackNav;
     })();
   </script>
 
-  <script defer src="./assets/nav.js"></script>
+  <script>
+    (function () {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      if (!('IntersectionObserver' in window) || !els.length) {
+        els.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      els.forEach((el) => obs.observe(el));
+    })();
+  </script>
+
   <script src="./wa-config.js"></script>
-  <script src="./wa-linker.js"></script>
+  <script defer src="./wa-linker.js"></script>
+  <script src="./slot-macro.js"></script>
+  <script defer src="./assets/nav.js"></script>
 </body>
 
 </html>

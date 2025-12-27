@@ -1,0 +1,114 @@
+
+{
+  "protocolVersion": "PROTU v1.0",
+  "documentId": "NEUROVA_DATAFLOW_v1.json",
+  "status": "DRAFT",
+  "dataSchema": {
+    "products": {
+      "tableName": "products",
+      "columns": [
+        {"name": "product_id", "type": "UUID", "isPrimary": true},
+        {"name": "name", "type": "VARCHAR(255)", "validation": ["required", "maxLength:255"]},
+        {"name": "description", "type": "TEXT"},
+        {"name": "price", "type": "DECIMAL(10, 2)", "validation": ["required", "min:0"]},
+        {"name": "type", "type": "ENUM('Service', 'Good')", "validation": ["required"]},
+        {"name": "created_at", "type": "TIMESTAMPZ", "default": "NOW()"}
+      ]
+    },
+    "guests": {
+      "tableName": "guests",
+      "columns": [
+        {"name": "guest_id", "type": "UUID", "isPrimary": true},
+        {"name": "first_name", "type": "VARCHAR(255)", "pii": true, "validation": ["required"]},
+        {"name": "last_name", "type": "VARCHAR(255)", "pii": true, "validation": ["required"]},
+        {"name": "email", "type": "VARCHAR(255)", "pii": true, "unique": true, "validation": ["required", "email"]},
+        {"name": "phone_number", "type": "VARCHAR(50)", "pii": true},
+        {"name": "loyalty_tier", "type": "ENUM('Bronze', 'Silver', 'Gold')", "default": "'Bronze'"},
+        {"name": "created_at", "type": "TIMESTAMPZ", "default": "NOW()"}
+      ]
+    },
+    "transactions": {
+      "tableName": "transactions",
+      "columns": [
+        {"name": "transaction_id", "type": "UUID", "isPrimary": true},
+        {"name": "guest_id", "type": "UUID", "foreignKey": "guests(guest_id)"},
+        {"name": "amount", "type": "DECIMAL(10, 2)", "validation": ["required"]},
+        {"name": "currency", "type": "CHAR(3)", "default": "'TRY'"},
+        {"name": "transaction_time", "type": "TIMESTAMPZ", "default": "NOW()"},
+        {"name": "status", "type": "ENUM('pending', 'completed', 'failed', 'refunded')"},
+        {"name": "data_hash", "type": "CHAR(64)", "description": "SHA-256 hash of key transaction data to ensure integrity."}
+      ],
+      "relations": [
+        {
+          "type": "many-to-many",
+          "targetTable": "products",
+          "throughTable": "transaction_items",
+          "columns": [
+            {"name": "transaction_id", "type": "UUID"},
+            {"name": "product_id", "type": "UUID"},
+            {"name": "quantity", "type": "INTEGER", "default": 1}
+          ]
+        }
+      ]
+    }
+  },
+  "dataFlow": {
+    "realtime": [
+      {
+        "flowName": "Guest Check-in",
+        "source": "PMS API Event",
+        "steps": [
+          "1. PMS sends `checkin` event with guest data.",
+          "2. Ingestion layer captures event and pushes to Kafka topic `pms_events`.",
+          "3. CRM module consumes event, creates or updates `guests` record.",
+          "4. AI Engine is notified to pre-load guest preference vector.",
+          "5. A log is written to `interaction_logs`."
+        ],
+        "consistencyProtocol": "Compensating Transaction: If CRM update fails, log error and alert staff dashboard."
+      }
+    ],
+    "batch": [
+      {
+        "flowName": "End-of-Day Sales Aggregation",
+        "schedule": "Daily at 23:59",
+        "source": "`transactions` and `transaction_items` tables",
+        "steps": [
+          "1. Airflow DAG is triggered.",
+          "2. Spark job reads all `completed` transactions for the day.",
+          "3. Data is aggregated by product, by hour, and by guest loyalty tier.",
+          "4. Aggregated results are loaded into the `agg_daily_sales` table in the Data Warehouse.",
+          "5. A checksum is calculated for total sales and stored in `data_audit_log`."
+        ],
+        "consistencyProtocol": "Idempotent write. If job fails, it can be re-run safely. Checksum validation against source data post-run."
+      }
+    ]
+  },
+  "errorHandlingProtocols": {
+    "transactionIntegrity": {
+      "name": "Transactional Data Integrity Protocol",
+      "method": "ACID principles enforced by PostgreSQL.",
+      "steps": {
+        "preCommit": "Calculate SHA-256 hash of a concatenated string of `guest_id`, `amount`, `currency`, and a server-side secret salt.",
+        "commit": "Store the transaction data along with the `data_hash`.",
+        "postCommit_validation": "A separate audit process can periodically recalculate hashes to verify integrity against tampering."
+      }
+    },
+    "piiAccess": {
+      "name": "PII Data Access Protocol",
+      "method": "Role-Based Access Control (RBAC) and Audit Logging.",
+      "rules": [
+        "All access to tables/columns with `pii: true` must be logged to `pii_access_log`.",
+        "Decryption of PII data is only allowed within the SECURITY module for authorized roles (e.g., 'Admin', 'Concierge').",
+        "Data returned via general APIs must have PII fields masked or omitted by default."
+      ]
+    },
+    "systemRollback": {
+      "name": "System State Rollback Protocol",
+      "method": "Database Snapshots and GitOps.",
+      "procedures": {
+        "database": "Leverage AWS RDS automated snapshots (every 6 hours) with point-in-time recovery.",
+        "application": "All application state and configuration is managed via Git. A `git revert` combined with a CI/CD pipeline trigger can roll back to a previous stable version."
+      }
+    }
+  }
+}
