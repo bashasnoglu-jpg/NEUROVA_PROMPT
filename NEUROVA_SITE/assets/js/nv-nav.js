@@ -1,0 +1,223 @@
+﻿(function () {
+  const prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const docLang = (document.documentElement.lang || '').toLowerCase();
+  const isEnglish = docLang.startsWith('en');
+
+  const NV_ROUTES = {
+    tr: {
+      home: '/index.html',
+      hamam: '/hamam.html',
+      massages: '/masajlar.html',
+      kids: '/kids-family.html',
+      face: '/face-sothys.html',
+      products: '/products.html',
+      about: '/about.html',
+      team: '/team.html',
+      packages: '/paketler.html',
+      gallery: '/galeri.html'
+    },
+    en: {
+      home: '/en/index.html',
+      hamam: '/en/hamam.html',
+      massages: '/en/masajlar.html',
+      kids: '/en/kids-family.html',
+      face: '/en/face-sothys.html',
+      products: '/en/products.html',
+      about: '/en/about.html',
+      team: '/en/team.html',
+      packages: '/en/packages.html',
+      gallery: '/en/galeri.html'
+    }
+  };
+
+  const lang = isEnglish ? 'en' : 'tr';
+  const R = NV_ROUTES[lang] || NV_ROUTES.tr;
+
+  const navItems = isEnglish ? [
+    { page: 'home', label: 'Home', href: R.home },
+    { page: 'hamam', label: 'Hammam', href: R.hamam },
+    { page: 'masajlar', label: 'Massages', href: R.massages },
+    { page: 'kids-family', label: 'Kids & Family', href: R.kids },
+    { page: 'face-sothys', label: 'Face & Sothys', href: R.face },
+    { page: 'products', label: 'Products / Store', href: R.products },
+    { page: 'paketler', label: 'Packages', href: R.packages },
+    { page: 'galeri', label: 'Gallery', href: R.gallery },
+    { page: 'about', label: 'About', href: R.about },
+    { page: 'team', label: 'Our Team', href: R.team }
+  ] : [
+    { page: 'home', label: 'Ana Sayfa', href: R.home },
+    { page: 'hamam', label: 'Hamam', href: R.hamam },
+    { page: 'masajlar', label: 'Masajlar', href: R.massages },
+    { page: 'kids-family', label: 'Kids & Family', href: R.kids },
+    { page: 'face-sothys', label: 'Face & Sothys', href: R.face },
+    { page: 'products', label: 'Ürünler', href: R.products },
+    { page: 'paketler', label: 'Paketler', href: R.packages },
+    { page: 'galeri', label: 'Galeri', href: R.gallery },
+    { page: 'about', label: 'Hakkımızda', href: R.about },
+    { page: 'team', label: 'Ekibimiz', href: R.team }
+  ];
+
+  const navSlot = document.getElementById('nv-nav-slot');
+  if (!navSlot) return;
+
+  const qs = (sel, root = document) => root.querySelector(sel);
+  const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  const navLinks = navItems.map((item) =>
+    `<a class="nv-link" href="${item.href}" data-page="${item.page}">${item.label}</a>`
+  ).join('');
+
+  const mobileLinks = navItems.map((item) =>
+    `<a class="nv-mlink" href="${item.href}" data-page="${item.page}">${item.label}</a>`
+  ).join('');
+
+  const ctaLabel = isEnglish ? 'Reservation' : 'Rezervasyon';
+
+  navSlot.innerHTML = `
+    <header class="nv-header" data-nv-header>
+      <div class="nv-shell">
+        <a class="nv-brand" href="${R.home}" aria-label="NEUROVA Home">
+          <span class="nv-brand__word">NEUROVA</span>
+          <span class="nv-brand__sub">Spa & Wellness</span>
+        </a>
+
+        <div class="nv-nav-row">
+          <nav class="nv-nav" aria-label="Primary">
+            ${navLinks}
+          </nav>
+
+          <div class="nv-actions">
+            <a class="nv-cta nv-nav-cta" href="#nv-wa" data-nv-open-reservation>${ctaLabel}</a>
+            <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menü" aria-expanded="false">
+              <span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="nv-mpanel" data-nv-mobile-panel aria-hidden="true" hidden>
+      <div class="nv-mpanel__inner">
+        ${mobileLinks}
+        <div class="nv-mobile__cta--sticky">
+          <a class="nv-cta nv-nav-cta" href="#nv-wa" data-nv-open-reservation>${ctaLabel}</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const normalizePath = () => {
+    const last = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    return last.split('?')[0].split('#')[0];
+  };
+
+  // âœ… Slug standardÄ±: body data-page bunlardan biri olmalÄ±
+  const pathMap = {
+    'index.html': 'home',
+    'hamam.html': 'hamam',
+    'masajlar.html': 'masajlar',
+    'kids-family.html': 'kids-family',
+    'face-sothys.html': 'face-sothys',
+    'products.html': 'products',
+    'urunler.html': 'products',
+    'about.html': 'about',
+    'team.html': 'team',
+    'packages.html': 'paketler',
+    'paketler.html': 'paketler',
+    'galeri.html': 'galeri'
+  };
+
+  function setActiveNav() {
+    const bodySlug = document.body.dataset.page;
+    const slug = bodySlug || pathMap[normalizePath()] || null;
+    if (slug && !bodySlug) document.body.dataset.page = slug;
+    if (!slug) return;
+    qsa(`[data-page="${slug}"]`).forEach((el) => el.classList.add('is-active'));
+  }
+
+  function setLock(on) {
+    document.documentElement.classList.toggle('nv-lock', !!on);
+    document.body.classList.toggle('nv-lock', !!on);
+  }
+
+  function wireMobilePanel() {
+    const toggle = qs('[data-nv-mobile-toggle]', navSlot);
+    const panel = qs('[data-nv-mobile-panel]', navSlot);
+    if (!toggle || !panel) return;
+
+    const OPEN_CLASS = 'is-open';
+    const BURGER_CLASS = 'is-open';
+
+    let hideTimer = null;
+
+    const close = () => {
+      if (hideTimer) { window.clearTimeout(hideTimer); hideTimer = null; }
+
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove(BURGER_CLASS);
+      panel.classList.remove(OPEN_CLASS);
+      panel.setAttribute('aria-hidden', 'true');
+      const delay = prefersReduced ? 0 : 180;
+      hideTimer = window.setTimeout(() => {
+        panel.hidden = true;
+        hideTimer = null;
+      }, delay);
+      setLock(false);
+    };
+
+    const open = () => {
+      if (hideTimer) { window.clearTimeout(hideTimer); hideTimer = null; }
+
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.classList.add(BURGER_CLASS);
+      panel.hidden = false;
+      panel.classList.add(OPEN_CLASS);
+      panel.setAttribute('aria-hidden', 'false');
+      setLock(true);
+    };
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      expanded ? close() : open();
+    });
+
+    panel.addEventListener('click', (e) => {
+      if (e.target === panel) close();
+    });
+
+    qsa('a', panel).forEach((a) => a.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+
+  function openReservation() {
+    const fn =
+      window.NV_OPEN_RESERVATION ||
+      window.nvOpenReservation ||
+      window.openReservation ||
+      null;
+
+    if (typeof fn === 'function') return fn();
+
+    const anchor = document.getElementById('nv-wa');
+    if (anchor) anchor.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  // âœ… Her durumda modal varsa aÃ§, yoksa #nv-waâ€™ya kay
+  function wireReservationTriggers(root = document) {
+    root.querySelectorAll('[data-nv-open-reservation]').forEach((el) => {
+      if (el.dataset.nvReservationWired === '1') return;
+      el.dataset.nvReservationWired = '1';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openReservation();
+      });
+    });
+  }
+
+  setActiveNav();
+  wireMobilePanel();
+  wireReservationTriggers(document);
+})();
+

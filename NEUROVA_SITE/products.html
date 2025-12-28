@@ -1,264 +1,342 @@
-<!DOCTYPE html>
-<html lang="tr" data-lang="tr">
-
+﻿<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="NEUROVA Spa & Wellness - online mağaza: hediyeler, ev bakımı, Sothys cilt ürünleri. Kurye + resepsiyon teslim." />
-  <meta property="og:title" content="NEUROVA - Spa & Wellness" />
-  <meta property="og:description" content="Ritüel tasarımı ile beden ve zihin için zarif bir reset. Online mağazada aynı gün teslim." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://neurova.site/assets/og-banner.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#eee9e4" />
-  <link rel="icon" href="./assets/favicon.png" />
-  <link rel="manifest" href="./manifest.webmanifest" />
-  <title>NEUROVA - Ürünler</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUROVA - ÃœrÃ¼nler</title>
+    <meta name="description" content="NEUROVA Online MaÄŸaza: Sothys cilt bakÄ±mÄ±, aromaterapi yaÄŸlarÄ± ve Ã¶zel hediye setleri. Maslak ve Ã§evresine aynÄ± gÃ¼n kurye veya spa resepsiyonundan teslim." />
+    <link rel="canonical" href="https://neurova.site/products.html" />
+    <meta property="og:title" content="NEUROVA - ÃœrÃ¼nler" />
+    <meta property="og:description" content="NEUROVA Online MaÄŸaza: Sothys cilt bakÄ±mÄ±, aromaterapi yaÄŸlarÄ± ve Ã¶zel hediye setleri. Maslak ve Ã§evresine aynÄ± gÃ¼n kurye veya spa resepsiyonundan teslim." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://neurova.site/products.html" />
+    <meta property="og:image" content="https://neurova.site/assets/og-banner.jpg" />
+    <meta property="og:site_name" content="NEUROVA" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NEUROVA - ÃœrÃ¼nler" />
+    <meta name="twitter:description" content="NEUROVA Online MaÄŸaza: Sothys cilt bakÄ±mÄ±, aromaterapi yaÄŸlarÄ± ve Ã¶zel hediye setleri. Maslak ve Ã§evresine aynÄ± gÃ¼n kurye veya spa resepsiyonundan teslim." />
+    <meta name="twitter:image" content="https://neurova.site/assets/og-banner.jpg" />
+    <link rel="icon" href="/assets/favicon.png" />
+    
+  <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/nav.css?v=1" />
 
-  <link rel="stylesheet" href="./assets/nav.css" />
-  <link rel="stylesheet" href="./assets/products-store.css" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet" />
-  <noscript>
-    <style>
-      [data-reveal] {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    </style>
-  </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/products-store.css">
+    <link rel="stylesheet" href="/assets/css/nv-modern.css?v=1">
+    <link rel="stylesheet" href="/assets/css/arch-theme.css?v=1">
+<link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
 </head>
+<body data-lang="tr" data-page="products">
+  <div id="nv-nav-slot"></div>
 
-<body data-lang="tr" data-page="urunler">
-  <div class="background-layer" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="none">
-      <source src="https://cdn.pixabay.com/video/2023/11/20/191445-889081177_large.mp4" type="video/mp4">
-      Tarayıcınız video etiketini desteklemiyor.
-    </video>
-    <div class="overlay"></div>
-  </div>
-
-  <div class="lang-switch" aria-label="Dil seçimi">
-    <a href="./index.html" class="active">TR</a> / <a href="./en/products.html">EN</a>
-  </div>
-
-  <div id="nv-nav-slot" data-nav-fallback></div>
-
-  <main>
-    <section class="store-hero" data-reveal>
-      <div class="hero-copy">
-        <p class="eyebrow">Online Mağaza</p>
-        <h1>Bakım, hediye, kurye. Aynı gün.</h1>
-        <p>Resepsiyon teslimi veya kurye ile seçili setler. Hediye notu ve kutu dahil; terapist seçimi kombinler.</p>
-        <div class="hero-actions">
-          <a class="nv-cta" href="#nv-wa" data-wa="1">Uzman önerisi</a>
-          <a class="nv-cta nv-cta-ghost" href="#store-grid">Koleksiyona in</a>
-        </div>
-        <div class="hero-chips">
-          <span>30 dk içinde hazır</span>
-          <span>Hediye notu / kutu</span>
-          <span>Sothys &amp; spa formülleri</span>
-        </div>
-      </div>
-      <div class="hero-meta">
-        <div class="stat-card">
-          <h3 data-cart-count>Sepet: 0</h3>
-          <p>Seçtikleriniz hazırlanır, resepsiyona bırakılır.</p>
-        </div>
-        <div class="stat-card">
-          <h3>Kürasyon</h3>
-          <p>Bütçe ve hissi yazın, üçlü set önerelim.</p>
-        </div>
-        <div class="stat-card">
-          <h3>Kurye / Teslim</h3>
-          <p>Maslak ve çevre bölgelere aynı gün kurye.</p>
-        </div>
-      </div>
+  <main class="arch-container">
+    <div class="arch-block feature-wide page-hero">
+    <section class="store-hero">
+    <div class="hero-copy">
+    <p class="eyebrow">Online MaÄŸaza</p>
+    <h1>BakÄ±m, hediye, kurye. AynÄ± gÃ¼n.</h1>
+    <p>Resepsiyon teslimi veya kurye ile seÃ§ili setler. Hediye notu ve kutu dahil; terapist seÃ§imi kombinler.</p>
+    <div class="hero-actions">
+    <a class="nv-cta" href="#nv-wa" data-wa="1">Uzman Ã–nerisi</a>
+    <a class="nv-cta nv-cta-ghost" href="#store-grid">Koleksiyona in</a>
+    </div>
+    <div class="hero-chips">
+    <span>30 dk iÃ§inde hazÄ±r</span>
+    <span>Hediye notu / kutu</span>
+    <span>Sothys &amp; spa formÃ¼lleri</span>
+    </div>
+    </div>
+    <div class="hero-meta">
+    <div class="stat-card">
+    <h3 data-cart-count>Sepet: 0</h3>
+    <p>SeÃ§tikleriniz hazÄ±rlanÄ±r, resepsiyona bÄ±rakÄ±lÄ±r.</p>
+    </div>
+    <div class="stat-card">
+    <h3>Kurasyon</h3>
+    <p>BÃ¼tÃ§e ve hissi yazÄ±n, Ã¶lÃ§Ã¼lÃ¼ set Ã¶nerelim.</p>
+    </div>
+    <div class="stat-card">
+    <h3>Kurye / Teslim</h3>
+    <p>Maslak ve Ã§evre bÃ¶lgelere aynÄ± gÃ¼n kurye.</p>
+    </div>
+    </div>
     </section>
+    </div>
 
-    <section class="store-shell" data-reveal>
-      <div class="filter-bar">
-        <div class="filter-buttons" role="tablist" aria-label="Ürün filtreleri">
-          <button class="is-active" type="button" data-filter="all">Hepsi</button>
-          <button type="button" data-filter="gift">Hediye setleri</button>
-          <button type="button" data-filter="home">Ev bakımı</button>
-          <button type="button" data-filter="face">Face &amp; Sothys</button>
-          <button type="button" data-filter="calm">Dinlenme</button>
-        </div>
-        <div class="filter-hint">Bugün teslim / kurye · Hediye notu dahil</div>
-      </div>
+    <div class="arch-block feature-wide nv-store-filter">
+    <div class="filter-bar">
+    <div class="filter-buttons" role="tablist" aria-label="ÃœrÃ¼n filtreleri">
+    <button class="is-active" type="button" data-filter="all">Hepsi</button>
+    <button type="button" data-filter="gift">Hediye setleri</button>
+    <button type="button" data-filter="home">Ev bakÄ±mÄ±</button>
+    <button type="button" data-filter="face">Face &amp; Sothys</button>
+    <button type="button" data-filter="calm">Dinlenme</button>
+    </div>
+    <div class="filter-hint">BugÃ¼n teslim / kurye â€¢ Hediye notu dahil</div>
+    </div>
+    </div>
 
-      <div class="store-layout">
-        <div class="product-grid" data-product-grid id="store-grid"></div>
+    <article id="store-grid" class="arch-block feature-third product-card nv-product-card" data-category="gift">
+    <div class="card-badge">Yeni</div>
+    <div class="card-header">
+    <div class="card-price">â‚º2.450</div>
+    <h3>RitÃ¼el Hediye Kutusu</h3>
+    <p>Spa ritÃ¼eli: masaj yaÄŸÄ±, peeling, aromatik tÃ¼tsÃ¼ + kiÅŸisel not.</p>
+    </div>
+    <ul class="card-features">
+    <li>Hediye kutusu</li>
+    <li>Not kartÄ±</li>
+    <li>AynÄ± gÃ¼n kurye</li>
+    <li>SÄ±cak taÅŸ masaj yaÄŸÄ± 100 ml</li>
+    <li>Åeker peeling 150 gr</li>
+    <li>Cam tÃ¼tsÃ¼ + seramik tabak</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p1" data-name="RitÃ¼el Hediye Kutusu" data-price="2450">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
 
-        <aside class="cart-panel" id="store-cart">
-          <div class="cart-header">
-            <div>
-              <p class="eyebrow">Sepet</p>
-              <h3 class="cart-title">Hazırlıyoruz</h3>
-            </div>
-            <span class="pill" data-cart-count>Sepet: 0</span>
-          </div>
+    <article class="arch-block feature-third product-card nv-product-card" data-category="gift">
+    <div class="card-badge">Hediye</div>
+    <div class="card-header">
+    <div class="card-price">â‚º1.950</div>
+    <h3>Signature Spa Set</h3>
+    <p>SakinleÅŸtirici ikili: aromatik yaÄŸ + mineral duÅŸ peelingi.</p>
+    </div>
+    <ul class="card-features">
+    <li>Kutulu teslim</li>
+    <li>DuÅŸta hÄ±zlÄ± bakÄ±m</li>
+    <li>Aromaterapi vÃ¼cut yaÄŸÄ± 120 ml</li>
+    <li>Mineral duÅŸ peelingi 180 ml</li>
+    <li>Koku hassasiyeti iÃ§in hafif nota</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p2" data-name="Signature Spa Set" data-price="1950">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
 
-          <div class="cart-items" data-cart-items></div>
+    <article class="arch-block feature-third product-card nv-product-card" data-category="calm">
+    <div class="card-badge">Rahatlama</div>
+    <div class="card-header">
+    <div class="card-price">â‚º1.380</div>
+    <h3>Rahatlama AkÅŸam Seti</h3>
+    <p>Uyku Ã¶ncesi: mist + masaj yaÄŸÄ± mini + lavanta balm.</p>
+    </div>
+    <ul class="card-features">
+    <li>UÃ§uÅŸ / seyahat</li>
+    <li>Hafif kokular</li>
+    <li>Uyku ritÃ¼eli mist 100 ml</li>
+    <li>Mini masaj yaÄŸÄ± 50 ml</li>
+    <li>Lavanta balm stick</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p3" data-name="Rahatlama AkÅŸam Seti" data-price="1380">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
 
-          <div class="cart-summary">
-            <div class="summary-row">
-              <span>Ara toplam</span>
-              <span data-cart-total>0 TL</span>
-            </div>
-            <p class="summary-note">Resepsiyon teslim veya kurye için bize yazın.</p>
-            <p class="summary-note">Hediye notu, bütçe ve teslim tercihlerini mesajda ekleyin.</p>
-            <div class="cart-actions">
-              <button class="nv-cta" type="button" data-checkout>WhatsApp Sipariş</button>
-              <button class="nv-cta nv-cta-ghost" type="button" data-curation>Biz seçelim</button>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+    <article class="arch-block feature-third product-card nv-product-card" data-category="home">
+    <div class="card-badge">Ev bakÄ±mÄ±</div>
+    <div class="card-header">
+    <div class="card-price">â‚º690</div>
+    <h3>Aromaterapi Masaj YaÄŸÄ±</h3>
+    <p>IsÄ±tÄ±cÄ± notalar, evde 20 dakikalÄ±k self-care iÃ§in.</p>
+    </div>
+    <ul class="card-features">
+    <li>IsÄ±tÄ±cÄ±</li>
+    <li>Terapist onaylÄ±</li>
+    <li>100 ml, 10-12 kullanÄ±m</li>
+    <li>Germe sonrasÄ± rahatlatÄ±cÄ±</li>
+    <li>Kuru cilde hÄ±zlÄ± emilim</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p4" data-name="Aromaterapi Masaj YaÄŸÄ±" data-price="690">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
 
-    <section class="assurance" data-reveal>
+    <article class="arch-block feature-third product-card nv-product-card" data-category="home">
+    <div class="card-badge">Ev bakÄ±mÄ±</div>
+    <div class="card-header">
+    <div class="card-price">â‚º560</div>
+    <h3>GÃ¼l Kuvars VÃ¼cut Peelingi</h3>
+    <p>Jojoba yaÄŸlÄ±, duÅŸta hÄ±zlÄ± yenileme. DuÅŸ sonrasÄ± nemli bÄ±rakÄ±r.</p>
+    </div>
+    <ul class="card-features">
+    <li>DuÅŸta bakÄ±m</li>
+    <li>IÅŸÄ±ltÄ± etkisi</li>
+    <li>180 ml, 8-10 kullanÄ±m</li>
+    <li>Jojoba &amp; kayÄ±sÄ± Ã§ekirdeÄŸi</li>
+    <li>Hafif gÃ¼l kuvars notasÄ±</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p5" data-name="GÃ¼l Kuvars VÃ¼cut Peelingi" data-price="560">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
+
+    <article class="arch-block feature-third product-card nv-product-card" data-category="calm">
+    <div class="card-badge">Rahatlama</div>
+    <div class="card-header">
+    <div class="card-price">â‚º520</div>
+    <h3>Uyku RitÃ¼eli Mist</h3>
+    <p>YastÄ±k + oda iÃ§in lavanta/neroli. Hafif, yaÄŸsÄ±z.</p>
+    </div>
+    <ul class="card-features">
+    <li>YastÄ±k spreyi</li>
+    <li>Uyku Ã¶ncesi</li>
+    <li>100 ml, 70+ pÃ¼skÃ¼rtme</li>
+    <li>YaÄŸsÄ±z formÃ¼l, leke bÄ±rakmaz</li>
+    <li>Hafif koku hassasiyetine uygun</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p6" data-name="Uyku RitÃ¼eli Mist" data-price="520">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
+
+    <article class="arch-block feature-third product-card nv-product-card" data-category="face">
+    <div class="card-badge">Face</div>
+    <div class="card-header">
+    <div class="card-price">â‚º2.450</div>
+    <h3>Sothys Hydra-Serum</h3>
+    <p>YoÄŸun nem, matlaÅŸma yapmaz. Klinik Sothys serisi.</p>
+    </div>
+    <ul class="card-features">
+    <li>Klinik seri</li>
+    <li>YaÄŸsÄ±z</li>
+    <li>GÃ¼ndÃ¼z + gece, 50 ml</li>
+    <li>Su bazlÄ±, hafif doku</li>
+    <li>TÃ¼m cilt tiplerine uygun</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p7" data-name="Sothys Hydra-Serum" data-price="2450">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
+
+    <article class="arch-block feature-third product-card nv-product-card" data-category="face">
+    <div class="card-badge">Face</div>
+    <div class="card-header">
+    <div class="card-price">â‚º1.850</div>
+    <h3>Sothys GÃ¶z Ã‡evresi</h3>
+    <p>ÅiÅŸkinlik ve morluk iÃ§in. SoÄŸuk uÃ§lu aplikatÃ¶r.</p>
+    </div>
+    <ul class="card-features">
+    <li>SoÄŸuk uÃ§</li>
+    <li>Sabah akÅŸam</li>
+    <li>15 ml, 60+ kullanÄ±m</li>
+    <li>Kafein + peptid desteÄŸi</li>
+    <li>Lens kullanÄ±cÄ±larÄ±na uygun</li>
+    </ul>
+    <div class="card-actions">
+    <button class="nv-cta-sm" type="button" data-add-to-cart data-id="p8" data-name="Sothys GÃ¶z Ã‡evresi" data-price="1850">Sepete ekle</button>
+    <a href="https://wa.me/905555555555" class="nv-link-sm">AnÄ±nda sor</a>
+    </div>
+    </article>
+
+    <div class="arch-block feature-large nv-store-assurance">
+      <section class="assurance">
       <div class="assurance-card">
-        <h4>Kurye / Teslim</h4>
-        <p>Maslak ve yakın çevrede aynı gün kurye. Spa resepsiyonundan 30 dk içinde teslim.</p>
+      <h4>Kurye / Teslim</h4>
+      <p>Maslak ve yakÄ±n Ã§evrede aynÄ± gÃ¼n kurye. Spa resepsiyonundan 30 dk iÃ§inde teslim.</p>
       </div>
       <div class="assurance-card">
-        <h4>Hediye notu + kutu</h4>
-        <p>Kişiye özel kart ve kutu. Spa kokusunu taşıyan yağ + mum kombinleri.</p>
+      <h4>Hediye notu + kutu</h4>
+      <p>KiÅŸiye Ã¶zel kart ve kutu. Spa kokusunu taÅŸÄ±yan yaÄŸ + mum kombinleri.</p>
       </div>
       <div class="assurance-card">
-        <h4>Face by Sothys</h4>
-        <p>Klinik seri; cilt tipinize göre öneri. Aşırı koku hassasiyetine uygun seçenekler.</p>
+      <h4>Face by Sothys</h4>
+      <p>Klinik seri; cilt tipinize gÃ¶re Ã¶neri. AÄŸÄ±rlÄ±ÄŸÄ± az koku hassasiyetine uygun seÃ§enekler.</p>
       </div>
-    </section>
+      </section>
+    </div>
+
+    <aside class="arch-block feature-small cart-panel nv-store-cart" id="store-cart">
+    <div class="cart-header">
+    <div>
+    <p class="eyebrow">Sepet</p>
+    <h3 class="cart-title">HazÄ±rlÄ±yoruz</h3>
+    </div>
+    <span class="pill" data-cart-count>Sepet: 0</span>
+    </div>
+    <div class="cart-items" data-cart-items>
+    <p class="empty-cart-msg" style="font-size: 0.9rem; color: #b3aba1; text-align: center; margin-top: 1rem;">HenÃ¼z Ã¼rÃ¼n yok. Hediye seti ekleyin.</p>
+    </div>
+    <div class="cart-summary">
+    <div class="summary-row">
+    <span>Ara toplam</span>
+    <span data-cart-total>0 TL</span>
+    </div>
+    <p class="summary-note">Resepsiyon teslim veya kurye iÃ§in bize yazÄ±n.</p>
+    <p class="summary-note">Hediye notu, bÃ¼tÃ§e ve teslim tercihlerini mesajda ekleyin.</p>
+    <div class="cart-actions">
+    <button class="nv-cta" type="button" data-checkout>WhatsApp SipariÅŸ</button>
+    <button class="nv-cta nv-cta-ghost" type="button" data-curation>Biz seÃ§elim</button>
+    </div>
+    </div>
+    </aside>
   </main>
 
   <footer class="nv-footer">
-    <div class="nv-footer-inner">
-      <div class="nv-footer-brand">
-        <span class="brand-name">NEUROVA</span>
-        <span class="brand-sub">Spa &amp; Wellness</span>
-      </div>
-
-      <nav class="nv-footer-links" aria-label="Alt gezinme">
-        <a href="./packages.html">Paketler</a>
-        <a href="./hamam.html">Hamam</a>
-        <a href="./masajlar.html">Masajlar</a>
-        <a href="./face-sothys.html">Face</a>
-        <a href="./about.html">Hakkımızda</a>
-      </nav>
-
-      <div class="nv-footer-lang" aria-label="Dil seçimi">
-        <a href="./index.html" class="active">TR</a> / <a href="./en/products.html">EN</a>
-      </div>
-
-      <div class="nv-footer-contact">
-        <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
-        <span>© 2025 NEUROVA</span>
-      </div>
+  <div class="nv-footer-inner">
+    <div class="nv-footer-brand">
+      <span class="brand-name">NEUROVA</span>
+      <span class="brand-sub">Spa & Wellness</span>
     </div>
-  </footer>
+
+    <nav class="nv-footer-links" aria-label="Alt gezinme">
+      <a href="/index.html">Ana Sayfa</a>
+      <a href="/hamam.html">Hamam</a>
+      <a href="/masajlar.html">Masajlar</a>
+      <a href="/kids-family.html">Kids & Family</a>
+      <a href="/face-sothys.html">Face & Sothys</a>
+      <a href="/products.html">Ürünler / Mağaza</a>
+      <a href="/about.html">Hakkımızda</a>
+      <a href="/team.html">Ekibimiz</a>
+      <a href="/paketler.html">Paketler</a>
+      <a href="/galeri.html">Galeri</a>
+    </nav>
+
+    <div class="nv-footer-lang" aria-label="Dil seçimi">
+      <a href="/index.html" class="active">TR</a> / <a href="/en/index.html">EN</a>
+    </div>
+
+    <div class="nv-footer-contact">
+      <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+      <span>&copy; 2025 NEUROVA</span>
+    </div>
+  </div>
+</footer>
 
   <div id="nv-wa" aria-hidden="true"></div>
-
-  <script>
-    (function () {
-      const slot = document.getElementById('nv-nav-slot');
-      if (!slot) return;
-
-      const fallbackNav = `
-<header class="nv-header nv-header--fallback" data-nv-header>
-  <div class="nv-shell">
-    <a class="nv-brand" href="./index.html" aria-label="NEUROVA Home">
-      <span class="nv-brand__word">NEUROVA</span>
-      <span class="nv-brand__sub">Spa &amp; Wellness</span>
-    </a>
-
-    <div class="nv-nav-row">
-      <nav class="nv-nav" aria-label="Primary">
-        <a class="nv-link" data-nav="home" href="./index.html">Ana Sayfa</a>
-        <a class="nv-link" data-nav="hamam" href="./hamam.html">Hamam</a>
-        <a class="nv-link" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-        <a class="nv-link" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
-        <a class="nv-link" data-nav="face" href="./face-sothys.html">Face</a>
-        <a class="nv-link" data-nav="paketler" href="./packages.html">Paketler</a>
-        <a class="nv-link" data-nav="urunler" href="./products.html">Ürünler</a>
-      </nav>
-
-      <div class="nv-dropdown" data-nv-dropdown>
-        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true" aria-expanded="false">
-          Kurumsal &#9662;</button>
-
-        <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
-          <a class="nv-link" data-nav="galeri" href="./galeri.html">Galeri</a>
-          <a class="nv-link" data-nav="about" href="./about.html">Hakkımızda</a>
-          <a class="nv-link" data-nav="team" href="./team.html">Ekibimiz</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="nv-actions">
-      <a class="nv-cta nv-nav-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
-      <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nv-mpanel" data-nv-mobile-panel hidden>
-    <div class="nv-mpanel__inner">
-      <a class="nv-mlink" data-nav="home" href="./index.html">Ana Sayfa</a>
-      <a class="nv-mlink" data-nav="hamam" href="./hamam.html">Hamam</a>
-      <a class="nv-mlink" data-nav="masajlar" href="./masajlar.html">Masajlar</a>
-      <a class="nv-mlink" data-nav="kids-family" href="./kids-family.html">Kids & Family</a>
-      <a class="nv-mlink" data-nav="face" href="./face-sothys.html">Face</a>
-      <a class="nv-mlink" data-nav="paketler" href="./packages.html">Paketler</a>
-      <a class="nv-mlink" data-nav="urunler" href="./products.html">Ürünler</a>
-
-      <a class="nv-mlink" data-nav="galeri" href="./galeri.html">Galeri</a>
-      <a class="nv-mlink" data-nav="about" href="./about.html">Hakkımızda</a>
-      <a class="nv-mlink" data-nav="team" href="./team.html">Ekibimiz</a>
-
-      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
-    </div>
-  </div>
-</header>
-      `;
-
-      slot.innerHTML = fallbackNav;
-    })();
-  </script>
-
-  <script>
-    (function () {
-      const els = Array.from(document.querySelectorAll('[data-reveal]'));
-      if (!('IntersectionObserver' in window) || !els.length) {
-        els.forEach((el) => el.classList.add('is-visible'));
-        return;
-      }
-
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-
-      els.forEach((el) => obs.observe(el));
-    })();
-  </script>
-
-  <script src="./wa-config.js"></script>
-  <script defer src="./wa-linker.js"></script>
-  <script defer src="./assets/products-store.js"></script>
-  <script defer src="./assets/NEUROVA_STORE_INTERACTIVE_FIX.js"></script>
-  <script src="./slot-macro.js"></script>
-  <script defer src="./assets/nav.js"></script>
+<script src="/assets/js/products-store.js" defer></script>
+  <script src="/assets/js/NEUROVA_STORE_INTERACTIVE_FIX.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/wa-config.js"></script>
+  <script defer src="/wa-linker.js"></script>
+  <script src="/slot-macro.js"></script>
+  <script src="/assets/js/nv-nav.js" defer></script>
+  <script src="/assets/js/nv-reveal.js" defer></script>
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+

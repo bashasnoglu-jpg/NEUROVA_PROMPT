@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEUROVA Premium Renk Paletleri</title>
+  <title>NEUROVA - Premium Renk Paletleri</title>
+  <link rel="stylesheet" href="/assets/nav.css?v=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       color-scheme: light;
@@ -13,7 +19,7 @@
       --accent: #6f665c;
     }
     * { box-sizing: border-box; }
-    body {
+    .palette-doc {
       font-family: "Inter", system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
@@ -21,26 +27,26 @@
       max-width: 1200px;
       padding: 0 16px 48px;
     }
-    h1 {
+    .palette-doc h1 {
       text-align: center;
       letter-spacing: 1px;
       font-weight: 650;
       margin: 0 0 28px;
     }
-    .lead {
+    .palette-doc .lead {
       text-align: center;
       color: #6f665c;
       margin: 0 0 32px;
       font-size: 15px;
     }
-    .actions {
+    .palette-doc .actions {
       display: flex;
       gap: 10px;
       justify-content: center;
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
-    .btn {
+    .palette-doc .btn {
       border: 1px solid rgba(0,0,0,0.12);
       background: var(--card);
       color: var(--accent);
@@ -51,12 +57,12 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.06);
       transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
     }
-    .btn:hover {
+    .palette-doc .btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 14px 30px rgba(0,0,0,0.08);
       background: #f0ede8;
     }
-    .palette {
+    .palette-doc .palette {
       margin-bottom: 44px;
       padding: 20px;
       border-radius: 16px;
@@ -64,7 +70,7 @@
       border: 1px solid rgba(0,0,0,0.05);
       box-shadow: 0 18px 40px rgba(0,0,0,0.04);
     }
-    .palette h2 {
+    .palette-doc .palette h2 {
       border-bottom: 2px solid #d7d1c9;
       padding-bottom: 8px;
       margin: 0 0 18px;
@@ -74,12 +80,12 @@
       color: #6f665c;
       font-size: 16px;
     }
-    .colors {
+    .palette-doc .colors {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .color-box {
+    .palette-doc .color-box {
       width: 152px;
       height: 110px;
       border-radius: 12px;
@@ -98,19 +104,19 @@
       text-align: center;
       padding: 10px;
     }
-    .color-box:hover {
+    .palette-doc .color-box:hover {
       transform: translateY(-2px);
       box-shadow: 0 16px 36px rgba(0,0,0,0.12);
       border-color: rgba(0,0,0,0.1);
     }
-    .color-box.dark { color: #f7f6f5; }
-    .label {
+    .palette-doc .color-box.dark { color: #f7f6f5; }
+    .palette-doc .label {
       margin-top: 8px;
       font-size: 12px;
       font-weight: 500;
       opacity: 0.92;
     }
-    .copy-hint {
+    .palette-doc .copy-hint {
       position: absolute;
       bottom: 8px;
       right: 10px;
@@ -124,19 +130,19 @@
       transition: opacity .2s ease, transform .2s ease;
       pointer-events: none;
     }
-    .color-box:hover .copy-hint,
-    .color-box.copied .copy-hint {
+    .palette-doc .color-box:hover .copy-hint,
+    .palette-doc .color-box.copied .copy-hint {
       opacity: 1;
       transform: translateY(0);
     }
-    .status {
+    .palette-doc .status {
       text-align: center;
       font-size: 13px;
       color: #4c5a55;
       min-height: 18px;
       margin-bottom: 12px;
     }
-    pre#exportOutput {
+    .palette-doc pre#exportOutput {
       background: #111827;
       color: #e5e7eb;
       padding: 14px;
@@ -148,31 +154,56 @@
       border: 1px solid rgba(255,255,255,0.06);
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nv-modern.css?v=1" />
+<link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
 </head>
-<body>
-  <h1>NEUROVA Premium Renk Paletleri</h1>
-  <p class="lead">Sessiz lüks, doğal zen ve modern sakinlik için kürasyonlu paletler. Renk kutucuklarına tıklayarak hex kodunu kopyalayabilir, tüm paleti CSS değişkeni olarak dışa aktarabilirsiniz.</p>
+<body data-lang="tr" data-page="palettes">
+  <div id="nv-header"></div>
 
-  <div class="actions">
-    <button class="btn" id="exportCss">CSS değişkenlerini kopyala</button>
-    <button class="btn" id="exportJson">Paletleri JSON olarak kopyala</button>
-  </div>
-  <div class="status" id="status"></div>
-  <pre id="exportOutput"></pre>
+  <main class="palette-doc">
+    <h1>NEUROVA Premium Renk Paletleri</h1>
+    <p class="lead">Sessiz lÃ¼ks, doÄŸal zen ve modern sakinlik iÃ§in kÃ¼rasyonlu paletler. Renk kutucuklarÄ±na tÄ±klayarak hex kodunu kopyalayabilir, tÃ¼m paleti CSS deÄŸiÅŸkeni olarak dÄ±ÅŸa aktarabilirsiniz.</p>
 
-  <div id="palettes"></div>
+    <div class="actions">
+      <button class="btn" id="exportCss">CSS deÄŸiÅŸkenlerini kopyala</button>
+      <button class="btn" id="exportJson">Paletleri JSON olarak kopyala</button>
+    </div>
+    <div class="status" id="status"></div>
+    <pre id="exportOutput"></pre>
+
+    <div id="palettes"></div>
+  </main>
+
+  <div id="nv-footer"></div>
+  <div id="nv-wa" aria-hidden="true"></div>
 
   <script>
-    const palettes = [
+    fetch('./header.html')
+      .then(response => response.text())
+      .then(html => {
+        const slot = document.getElementById('nv-header');
+        if (slot) slot.innerHTML = html;
+      });
+
+    fetch('./footer.html')
+      .then(response => response.text())
+      .then(html => {
+        const slot = document.getElementById('nv-footer');
+        if (slot) slot.innerHTML = html;
+      });
+  </script>
+
+  <script>
+const palettes = [
       {
         name: "Quiet Luxury Nude",
         slug: "quiet-luxury-nude",
         colors: [
           { hex: "#F6F4F1", label: "Arka Plan" },
-          { hex: "#D7CFC4", label: "İkincil Zemin" },
+          { hex: "#D7CFC4", label: "Ä°kincil Zemin" },
           { hex: "#A9A59C", label: "Metin" },
-          { hex: "#7C7B71", label: "Düğmeler" },
-          { hex: "#4A3B31", label: "Başlık" },
+          { hex: "#7C7B71", label: "DÃ¼ÄŸmeler" },
+          { hex: "#4A3B31", label: "BaÅŸlÄ±k" },
         ],
       },
       {
@@ -182,8 +213,8 @@
           { hex: "#F3F2EE", label: "Zemin" },
           { hex: "#C6C2BA", label: "Kartlar" },
           { hex: "#9DA793", label: "Vurgu" },
-          { hex: "#8A6E56", label: "Başlık" },
-          { hex: "#4D5744", label: "Footer / Menü" },
+          { hex: "#8A6E56", label: "BaÅŸlÄ±k" },
+          { hex: "#4D5744", label: "Footer / MenÃ¼" },
         ],
       },
       {
@@ -194,7 +225,7 @@
           { hex: "#D4D2CF", label: "Kart" },
           { hex: "#A7A8AA", label: "Metin" },
           { hex: "#8D99AE", label: "Link / Hover" },
-          { hex: "#2B2D42", label: "Başlık" },
+          { hex: "#2B2D42", label: "BaÅŸlÄ±k" },
         ],
       },
       {
@@ -204,8 +235,8 @@
           { hex: "#F8EBDD", label: "Arka Plan" },
           { hex: "#D9B89C", label: "Kart" },
           { hex: "#B37556", label: "Buton" },
-          { hex: "#6E4C3A", label: "Başlık" },
-          { hex: "#FAF7F3", label: "Boşluk" },
+          { hex: "#6E4C3A", label: "BaÅŸlÄ±k" },
+          { hex: "#FAF7F3", label: "BoÅŸluk" },
         ],
       },
       {
@@ -213,8 +244,8 @@
         slug: "midnight-serenity",
         colors: [
           { hex: "#1E1E1E", label: "Arka Plan" },
-          { hex: "#8B8581", label: "Yazı" },
-          { hex: "#B8A89A", label: "Düğme" },
+          { hex: "#8B8581", label: "YazÄ±" },
+          { hex: "#B8A89A", label: "DÃ¼ÄŸme" },
           { hex: "#EAE6E2", label: "Kart" },
           { hex: "#C19A6B", label: "Hover" },
         ],
@@ -290,7 +321,7 @@
           copyText(hex);
           box.classList.add("copied");
           setTimeout(() => box.classList.remove("copied"), 600);
-          setStatus(`${hex} kopyalandı`);
+          setStatus(`${hex} kopyalandÄ±`);
         });
       });
     }
@@ -306,14 +337,14 @@
       const css = lines.join("\n");
       exportOutput.textContent = css;
       copyText(css);
-      setStatus("CSS değişkenleri kopyalandı.");
+      setStatus("CSS deÄŸiÅŸkenleri kopyalandÄ±.");
     }
 
     function exportJsonVars() {
       const json = JSON.stringify(palettes, null, 2);
       exportOutput.textContent = json;
       copyText(json);
-      setStatus("Paletler JSON olarak kopyalandı.");
+      setStatus("Paletler JSON olarak kopyalandÄ±.");
     }
 
     function init() {
@@ -321,10 +352,17 @@
       wireBoxes();
       document.getElementById("exportCss").addEventListener("click", exportCssVars);
       document.getElementById("exportJson").addEventListener("click", exportJsonVars);
-      exportOutput.textContent = ":root { /* CSS değişkenlerini kopyalamak için butona tıklayın */ }";
+      exportOutput.textContent = ":root { /* CSS deÄŸiÅŸkenlerini kopyalamak iÃ§in butona tÄ±klayÄ±n */ }";
     }
 
     init();
   </script>
+  <script src="/wa-config.js"></script>
+  <script defer src="/wa-linker.js"></script>
+  <script src="/slot-macro.js"></script>
+  <script defer src="/assets/nav.js"></script>
 </body>
 </html>
+
+
+

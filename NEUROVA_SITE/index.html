@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr" data-lang="tr">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="NEUROVA Spa & Wellness - Modern mimari ve kadim rit?ellerin bulu?ma noktas?. Hamam, Masaj ve Cilt Bak?m?." />
+    content="NEUROVA Spa & Wellness - Modern mimari ve kadim ritÃ¼ellerin buluÅŸma noktasÄ±. Hamam, Masaj ve Cilt BakÄ±mÄ±." />
   <title>NEUROVA - Spa & Wellness Architecture</title>
 
-  <link rel="icon" href="./assets/favicon.png" />
-  <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="icon" href="/favicon.png" />
+  
+  <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/nav.css?v=1" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,304 +18,140 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet" />
 
-  <style>
-    :root {
-      --arch-bg: #F4F2EF;
-      /* Stone White */
-      --arch-line: #D8D4CE;
-      /* Grid Line Color */
-      --arch-text: #2B2A29;
-      /* Charcoal */
-      --arch-sub: #6E6B68;
-      /* Stone Gray */
-      --arch-accent: #9A8C7D;
-      /* Clay */
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--arch-bg);
-      color: var(--arch-text);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* --- ARCHITECTURAL GRID SYSTEM --- */
-    .arch-container {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1px;
-      background-color: var(--arch-line);
-      /* Creates the grid lines */
-      border-bottom: 1px solid var(--arch-line);
-      padding-top: 80px;
-      /* Space for Nav */
-    }
-
-    .arch-block {
-      background-color: var(--arch-bg);
-      padding: 2rem;
-      position: relative;
-      transition: background-color 0.4s ease;
-    }
-
-    .arch-block:hover {
-      background-color: #fff;
-    }
-
-    /* --- HERO SECTION --- */
-    .hero-block {
-      grid-column: span 12;
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 400;
-      line-height: 1;
-      margin: 0 0 1.5rem 0;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--arch-sub);
-      max-width: 500px;
-      line-height: 1.6;
-      margin-bottom: 3rem;
-    }
-
-    .arch-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      border: 1px solid var(--arch-text);
-      color: var(--arch-text);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      transition: all 0.3s ease;
-    }
-
-    .arch-btn:hover {
-      background-color: var(--arch-text);
-      color: var(--arch-bg);
-    }
-
-    /* --- BENTO GRID LAYOUT --- */
-    .feature-large {
-      grid-column: span 8;
-      aspect-ratio: 16/9;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .feature-small {
-      grid-column: span 4;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .feature-tall {
-      grid-column: span 4;
-      grid-row: span 2;
-    }
-
-    /* Typography in Blocks */
-    .block-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--arch-sub);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .block-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      margin: 0 0 1rem 0;
-      font-weight: 400;
-    }
-
-    .block-desc {
-      color: var(--arch-sub);
-      line-height: 1.5;
-      margin-bottom: 2rem;
-    }
-
-    .link-arrow {
-      text-decoration: none;
-      color: var(--arch-text);
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 900px) {
-
-      .feature-large,
-      .feature-small,
-      .feature-tall {
-        grid-column: span 12;
-        aspect-ratio: auto;
-        min-height: 300px;
-      }
-    }
-
-    /* Footer Override for Consistency */
-    .nv-footer {
-      background-color: var(--arch-bg);
-      border-top: 1px solid var(--arch-line);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .nv-footer a {
-      color: var(--arch-sub);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/nv-modern.css?v=1" />
+  <link rel="stylesheet" href="/assets/css/arch-theme.css?v=1" />
+<link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
 </head>
 
-<body data-page="home">
-
-  <!-- Nav Slot (Script ile doldurulacak) -->
+<body data-lang="tr" data-page="home">
   <div id="nv-nav-slot"></div>
 
   <main class="arch-container">
-
-    <!-- HERO -->
     <div class="arch-block hero-block">
       <span class="block-label">Estetik & Denge</span>
-      <h1 class="hero-title">Mek?n, Ruh ve<br>Modern Rit?eller.</h1>
+      <h1 class="hero-title">MekÃ¢n, Ruh ve<br>Modern RitÃ¼eller.</h1>
       <p class="hero-subtitle">
-        Bedenin mimarisi ile mek?n?n dinginli?ini birle?tiren, ?zenle tasarlanm?? bir spa deneyimi.
+        Bedenin mimarisi ile mekÃ¢nÄ±n dinginliÄŸini birleÅŸtiren, Ã¶zenle tasarlanmÄ±ÅŸ bir spa deneyimi.
       </p>
-      <a href="#services" class="arch-btn">Ke?fetmeye Ba?la</a>
+      <div class="hero-actions">
+        <a href="#services" class="arch-btn">KeÅŸfetmeye BaÅŸla</a>
+        <a href="#nv-wa" class="arch-btn" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+      </div>
+      <div class="hero-panel" aria-hidden="true"></div>
     </div>
 
-    <!-- HAMAM -->
     <div class="arch-block feature-large" id="services">
-      <span class="block-label">01 � Islak Alanlar</span>
+      <span class="block-label">01 â€” Islak Alanlar</span>
       <h2 class="block-heading">Geleneksel Hamam</h2>
-      <p class="block-desc">Mermerin s?cakl??? ve suyun ar?nd?r?c? g?c?. Modern bir yorumla sunulan klasik rit?eller.
-      </p>
-      <a href="./hamam.html" class="link-arrow">Detaylar? ?ncele &rarr;</a>
+      <p class="block-desc">Mermerin sÄ±caklÄ±ÄŸÄ±nÄ± ve suyun arÄ±ndÄ±rÄ±cÄ± gÃ¼cÃ¼nÃ¼ birleÅŸtiren, modern yorumlu klasik ritÃ¼eller.</p>
+      <a href="./hamam.html" class="link-arrow">DetaylarÄ± Ä°ncele &rarr;</a>
     </div>
 
-    <!-- MASAJ -->
+    <div class="arch-block feature-large">
+      <span class="block-label">04 â€” Koleksiyon</span>
+      <h2 class="block-heading">Ã‡evrim Ä°Ã§i MaÄŸaza</h2>
+      <p class="block-desc">Eviniz iÃ§in Ã¶zenle seÃ§ilmiÅŸ setler, aromaterapi ve hediye kutularÄ±. AynÄ± gÃ¼n teslimat.</p>
+      <a href="./products.html" class="link-arrow">AlÄ±ÅŸveriÅŸe BaÅŸla &rarr;</a>
+    </div>
+
     <div class="arch-block feature-small">
       <div>
-        <span class="block-label">02 � Terapi</span>
+        <span class="block-label">02 â€” Terapi</span>
         <h2 class="block-heading">Masajlar</h2>
       </div>
-      <a href="./masajlar.html" class="link-arrow">T?m Se?enekler &rarr;</a>
+      <a href="./masajlar.html" class="link-arrow">TÃ¼m SeÃ§enekler &rarr;</a>
     </div>
 
-    <!-- FACE -->
     <div class="arch-block feature-small">
-      <span class="block-label">03 � Klinik Bak?m</span>
+      <span class="block-label">03 â€” Klinik BakÄ±m</span>
       <h2 class="block-heading">Face by Sothys</h2>
-      <p class="block-desc">Bilimsel cilt bak?m? ve Frans?z esteti?i.</p>
-      <a href="./face-sothys.html" class="link-arrow">?ncele &rarr;</a>
+      <p class="block-desc">Bilimsel cilt bakÄ±mÄ± ve FransÄ±z estetiÄŸi.</p>
+      <a href="./face-sothys.html" class="link-arrow">Ä°ncele &rarr;</a>
+    </div>
+  
+<!-- NV:GALLERY_PREVIEW -->
+<section id="gallery" class="nv-section nv-gallery-preview" aria-labelledby="galleryTitle">
+  <div class="nv-wrap">
+    <div class="nv-row nv-row--between nv-row--baseline">
+      <div>
+        <h2 id="galleryTitle" class="nv-h2">Galeri</h2>
+        <p class="nv-muted">Hamam ritüellerinden seçilmiş kareler.</p>
+      </div>
+      <a class="nv-btn nv-btn--ghost" href="/galeri.html">Tümünü Gör</a>
     </div>
 
-    <!-- STORE -->
-    <div class="arch-block feature-large" style="grid-column: span 8;">
-      <span class="block-label">04 � Koleksiyon</span>
-      <h2 class="block-heading">?evrim ??i Ma?aza</h2>
-      <p class="block-desc">Eviniz i?in ?zenle se?ilmi? setler, aromaterapi ve hediye kutular?. Ayn? g?n teslimat.</p>
-      <a href="./products.html" class="link-arrow">Al??veri?e Ba?la &rarr;</a>
+    <div class="nv-grid nv-grid--5">
+      <a class="nv-thumb" href="/galeri.html">
+        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C1_FoamHand_Close.png" alt="Hamam – köpük masajı detayı">
+      </a>
+      <a class="nv-thumb" href="/galeri.html">
+        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C2_Venue_Wide.png" alt="Hamam – mekan atmosferi">
+      </a>
+      <a class="nv-thumb" href="/galeri.html">
+        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C3_Setup_Medium.png" alt="Hamam – ritüel hazırlığı">
+      </a>
+      <a class="nv-thumb" href="/galeri.html">
+        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C4_Cloud_Detail.png" alt="Hamam – doku detayı">
+      </a>
+      <a class="nv-thumb" href="/galeri.html">
+        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C5_Abstract_Bokeh.png" alt="Hamam – ışık & atmosfer">
+      </a>
     </div>
-
-  </main>
+  </div>
+</section>
+<!-- /NV:GALLERY_PREVIEW -->
+</main>
 
   <footer class="nv-footer">
-    <div style="margin-bottom: 2rem;">
-      <span
-        style="font-family: 'Cormorant Garamond'; font-size: 1.5rem; display: block; margin-bottom: 0.5rem;">NEUROVA</span>
-      <span style="color: var(--arch-sub); font-size: 0.9rem;">Spa & Wellness Architecture</span>
+  <div class="nv-footer-inner">
+    <div class="nv-footer-brand">
+      <span class="brand-name">NEUROVA</span>
+      <span class="brand-sub">Spa & Wellness</span>
     </div>
-    <nav>
-      <a href="./about.html">Hakk?m?zda</a>
-      <a href="./galeri.html">Galeri</a>
-      <a href="./contact.html">?leti?im</a>
+
+    <nav class="nv-footer-links" aria-label="Alt gezinme">
+      <a href="/index.html">Ana Sayfa</a>
+      <a href="/hamam.html">Hamam</a>
+      <a href="/masajlar.html">Masajlar</a>
+      <a href="/kids-family.html">Kids & Family</a>
+      <a href="/face-sothys.html">Face & Sothys</a>
+      <a href="/products.html">Ürünler / Mağaza</a>
+      <a href="/about.html">Hakkımızda</a>
+      <a href="/team.html">Ekibimiz</a>
+      <a href="/paketler.html">Paketler</a>
+      <a href="/galeri.html">Galeri</a>
     </nav>
-    <div style="margin-top: 2rem; font-size: 0.8rem; color: var(--arch-sub);">
-      &copy; 2025 NEUROVA. T?m haklar? sakl?d?r.
+
+    <div class="nv-footer-lang" aria-label="Dil seçimi">
+      <a href="/index.html" class="active">TR</a> / <a href="/en/index.html">EN</a>
     </div>
-  </footer>
 
-  <!-- Navigasyon Scripti (Di?er sayfalardan al?nd?) -->
-  <script>
-    (function () {
-      const slot = document.getElementById('nv-nav-slot');
-      if (!slot) return;
+    <div class="nv-footer-contact">
+      <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
+      <span>&copy; 2025 NEUROVA</span>
+    </div>
+  </div>
+</footer>
 
-      const fallbackNav = `
-        <header class="nv-header nv-header--fallback" style="position:fixed; top:0; left:0; width:100%; z-index:1000; background: rgba(244, 242, 239, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #D8D4CE;">
-          <div class="nv-shell" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem; height: 80px; display: flex; align-items: center; justify-content: space-between;">
-            <a class="nv-brand" href="./index.html" style="text-decoration: none; color: #2B2A29;">
-              <span style="font-weight: 600; letter-spacing: 0.05em;">NEUROVA</span>
-            </a>
-
-            <nav class="nv-nav" style="display: flex; gap: 2rem;">
-              <a href="./hamam.html" style="text-decoration: none; color: #2B2A29; font-size: 0.9rem;">Hamam</a>
-              <a href="./masajlar.html" style="text-decoration: none; color: #2B2A29; font-size: 0.9rem;">Masaj</a>
-              <a href="./products.html" style="text-decoration: none; color: #2B2A29; font-size: 0.9rem;">Ma?aza</a>
-              <a href="./galeri.html" style="text-decoration: none; color: #2B2A29; font-size: 0.9rem;">Galeri</a>
-            </nav>
-
-            <div class="nv-actions">
-              <a href="https://wa.me/905555555555" style="padding: 0.6rem 1.2rem; background: #2B2A29; color: #fff; text-decoration: none; border-radius: 2px; font-size: 0.85rem;">Rezervasyon</a>
-            </div>
-          </div>
-          
-          <!-- Mobile Menu Toggle Logic would go here for full implementation -->
-        </header>
-      `;
-
-      slot.innerHTML = fallbackNav;
-    })();
-  </script>
-
-  <!-- Scroll Reveal Script -->
-  <script>
-    (function () {
-      const els = document.querySelectorAll('.arch-block');
-
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      els.forEach((el, index) => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s, background-color 0.4s ease`;
-        obs.observe(el);
-      });
-    })();
-  </script>
-
+  <div id="nv-wa" aria-hidden="true"></div>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/wa-config.js"></script>
+  <script defer src="/wa-linker.js"></script>
+  <script src="/slot-macro.js"></script>
+  <script src="/assets/js/nv-nav.js" defer></script>
+  <script src="/assets/js/nv-reveal.js" defer></script>
 </body>
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

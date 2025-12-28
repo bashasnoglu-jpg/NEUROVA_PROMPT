@@ -1,0 +1,60 @@
+/* NAV SAFETY BLOCK v1.0 - keep at file end */
+html.nv-lock, body.nv-lock{ overflow:hidden; }
+
+/* Legacy overlay/panel safety (if markup uses nv-nav-overlay / nv-nav-panel). */
+.nv-nav-overlay{
+  position:fixed; inset:0;
+  opacity:0;
+  pointer-events:none;
+  z-index:9998;
+}
+.nv-nav-overlay.is-on{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.nv-nav-panel{
+  position:fixed;
+  top:0; right:0;
+  height:100vh;
+  width:min(360px, 86vw);
+  transform:translateX(110%);
+  transition:transform .25s ease;
+  z-index:9999;
+}
+.nv-nav-panel.is-open{ transform:translateX(0); }
+
+/* Current mobile panel safety (nv-nav.js output). */
+#nv-nav-slot{ position:relative; z-index:10000; }
+#nv-nav-slot .nv-header{ position:sticky; top:0; z-index:10001; }
+#nv-nav-slot .nv-header, #nv-nav-slot .nv-header *{ pointer-events:auto; }
+#nv-nav-slot .nv-mpanel{
+  position:fixed;
+  inset:0;
+  z-index:10002;
+  pointer-events:none;
+  opacity:0;
+  visibility:hidden;
+}
+#nv-nav-slot .nv-mpanel.is-open{
+  pointer-events:auto;
+  opacity:1;
+  visibility:visible;
+}
+#nv-nav-slot .nv-mpanel__inner{
+  position:absolute;
+  top:0;
+  right:0;
+  height:100%;
+  z-index:10003;
+  pointer-events:auto;
+  transform: translateX(110%);
+  transition: transform .25s ease;
+}
+#nv-nav-slot .nv-mpanel.is-open .nv-mpanel__inner{
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  #nv-nav-slot .nv-mpanel__inner{ transition: none; }
+}
