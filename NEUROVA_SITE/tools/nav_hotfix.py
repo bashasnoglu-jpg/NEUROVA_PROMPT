@@ -5,7 +5,7 @@ ROOT = Path(".")  # run from NEUROVA_SITE
 EXCLUDE_DIRS = {"node_modules", ".git", "dist", "build", ".next", ".cache"}
 
 SCRIPT_TAG_RE = re.compile(
-    r"<script\b[^>]*\bsrc\s*=\s*[\"'][^\"']*nv-nav\.js[^\"']*[\"'][^>]*>",
+    r"<script\b[^>]*\bsrc\s*=\s*[\"'][^\"']*(nv-nav\.js|nv-reveal\.js)[^\"']*[\"'][^>]*>",
     re.IGNORECASE,
 )
 DEFER_RE = re.compile(r"\bdefer\b", re.IGNORECASE)
@@ -43,6 +43,7 @@ html.nv-lock, body.nv-lock{ overflow:hidden; }
 #nv-nav-slot{ position:relative; z-index:10000; }
 #nv-nav-slot .nv-header{ position:sticky; top:0; z-index:10001; }
 #nv-nav-slot .nv-header, #nv-nav-slot .nv-header *{ pointer-events:auto; }
+/* NAV CLICKABILITY GUARANTEE — ensure panel becomes interactive when open */
 #nv-nav-slot .nv-mpanel{
   position:fixed;
   inset:0;
@@ -51,8 +52,9 @@ html.nv-lock, body.nv-lock{ overflow:hidden; }
   opacity:0;
   visibility:hidden;
 }
-#nv-nav-slot .nv-mpanel.is-open{
-  pointer-events:auto;
+#nv-nav-slot .nv-mpanel.is-open,
+#nv-nav-slot .nv-mpanel[aria-hidden="false"]{
+  pointer-events:auto !important;
   opacity:1;
   visibility:visible;
 }
@@ -84,6 +86,11 @@ def is_excluded(path: Path) -> bool:
     return any(d in parts for d in EXCLUDE_DIRS)
 
 
+def is_backup_html(path: Path) -> bool:
+    name = path.name.lower()
+    return ".bak-" in name or name.endswith(".bak.html") or name.startswith("bak-")
+
+
 def patch_html_defer(file_path: Path) -> bool:
     text = file_path.read_text(encoding="utf-8", errors="ignore")
     changed = False
@@ -104,14 +111,18 @@ def patch_html_defer(file_path: Path) -> bool:
 
 def patch_safety_css() -> bool:
     safety_css = ROOT / "assets" / "css" / "nv-nav-safety.css"
-    if safety_css.exists():
-        text = safety_css.read_text(encoding="utf-8", errors="ignore")
-        if SAFETY_MARKER in text:
-            return False
-
     safety_css.parent.mkdir(parents=True, exist_ok=True)
-    safety_css.write_text(SAFETY_BLOCK.strip() + "\n", encoding="utf-8")
-    print(f"Safety block eklendi: {safety_css}")
+
+    desired = SAFETY_BLOCK.strip() + "\n"
+    current = ""
+    if safety_css.exists():
+        current = safety_css.read_text(encoding="utf-8", errors="ignore")
+
+    if current == desired:
+        return False
+
+    safety_css.write_text(desired, encoding="utf-8")
+    print(f"Safety CSS yazildi/guncellendi: {safety_css}")
     return True
 
 
@@ -131,7 +142,10 @@ def patch_html_safety_link(file_path: Path) -> bool:
 
 
 def main() -> None:
-    html_files = [p for p in ROOT.rglob("*.html") if not is_excluded(p)]
+    html_files = [
+        p for p in ROOT.rglob("*.html")
+        if not is_excluded(p) and not is_backup_html(p)
+    ]
     changed_files = []
 
     for f in html_files:

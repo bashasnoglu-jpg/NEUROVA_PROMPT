@@ -59,6 +59,8 @@
 
   const navSlot = document.getElementById('nv-nav-slot');
   if (!navSlot) return;
+  if (navSlot.dataset.nvNavMounted === '1') return;
+  navSlot.dataset.nvNavMounted = '1';
 
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
@@ -88,7 +90,7 @@
 
           <div class="nv-actions">
             <a class="nv-cta nv-nav-cta" href="#nv-wa" data-nv-open-reservation>${ctaLabel}</a>
-            <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menü" aria-expanded="false">
+            <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Men?" aria-expanded="false">
               <span></span><span></span>
             </button>
           </div>
@@ -141,9 +143,12 @@
   }
 
   function wireMobilePanel() {
+    const slot = document.getElementById('nv-nav-slot');
     const toggle = qs('[data-nv-mobile-toggle]', navSlot);
     const panel = qs('[data-nv-mobile-panel]', navSlot);
     if (!toggle || !panel) return;
+    if (slot?.dataset.nvMobileWired === '1') return;
+    if (slot) slot.dataset.nvMobileWired = '1';
 
     const OPEN_CLASS = 'is-open';
     const BURGER_CLASS = 'is-open';
@@ -182,7 +187,7 @@
     });
 
     panel.addEventListener('click', (e) => {
-      if (e.target === panel) close();
+      if (!e.target.closest('.nv-mpanel__inner')) close();
     });
 
     qsa('a', panel).forEach((a) => a.addEventListener('click', close));
@@ -218,6 +223,87 @@
 
   setActiveNav();
   wireMobilePanel();
+  function wireMobilePanelFallback() {
+    if (document.documentElement.dataset.nvMobileFallback === '1') return;
+    document.documentElement.dataset.nvMobileFallback = '1';
+
+    let hideTimer = null;
+
+    const getEls = () => {
+      const slot = document.getElementById('nv-nav-slot');
+      const toggle =
+        (slot && slot.querySelector('[data-nv-mobile-toggle]')) ||
+        document.querySelector('[data-nv-mobile-toggle]');
+
+      const panel =
+        (slot && slot.querySelector('[data-nv-mobile-panel]')) ||
+        document.querySelector('[data-nv-mobile-panel]');
+
+      return { toggle, panel };
+    };
+
+    const setLockSafe = (on) => {
+      document.documentElement.classList.toggle('nv-lock', !!on);
+      document.body.classList.toggle('nv-lock', !!on);
+    };
+
+    const close = (toggle, panel) => {
+      if (!toggle || !panel) return;
+      if (hideTimer) { window.clearTimeout(hideTimer); hideTimer = null; }
+
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('is-open');
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+
+      const delay = prefersReduced ? 0 : 180;
+      hideTimer = window.setTimeout(() => {
+        panel.hidden = true;
+        hideTimer = null;
+      }, delay);
+
+      setLockSafe(false);
+    };
+
+    const open = (toggle, panel) => {
+      if (!toggle || !panel) return;
+      if (hideTimer) { window.clearTimeout(hideTimer); hideTimer = null; }
+
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.classList.add('is-open');
+      panel.hidden = false;
+      panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+
+      setLockSafe(true);
+    };
+
+    document.addEventListener('click', (e) => {
+      const { toggle, panel } = getEls();
+      if (!toggle || !panel) return;
+      if (document.getElementById('nv-nav-slot')?.dataset.nvMobileWired === '1') return;
+
+      const hitToggle = e.target.closest('[data-nv-mobile-toggle]');
+      if (hitToggle) {
+        const expanded = hitToggle.getAttribute('aria-expanded') === 'true';
+        expanded ? close(toggle, panel) : open(toggle, panel);
+        return;
+      }
+
+      if (panel.classList.contains('is-open')) {
+        if (!e.target.closest('.nv-mpanel__inner')) close(toggle, panel);
+      }
+    }, true);
+
+    document.addEventListener('keydown', (e) => {
+      const { toggle, panel } = getEls();
+      if (!toggle || !panel) return;
+      if (document.getElementById('nv-nav-slot')?.dataset.nvMobileWired === '1') return;
+      if (e.key === 'Escape') close(toggle, panel);
+    });
+  }
+
+  wireMobilePanelFallback();
   wireReservationTriggers(document);
 })();
 

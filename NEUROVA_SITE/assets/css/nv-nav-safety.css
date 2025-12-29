@@ -28,6 +28,7 @@ html.nv-lock, body.nv-lock{ overflow:hidden; }
 #nv-nav-slot{ position:relative; z-index:10000; }
 #nv-nav-slot .nv-header{ position:sticky; top:0; z-index:10001; }
 #nv-nav-slot .nv-header, #nv-nav-slot .nv-header *{ pointer-events:auto; }
+/* NAV CLICKABILITY GUARANTEE — ensure panel becomes interactive when open */
 #nv-nav-slot .nv-mpanel{
   position:fixed;
   inset:0;
@@ -36,8 +37,9 @@ html.nv-lock, body.nv-lock{ overflow:hidden; }
   opacity:0;
   visibility:hidden;
 }
-#nv-nav-slot .nv-mpanel.is-open{
-  pointer-events:auto;
+#nv-nav-slot .nv-mpanel.is-open,
+#nv-nav-slot .nv-mpanel[aria-hidden="false"]{
+  pointer-events:auto !important;
   opacity:1;
   visibility:visible;
 }
