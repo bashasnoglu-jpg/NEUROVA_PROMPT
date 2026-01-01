@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
@@ -158,14 +158,14 @@
 <link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
 </head>
 <body data-lang="tr" data-page="palettes">
-  <div id="nv-header"></div>
+  <div id="nv-nav-slot"></div>
 
   <main class="palette-doc">
     <h1>NEUROVA Premium Renk Paletleri</h1>
-    <p class="lead">Sessiz lÃ¼ks, doÄŸal zen ve modern sakinlik iÃ§in kÃ¼rasyonlu paletler. Renk kutucuklarÄ±na tÄ±klayarak hex kodunu kopyalayabilir, tÃ¼m paleti CSS deÄŸiÅŸkeni olarak dÄ±ÅŸa aktarabilirsiniz.</p>
+    <p class="lead">Sessiz lüks, doğal zen ve modern sakinlik için kürasyonlu paletler. Renk kutucuklarına tıklayarak hex kodunu kopyalayabilir, tüm paleti CSS değişkeni olarak dışa aktarabilirsiniz.</p>
 
     <div class="actions">
-      <button class="btn" id="exportCss">CSS deÄŸiÅŸkenlerini kopyala</button>
+      <button class="btn" id="exportCss">CSS değişkenlerini kopyala</button>
       <button class="btn" id="exportJson">Paletleri JSON olarak kopyala</button>
     </div>
     <div class="status" id="status"></div>
@@ -178,13 +178,6 @@
   <div id="nv-wa" aria-hidden="true"></div>
 
   <script>
-    fetch('./header.html')
-      .then(response => response.text())
-      .then(html => {
-        const slot = document.getElementById('nv-header');
-        if (slot) slot.innerHTML = html;
-      });
-
     fetch('./footer.html')
       .then(response => response.text())
       .then(html => {
@@ -193,6 +186,8 @@
       });
   </script>
 
+  <script src="/assets/js/nv-nav.js" defer></script>
+
   <script>
 const palettes = [
       {
@@ -200,10 +195,10 @@ const palettes = [
         slug: "quiet-luxury-nude",
         colors: [
           { hex: "#F6F4F1", label: "Arka Plan" },
-          { hex: "#D7CFC4", label: "Ä°kincil Zemin" },
+          { hex: "#D7CFC4", label: "İkincil Zemin" },
           { hex: "#A9A59C", label: "Metin" },
-          { hex: "#7C7B71", label: "DÃ¼ÄŸmeler" },
-          { hex: "#4A3B31", label: "BaÅŸlÄ±k" },
+          { hex: "#7C7B71", label: "Düğmeler" },
+          { hex: "#4A3B31", label: "Başlık" },
         ],
       },
       {
@@ -213,8 +208,8 @@ const palettes = [
           { hex: "#F3F2EE", label: "Zemin" },
           { hex: "#C6C2BA", label: "Kartlar" },
           { hex: "#9DA793", label: "Vurgu" },
-          { hex: "#8A6E56", label: "BaÅŸlÄ±k" },
-          { hex: "#4D5744", label: "Footer / MenÃ¼" },
+          { hex: "#8A6E56", label: "Başlık" },
+          { hex: "#4D5744", label: "Footer / Menü" },
         ],
       },
       {
@@ -225,7 +220,7 @@ const palettes = [
           { hex: "#D4D2CF", label: "Kart" },
           { hex: "#A7A8AA", label: "Metin" },
           { hex: "#8D99AE", label: "Link / Hover" },
-          { hex: "#2B2D42", label: "BaÅŸlÄ±k" },
+          { hex: "#2B2D42", label: "Başlık" },
         ],
       },
       {
@@ -235,8 +230,8 @@ const palettes = [
           { hex: "#F8EBDD", label: "Arka Plan" },
           { hex: "#D9B89C", label: "Kart" },
           { hex: "#B37556", label: "Buton" },
-          { hex: "#6E4C3A", label: "BaÅŸlÄ±k" },
-          { hex: "#FAF7F3", label: "BoÅŸluk" },
+          { hex: "#6E4C3A", label: "Başlık" },
+          { hex: "#FAF7F3", label: "Boşluk" },
         ],
       },
       {
@@ -244,8 +239,8 @@ const palettes = [
         slug: "midnight-serenity",
         colors: [
           { hex: "#1E1E1E", label: "Arka Plan" },
-          { hex: "#8B8581", label: "YazÄ±" },
-          { hex: "#B8A89A", label: "DÃ¼ÄŸme" },
+          { hex: "#8B8581", label: "Yazı" },
+          { hex: "#B8A89A", label: "Düğme" },
           { hex: "#EAE6E2", label: "Kart" },
           { hex: "#C19A6B", label: "Hover" },
         ],
@@ -321,7 +316,7 @@ const palettes = [
           copyText(hex);
           box.classList.add("copied");
           setTimeout(() => box.classList.remove("copied"), 600);
-          setStatus(`${hex} kopyalandÄ±`);
+          setStatus(`${hex} kopyalandı`);
         });
       });
     }
@@ -337,14 +332,14 @@ const palettes = [
       const css = lines.join("\n");
       exportOutput.textContent = css;
       copyText(css);
-      setStatus("CSS deÄŸiÅŸkenleri kopyalandÄ±.");
+      setStatus("CSS değişkenleri kopyalandı.");
     }
 
     function exportJsonVars() {
       const json = JSON.stringify(palettes, null, 2);
       exportOutput.textContent = json;
       copyText(json);
-      setStatus("Paletler JSON olarak kopyalandÄ±.");
+      setStatus("Paletler JSON olarak kopyalandı.");
     }
 
     function init() {
@@ -352,7 +347,7 @@ const palettes = [
       wireBoxes();
       document.getElementById("exportCss").addEventListener("click", exportCssVars);
       document.getElementById("exportJson").addEventListener("click", exportJsonVars);
-      exportOutput.textContent = ":root { /* CSS deÄŸiÅŸkenlerini kopyalamak iÃ§in butona tÄ±klayÄ±n */ }";
+      exportOutput.textContent = ":root { /* CSS değişkenlerini kopyalamak için butona tıklayın */ }";
     }
 
     init();
@@ -363,6 +358,3 @@ const palettes = [
   <script defer src="/assets/nav.js"></script>
 </body>
 </html>
-
-
-

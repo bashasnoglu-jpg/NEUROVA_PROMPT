@@ -120,7 +120,7 @@
 
     if (els.cartItems) {
       if (!cart.length) {
-        els.cartItems.innerHTML = `<div class="cart-empty">${t("Henüz ürün yok. Hediye seti ekleyin.", "Your cart is empty.")}</div>`;
+        els.cartItems.innerHTML = `<div class="cart-empty">${t("HenÃ¼z Ã¼rÃ¼n yok. Hediye seti ekleyin.", "Your cart is empty.")}</div>`;
       } else {
         els.cartItems.innerHTML = cart
           .map((item) => {
@@ -160,10 +160,10 @@
     const brand = (window.NV_WA && window.NV_WA.WA_BRAND) || "NEUROVA";
     const intro =
       mode === "single"
-        ? t("Bu ürünü sipariþ etmek istiyorum:", "I would like to order this product:")
+        ? t("Bu Ã¼rÃ¼nÃ¼ sipariÅŸ etmek istiyorum:", "I would like to order this product:")
         : mode === "curation"
-          ? t("Lütfen bütçe ve hisse göre 3'lü set önerin:", "Please curate a 3-piece set for my budget/mood:")
-          : t("Sepetimi paylaþýyorum:", "Sharing my cart:");
+          ? t("LÃ¼tfen bÃ¼tÃ§e ve hisse gÃ¶re 3'lÃ¼ set Ã¶nerin:", "Please curate a 3-piece set for my budget/mood:")
+          : t("Sepetimi paylaÅŸÄ±yorum:", "Sharing my cart:");
 
     const bodyItems = cart.map((item) => `- ${item.name || item.id} x${item.qty}`);
     const total = cart.reduce((sum, item) => sum + (item.price || 0) * (item.qty || 0), 0);
@@ -179,7 +179,7 @@
     }
 
     const delivery = localStorage.getItem("nv_delivery_method") || t("Teslim tercihi: resepsiyon/kurye", "Delivery: pickup/courier");
-    lines.push("", delivery, t("Hediye notu + stok bilgisini paylaþýr mýsýnýz?", "Please confirm stock + delivery."));
+    lines.push("", delivery, t("Hediye notu + stok bilgisini paylaÅŸÄ±r mÄ±sÄ±nÄ±z?", "Please confirm stock + delivery."));
 
     return lines.join("\n");
   }
@@ -210,10 +210,10 @@
         e.preventDefault();
         const budget = (els.curationForm.querySelector("[name='budget']") || {}).value || "";
         const mood = (els.curationForm.querySelector("[name='mood']") || {}).value || "";
-        const note = `${t("Bütçe", "Budget")}: ${budget} | ${t("Hissiyat", "Mood")}: ${mood}`;
+        const note = `${t("BÃ¼tÃ§e", "Budget")}: ${budget} | ${t("Hissiyat", "Mood")}: ${mood}`;
         const out = els.curationOut;
         if (out) {
-          out.textContent = t("Curation talebi kaydedildi. WhatsApp ile paylaþabilirsiniz.", "Curation request captured. You can share via WhatsApp.");
+          out.textContent = t("Curation talebi kaydedildi. WhatsApp ile paylaÅŸabilirsiniz.", "Curation request captured. You can share via WhatsApp.");
         }
         const msg = `${note}\n\n${buildMessage("curation")}`;
         const num = ((window.NV_WA && window.NV_WA.WA_NUM) || "").replace(/\D/g, "");
@@ -236,7 +236,7 @@
       btn.dataset.bound = "1";
       btn.addEventListener("click", () => {
         const option = btn.dataset.delivery || "pickup";
-        localStorage.setItem("nv_delivery_method", t(option === "courier" ? "Kurye seçildi" : "Resepsiyon teslim", option === "courier" ? "Courier selected" : "Pickup selected"));
+        localStorage.setItem("nv_delivery_method", t(option === "courier" ? "Kurye seÃ§ildi" : "Resepsiyon teslim", option === "courier" ? "Courier selected" : "Pickup selected"));
         updateDeliveryStatus(option);
       });
     });
@@ -247,8 +247,8 @@
     const saved = localStorage.getItem("nv_delivery_method");
     const label = option
       ? option === "courier"
-        ? t("Kurye seçildi ??", "Courier selected ??")
-        : t("Resepsiyon teslim seçildi", "Pickup selected")
+        ? t("Kurye seÃ§ildi ??", "Courier selected ??")
+        : t("Resepsiyon teslim seÃ§ildi", "Pickup selected")
       : saved || t("Teslim tercihi kaydedilmedi.", "No delivery choice yet.");
     if (els.deliveryStatus) {
       els.deliveryStatus.textContent = label;

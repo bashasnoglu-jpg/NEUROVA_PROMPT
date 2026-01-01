@@ -86,7 +86,7 @@
 (function () {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').catch((err) =>
+      navigator.serviceWorker.register('../nv-sw.js').catch((err) =>
         console.warn('Service worker kayıt hatası:', err)
       );
     });

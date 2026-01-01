@@ -44,7 +44,58 @@ function requireDom(keys) {
     return true;
 }
 
-const state = { q: "", category: "ALL", role: "ALL", tag: "ALL", lang: "all", kidsMode: false };
+const PAGE_LANG = (document.documentElement.lang || "tr")
+    .toLowerCase()
+    .startsWith("en")
+    ? "en"
+    : "tr";
+const LS_KEY = `nvPromptFilterState_${PAGE_LANG}`;
+
+try {
+    const legacy = localStorage.getItem("nvPromptFilterState");
+    if (legacy && !localStorage.getItem(LS_KEY)) {
+        localStorage.setItem(LS_KEY, legacy);
+    }
+} catch (_) {}
+
+function readFilterState() {
+    try {
+        const raw = localStorage.getItem(LS_KEY);
+        if (!raw) return {};
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") return {};
+        const lang = ["all", "tr", "en"].includes(parsed.lang) ? parsed.lang : "all";
+        return {
+            q: typeof parsed.q === "string" ? parsed.q : "",
+            category: typeof parsed.category === "string" ? parsed.category : "ALL",
+            role: typeof parsed.role === "string" ? parsed.role : "ALL",
+            tag: typeof parsed.tag === "string" ? parsed.tag : "ALL",
+            lang,
+            kidsMode: !!parsed.kidsMode,
+        };
+    } catch (_) {
+        return {};
+    }
+}
+
+function persistFilterState() {
+    try {
+        localStorage.setItem(
+            LS_KEY,
+            JSON.stringify({
+                q: state.q,
+                category: state.category,
+                role: state.role,
+                tag: state.tag,
+                lang: state.lang,
+                kidsMode: state.kidsMode,
+            })
+        );
+    } catch (_) {}
+}
+
+const DEFAULT_STATE = { q: "", category: "ALL", role: "ALL", tag: "ALL", lang: "all", kidsMode: false };
+const state = { ...DEFAULT_STATE, ...readFilterState() };
 const QA_MODE = new URLSearchParams(location.search || "").get("qa") === "1";
 
 let toastHost = null;
@@ -263,6 +314,19 @@ function renderChips(data) {
     setActiveChip(el.cat, state.category);
     setActiveChip(el.role, state.role);
     setActiveChip(el.tag, state.tag);
+}
+
+function syncStateToUI() {
+    if (el.q) el.q.value = state.q || "";
+
+    const langBtn = document.querySelector(`[data-nv-lang="${state.lang}"]`);
+    if (langBtn) markActiveLang(langBtn);
+
+    const kidsToggleBtn = document.getElementById("nv-kids-toggle");
+    if (kidsToggleBtn) {
+        kidsToggleBtn.classList.toggle("nv-btn--gold", state.kidsMode);
+        kidsToggleBtn.textContent = state.kidsMode ? "Kids Mode (ON)" : "Kids Mode";
+    }
 }
 
 function renderCards(data) {
@@ -595,6 +659,7 @@ function initUI(data) {
 
     renderChips(data);
     renderCards(data);
+    syncStateToUI();
     applyFilter();
 }
 
@@ -602,6 +667,7 @@ function wireEvents() {
     // search
     el.q?.addEventListener("input", () => {
         state.q = el.q.value || "";
+        persistFilterState();
         applyFilter();
     });
 
@@ -611,6 +677,7 @@ function wireEvents() {
         if (langBtn) {
             state.lang = langBtn.getAttribute("data-nv-lang") || "all";
             markActiveLang(langBtn);
+            persistFilterState();
             applyFilter();
             return;
         }
@@ -628,6 +695,7 @@ function wireEvents() {
             if (group === "role") setActiveChip(el.role, state.role);
             if (group === "tag") setActiveChip(el.tag, state.tag);
 
+            persistFilterState();
             applyFilter();
             return;
         }
@@ -679,6 +747,7 @@ function wireEvents() {
         state.kidsMode = !state.kidsMode;
         kidsToggleBtn.classList.toggle("nv-btn--gold", state.kidsMode);
         kidsToggleBtn.textContent = state.kidsMode ? "Kids Mode (ON)" : "Kids Mode";
+        persistFilterState();
         applyFilter();
     });
 

@@ -1,6 +1,6 @@
-NEUROVA MEGA SCAN v1.1
+NEUROVA MEGA SCAN v1.1 (FIXED)
 ROOT: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
-TIME: 2025-12-18T14:24:34
+TIME: 2026-01-01T17:31:06
 
 == 0) BASIC CHECKS ==
 package.json: True
@@ -13,143 +13,1734 @@ quality:gate = node tools/quality-gate.mjs
 export:prompts = node tools/export-prompts.mjs
 check:syntax = node --check app.js main.js
 dev = node server/index.cjs
+nv:verify = node tools/nv-verify.js
+nv:selftest = node tools/nv-selftest.js
+test = jest
 
 == 2) NODE SYNTAX CHECK (node --check) ==
-Node --check tamamlandÄ±.
+Node --check tamamlandý.
 
-== 3) JSON FILE PARSE CHECK ==
+== 3) JSON FILE PARSE CHECK (skip node_modules + lockfiles) ==
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\.devcontainer\devcontainer.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\.vscode\extensions.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\.vscode\launch.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\.vscode\settings.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\exports\neurova-prompts.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\exports\quality-report.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\.local\state\replit\agent\.latest (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\.local\state\replit\agent\.latest.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\smart-reception-assistant (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\smart-reception-assistant.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\spa-sales-optimizer (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\spa-sales-optimizer.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\spa-standard-pro (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\products\spa-standard-pro.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\gallery-curation (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\src\config\gallery-curation.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\components (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\components.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\package (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\package-lock (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\package-lock.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\tsconfig (2).json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_PROMPT\packs\manifest.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_PROMPT\packs\metrics.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_PROMPTS\curation.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_PROMPTS\theme_map.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\.vercel\project.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\.cspell.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\vercel.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\code-frame\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\corejs2-built-ins.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\corejs3-shipped-proposals.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\native-modules.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\overlapping-plugins.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\plugin-bugfixes.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\data\plugins.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\compat-data\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\core\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\core\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\core\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\generator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-compilation-targets\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-globals\data\browser-upper.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-globals\data\builtin-lower.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-globals\data\builtin-upper.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-globals\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-module-imports\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-module-transforms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-plugin-utils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-string-parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-validator-identifier\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helper-validator-option\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\helpers\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-async-generators\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-bigint\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-class-properties\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-class-static-block\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-import-attributes\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-import-meta\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-json-strings\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-jsx\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-logical-assignment-operators\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-nullish-coalescing-operator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-numeric-separator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-object-rest-spread\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-optional-catch-binding\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-optional-chaining\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-private-property-in-object\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-top-level-await\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\plugin-syntax-typescript\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\template\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\traverse\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\traverse\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\traverse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\traverse\tsconfig.overrides.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@babel\types\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@bcoe\v8-coverage\dist\lib\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@bcoe\v8-coverage\dist\lib\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@bcoe\v8-coverage\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@bcoe\v8-coverage\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@istanbuljs\load-nyc-config\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@istanbuljs\schema\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\console\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\core\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\environment\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\expect\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\expect-utils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\fake-timers\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\globals\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\reporters\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\schemas\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\source-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\test-result\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\test-sequencer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\transform\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jest\types\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jridgewell\gen-mapping\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jridgewell\remapping\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jridgewell\resolve-uri\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jridgewell\sourcemap-codec\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@jridgewell\trace-mapping\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@sinclair\typebox\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@sinonjs\commons\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@sinonjs\fake-timers\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@tootallnate\once\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\babel__core\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\babel__generator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\babel__template\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\babel__traverse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\graceful-fs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\istanbul-lib-coverage\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\istanbul-lib-report\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\istanbul-reports\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\jsdom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\node\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\stack-utils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\tough-cookie\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\yargs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\@types\yargs-parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\abab\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\accepts\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\acorn\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\acorn-globals\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\acorn-walk\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\agent-base\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\agent-base\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\agent-base\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ansi-escapes\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ansi-regex\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ansi-styles\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\anymatch\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\argparse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\array-flatten\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\asynckit\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-jest\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-plugin-istanbul\node_modules\istanbul-lib-instrument\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-plugin-istanbul\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-plugin-jest-hoist\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-preset-current-node-syntax\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\babel-preset-jest\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\balanced-match\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\baseline-browser-mapping\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\body-parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\brace-expansion\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\braces\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\browserslist\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\bser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\buffer-from\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\bytes\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bind-apply-helpers\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bind-apply-helpers\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bound\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bound\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\callsites\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\camelcase\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\caniuse-lite\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\chalk\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\char-regex\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ci-info\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ci-info\vendors.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cjs-module-lexer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cliui\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\co\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\collect-v8-coverage\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\color-convert\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\color-name\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\combined-stream\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\concat-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\content-disposition\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\content-type\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\convert-source-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cookie\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cookie-signature\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\create-jest\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cross-spawn\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cssom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cssstyle\lib\named_colors.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cssstyle\node_modules\cssom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\cssstyle\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\data-urls\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\debug\component.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\decimal.js\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\dedent\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\deepmerge\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\delayed-stream\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\depd\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\destroy\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\detect-newline\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\diff-sequences\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\domexception\lib\legacy-error-codes.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\domexception\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\dunder-proto\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\dunder-proto\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ee-first\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\electron-to-chromium\chromium-versions.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\electron-to-chromium\full-chromium-versions.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\electron-to-chromium\full-versions.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\electron-to-chromium\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\electron-to-chromium\versions.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\emittery\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\emoji-regex\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\encodeurl\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\entities\dist\commonjs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\entities\dist\esm\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\entities\src\generated\.eslintrc.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\entities\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\error-ex\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-define-property\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-define-property\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-errors\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-errors\tsconfig.json
-   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (27): {
-	"compilerOptions": {
-		/* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-		/* Projects */
-
-		/* Language and Environment */
-		"target": "es5",																	/* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-		// "lib": [],																				/* Specify a set of bundled library declaration files that describe the target runtime environment. */
-		// "noLib": true,																		/* Disable including any library files, including the default lib.d.ts. */
-		"useDefineForClassFields": true,										 /* Emit ECMAScript-standard-compliant class fields. */
-		// "moduleDetection": "auto",												/* Control what method is used to detect module-format JS files. */
-
-		/* Modules */
-		"module": "commonjs",																/* Specify what module code is generated. */
-		// "rootDir": "./",																	/* Specify the root folder within your source files. */
-		// "moduleResolution": "node",											 /* Specify how TypeScript looks up a file from a given module specifier. */
-		// "baseUrl": "./",																	/* Specify the base directory to resolve non-relative module names. */
-		// "paths": {},																			/* Specify a set of entries that re-map imports to additional lookup locations. */
-		// "rootDirs": [],																	 /* Allow multiple folders to be treated as one when resolving modules. */
-		// "typeRoots": ["types"],													 /* Specify multiple folders that act like `./node_modules/@types`. */
-		"resolveJsonModule": true,													 /* Enable importing .json files. */
-		// "allowArbitraryExtensions": true,								 /* Enable importing files with any extension, provided a declaration file is present. */
-
-		/* JavaScript Support */
-		"allowJs": true,																		 /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
-		"checkJs": true,																		 /* Enable error reporting in type-checked JavaScript files. */
-		"maxNodeModuleJsDepth": 1,													 /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
-
-		/* Emit */
-		"declaration": true,																 /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-		"declarationMap": true,															/* Create sourcemaps for d.ts files. */
-		"noEmit": true,																			/* Disable emitting files from a compilation. */
-
-		/* Interop Constraints */
-		"allowSyntheticDefaultImports": true,								/* Allow `import x from y` when a module doesn't have a default export. */
-		"esModuleInterop": true,														 /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
-		"forceConsistentCasingInFileNames": true,						/* Ensure that casing is correct in imports. */
-
-		/* Type Checking */
-		"strict": true,																			/* Enable all strict type-checking options. */
-
-		/* Completeness */
-		// "skipLibCheck": true															/* Skip type checking all .d.ts files. */
-	},
-	"exclude": [
-		"coverage",
-	],
-}
-
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-object-atoms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-object-atoms\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-set-tostringtag\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-set-tostringtag\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\escalade\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\escape-html\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\escape-string-regexp\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\escodegen\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\esprima\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\estraverse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\esutils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\etag\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\execa\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\exit\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\expect\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\express\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fast-json-stable-stringify\benchmark\test.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fast-json-stable-stringify\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fb-watchman\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fill-range\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\finalhandler\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\find-up\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\form-data\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\forwarded\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fresh\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\fs.realpath\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\function-bind\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\gensync\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-caller-file\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-intrinsic\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-package-type\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-proto\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-proto\tsconfig.json
-   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (59): {
-	"extends": "@ljharb/tsconfig",
-	"compilerOptions": {
-		//"target": "es2021",
-	},
-	"exclude": [
-		"coverage",
-	],
-}
-
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-stream\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\glob\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\gopd\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\gopd\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\graceful-fs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-flag\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-symbols\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-symbols\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-tostringtag\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-tostringtag\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\hasown\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\hasown\tsconfig.json
-   Geçersiz dizi geçirildi, fazladan izleyen ',' var. (69): {
-  "extends": "@ljharb/tsconfig",
-  "exclude": [
-    "coverage",
-  ],
-}
-
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\html-encoding-sniffer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\html-escaper\cjs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\html-escaper\test\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\html-escaper\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\http-errors\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\http-proxy-agent\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\http-proxy-agent\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\http-proxy-agent\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\https-proxy-agent\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\https-proxy-agent\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\https-proxy-agent\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\human-signals\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\big5-added.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\cp936.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\cp949.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\cp950.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\eucjp.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\gb18030-ranges.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\gbk-added.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\encodings\tables\shiftjis.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\iconv-lite\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\import-local\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\imurmurhash\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\inflight\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\inherits\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ipaddr.js\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-arrayish\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-core-module\core.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-core-module\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-fullwidth-code-point\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-generator-fn\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-number\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-potential-custom-element-name\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\is-stream\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\isexe\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-coverage\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-instrument\node_modules\semver\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-instrument\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-report\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-source-maps\node_modules\debug\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-source-maps\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-lib-source-maps\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\istanbul-reports\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-changed-files\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-circus\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-cli\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-config\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-diff\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-docblock\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-each\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-environment-jsdom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-environment-node\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-get-type\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-haste-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-leak-detector\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-matcher-utils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-message-util\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-mock\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-pnp-resolver\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-regex-util\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-resolve\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-resolve-dependencies\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-runner\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-runtime\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-snapshot\node_modules\semver\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-snapshot\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-util\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-validate\node_modules\camelcase\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-validate\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-watcher\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-worker\node_modules\supports-color\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jest-worker\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\js-tokens\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\js-yaml\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jsdom\lib\jsdom\browser\js-globals.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jsdom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\jsesc\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\json-parse-even-better-errors\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\json5\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\kleur\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\leven\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\lines-and-columns\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\locate-path\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\lru-cache\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\make-dir\node_modules\semver\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\make-dir\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\makeerror\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\math-intrinsics\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\math-intrinsics\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\media-typer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\merge-descriptors\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\merge-stream\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\methods\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\micromatch\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mime\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mime\types.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mime-db\db.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mime-db\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mime-types\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\mimic-fn\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\minimatch\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\natural-compare\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\negotiator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\node-int64\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\node-releases\data\processed\envs.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\node-releases\data\release-schedule\release-schedule.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\node-releases\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\normalize-path\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\npm-run-path\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\nwsapi\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\object-inspect\package-support.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\object-inspect\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\on-finished\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\once\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\onetime\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\p-limit\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\p-locate\node_modules\p-limit\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\p-locate\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\p-try\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\parse-json\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\parse5\dist\cjs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\parse5\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\parseurl\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\path-exists\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\path-is-absolute\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\path-key\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\path-parse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\path-to-regexp\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\picocolors\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\picomatch\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pirates\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pkg-dir\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pretty-format\node_modules\ansi-styles\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pretty-format\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\prompts\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\proxy-addr\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\psl\types\tsconfig.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\psl\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\punycode\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pure-rand\lib\esm\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\pure-rand\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\qs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\querystringify\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\range-parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\raw-body\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\react-is\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\require-directory\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\requires-port\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\lib\core.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\module_dir\zmodules\bbb\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\baz\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\browser_field\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\dot_main\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\dot_slash_main\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\false_main\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\incorrect_main\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\invalid_main\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\multirepo\packages\package-a\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\multirepo\packages\package-b\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\multirepo\lerna.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\multirepo\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\nested_symlinks\mylib\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\test\resolver\symlinked\package\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve-cwd\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve-from\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\resolve.exports\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\safe-buffer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\safer-buffer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\saxes\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\semver\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\send\node_modules\ms\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\send\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\serve-static\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\setprototypeof\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\shebang-command\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\shebang-regex\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-list\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-list\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-map\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-weakmap\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-weakmap\tsconfig.json
-   Geçersiz JSON basit öðesi: .
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\signal-exit\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\sisteransi\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\slash\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\source-map\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\source-map-support\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\sprintf-js\bower.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\sprintf-js\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\stack-utils\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\statuses\codes.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\statuses\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\string-length\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\string-width\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\strip-ansi\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\strip-bom\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\strip-final-newline\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\strip-json-comments\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\supports-color\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\supports-preserve-symlinks-flag\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\symbol-tree\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\test-exclude\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\tmpl\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\to-regex-range\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\toidentifier\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\tough-cookie\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\tr46\lib\mappingTable.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\tr46\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\type-detect\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\type-fest\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\type-is\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\undici-types\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\universalify\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\unpipe\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\update-browserslist-db\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\url-parse\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\utils-merge\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\v8-to-istanbul\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\vary\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\w3c-xmlserializer\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\walker\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\webidl-conversions\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\lib\labels-to-names.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\lib\supported-names.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\big5-added.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\cp936.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\cp949.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\cp950.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\eucjp.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\gb18030-ranges.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\gbk-added.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\encodings\tables\shiftjis.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\node_modules\iconv-lite\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-encoding\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-mimetype\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\whatwg-url\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\which\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\wrap-ansi\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\wrappy\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\write-file-atomic\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\ws\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\xml-name-validator\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\xmlchars\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\y18n\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yallist\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\helpers\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\be.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\cs.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\de.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\en.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\es.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\fi.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\fr.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\hi.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\hu.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\id.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\it.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\ja.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\ko.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\nb.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\nl.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\nn.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\pirate.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\pl.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\pt.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\pt_BR.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\ru.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\th.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\tr.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\uk_UA.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\uz.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\zh_CN.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\locales\zh_TW.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yargs-parser\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\yocto-queue\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\.package-lock.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\guard-report.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-enums.node.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-audit.report.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-move-plan.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-sanity.report.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\NV_SELFTEST_PROOF.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\NV_VERIFY_PROOF.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\.cspell.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\hero-overlay-1766788922444.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_DATAFLOW_v1.json
+   A parameter cannot be found that matches parameter name 'Depth'.
 [BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\package-lock.json
-   Cannot process argument because the value of argument "name" is not valid. Change the value of the "name" argument and run the operation again.
-JSON parse check tamamlandÄ±.
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\package.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\uiCopy.en.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\uiCopy.tr.json
+   A parameter cannot be found that matches parameter name 'Depth'.
+JSON parse check tamamlandý.
 
 == 4) HTML ASSET LINK CHECK (src/href exists) ==
-HTML asset check tamamlandÄ±.
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\hamam.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\index.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\index.html
+   ref:  /apple-touch-icon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\apple-touch-icon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\kids-family.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\kids-family.html
+   ref:  ../site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\..\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\masajlar.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\masajlar.html
+   ref:  ../site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\..\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\packages.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\paketler.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\paketler.html
+   ref:  /apple-touch-icon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\apple-touch-icon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\products.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\products.html
+   ref:  ../site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\..\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\team.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\team.html
+   ref:  ../site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\en\..\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\about_1766744891480.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\face-sothys_1766744891481.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\galeri_1766744891478.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\hamam_1766744891478.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\index_1766744891479.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\kids-family_1766744891479.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\masajlar_1766744891480.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\packages_1766744891480.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\paketler_1766744878979.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\products_1766744878979.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978 (2).html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./wa-config.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-config.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./wa-linker.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\wa-linker.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./slot-macro.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\slot-macro.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./assets/nav.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./assets/favicon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\favicon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./manifest.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\manifest.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\team_1766744878978.html
+   ref:  ./assets/nav.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\attached_assets\.\assets\nav.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\index (2).html
+   ref:  /src/main.tsx
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\src\main.tsx
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\Image-Analyzer\Image-Analyzer\client\index.html
+   ref:  /src/main.tsx
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\src\main.tsx
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\hamam.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\index.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\index.html
+   ref:  /apple-touch-icon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\apple-touch-icon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\kids-family.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\masajlar.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\packages.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\paketler.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\paketler.html
+   ref:  /apple-touch-icon.png
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\apple-touch-icon.png
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\products.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\en\team.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\pages\galeri.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\pages\hamam.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\face-sothys.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\galeri.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\hamam.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\index.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\kids-family.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\masajlar.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\packages.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\paketler.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\products.html
+   ref:  /assets/js/products-store.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\assets\js\products-store.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\products.html
+   ref:  /assets/js/NEUROVA_STORE_INTERACTIVE_FIX.js
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\assets\js\NEUROVA_STORE_INTERACTIVE_FIX.js
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\products.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\products.html
+   ref:  /assets/css/products-store.css
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\assets\css\products-store.css
+[MISSING ASSET] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\team.html
+   ref:  /site.webmanifest
+   path: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\site.webmanifest
+HTML asset check tamamlandý.
 
 == 5) PACK METRICS ==
-packs count = 10
-total prompts = 53
-  ./packs/pack.ayurveda.js â†’ prompts=2 ids=2
-  ./packs/pack.brand-look.js â†’ prompts=3 ids=3
-  ./packs/pack.face-sothys.js â†’ prompts=4 ids=4
-  ./packs/pack.hamam.js â†’ prompts=10 ids=10
-  ./packs/pack.kids.js â†’ prompts=6 ids=6
-  ./packs/pack.kids.premium.js â†’ prompts=8 ids=8
-  ./packs/pack.recovery.js â†’ prompts=8 ids=8
-  ./packs/pack.seasonal-detox.js â†’ prompts=4 ids=4
-  ./packs/pack.signature-family-teen.js â†’ prompts=4 ids=4
-  ./packs/pack.signature.js â†’ prompts=4 ids=4
+[FAIL] mega-metrics: mega-metrics exited with code 1
 
-== 5) COMMON OOPS PATTERNS ==
-[HIT] NV_PACK_LIST  (6)
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-audit.js
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-build-pack-index.js
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\app.js
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\health-check.js
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompt-library.html
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
-[HIT] manifest.json  (6)
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\export-prompts.mjs
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\mega-metrics.mjs
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-guard-packs.mjs
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\quality-gate.mjs
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-move-plan.preview.txt
-   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
+== 6) PRODUCTS QUICK EXTRACT ==
+card-price examples:
+  - â€šÂº2.450
+  - â€šÂº1.950
+  - â€šÂº1.380
+found: Å
+found: Å
 
-== 6) SUMMARY ==
-Rapor Ã¼retildi: NV_MEGA_REPORT.txt
-Ã–ncelik: [OK] node --check [OK] assets
+== 7) SUMMARY ==
+node --check: OK
+assets: MISSING
 

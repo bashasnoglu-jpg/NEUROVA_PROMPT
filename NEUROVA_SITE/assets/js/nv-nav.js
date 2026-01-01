@@ -1,7 +1,7 @@
-﻿(function () {
+(function () {
   const prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   const docLang = (document.documentElement.lang || '').toLowerCase();
-  const isEnglish = docLang.startsWith('en');
+  const isEnglish = docLang.startsWith('en') || location.pathname.startsWith('/en/');
 
   const NV_ROUTES = {
     tr: {
@@ -74,6 +74,7 @@
   ).join('');
 
   const ctaLabel = isEnglish ? 'Reservation' : 'Rezervasyon';
+  const ariaLabelMenu = isEnglish ? 'Menu' : 'Menü';
 
   navSlot.innerHTML = `
     <header class="nv-header" data-nv-header>
@@ -90,7 +91,7 @@
 
           <div class="nv-actions">
             <a class="nv-cta nv-nav-cta" href="#nv-wa" data-nv-open-reservation>${ctaLabel}</a>
-            <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Men?" aria-expanded="false">
+            <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="${ariaLabelMenu}" aria-expanded="false">
               <span></span><span></span>
             </button>
           </div>
@@ -113,7 +114,7 @@
     return last.split('?')[0].split('#')[0];
   };
 
-  // âœ… Slug standardÄ±: body data-page bunlardan biri olmalÄ±
+  // ✅ Slug standardı: body data-page bunlardan biri olmalı
   const pathMap = {
     'index.html': 'home',
     'hamam.html': 'hamam',
@@ -209,7 +210,7 @@
     if (anchor) anchor.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
   }
 
-  // âœ… Her durumda modal varsa aÃ§, yoksa #nv-waâ€™ya kay
+  // ✅ Her durumda modal varsa aç, yoksa #nv-wa'ya kay
   function wireReservationTriggers(root = document) {
     root.querySelectorAll('[data-nv-open-reservation]').forEach((el) => {
       if (el.dataset.nvReservationWired === '1') return;
@@ -221,8 +222,6 @@
     });
   }
 
-  setActiveNav();
-  wireMobilePanel();
   function wireMobilePanelFallback() {
     if (document.documentElement.dataset.nvMobileFallback === '1') return;
     document.documentElement.dataset.nvMobileFallback = '1';
@@ -303,7 +302,12 @@
     });
   }
 
-  wireMobilePanelFallback();
+  setActiveNav();
+  wireMobilePanel();
+  const navSlotEl = document.getElementById('nv-nav-slot');
+  if (navSlotEl?.dataset.nvMobileWired !== '1') {
+    wireMobilePanelFallback();
+  }
   wireReservationTriggers(document);
 })();
 
