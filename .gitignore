@@ -1,4 +1,4 @@
-﻿# dependencies
+# dependencies
 node_modules/
 
 # logs
@@ -33,12 +33,19 @@ _report/
 tmp/
 *.log
 *.bak
+*.bak-*
+*.bak.*
+*.backup
+*.tmp
 .DS_Store
 desktop.ini
 
 # local inventories
+
 dosya-listesi.txt
+
 git-dosyalari.txt
+.venv/
+__pycache__/
+*.pyc
 
-
-index.html
