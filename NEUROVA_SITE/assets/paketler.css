@@ -11,6 +11,12 @@
   --nv-premium: #7f8a99;
   --nv-r-lg: 18px;
   --nv-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  --NV_PANEL: #41464A;
+  --NV_BG: #34393D;
+  --NV_FRAME: #2C2F32;
+  --NV_DIVIDER: #32363A;
+  --NV_STROKE: #55595D;
+  --NV_HIGHLIGHT: #9F9F9F;
 }
 
 *,
@@ -29,6 +35,11 @@ body {
 main {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+body[data-page="paketler"] main,
+body[data-page="products"] main,
+body[data-page="packages"] main {
   padding: 120px 10vw 96px;
   display: flex;
   flex-direction: column;
@@ -342,4 +353,143 @@ a {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .nv-wa div, .nv-wa .nv-cta { grid-column: 1 / span 4; justify-self: start; }
+}
+
+/* NEUROVA • Feature Hero: Hamam (v1.0) */
+.nv-feature-hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  min-height:520px;
+  margin:22px 0 34px;
+  background:var(--NV_FRAME, #2C2F32);
+  border:1px solid var(--NV_STROKE, #55595D);
+}
+
+.nv-feature-bg{
+  position:absolute; inset:0;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.03);
+  filter:saturate(0.95) contrast(1.03);
+  will-change: transform;
+}
+
+.nv-feature-overlay{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(70% 80% at 30% 35%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.78) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.30) 45%, rgba(0,0,0,0.10) 100%);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.nv-feature-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  align-items:flex-end;
+  padding:26px;
+}
+
+.nv-feature-card{
+  width:min(640px, 92vw);
+  padding:22px 22px 18px;
+  border-radius:20px;
+  background:rgba(65,70,74,0.48); /* NV_PANEL */
+  border:1px solid rgba(85,89,93,0.75); /* NV_STROKE */
+  box-shadow:0 18px 60px rgba(0,0,0,0.45);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.nv-feature-kicker{
+  font-size:12px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(159,159,159,0.92); /* NV_HIGHLIGHT */
+  margin-bottom:10px;
+}
+
+.nv-feature-title{
+  font-size:38px;
+  line-height:1.08;
+  margin:0 0 10px;
+  color:#fff;
+}
+
+.nv-feature-sub{
+  font-size:15.5px;
+  line-height:1.55;
+  margin:0 0 16px;
+  color:rgba(255,255,255,0.86);
+}
+
+.nv-feature-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:2px 0 10px;
+}
+
+.nv-feature-meta{
+  font-size:12.5px;
+  line-height:1.4;
+  color:rgba(255,255,255,0.70);
+  border-top:1px solid rgba(85,89,93,0.55);
+  padding-top:10px;
+  margin-top:10px;
+}
+
+/* Buttons (fallback if your global buttons already exist) */
+.nv-feature-hero .nv-btn{
+  appearance:none;
+  border:1px solid rgba(85,89,93,0.8);
+  background:rgba(44,47,50,0.55);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:14px;
+  font-size:14px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .18s ease, filter .18s ease, background .18s ease;
+}
+
+.nv-feature-hero .nv-btn:hover{
+  transform:translateY(-1px);
+  filter:brightness(1.03);
+}
+
+.nv-feature-hero .nv-btn-primary{
+  background:rgba(159,159,159,0.22);
+  border-color:rgba(159,159,159,0.48);
+}
+
+.nv-feature-hero .nv-btn-ghost{
+  background:rgba(44,47,50,0.35);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .nv-feature-hero .nv-btn,
+  .nv-feature-hero .nv-btn:hover,
+  .nv-feature-bg{
+    transition:none !important;
+  }
+  .nv-feature-bg{
+    transform:none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px){
+  .nv-feature-hero{ min-height:560px; border-radius:20px; }
+  .nv-feature-inner{ padding:18px; }
+  .nv-feature-title{ font-size:30px; }
+  .nv-feature-card{ padding:18px; border-radius:18px; }
+  .nv-feature-bg{ background-position:60% center; }
+  .nv-feature-card{ width:min(640px, 94vw); }
 }

@@ -1,27 +1,27 @@
-# Hammam Team – Post-Service Routine and Cleaning
+# Hamam Team – Post-Program Routine and Cleaning
 
-This guide walks the hammam team through the post-service handover: guest communication, defect reporting, and the detailed cleaning flow.
+This guide explains the step-by-step closing process for the hamam team after their shift, covering guest relations wrap-up, defect/damage reporting, and the detailed cleaning workflow.
 
-## 1. Guest interaction – when the service ends
-1. Thank the guest and briefly summarize the ritual performed (which mud, which rhythm was used).
-2. If the guest is satisfied, offer a quick “see you soon”; document any sensitive points and notify the manager.
-3. If you spot a potential defect or damage (e.g., stone panel chipped) capture a photo, short note, and code (e.g., `HAM_05`) and send it via WhatsApp/Slack channel.
+## 1. Guest Relations – When the Service is Complete
+1. Thank the guest and briefly summarize the ritual prepared for them (which mud, which ritual was used).
+2. If the guest is satisfied, say a quick "see you soon"; if there are any sensitive points, take notes and inform the manager.
+3. If there is any anticipated damage or defect (e.g., damage to the marble basin or stone cladding), send a photo + short note + code (e.g., `HAM_05`) to the WhatsApp/Slack channel.
 
-## 2. Defect & damage reporting
-- For small cracks or floor spills: cordon the area, document with a photo, and inform maintenance immediately.
-- For pool equipment or jacuzzi issues: if the control panel shows an alert, shut the system down and log a “maintenance request”; provide another room if the guest is still inside.
-- If a water/heating regulator error occurs, call the technician, log it in the notebook, and offer an alternative room to keep the guest flow smooth.
+## 2. Defect & Damage Reporting
+- Minor cracks/spalls: first, close off the area and report it with a photo; inform the maintenance team immediately.
+- Pool equipment or jacuzzi issues: if a control panel warning is received, shut down the system and enter it into the "maintenance request" form; if a guest is still inside, prepare another room.
+- If there is an error with the water/heat regulator, call the technician, log it in the notebook, and offer an alternative room to meet the guest's expectations.
 
-## 3. Detailed cleaning flow
-1. **First round:** Clean the steam room glass, stone seating, textured surfaces, and rope doors in sequence.
-2. **Second round:** If liquids remain on the floors, dry them first, then wipe with hammam-certified disinfectant.
-3. **Third round:** Sanitize pool edges, shower areas, towel trays, and accessories with antiseptic solution.
-4. **Last round:** Check the air purifier and aroma diffuser; refresh plant materials (laurel, lavender etc.) and rinse with fresh water.
-5. Apply the “cleaning complete” tag after each cycle and enter related notes in the digital forms.
+## 3. Detailed Cleaning Workflow
+1.  **First Round:** Steam room windows, stone seating areas, porous surfaces, and rope-handled doors are cleaned in order.
+2.  **Second Round:** If there is liquid residue on the floors, first dry them, then wipe with a hamam-certified disinfectant.
+3.  **Third Round:** The pool edge, shower areas, bathrobe/towel trays, and accessories are wiped down with an antiseptic solution.
+4.  **Final Round:** The air purifier and aroma diffuser are checked; herbal materials (bay leaf, lavender, etc.) are replenished and rinsed with fresh water.
+5.  A "cleaning complete" tag must be attached at each step, and notes about the room should be entered into digital forms.
 
-## 4. Resources & sustainability
-- Record every chemical used with quantities to avoid mixing errors.
-- Place soiled textiles into red bags before sending them to the laundry.
-- After lights and water systems are off, ventilate the space; keep doors closed until the next guest arrives.
+## 4. Resources & Sustainability
+- Record the quantities of chemicals used; prevent incorrect mixtures.
+- Soiled textiles are first placed in red bags, then sent to the laundry.
+- After the lighting and water systems are turned off, the area is ventilated; the doors do not remain open until the next guest arrives.
 
-Share this guide at the hammam entrance, cleaning closet, and team WhatsApp group to keep consistency. If you want, I can also prepare an English QA summary version or printable poster next.
+You can maintain consistency by sharing this guide at the hamam entrance, in the cleaning closet, and in the team's WhatsApp group. We can also translate this text into English and reproduce it as a QA guide.

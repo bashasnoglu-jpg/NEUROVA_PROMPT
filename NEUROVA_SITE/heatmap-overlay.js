@@ -14,9 +14,9 @@
     return "tr";
   }
 
-  const L = {
+    const L = {
     tr: {
-      chip: "Isı Haritası",
+      chip: "Isı haritası",
       title: "HEATMAP",
       subtitle: "WhatsApp tıklamaları (localStorage)",
       collapse: "Daralt",
@@ -24,8 +24,8 @@
       sources: "Kaynaklar",
       tiers: "Tier",
       total: "Toplam",
-      none: "Henüz veri yok.",
-      hintGenerate: "Herhangi bir WhatsApp CTA'sına tıkla, veri oluşsun.",
+      none: "Henüz veri yok. WhatsApp CTA’larına tıkla.",
+      hintGenerate: "WhatsApp CTA’larından birine tıkla, sayaçlar dolsun.",
       reset: "Sıfırla",
       close: "Kapat",
       copy: "Kopyala",
@@ -33,9 +33,16 @@
       confirmReset: "Tüm heatmap sayaçlarını sıfırlamak istiyor musun?",
       toastCopied: "Kopyalandı (CSV + Page mix)",
       toastResetOk: "Sıfırlandı",
-      toastCopyFail: "Kopyalanamadı (izin/odak). Not: file:// yerine http:// açın.",
+      toastCopyFail: "Kopyalanamadı (izin/odak). Not: http bağlantısı kullan.",
       download: "İndir",
       toastDownloaded: "İndirildi",
+      dockRight: "Sağ alta hizala",
+      helpLines: [
+        "Isı haritasını açmak için sol alttaki "Isı haritası" chip’ine tıkla.",
+        "WhatsApp CTA’larına tıklayınca sayaçlar artar; panel veriyi localStorage’dan okur.",
+        "Kapat butonu veya ESC ile paneli gizleyebilirsin."
+      ],
+      helpChip: "Isı haritası panelini aç",
     },
     en: {
       chip: "Heatmap",
@@ -46,8 +53,8 @@
       sources: "Sources",
       tiers: "Tier",
       total: "Total",
-      none: "No data yet.",
-      hintGenerate: "Click any WhatsApp CTA to generate data.",
+      none: "No data yet. Click WhatsApp CTAs.",
+      hintGenerate: "Tap any WhatsApp CTA to generate data.",
       reset: "Reset",
       close: "Close",
       copy: "Copy",
@@ -58,11 +65,26 @@
       toastCopyFail: "Copy failed (permission/focus). Tip: use http:// instead of file://",
       download: "Download",
       toastDownloaded: "Downloaded",
+      dockRight: "Dock bottom-right",
+      helpLines: [
+        "Tap the bottom-left “Heatmap” chip to reveal the overlay.",
+        "WhatsApp CTA clicks grow the counters; the panel reads data from localStorage.",
+        "Close with the button, ESC, or by clicking the backdrop."
+      ],
+      helpChip: "Open the heatmap panel",
     },
   };
 
+  function resolveLang(lang) {
+    if (lang) {
+      const normalized = String(lang || "").toLowerCase();
+      return normalized.startsWith("en") ? "en" : "tr";
+    }
+    return getLang();
+  }
+
   function tNow() {
-    return getLang() === "en" ? L.en : L.tr;
+    return L[resolveLang()];
   }
 
   function nvParseWaClickKey(key) {
@@ -147,7 +169,12 @@
 
   function toCSV(rows) {
     const head = "source,tier,count";
-    return [head, ...rows.map((r) => `${r.source},${r.tier},${r.count}`)].join("\n");
+    const total = rows.reduce((sum, r) => sum + (Number(r.count) || 0), 0);
+    return [
+      head,
+      ...rows.map((r) => `${r.source},${r.tier},${r.count}`),
+      `TOTAL,,${total}`,
+    ].join("\n");
   }
 
   function nvComputePageMixFromCells(cells) {
@@ -471,14 +498,19 @@
     } catch (_) {}
   }
 
-  function setupCollapse(overlay, t) {
+  function setupCollapse(overlay) {
     const KEY = "nv_heat_overlay_collapsed";
     const btn = overlay.querySelector('[data-act="toggle"]');
     if (!btn) return;
 
+    const updateLabel = () => {
+      const tt = tNow();
+      btn.textContent = overlay.classList.contains("is-collapsed") ? tt.expand : tt.collapse;
+    };
+
     const apply = (collapsed) => {
       overlay.classList.toggle("is-collapsed", collapsed);
-      btn.textContent = collapsed ? t.expand : t.collapse;
+      updateLabel();
     };
 
     const initial = localStorage.getItem(KEY) === "1";
@@ -488,8 +520,10 @@
       const next = !overlay.classList.contains("is-collapsed");
       apply(next);
       localStorage.setItem(KEY, next ? "1" : "0");
-      render(overlay, getLang());
+      render(overlay);
     });
+
+    overlay.__nvHeatCollapseUpdate__ = updateLabel;
   }
 
   /* =========================================================
@@ -578,12 +612,32 @@
     const safeParse = (s) => {
       try { return JSON.parse(s); } catch { return null; }
     };
-    const saved = safeParse(localStorage.getItem(storageKey)) || {};
-    if (saved && typeof saved === "object") {
-      if (saved.w) panelEl.style.width = `${saved.w}px`;
-      if (saved.h) panelEl.style.height = `${saved.h}px`;
-      if (saved.x != null) panelEl.style.left = `${saved.x}px`;
-      if (saved.y != null) panelEl.style.top = `${saved.y}px`;
+
+    const savedLegacy = safeParse(localStorage.getItem(storageKey));
+    const savedPos = safeParse(localStorage.getItem("nv_heat_overlay_pos"));
+    const savedSize = safeParse(localStorage.getItem("nv_heat_overlay_size"));
+
+    const applySize = (size) => {
+      if (!size || typeof size !== "object") return;
+      if (typeof size.w === "number" && size.w > 0) panelEl.style.width = `${size.w}px`;
+      if (typeof size.h === "number" && size.h > 0) panelEl.style.height = `${size.h}px`;
+    };
+    const applyPos = (pos) => {
+      if (!pos || typeof pos !== "object") return;
+      if (typeof pos.x === "number") panelEl.style.left = `${pos.x}px`;
+      if (typeof pos.y === "number") panelEl.style.top = `${pos.y}px`;
+    };
+
+    if (savedSize && typeof savedSize === "object") {
+      applySize(savedSize);
+    } else if (savedLegacy && typeof savedLegacy === "object") {
+      applySize(savedLegacy);
+    }
+
+    if (savedPos && typeof savedPos === "object") {
+      applyPos(savedPos);
+    } else if (savedLegacy && typeof savedLegacy === "object") {
+      applyPos(savedLegacy);
     }
 
     const rect0 = panelEl.getBoundingClientRect();
@@ -599,12 +653,11 @@
     const persist = () => {
       try {
         const r = panelEl.getBoundingClientRect();
-        localStorage.setItem(storageKey, JSON.stringify({
-          x: Math.round(r.left),
-          y: Math.round(r.top),
-          w: Math.round(r.width),
-          h: Math.round(r.height),
-        }));
+        const pos = { x: Math.round(r.left), y: Math.round(r.top) };
+        const size = { w: Math.round(r.width), h: Math.round(r.height) };
+        localStorage.setItem("nv_heat_overlay_pos", JSON.stringify(pos));
+        localStorage.setItem("nv_heat_overlay_size", JSON.stringify(size));
+        localStorage.setItem(storageKey, JSON.stringify(Object.assign({}, pos, size)));
       } catch (_) {}
     };
 
@@ -650,6 +703,7 @@
       let y = clamp(panelStartTop + dy, minY, maxY);
 
       x = snap(x, minX, maxX, SNAP_PX);
+      y = snap(y, minY, maxY, SNAP_PX);
 
       panelEl.style.left = `${Math.round(x)}px`;
       panelEl.style.top = `${Math.round(y)}px`;
@@ -720,13 +774,17 @@
       const w = r.width;
 
       const minX = 8;
+      const minY = 8;
       const maxX = window.innerWidth - w - 8;
+      const maxY = window.innerHeight - r.height - 8;
 
       let x = clamp(r.left, minX, maxX);
+      let y = clamp(r.top, minY, maxY);
       x = snap(x, minX, maxX, SNAP_PX);
+      y = snap(y, minY, maxY, SNAP_PX);
 
       panelEl.style.left = `${Math.round(x)}px`;
-      panelEl.style.top = `${Math.round(clamp(r.top, 8, window.innerHeight - r.height - 8))}px`;
+      panelEl.style.top = `${Math.round(y)}px`;
 
       persist();
       updateDockPadding();
@@ -770,6 +828,8 @@
     overlayEl.__nvDockRefresh__ = updateDockPadding;
     overlayEl.__nvDockClear__ = nvHeatmapClearDockPadding;
     overlayEl.__nvClamp = onWindowResize;
+    overlayEl.__nvHeatPersist__ = persist;
+    panelEl.__nvHeatPersist__ = persist;
 
     panelEl.__nvOverlayDispose__ = () => {
       try {
@@ -803,14 +863,20 @@
   }
 
   function render(overlay, lang) {
-    const currentLang = lang || getLang();
-    const t = currentLang === "en" ? L.en : L.tr;
+    const currentLang = resolveLang(lang);
+    const t = L[currentLang];
     const cells = getCells();
     const total = cells.reduce((acc, c) => acc + (c.count || 0), 0);
     const sources = Array.from(new Set(cells.map((c) => c.source))).sort();
     const tiers = Array.from(new Set(cells.map((c) => c.tier))).sort();
     const ov = overlay || document.getElementById("nv-heat-overlay");
     const isCollapsed = !!(ov && ov.classList.contains("is-collapsed"));
+    const helpLines = Array.isArray(t.helpLines) ? t.helpLines : [];
+    const helpBlock = helpLines.length
+      ? `<div class="nv-heat-help">${helpLines
+          .map((line) => `<div>${escapeHtml(line)}</div>`)
+          .join("")}</div>`
+      : "";
 
     const mini = document.getElementById("nv-heat-mini");
     const miniTotal = document.getElementById("nv-heat-mini-total");
@@ -828,8 +894,10 @@
     }
 
     if (!cells.length) {
-      const hint = t.hintGenerate || "Click any WhatsApp CTA to generate data.";
-      bodyEl.innerHTML = `<div class="nv-heat-empty">${escapeHtml(t.none)}<br/>${escapeHtml(hint)}</div>`;
+      const hint = t.hintGenerate ? `<div class="nv-heat-hint">${escapeHtml(t.hintGenerate)}</div>` : "";
+      bodyEl.innerHTML = `${helpBlock}<div class="nv-heat-empty">${escapeHtml(t.none)}${hint ? `<br/>${hint}` : ""}</div>`;
+      ov.__nvHeatLangUpdate__?.();
+      ov.__nvHeatCollapseUpdate__?.();
       return;
     }
 
@@ -923,7 +991,8 @@
     `;
 
     bodyEl.innerHTML = `
-      <div style="opacity:.85;margin-bottom:8px;">${escapeHtml(t.subtitle)}</div>
+      ${helpBlock}
+      <div class="nv-heat-subtitle">${escapeHtml(t.subtitle)}</div>
       ${debugHtml}
       ${mixHtml}
 
@@ -960,16 +1029,19 @@
     bodyEl.querySelectorAll(".nv-heat-table-wrap").forEach((w) => {
       try { w.scrollLeft = 0; } catch (_) {}
     });
+    ov.__nvHeatLangUpdate__?.();
+    ov.__nvHeatCollapseUpdate__?.();
   }
 
   function buildUI() {
-    const lang = getLang();
-    const t = lang === "en" ? L.en : L.tr;
+    const initialT = tNow();
 
     const chip = document.createElement("button");
     chip.type = "button";
     chip.className = "nv-heat-chip";
-    chip.textContent = t.chip;
+    chip.textContent = initialT.chip;
+    chip.setAttribute("title", initialT.helpChip || initialT.chip);
+    chip.setAttribute("aria-label", initialT.helpChip || initialT.chip);
     document.body.appendChild(chip);
 
     const overlay = document.createElement("div");
@@ -982,14 +1054,15 @@
         <div class="nv-heat-head" id="nv-heat-head">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
             <div style="font-weight:800;">HEATMAP</div>
-            <button type="button" id="nv-heat-toggle" data-act="toggle" style="padding:8px 10px;border-radius:999px;font-size:12px;">${escapeHtml(t.collapse)}</button>
+            <button type="button" id="nv-heat-toggle" data-act="toggle" style="padding:8px 10px;border-radius:999px;font-size:12px;">${escapeHtml(initialT.collapse)}</button>
           </div>
 
           <div class="nv-heat-actions" id="nv-heat-actions">
-            <button type="button" id="nv-heat-copy" data-act="copy">${escapeHtml(t.copy)}</button>
-            <button type="button" id="nv-heat-dl" data-act="download">${escapeHtml(t.download)}</button>
-            <button type="button" id="nv-heat-reset" data-act="reset">${escapeHtml(t.reset)}</button>
-            <button type="button" id="nv-heat-close" data-act="close">${escapeHtml(t.close)}</button>
+            <button type="button" id="nv-heat-copy" data-act="copy">${escapeHtml(initialT.copy)}</button>
+            <button type="button" id="nv-heat-dl" data-act="download">${escapeHtml(initialT.download)}</button>
+            <button type="button" id="nv-heat-reset" data-act="reset">${escapeHtml(initialT.reset)}</button>
+            <button type="button" id="nv-heat-dock" data-act="dock-right">${escapeHtml(initialT.dockRight)}</button>
+            <button type="button" id="nv-heat-close" data-act="close">${escapeHtml(initialT.close)}</button>
           </div>
 
           <!-- Collapsed (mini) -->
@@ -1004,7 +1077,7 @@
               justify-content:space-between;
               gap:10px;
             ">
-              <div style="font-size:12px;opacity:.8;">${escapeHtml(t.total)}</div>
+              <div style="font-size:12px;opacity:.8;">${escapeHtml(initialT.total)}</div>
               <div id="nv-heat-mini-total" style="font-weight:900;font-size:18px;">0</div>
             </div>
           </div>
@@ -1022,18 +1095,73 @@
       </div>
     `;
     document.body.appendChild(overlay);
-    setupCollapse(overlay, t);
+    const panelEl = overlay.querySelector("#nv-heat-panel");
+    const headEl = overlay.querySelector("#nv-heat-head");
+    const resizeEl = overlay.querySelector("#nv-heat-resize");
+
+    const syncLang = () => {
+      const tt = tNow();
+      chip.textContent = tt.chip;
+      chip.setAttribute("title", tt.helpChip || tt.chip);
+      chip.setAttribute("aria-label", tt.helpChip || tt.chip);
+      [
+        ["copy", tt.copy],
+        ["download", tt.download],
+        ["reset", tt.reset],
+        ["dock-right", tt.dockRight],
+        ["close", tt.close],
+      ].forEach(([act, label]) => {
+        const btn = overlay.querySelector(`[data-act="${act}"]`);
+        if (btn) btn.textContent = label;
+      });
+      overlay.__nvHeatCollapseUpdate__?.();
+    };
+    overlay.__nvHeatLangUpdate__ = syncLang;
+
+    setupCollapse(overlay);
     nvAttachOverlayDragResize({
       overlayEl: overlay,
-      panelEl: overlay.querySelector("#nv-heat-panel"),
-      dragHandleEl: overlay.querySelector("#nv-heat-head"),
-      resizeHandleEl: overlay.querySelector("#nv-heat-resize"),
+      panelEl,
+      dragHandleEl: headEl,
+      resizeHandleEl: resizeEl,
       onClose: () => overlay.querySelector('[data-act="close"]')?.click(),
       storageKey: "nv_heat_overlay_state_v1",
     });
 
+    syncLang();
+
+    const langObserver = new MutationObserver((records) => {
+      if (!records.some((rec) => rec.attributeName === "lang")) return;
+      syncLang();
+      if (overlay.classList.contains("is-on")) {
+        render(overlay);
+      }
+    });
+    langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+    const originalDispose = panelEl.__nvOverlayDispose__;
+    panelEl.__nvOverlayDispose__ = () => {
+      try { langObserver.disconnect(); } catch (_) {}
+      if (typeof originalDispose === "function") originalDispose();
+    };
+
+    const dockButton = overlay.querySelector('[data-act="dock-right"]');
+    if (dockButton) {
+      dockButton.addEventListener("click", () => {
+        const rect = panelEl.getBoundingClientRect();
+        const targetLeft = Math.max(8, window.innerWidth - rect.width - 16);
+        const targetTop = Math.max(8, window.innerHeight - rect.height - 16);
+        panelEl.style.left = `${Math.round(targetLeft)}px`;
+        panelEl.style.top = `${Math.round(targetTop)}px`;
+        panelEl.__nvHeatPersist__?.();
+        overlay.__nvClamp?.();
+        overlay.__nvDockRefresh__?.();
+      });
+    }
+
     chip.addEventListener("click", () => {
-      render(overlay, lang);
+      syncLang();
+      render(overlay);
       overlay.classList.add("is-on");
       overlay.setAttribute("aria-hidden", "false");
       if (overlay.__nvClamp) {
@@ -1077,7 +1205,7 @@
         const res = nvCleanupMergeWaClicks({ dryRun: false, deleteLegacy: true });
         console.log("[NV Cleanup apply]", res);
         toast(`Cleanup done: writes=${res.writes || 0}, deletes=${res.deletes || 0}`);
-        render(overlay, getLang());
+        render(overlay);
         return;
       }
     });
@@ -1089,7 +1217,8 @@
     });
 
     overlay.querySelector('[data-act="reset"]').addEventListener("click", () => {
-      if (!window.confirm(t.confirmReset)) return;
+      const tt = tNow();
+      if (!window.confirm(tt.confirmReset)) return;
       if (window.NV_HEAT && typeof window.NV_HEAT.reset === "function") {
         window.NV_HEAT.reset();
       } else {
@@ -1100,8 +1229,8 @@
         }
         keys.forEach((k) => localStorage.removeItem(k));
       }
-      render(overlay, getLang());
-      toast(tNow().toastResetOk);
+      render(overlay);
+      toast(tt.toastResetOk);
     });
 
     overlay.querySelector('[data-act="copy"]').addEventListener("click", async () => {

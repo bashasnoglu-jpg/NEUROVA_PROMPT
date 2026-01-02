@@ -3,25 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="NEUROVA Spa & Wellness - Modern mimari ve kadim ritüellerin buluşma noktası. Hamam, Masaj ve Cilt Bakımı." />
+  <meta name="description" content="NEUROVA Spa & Wellness - Modern mimari ve kadim rit?ellerin bulu?ma noktas?. Hamam, Masaj ve Cilt Bak?m?." />
   <title>NEUROVA - Spa & Wellness Architecture</title>
 
-  <link rel="icon" href="/favicon.png" />
+  <link rel="icon" href="/assets/favicon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-
-
-<link rel="stylesheet" href="/assets/nav.css?v=1" />
-
+  <link rel="stylesheet" href="/assets/nav.css?v=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/nv-modern.css?v=1" />
   <link rel="stylesheet" href="/assets/css/arch-theme.css?v=1" />
-<link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
+  <link rel="stylesheet" href="/assets/css/nv-nav-safety.css?v=1">
+  <link rel="stylesheet" href="/assets/paketler.css?v=1">
 </head>
 
 <body data-lang="tr" data-page="home">
@@ -29,112 +23,196 @@
 
   <main class="arch-container">
     <div class="arch-block hero-block">
-      <span class="block-label">Estetik & Denge</span>
-      <h1 class="hero-title">Mekân, Ruh ve<br>Modern Ritüeller.</h1>
+      <span class="block-label">Spa &amp; Wellness</span>
+      <h1 class="hero-title">Mekan, rit?el, sakinlik.</h1>
       <p class="hero-subtitle">
-        Bedenin mimarisi ile mekânın dinginliğini birleştiren, özenle tasarlanmış bir spa deneyimi.
+        Mimari denge, sessiz l?ks ve kadim rit?eller; beden ve zihin i?in sade bir reset.
       </p>
       <div class="hero-actions">
-        <a href="#services" class="arch-btn">Keşfetmeye Başla</a>
-        <a href="#nv-wa" class="arch-btn" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+        <a href="/paketler.html" class="arch-btn">Paketleri g?r</a>
+        <a href="#nv-wa" class="arch-btn" data-wa="1" data-nv-open-reservation>WhatsApp Rezervasyon</a>
       </div>
       <div class="hero-panel" aria-hidden="true"></div>
     </div>
 
-    <div class="arch-block feature-large" id="services">
-      <span class="block-label">01 — Islak Alanlar</span>
-      <h2 class="block-heading">Geleneksel Hamam</h2>
-      <p class="block-desc">Mermerin sıcaklığını ve suyun arındırıcı gücünü birleştiren, modern yorumlu klasik ritüeller.</p>
-      <a href="./hamam.html" class="link-arrow">Detayları İncele &rarr;</a>
-    </div>
-
-    <div class="arch-block feature-large">
-      <span class="block-label">04 — Koleksiyon</span>
-      <h2 class="block-heading">Çevrim İçi Mağaza</h2>
-      <p class="block-desc">Eviniz için özenle seçilmiş setler, aromaterapi ve hediye kutuları. Aynı gün teslimat.</p>
-      <a href="./products.html" class="link-arrow">Alışverişe Başla &rarr;</a>
-    </div>
-
-    <div class="arch-block feature-small">
-      <div>
-        <span class="block-label">02 — Terapi</span>
-        <h2 class="block-heading">Masajlar</h2>
+    <section class="arch-block feature-wide" id="quick-routes">
+      <span class="block-label">H?zl? rotalar</span>
+      <div class="nv-grid nv-grid--3 nv-quick-grid">
+        <div class="nv-card nv-card-compact">
+          <h3>Hamam</h3>
+          <p>Is?nma ? K?p?k ? Kese ? zamans?z ar?nma.</p>
+          <div class="nv-card-actions">
+            <a class="arch-btn" href="/hamam.html">Rit?eller</a>
+            <a class="arch-btn ghost" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon</a>
+          </div>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Masajlar</h3>
+          <p>Derin doku, Asya, spor, jet lag reset ? v?cut dengesi.</p>
+          <div class="nv-card-actions">
+            <a class="arch-btn" href="/masajlar.html">Se?enekler</a>
+            <a class="arch-btn ghost" href="/paketler.html">Paketler</a>
+          </div>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Paketler</h3>
+          <p>Entry / Value / Premium ? karar yorgunlu?unu bitir.</p>
+          <div class="nv-card-actions">
+            <a class="arch-btn" href="/paketler.html">Paketleri g?r</a>
+            <a class="arch-btn ghost" href="#nv-wa" data-wa="1" data-nv-open-reservation>H?zl? randevu</a>
+          </div>
+        </div>
       </div>
-      <a href="./masajlar.html" class="link-arrow">Tüm Seçenekler &rarr;</a>
-    </div>
+    </section>
 
-    <div class="arch-block feature-small">
-      <span class="block-label">03 — Klinik Bakım</span>
-      <h2 class="block-heading">Face by Sothys</h2>
-      <p class="block-desc">Bilimsel cilt bakımı ve Fransız estetiği.</p>
-      <a href="./face-sothys.html" class="link-arrow">İncele &rarr;</a>
-    </div>
-  
-<!-- NV:GALLERY_PREVIEW -->
-<section id="gallery" class="nv-section nv-gallery-preview" aria-labelledby="galleryTitle">
-  <div class="nv-wrap">
-    <div class="nv-row nv-row--between nv-row--baseline">
-      <div>
-        <h2 id="galleryTitle" class="nv-h2">Galeri</h2>
-        <p class="nv-muted">Hamam ritüellerinden seçilmiş kareler.</p>
+    <section class="arch-block feature-large" id="mood">
+      <span class="block-label">Hangi moddas?n?</span>
+      <div class="nv-grid nv-grid--4 nv-mood-grid">
+        <div class="nv-card nv-card-compact">
+          <h3>Recovery</h3>
+          <p>Spor sonras? toparlanma, dola??m ve mobilite odakl?.</p>
+          <a class="link-arrow" href="/masajlar.html">Spor &amp; terapi ?</a>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Deep Relax</h3>
+          <p>Aromaterapi, nefes ve s?cak mermer; sinir sistemi sakinli?i.</p>
+          <a class="link-arrow" href="/hamam.html">Hamam &amp; k?p?k ?</a>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Detox</h3>
+          <p>K?p?k + kese + sauna; hafifleme ve ar?nma rutini.</p>
+          <a class="link-arrow" href="/paketler.html">Entry/Value ?</a>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Glow</h3>
+          <p>Nem, ???lt? ve klinik bak?m; Face ? Sothys protokolleri.</p>
+          <a class="link-arrow" href="/face-sothys.html">Face ? Sothys ?</a>
+        </div>
       </div>
-      <a class="nv-btn nv-btn--ghost" href="/galeri.html">Tümünü Gör</a>
-    </div>
+    </section>
 
-    <div class="nv-grid nv-grid--5">
-      <a class="nv-thumb" href="/galeri.html">
-        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C1_FoamHand_Close.png" alt="Hamam — köpük masajı detayı">
-      </a>
-      <a class="nv-thumb" href="/galeri.html">
-        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C2_Venue_Wide.png" alt="Hamam — mekan atmosferi">
-      </a>
-      <a class="nv-thumb" href="/galeri.html">
-        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C3_Setup_Medium.png" alt="Hamam — ritüel hazırlığı">
-      </a>
-      <a class="nv-thumb" href="/galeri.html">
-        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C4_Cloud_Detail.png" alt="Hamam — doku detayı">
-      </a>
-      <a class="nv-thumb" href="/galeri.html">
-        <img loading="lazy" src="/assets/galeri/hamam/NV_477061656428_R1C5_Abstract_Bokeh.png" alt="Hamam — ışık & atmosfer">
-      </a>
-    </div>
-  </div>
-</section>
-<!-- /NV:GALLERY_PREVIEW -->
-</main>
+    <section class="arch-block feature-wide">
+      <span class="block-label">Program ak???</span>
+      <div class="nv-grid nv-grid--3 nv-steps">
+        <div class="nv-card nv-card-compact">
+          <h3>01 ? Kar??lama</h3>
+          <p>?ay + k?sa ihtiya? analizi; paket veya rit?el se?imi.</p>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>02 ? Rit?el</h3>
+          <p>Hamam, masaj veya y?z bak?m?; sessiz l?ks tempo.</p>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>03 ? Kapan??</h3>
+          <p>Sonraki bak?m ?nerisi + ?r?n e?le?mesi; WhatsApp?tan takip.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer class="nv-footer">
-  <div class="nv-footer-inner">
-    <div class="nv-footer-brand">
-      <span class="brand-name">NEUROVA</span>
-      <span class="brand-sub">Spa & Wellness</span>
-    </div>
+    <section class="arch-block feature-large">
+      <span class="block-label">Neden NEUROVA?</span>
+      <div class="nv-grid nv-grid--2 nv-why">
+        <div class="nv-card nv-card-compact">
+          <h3>Quiet Luxury</h3>
+          <p>Inter + Cormorant tipografi, do?al ta? dokular, yumu?ak ???k.</p>
+        </div>
+        <div class="nv-card nv-card-compact">
+          <h3>Hijyen &amp; G?ven</h3>
+          <p>Tek kullan?ml?k set, hijyen protokol?; randevu sonras? takip.</p>
+        </div>
+      </div>
+    </section>
 
-    <nav class="nv-footer-links" aria-label="Alt gezinme">
-      <a href="/index.html">Ana Sayfa</a>
-      <a href="/hamam.html">Hamam</a>
-      <a href="/masajlar.html">Masajlar</a>
-      <a href="/kids-family.html">Kids & Family</a>
-      <a href="/face-sothys.html">Face & Sothys</a>
-      <a href="/products.html">Ürünler / Mağaza</a>
-      <a href="/about.html">Hakkımızda</a>
-      <a href="/team.html">Ekibimiz</a>
-      <a href="/paketler.html">Paketler</a>
-      <a href="/galeri.html">Galeri</a>
-    </nav>
+    <section id="gallery" class="nv-section nv-gallery-preview" aria-labelledby="galleryTitle">
+      <div class="nv-wrap">
+        <div class="nv-row nv-row--between nv-row--baseline">
+          <div>
+            <h2 id="galleryTitle" class="nv-h2">Galeri</h2>
+            <p class="nv-muted">Hamam ve rit?el alanlar?ndan kareler.</p>
+          </div>
+          <a class="nv-btn nv-btn--ghost" href="/galeri.html">T?m?n? g?r</a>
+        </div>
 
-    <div class="nv-footer-lang" aria-label="Dil seçimi">
-      <a href="/index.html" class="active">TR</a> / <a href="/en/index.html">EN</a>
-    </div>
+        <div class="nv-grid nv-grid--5">
+          <a class="nv-thumb" href="/galeri.html">
+            <img src="/assets/feature-hamam.png" alt="Hamam k?p?k masaj? detay?" loading="lazy" decoding="async" width="400" height="225">
+          </a>
+          <a class="nv-thumb" href="/galeri.html">
+            <img src="/assets/feature-hamam.png" alt="Hamam mekan atmosferi" loading="lazy" decoding="async" width="400" height="225">
+          </a>
+          <a class="nv-thumb" href="/galeri.html">
+            <img src="/assets/feature-hamam.png" alt="Hamam rit?el haz?rl???" loading="lazy" decoding="async" width="400" height="225">
+          </a>
+          <a class="nv-thumb" href="/galeri.html">
+            <img src="/assets/feature-hamam.png" alt="Hamam doku detay?" loading="lazy" decoding="async" width="400" height="225">
+          </a>
+          <a class="nv-thumb" href="/galeri.html">
+            <img src="/assets/feature-hamam.png" alt="Hamam ???k & atmosfer" loading="lazy" decoding="async" width="400" height="225">
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="nv-footer-contact">
-      <a href="https://wa.me/905555555555" target="_blank" rel="noopener">WhatsApp</a>
-      <span>&copy; 2025 NEUROVA</span>
-    </div>
-  </div>
-</footer>
+    <section class="arch-block feature-wide nv-cta">
+      <div>
+        <span class="block-label">Haz?rsan</span>
+        <h2 class="block-heading">WhatsApp?tan h?zla rezervasyon alal?m.</h2>
+        <p class="block-desc">G?n?n modu, ki?i say?s?, uygun saat; 2 mesajda tamamlayal?m.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="arch-btn" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp Rezervasyon</a>
+        <a class="arch-btn ghost" href="/paketler.html">Paket se?</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="nv-footer"></div>
 
   <div id="nv-wa" aria-hidden="true"></div>
+  <script>
+    (function loadFooter() {
+      const slot = document.getElementById('nv-footer');
+      if (!slot) return;
+      fetch('/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          slot.innerHTML = html;
+          const { lang, page } = document.body.dataset;
+          if (lang) {
+            const langLink = slot.querySelector(`.nv-footer-lang [data-lang="${lang}"]`);
+            langLink?.classList.add('active');
+          }
+          if (page) {
+            const pageLink = slot.querySelector(`[data-page="${page}"]`);
+            pageLink?.classList.add('active');
+          }
+        });
+    })();
+  </script>
+
+  <style>
+    .nv-quick-grid,
+    .nv-mood-grid,
+    .nv-steps,
+    .nv-why { gap: 16px; }
+    .nv-grid { display: grid; }
+    .nv-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .nv-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .nv-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nv-card-compact { padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+    .nv-card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .arch-btn.ghost { background: transparent; border: 1px solid currentColor; }
+    .nv-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 1024px) {
+      .nv-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nv-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .nv-grid--4, .nv-grid--3, .nv-grid--2 { grid-template-columns: 1fr; }
+      .hero-actions { gap: 8px; }
+    }
+  </style>
+
   <script src="/assets/js/app.js" defer></script>
   <script src="/wa-config.js"></script>
   <script defer src="/wa-linker.js"></script>
