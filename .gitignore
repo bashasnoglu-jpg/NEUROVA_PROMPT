@@ -46,3 +46,11 @@ index.html
 *.zip
 *.7z
 *.rar
+# temp / backups
+*.bak
+*.bak2
+*.tmp
+test.txt
+
+# generated / scratch
+NEUROVA_SITE/pages/
