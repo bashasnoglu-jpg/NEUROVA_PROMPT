@@ -42,3 +42,7 @@ git-dosyalari.txt
 
 
 index.html
+# archives / big binaries
+*.zip
+*.7z
+*.rar
