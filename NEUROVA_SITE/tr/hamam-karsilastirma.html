@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamam Ritüelleri Karşılaştırma | NEUROVA</title>
+    <meta name="description" content="NEUROVA Hamam Ritüelleri Karşılaştırma Tablosu: Klasik, Osmanlı, Detox ve Bakım ritüelleri arasındaki farkları inceleyin ve size en uygun olanı seçin.">
+    <!-- Tailwind Output CSS -->
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-nv-bg text-nv-text font-sans antialiased selection:bg-nv-highlight selection:text-nv-bg">
+
+    <!-- Header (Global) -->
+    <header class="nv-header fixed top-0 w-full z-50 bg-nv-bg/80 backdrop-blur-md border-b border-nv-frame transition-all duration-nv">
+        <div class="nv-container max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-widest text-nv-text hover:text-white transition-colors">NEUROVA</a>
+            
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html#rituals" class="text-sm uppercase tracking-wider text-nv-text hover:text-nv-highlight transition-colors duration-nv">Ritüeller</a>
+                <a href="hamam.html" class="text-sm uppercase tracking-wider text-white font-bold transition-colors duration-nv">Hamam</a>
+                <a href="masajlar.html" class="text-sm uppercase tracking-wider text-nv-text hover:text-nv-highlight transition-colors duration-nv">Masaj</a>
+                <a href="#contact" class="text-sm uppercase tracking-wider text-nv-text hover:text-nv-highlight transition-colors duration-nv">İletişim</a>
+            </nav>
+
+            <a href="#" class="nv-btn nv-btn--primary px-6 py-2 bg-nv-stone text-nv-bg font-bold rounded-nv hover:bg-white transition-colors duration-nv shadow-nv-soft" data-wa="1">
+                Rezervasyon
+            </a>
+            
+            <button class="md:hidden text-nv-text" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="nv-hero relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-nv-frame/50"></div> 
+                <!-- Placeholder Image -->
+                <img src="https://placehold.co/1920x1080/34393D/ECECEC?text=Spa+Ritual+Selection" alt="Hamam Rehberi" class="w-full h-full object-cover opacity-60 nv-parallax" data-speed="0.1">
+                <div class="absolute inset-0 bg-gradient-to-t from-nv-bg via-nv-bg/20 to-transparent"></div>
+            </div>
+            
+            <div class="nv-hero__content relative z-10 text-center max-w-3xl px-6 animate-fade-in-up">
+                <span class="block text-nv-highlight uppercase tracking-[0.2em] text-sm mb-4 font-medium">Seçim Rehberi</span>
+                <h1 class="text-4xl md:text-5xl font-light mb-6 leading-tight text-white">
+                    Hangi Ritüel<br>Sizin İçin?
+                </h1>
+                <p class="text-lg text-nv-muted mb-8 max-w-xl mx-auto font-light">
+                    İhtiyaçlarınıza en uygun hamam deneyimini bulmanız için hazırladığımız karşılaştırma tablosu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section class="py-20 px-6 bg-nv-bg">
+            <div class="nv-container max-w-[1100px] mx-auto">
+                
+                <div class="overflow-x-auto rounded-nv border border-white/10 shadow-nv bg-nv-panel/20">
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead>
+                            <tr class="bg-nv-panel/50 text-nv-highlight text-xs uppercase tracking-wider border-b border-white/10">
+                                <th class="p-6 font-bold whitespace-nowrap">Ritüel</th>
+                                <th class="p-6 font-medium whitespace-nowrap">Süre</th>
+                                <th class="p-6 font-medium">Odak Noktası</th>
+                                <th class="p-6 font-medium">Ana İçerik</th>
+                                <th class="p-6 font-medium">Kimler İçin?</th>
+                                <th class="p-6 font-medium"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm text-nv-text divide-y divide-white/5">
+                            
+                            <!-- Klasik -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Classic" alt="Klasik" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Klasik Kese & Köpük</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">45 Dk</td>
+                                <td class="p-6">Arınma & Temizlik</td>
+                                <td class="p-6 text-nv-muted">Kese + Köpük Yıkama</td>
+                                <td class="p-6 text-nv-muted">Geleneksel temizlik ve arınma isteyenler.</td>
+                                <td class="p-6 text-right"><a href="klasik-hamam.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Deniz Tuzu -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Sea+Salt" alt="Deniz Tuzu" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Deniz Tuzu Arındırma</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">50 Dk</td>
+                                <td class="p-6">Mineral & Pürüzsüzlük</td>
+                                <td class="p-6 text-nv-muted">Tuz Peeling + Köpük</td>
+                                <td class="p-6 text-nv-muted">Cildini canlandırmak ve mineral yüklemek isteyenler.</td>
+                                <td class="p-6 text-right"><a href="deniz-tuzu-glow.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Kahve Detox -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Coffee" alt="Kahve" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Kahve Detox</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">60 Dk</td>
+                                <td class="p-6">Enerji & Sıkılaşma</td>
+                                <td class="p-6 text-nv-muted">Kahve Peeling + Köpük</td>
+                                <td class="p-6 text-nv-muted">Selülit endişesi olanlar ve enerji arayanlar.</td>
+                                <td class="p-6 text-right"><a href="kahve-detox.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Bal & Çikolata -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Honey" alt="Bal Çikolata" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Bal & Çikolata</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">60 Dk</td>
+                                <td class="p-6">Nem & Mutluluk</td>
+                                <td class="p-6 text-nv-muted">Bal/Kakao Maske + Köpük</td>
+                                <td class="p-6 text-nv-muted">Kuru ciltler ve kendini şımartmak isteyenler.</td>
+                                <td class="p-6 text-right"><a href="bal-cikolata-ritueli.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Alg Detox -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Algae" alt="Alg" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Alg (Yosun) Detox</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">75 Dk</td>
+                                <td class="p-6">Ödem Atma & Metabolizma</td>
+                                <td class="p-6 text-nv-muted">Yosun Sargı + Isı</td>
+                                <td class="p-6 text-nv-muted">Detoks yapmak ve ödem atmak isteyenler.</td>
+                                <td class="p-6 text-right"><a href="algae-yosun-bakimi.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Osmanlı (Signature) -->
+                            <tr class="bg-nv-highlight/5 hover:bg-nv-highlight/10 transition-colors border-l-4 border-l-nv-highlight">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Ottoman" alt="Osmanlı" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <div class="flex flex-col">
+                                            <span>Osmanlı Hamam</span>
+                                            <span class="text-[10px] text-nv-highlight uppercase tracking-wider font-normal">Signature</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">60 Dk</td>
+                                <td class="p-6">Gevşeme & Seremoni</td>
+                                <td class="p-6 text-nv-muted">Uzun Köpük Masajı (Kese Yok)</td>
+                                <td class="p-6 text-nv-muted">Derin rahatlama ve köpük keyfi arayanlar.</td>
+                                <td class="p-6 text-right"><a href="osmanli-hamam.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                            <!-- Jet Lag Recovery -->
+                            <tr class="hover:bg-white/5 transition-colors">
+                                <td class="p-6 font-bold text-white whitespace-nowrap">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://placehold.co/100x100/41464A/ECECEC?text=Jet+Lag" alt="Jet Lag" class="w-12 h-12 rounded-lg object-cover bg-nv-frame">
+                                        <span>Jet Lag Recovery</span>
+                                    </div>
+                                </td>
+                                <td class="p-6 text-nv-muted whitespace-nowrap">90 Dk</td>
+                                <td class="p-6">Denge & Toparlanma</td>
+                                <td class="p-6 text-nv-muted">Kese + Köpük + Baş Masajı</td>
+                                <td class="p-6 text-nv-muted">Seyahat sonrası yorgunluk ve ödem atanlar.</td>
+                                <td class="p-6 text-right"><a href="jet-lag-recovery.html" class="text-nv-stone hover:text-white font-bold underline decoration-white/20 hover:decoration-white transition-all">İncele</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-nv-muted mb-6">Hala kararsız mısınız? Uzmanlarımız size yardımcı olabilir.</p>
+                    <a href="#nv-wa" data-wa="1" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-white/15 bg-white/5 shadow-nv text-sm tracking-wider hover:bg-white/10 transition-colors">
+                        Bize Danışın (WhatsApp)
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Global) -->
+    <footer id="contact" class="bg-nv-frame py-16 border-t border-white/5">
+        <div class="nv-container max-w-[1100px] mx-auto px-6">
+            <!-- Footer content same as global -->
+            <div class="text-center text-nv-muted text-sm">
+                <p>© 2024 NEUROVA. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/app.js" defer></script>
+</body>
+</html>

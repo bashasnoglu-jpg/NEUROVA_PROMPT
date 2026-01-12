@@ -1,0 +1,235 @@
+﻿:root {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f4;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+header[data-nv-header] {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e0;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.nv-shell {
+  position: relative;
+}
+
+.nv-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 24px;
+}
+
+.nv-logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nv-desktop-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nv-link,
+.nv-mlink,
+.nv-dropdown-toggle {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nv-dropdown {
+  position: relative;
+}
+
+.nv-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nv-lang-switch,
+.nv-mobile-lang {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.nv-lang {
+  border: 1px solid #d6d6d6;
+  background: #f6f6f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nv-cta {
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nv-link.is-active,
+.nv-mlink.is-active {
+  background: #eef2ff;
+  color: #1d2f8f;
+  font-weight: 600;
+}
+
+.nv-mobile-toggle {
+  display: none;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nv-mobile-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: #fff;
+  box-shadow: -8px 0 20px rgba(0, 0, 0, 0.18);
+  padding: 24px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.nv-mobile-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nv-mobile-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nv-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nv-mobile-group {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f7f7f4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nv-mobile-group-label {
+  font-weight: 600;
+}
+
+.nv-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.nv-lock {
+  overflow: hidden;
+}
+
+main#main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+main#main h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+#reservation {
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #eef2ff;
+}
+
+#reservation button[data-nv-open-reservation] {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 16px;
+  background: #0f172a;
+  color: #f4f4f4;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .nv-desktop-links {
+    display: none;
+  }
+
+  .nv-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}

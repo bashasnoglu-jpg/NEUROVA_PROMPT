@@ -2,9 +2,19 @@
   "categories": [
     "Hamam Ritüelleri",
     "Kids & Family",
-    "Ayurveda Ritüelleri",
+    "Ayurveda",
     "Recovery & Performance",
-    "Signature & Couples Ritüelleri"
+    "Signature & Couples",
+    "Face – Sothys",
+    "NEUROVA Look",
+    "Seasonal Detox",
+    "Signature",
+    "Signature & Family"
   ],
-  "roles": ["Therapist", "Reception"]
+  "roles": [
+    "Therapist",
+    "Reception",
+    "Designer",
+    "Photographer"
+  ]
 }

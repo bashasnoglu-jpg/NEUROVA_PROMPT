@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Massages • NEUROVA</title>
-  <meta name="description" content="NEUROVA Massages: Deep relaxation, balance, and comfort-focused massage flows. Quiet luxury spa experience.">
+  
+  <title data-lang="en">Massage Rituals – NEUROVA</title>
+  <title data-lang="tr" hidden>Masaj Ritüelleri – NEUROVA</title>
+  
+  <meta data-lang="en" name="description" content="NEUROVA Massage: Massage flows focused on deep relaxation, balance, and comfort. Silence, ritual, and modern spa experience.">
+  <meta data-lang="tr" name="description" hidden content="NEUROVA Masaj: Derin rahatlama, denge ve konfor odaklı masaj akışları. Sessizlik, ritüel ve modern spa deneyimi.">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+  <link rel="manifest" href="../manifest.json">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
@@ -13,163 +22,229 @@
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXX');
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Spa",
-    "name": "NEUROVA Spa & Wellness",
-    "url": "https://www.neurova.com/massages",
-    "logo": "https://www.neurova.com/images/logo.png",
-    "image": "https://www.neurova.com/images/hero-hamam.jpg",
-    "description": "Luxury spa with hammam, massage, and wellness rituals.",
-    "telephone": "+905348350169",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hammam Rituals", "url": "https://www.neurova.com/en/hamam.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Massage Rituals", "url": "https://www.neurova.com/en/massages.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial Care (Sothys)", "url": "https://www.neurova.com/face-sothys.html" } }
-      ]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Address here",
-      "addressLocality": "City",
-      "addressCountry": "TR"
-    }
-  }
-  </script>
 </head>
-<body data-page="massages">
-  <!-- Canonical NEUROVA Global Nav -->
-<header class="nv-header" data-nv-header>
-  <div class="nv-shell">
-    <a class="nv-brand" href="../index.html" aria-label="NEUROVA Home">
-      <span class="nv-brand__word">NEUROVA</span>
-      <span class="nv-brand__sub">Spa & Wellness</span>
-    </a>
+<body data-page="masajlar" class="bg-nv-bg text-nv-text font-sans antialiased h-full selection:bg-nv-highlight selection:text-white">
 
-    <div class="nv-nav-row">
-      <nav class="nv-nav" aria-label="Primary">
-        <a class="nv-link" data-nav="home" href="../index.html">Home</a>
-        <a class="nv-link" data-nav="hamam" href="../hamam.html">Hammam</a>
-        <a class="nv-link" data-nav="massages" href="../massages.html">Massages</a>
-        <a class="nv-link" data-nav="kids-family" href="../kids-family.html">Kids &amp; Family</a>
-        <a class="nv-link" data-nav="signature-couples" href="../signature-couples.html">Signature &amp; Couples</a>
-        <a class="nv-link" data-nav="face" href="../face-sothys.html">Face · Sothys</a>
-        <a class="nv-link" data-nav="packages" href="../packages.html">Packages</a>
-        <a class="nv-link" data-nav="products" href="../products.html">Products</a>
-        <a class="nv-link" data-nav="gallery" href="../galeri.html">Gallery</a>
-      </nav>
-
-      <!-- Single dropdown: Corporate -->
-      <div class="nv-dropdown" data-nv-dropdown>
-        <button class="nv-link nv-link--dropdown" type="button" data-nv-dropdown-toggle aria-haspopup="true"
-          aria-expanded="false">
-          Corporate —
-        </button>
-
-        <div class="nv-dropdown__menu" data-nv-dropdown-menu hidden>
-          <a class="nv-link" data-nav="about" href="../about.html">About Us</a>
-          <a class="nv-link" data-nav="team" href="../team.html">Our Team</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="nv-actions">
-      <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
-      <button class="nv-burger" type="button" data-nv-mobile-toggle aria-label="Menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="nv-mpanel" data-nv-mobile-panel hidden>
-    <div class="nv-mpanel__inner">
-        <a class="nv-mlink" data-nav="home" href="../index.html">Home</a>
-        <a class="nv-mlink" data-nav="hamam" href="../hamam.html">Hammam</a>
-        <a class="nv-mlink" data-nav="massages" href="../massages.html">Massages</a>
-        <a class="nv-mlink" data-nav="kids-family" href="../kids-family.html">Kids &amp; Family</a>
-        <a class="nv-mlink" data-nav="signature-couples" href="../signature-couples.html">Signature &amp; Couples</a>
-        <a class="nv-mlink" data-nav="face" href="../face-sothys.html">Face · Sothys</a>
-        <a class="nv-mlink" data-nav="packages" href="../packages.html">Packages</a>
-        <a class="nv-mlink" data-nav="products" href="../products.html">Products</a>
-        <a class="nv-mlink" data-nav="gallery" href="../galeri.html">Gallery</a>
-
-      <!-- Mobile secondary (Corporate items) -->
-      <a class="nv-mlink" data-nav="about" href="../about.html">About Us</a>
-      <a class="nv-mlink" data-nav="team" href="../team.html">Our Team</a>
-
-      <a class="nv-mcta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Reservation</a>
-    </div>
-  </div>
-</header>
+  <!-- Canonical NEUROVA Global Nav (Copied from a clean page) -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-nv-bg/70 border-b border-gray-200 dark:border-white/5 transition-colors duration-300" data-nv-header></header>
 
   <main>
-    <section class="page-hero">
-      <h1>Massage Rituals</h1>
-      <p>Deep relaxation, balance, and comfort-focused massage flows.</p>
-      <a class="cta-btn wa-cta" href="#" target="_blank" rel="noopener">Reserve (WhatsApp)</a>
+    <!-- Hero Section -->
+    <section class="nv-hero relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-nv-frame/50"></div> 
+            <img src="https://placehold.co/1920x1080/34393D/ECECEC?text=NEUROVA+Massage" alt="NEUROVA Massage Atmosphere" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-nv-bg via-nv-bg/20 to-transparent"></div>
+        </div>
+        
+        <div class="nv-hero__content relative z-10 text-center max-w-3xl px-6 animate-fade-in-up">
+            <span class="block text-nv-highlight uppercase tracking-[0.2em] text-sm mb-4 font-medium" data-lang="en">Therapy & Balance</span>
+            <span class="block text-nv-highlight uppercase tracking-[0.2em] text-sm mb-4 font-medium" data-lang="tr" hidden>Terapi & Denge</span>
+            
+            <h1 class="text-5xl md:text-6xl font-light mb-6 leading-tight text-white" data-lang="en">Power of<br>Touch.</h1>
+            <h1 class="text-5xl md:text-6xl font-light mb-6 leading-tight text-white" data-lang="tr" hidden>Dokunuşun<br>Gücü.</h1>
+
+            <p class="text-lg text-nv-muted mb-8 max-w-xl mx-auto font-light" data-lang="en">
+                Special therapy flows that reset muscle memory, calm the mind, and restructure the body.
+            </p>
+            <p class="text-lg text-nv-muted mb-8 max-w-xl mx-auto font-light" data-lang="tr" hidden>
+                Kas hafızasını sıfırlayan, zihni sakinleştiren ve bedeni yeniden yapılandıran özel terapi akışları.
+            </p>
+        </div>
     </section>
 
-    <section aria-label="Massage details">
-      <div class="detail-block">
-        <div class="detail-img">
-          <img src="../images/massage-room.jpg" loading="lazy" alt="Massage room detail">
+    <!-- Intro -->
+    <section class="py-20 px-6 bg-nv-bg">
+        <div class="max-w-[1100px] mx-auto text-center">
+            <h2 class="text-3xl font-light mb-6 text-nv-text" data-lang="en">Language of the Body</h2>
+            <h2 class="text-3xl font-light mb-6 text-nv-text" data-lang="tr" hidden>Bedenin Dili</h2>
+            <p class="text-nv-muted max-w-2xl mx-auto leading-relaxed text-lg" data-lang="en">
+                Our expert therapists intuitively determine the pressure and rhythm your body needs. Every touch is an invitation to healing.
+            </p>
+            <p class="text-nv-muted max-w-2xl mx-auto leading-relaxed text-lg" data-lang="tr" hidden>
+                Uzman terapistlerimiz, bedeninizin ihtiyaç duyduğu basıncı ve ritmi sezgisel olarak belirler. Her dokunuş, iyileşmeye bir davettir.
+            </p>
         </div>
-        <div class="detail-text">
-          <h3>Deep Balance Massage</h3>
-          <p>Skilled touch, slow rhythm, and techniques that ease muscles and realign the body.</p>
-          <ul>
-            <li>⏱ 60–75 min</li>
-            <li>g���‍♀️ Deep tissue &amp; stretch</li>
-            <li>g��� Supports sleep quality</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <section id="reservation" class="reservation" aria-labelledby="reservation-title">
-      <h2 id="reservation-title">Reservation</h2>
-      <p>Share your preferred ritual and time slot; we will confirm quickly.</p>
-      <a class="cta-btn wa-cta" href="#" target="_blank" rel="noopener">Reserve (WhatsApp)</a>
+    <!-- Classic Massages Section -->
+    <section class="py-20 bg-nv-panel/20">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-3xl font-light text-nv-text" data-lang="en">Classic Massages</h2>
+                <h2 class="text-3xl font-light text-nv-text" data-lang="tr" hidden>Klasik Masajlar</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Classic</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Klasik</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Classic Massage (Swedish)</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Klasik Masaj (İsveç)</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Timeless relaxation, balanced touch.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Zamansız rahatlama, dengeli dokunuş.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">60 / 90 Min</span>
+                            <a href="classic-massage.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="classic-massage.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                     <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Relax</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Rahatlama</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Anti-Stress Massage</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Anti-Stres Masajı</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Mind-slowing relaxation focused on the nervous system.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Sinir sistemine odaklı, zihni yavaşlatan rahatlama.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">50 / 80 Min</span>
+                            <a href="anti-stress.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="anti-stress.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Performance</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Performans</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Deep Tissue</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Derin Doku</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Firm pressure for chronic tension.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Kronik gerginlik için sert basınç.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">50 / 80 Min</span>
+                            <a href="deep-tissue.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="deep-tissue.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- World & Specialty Massages Section -->
+    <section class="py-20 bg-nv-bg border-t border-white/5">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl font-light text-nv-text" data-lang="en">World & Specialty Massages</h2>
+                <h2 class="text-3xl font-light text-nv-text" data-lang="tr" hidden>Dünya & Uzmanlık Masajları</h2>
+                <p class="text-nv-muted mt-2" data-lang="en">Traditional Asian techniques and special therapies.</p>
+                <p class="text-nv-muted mt-2" data-lang="tr" hidden>Geleneksel Asya teknikleri ve özel terapiler.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Asian</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Asya</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Bali Aroma</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Bali Aroma</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Traditional Bali massage with aromatherapy oils and long, flowing strokes.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Aromaterapi yağları ve uzun, akıcı vuruşlarla geleneksel Bali masajı.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">60 / 90 Min</span>
+                            <a href="bali-aroma.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="bali-aroma.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Asian</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Asya</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Thai-Aroma Massage</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Thai-Aroma Masajı</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Fluid touch, sensory balance. Combination of Thai techniques with warm aromatic oils.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Akışkan dokunuş, duyusal denge. Thai tekniklerinin sıcak aromatik yağlarla birleşimi.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">60 / 90 Min</span>
+                            <a href="thai-aroma.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="thai-aroma.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="en">Asian</span>
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold" data-lang="tr" hidden>Asya</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="en">Shiatsu Massage</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text" data-lang="tr" hidden>Shiatsu Masajı</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Japanese therapy applied with finger and palm pressure, balancing energy flow.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Parmak ve avuç içi basıncıyla uygulanan, enerji akışını dengeleyen Japon terapisi.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">60 Min</span>
+                            <a href="shiatsu.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="shiatsu.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ayurveda Rituals Section -->
+    <section class="py-20 bg-nv-panel/20 border-t border-white/5">
+        <div class="max-w-[1100px] mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl font-light text-nv-text" data-lang="en">Ayurveda Rituals</h2>
+                <h2 class="text-3xl font-light text-nv-text" data-lang="tr" hidden>Ayurveda Ritüelleri</h2>
+                <p class="text-nv-muted mt-2" data-lang="en">Holistic balance with warm oils and ancient wisdom.</p>
+                <p class="text-nv-muted mt-2" data-lang="tr" hidden>Sıcak yağlar ve kadim bilgelik ile bütünsel denge.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold">Ayurveda</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text">Abhyanga</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Ayurvedic balance. Holistic care enveloping the body with warm herbal oils.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Ayurvedik denge. Vücudu sıcak bitkisel yağlarla saran bütünsel bakım.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">60 / 90 Min</span>
+                            <a href="abhyanga.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="abhyanga.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft transition-all duration-nv hover:-translate-y-1 hover:shadow-nv">
+                    <div class="p-6">
+                        <span class="text-xs text-nv-highlight uppercase tracking-wider font-bold">Ayurveda</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text">Shirodhara</h3>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="en">Mental calm. Deep serenity provided by the rhythmic flow of warm oil on the forehead.</p>
+                        <p class="text-sm text-nv-muted mb-4 leading-relaxed" data-lang="tr" hidden>Zihinsel sakinlik. Alına ritmik olarak akan ılık yağın sağladığı derin dinginlik.</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-white/5 pt-4">
+                            <span class="text-xs text-nv-highlight uppercase tracking-wider">45 Min</span>
+                            <a href="shirodhara.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="en">View</a>
+                            <a href="shirodhara.html" class="text-sm font-bold text-nv-stone hover:text-white transition-colors" data-lang="tr" hidden>İncele</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
     </section>
   </main>
 
-  <footer class="nv-footer">
-    <div class="nv-footer-inner">
-      <p>© 2026 NEUROVA Spa &amp; Wellness</p>
-      <p>Silence • Ritual • Balance</p>
+  <!-- Footer -->
+  <footer id="contact" class="bg-nv-frame py-16 border-t border-white/5">
+    <div class="nv-container max-w-[1100px] mx-auto px-6 text-center text-nv-muted text-sm">
+        <p>© 2026 NEUROVA. All rights reserved.</p>
     </div>
   </footer>
 
-  <a class="floating-cta wa-cta" href="#" target="_blank" rel="noopener">Reservation</a>
-
-  <script>
-    const toggle = document.querySelector('.nv-toggle');
-    const links = document.querySelector('.nv-links');
-    if (toggle && links) { toggle.addEventListener('click', () => { links.classList.toggle('open'); }); }
-  </script>
-  <script>
-  (function () {
-    const PHONE = "905348350169";
-    const path = window.location.pathname.toLowerCase();
-    const isEN = path.includes("/en/");
-    const file = path.split("/").pop() || "index.html";
-    const topicByFile = {
-      "index.html": isEN ? "general" : "genel",
-      "hamam.html": isEN ? "hammam rituals" : "hamam rit�elleri",
-      "masajlar.html": isEN ? "massage" : "masaj",
-      "massages.html": "massage"
-    };
-    const topic = topicByFile[file] || (isEN ? "reservation" : "rezervasyon");
-    const msgTR = `Merhaba NEUROVA, ${topic} i�in rezervasyon yapmak istiyorum. Tarih/Saat: ... Kisi sayisi: ... (Varsa not: ...)`;
-    const msgEN = `Hello NEUROVA, I'd like to make a reservation for ${topic}. Date/Time: ... Number of guests: ... (Notes: ...)`;
-    const message = isEN ? msgEN : msgTR;
-    const waUrl = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
-    document.querySelectorAll(".wa-cta").forEach(a => { a.href = waUrl; });
-  })();
-  </script>
+  <script src="../assets/js/app.js" defer></script>
 </body>
 </html>

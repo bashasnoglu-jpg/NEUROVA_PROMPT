@@ -1,0 +1,30 @@
+name: Mojibake Guard
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  mojibake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Mojibake dry-run (fail on detect)
+        run: |
+          python NEUROVA_SITE/fix_tr_chars.py --root . --fail-on-detect --report-json reports/mojibake-report.json
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mojibake-report
+          path: reports/mojibake-report.json
+          if-no-files-found: ignore

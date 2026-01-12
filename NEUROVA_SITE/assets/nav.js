@@ -1,243 +1,251 @@
-"use strict";
+﻿﻿'use strict';
 
-const prefersReduced = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-const qs = (sel, root = document) => root.querySelector(sel);
-const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+(() => {
+  const doc = document;
+  const html = doc.documentElement;
+  const body = doc.body;
 
-const map = {
-  "index.html": "home",
-  "hamam.html": "hamam",
-  "masajlar.html": "masajlar",
-  "face-sothys.html": "face",
-  "kids-family.html": "kids-family",
-  "galeri.html": "galeri",
-  "products.html": "urunler",
-  "about.html": "about",
-  "team.html": "team",
-  "packages.html": "paketler",
-  "paketler.html": "paketler"
-  // prompt-library.html intentionally omitted from nav mapping (Prompt is hidden)
-};
+  const CANON_KEYS = [
+    'home', 'hamam', 'masajlar', 'signature-couples', 'kids-family', 'face',
+    'paketler', 'urunler', 'galeri', 'about', 'team'
+  ];
 
-const normalizePath = () => {
-  const last = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  return last.split("?")[0].split("#")[0];
-};
-
-const key = map[normalizePath()];
-if (key) {
-  qsa(`[data-nav="${key}"]`).forEach(a => a.classList.add("is-active"));
-}
-
-const header = qs("[data-nv-header]");
-const main = qs("main") || qs(".nv-main") || qs("#main");
-if (header && main) {
-  const applyPad = () => {
-    const h = Math.ceil(header.getBoundingClientRect().height || 0);
-    main.style.paddingTop = h ? `${h + 10}px` : "";
+  const FILE_TO_KEY = {
+    index: 'home',
+    hamam: 'hamam',
+    hammam: 'hamam',
+    masajlar: 'masajlar',
+    massages: 'masajlar',
+    'signature-couples': 'signature-couples',
+    'kids-family': 'kids-family',
+    'face-sothys': 'face',
+    paketler: 'paketler',
+    packages: 'paketler',
+    products: 'urunler',
+    urunler: 'urunler',
+    galeri: 'galeri',
+    gallery: 'galeri',
+    about: 'about',
+    team: 'team'
   };
-  applyPad();
-  window.addEventListener("resize", applyPad, { passive: true });
-}
 
-const setLock = (on) => {
-  document.documentElement.classList.toggle("nv-lock", !!on);
-  document.body.classList.toggle("nv-lock", !!on);
-};
+  const ROUTES_TR = {
+    home: 'index.html',
+    hamam: 'hamam.html',
+    masajlar: 'masajlar.html',
+    'signature-couples': 'signature-couples.html',
+    'kids-family': 'kids-family.html',
+    face: 'face-sothys.html',
+    paketler: 'paketler.html',
+    urunler: 'products.html',
+    galeri: 'galeri.html',
+    about: 'about.html',
+    team: 'team.html'
+  };
 
-const toggle = qs("[data-nv-mobile-toggle]");
-const panel = qs("[data-nv-mobile-panel]");
-const overlay = qs("[data-nv-mobile-overlay]");
-const OPEN_CLASS = "is-open";
-const BURGER_CLASS = "is-open";
+  const ROUTES_EN = {
+    home: 'index.html',
+    hamam: 'hamam.html',
+    masajlar: 'massages.html',
+    'signature-couples': 'signature-couples.html',
+    'kids-family': 'kids-family.html',
+    face: 'face-sothys.html',
+    paketler: 'packages.html',
+    urunler: 'products.html',
+    galeri: 'gallery.html',
+    about: 'about.html',
+    team: 'team.html'
+  };
 
-const open = () => {
-  if (!toggle || !panel) return;
-  toggle.setAttribute("aria-expanded", "true");
-  toggle.classList.add(BURGER_CLASS);
-  panel.hidden = false;
-  panel.classList.add(OPEN_CLASS);
-  if (overlay) {
-    overlay.hidden = false;
-    overlay.classList.add(OPEN_CLASS);
-  }
-  setLock(true);
-};
+  const ALIAS_MAP = {
+    massages: 'masajlar',
+    packages: 'paketler',
+    products: 'urunler',
+    gallery: 'galeri',
+    corporate: 'kurumsal'
+  };
 
-const close = () => {
-  if (!toggle || !panel) return;
-  toggle.setAttribute("aria-expanded", "false");
-  toggle.classList.remove(BURGER_CLASS);
-  panel.classList.remove(OPEN_CLASS);
-  const delay = prefersReduced ? 0 : 180;
-  window.setTimeout(() => { panel.hidden = true; }, delay);
-  setLock(false);
-  if (overlay) {
-    overlay.classList.remove(OPEN_CLASS);
-    window.setTimeout(() => { overlay.hidden = true; }, delay);
-  }
-};
+  const isDev = (() => {
+    const search = new URLSearchParams(window.location.search || '');
+    return search.get('nvdev') === '1' || html.dataset.nvDev === '1';
+  })();
 
-if (toggle && panel) {
-  toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    expanded ? close() : open();
-  });
-  panel.addEventListener("click", (e) => {
-    if (e.target === panel) close();
-  });
-  qsa("a", panel).forEach(a => a.addEventListener("click", close));
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") close();
-  });
-  if (overlay) {
-    overlay.addEventListener("click", close);
-  }
-}
+  const isEn = (() => {
+    const lang = (html.lang || '').toLowerCase();
+    if (lang.startsWith('en')) return true;
+    return (window.location.pathname || '').startsWith('/en/');
+  })();
 
-const openReservation = () => {
-  const fn =
-    window.NV_OPEN_RESERVATION ||
-    window.nvOpenReservation ||
-    window.openReservation ||
-    null;
-
-  if (typeof fn === "function") return fn();
-
-  // Fallback: sayfada #nv-wa varsa oraya kaydır
-  const anchor = document.getElementById("nv-wa");
-  if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
-
-  console.log("[NEUROVA] Reservation CTA clicked (no handler found).");
-};
-
-function wireReservationTriggers(root = document) {
-  root.querySelectorAll("[data-nv-open-reservation]").forEach((el) => {
-    if (el.dataset.nvReservationWired === "1") return;
-    el.dataset.nvReservationWired = "1";
-    el.addEventListener("click", openReservation);
-  });
-}
-
-// Keep existing behavior (doesn't hurt)…
-wireReservationTriggers(document);
-
-/* --- NV Dropdown (Kurumsal) - Delegated Toggle Patch v1.0 --- */
-(function () {
-  const DROPDOWN_SEL = "[data-nv-dropdown]";
-  const TOGGLE_SEL = "[data-nv-dropdown-toggle]";
-  const MENU_SEL = "[data-nv-dropdown-menu]";
-
-  function getParts(toggleEl) {
-    const dd = toggleEl.closest(DROPDOWN_SEL);
-    if (!dd) return null;
-    const menu = dd.querySelector(MENU_SEL);
-    return menu ? { dd, menu } : null;
+  function canonKey(key) {
+    if (!key) return null;
+    const lower = key.toLowerCase();
+    if (ALIAS_MAP[lower]) return ALIAS_MAP[lower];
+    return lower;
   }
 
-  function isOpen(toggleEl, menuEl) {
-    return !menuEl.hasAttribute("hidden") && toggleEl.getAttribute("aria-expanded") === "true";
+  function devGuard() {
+    if (!isDev) return;
+    const badTokens = ['Ãœ', 'â€“', 'â–¾', '�'];
+    const htmlText = doc.documentElement.innerHTML;
+    if (badTokens.some((t) => htmlText.includes(t))) {
+      throw new Error('nvdev: mojibake detected');
+    }
+    const allLinks = Array.from(doc.querySelectorAll('[href],[src]'));
+    const parentRefs = allLinks.filter((el) => {
+      const val = el.getAttribute('href') || el.getAttribute('src') || '';
+      return val.includes('../');
+    });
+    if (parentRefs.length) {
+      throw new Error('nvdev: parent path ../ found');
+    }
+    const allowed = new Set([...CANON_KEYS, ...Object.keys(ALIAS_MAP)]);
+    const invalid = Array.from(doc.querySelectorAll('[data-nav]')).filter((el) => {
+      const key = canonKey(el.dataset.nav);
+      return !key || (!allowed.has(key) && !CANON_KEYS.includes(key));
+    });
+    if (invalid.length) {
+      throw new Error('nvdev: unknown data-nav key');
+    }
   }
 
-  function closeAll(exceptDropdown) {
-    document.querySelectorAll(DROPDOWN_SEL).forEach((dd) => {
-      if (exceptDropdown && dd === exceptDropdown) return;
-      const toggle = dd.querySelector(TOGGLE_SEL);
-      const menu = dd.querySelector(MENU_SEL);
-      if (!toggle || !menu) return;
-      toggle.setAttribute("aria-expanded", "false");
-      menu.setAttribute("hidden", "");
+  function applyNavTargets() {
+    const map = isEn ? ROUTES_EN : ROUTES_TR;
+    const base = '';
+    doc.querySelectorAll('a[data-nav]').forEach((anchor) => {
+      const key = canonKey(anchor.dataset.nav);
+      if (!key || !map[key]) return;
+      anchor.setAttribute('href', `${base}${map[key]}`);
     });
   }
 
-  function openDD(toggleEl, menuEl, ddEl) {
-    closeAll(ddEl);
-    toggleEl.setAttribute("aria-expanded", "true");
-    menuEl.removeAttribute("hidden");
+  function currentFileName() {
+    const path = window.location.pathname || '';
+    if (!path || path === '/') return 'index.html';
+    const trimmed = path.endsWith('/') ? path.slice(0, -1) : path;
+    const parts = trimmed.split('/').filter(Boolean);
+    const last = parts[parts.length - 1] || 'index.html';
+    return last.includes('.') ? last : `${last}.html`;
   }
 
-  function closeDD(toggleEl, menuEl) {
-    toggleEl.setAttribute("aria-expanded", "false");
-    menuEl.setAttribute("hidden", "");
+  function resolveActiveKey() {
+    const fromBody = canonKey(body?.dataset?.page);
+    if (fromBody && CANON_KEYS.includes(fromBody)) return fromBody;
+    const file = currentFileName().replace(/\.html$/i, '');
+    const mapped = FILE_TO_KEY[file];
+    const key = canonKey(mapped || file);
+    if (key && CANON_KEYS.includes(key)) return key;
+    return null;
   }
 
-  document.addEventListener("click", (e) => {
-    const toggle = e.target.closest(TOGGLE_SEL);
-    if (toggle) {
-      e.preventDefault();
-      const parts = getParts(toggle);
-      if (!parts) return;
-
-      const { dd, menu } = parts;
-      if (isOpen(toggle, menu)) closeDD(toggle, menu);
-      else openDD(toggle, menu, dd);
-
-      e.stopPropagation();
-      return;
-    }
-
-    if (!e.target.closest(DROPDOWN_SEL)) {
-      closeAll();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeAll();
-  });
-
-  document.addEventListener("click", (e) => {
-    const item = e.target.closest(`${DROPDOWN_SEL} ${MENU_SEL} a`);
-    if (item) closeAll();
-  });
-})();
-
-/* --- NV Reservation - Delegated Click Patch v1.0 (slot-safe) --- */
-(function () {
-  const RES_SEL = "[data-nv-open-reservation]";
-  const DROPDOWN_SEL = "[data-nv-dropdown]";
-  const MOBILE_PANEL_SEL = "[data-nv-mobile-panel]";
-  const MOBILE_TOGGLE_SEL = "[data-nv-mobile-toggle]";
-
-  function closeMobilePanelIfOpen() {
-    const panel = document.querySelector(MOBILE_PANEL_SEL);
-    const btn = document.querySelector(MOBILE_TOGGLE_SEL);
-    if (!panel || panel.hasAttribute("hidden")) return;
-
-    // reuse existing close behavior if available
-    panel.classList.remove("is-open");
-    const delay = prefersReduced ? 0 : 180;
-    window.setTimeout(() => { panel.hidden = true; }, delay);
-
-    if (btn) {
-      btn.setAttribute("aria-expanded", "false");
-      btn.classList.remove("is-open");
-    }
-
-    document.documentElement.classList.remove("nv-lock");
-    document.body.classList.remove("nv-lock");
+  function applyActiveState() {
+    const active = resolveActiveKey();
+    if (!active) return;
+    doc.querySelectorAll('[data-nav]').forEach((el) => {
+      const key = canonKey(el.dataset.nav);
+      if (key === active) el.classList.add('is-active');
+    });
   }
 
-  function closeDropdownIfOpen() {
-    const dd = document.querySelector(DROPDOWN_SEL);
-    if (!dd) return;
-    const t = dd.querySelector("[data-nv-dropdown-toggle]");
-    const m = dd.querySelector("[data-nv-dropdown-menu]");
-    if (!t || !m) return;
-    t.setAttribute("aria-expanded", "false");
-    m.setAttribute("hidden", "");
+  function setupDropdown() {
+    const dropdown = doc.querySelector('[data-nv-dropdown]');
+    if (!dropdown) return;
+    const toggle = dropdown.querySelector('[data-nv-dropdown-toggle]');
+    const menu = dropdown.querySelector('[data-nv-dropdown-menu]');
+    if (!toggle || !menu) return;
+
+    const close = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    };
+    const open = () => {
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.hidden = false;
+    };
+
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      expanded ? close() : open();
+    });
+
+    doc.addEventListener('click', (event) => {
+      if (menu.hidden) return;
+      if (dropdown.contains(event.target)) return;
+      close();
+    });
+
+    doc.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
   }
 
-  document.addEventListener("click", (e) => {
-    const el = e.target.closest(RES_SEL);
-    if (!el) return;
-    if (el && el.hasAttribute("data-wa")) return; // WA linker yönetsin
+  const mobileToggles = Array.from(doc.querySelectorAll('[data-nv-mobile-toggle]'));
+  const mobilePanel = doc.querySelector('[data-nv-mobile-panel]');
+  const mobileOverlay = doc.querySelector('[data-nv-mobile-overlay]');
 
-    // UX: close open UI layers
-    closeDropdownIfOpen();
-    closeMobilePanelIfOpen();
+  function setMobile(open) {
+    if (!mobilePanel || !mobileOverlay) return;
+    mobilePanel.hidden = !open;
+    mobileOverlay.hidden = !open;
+    mobileToggles.forEach((btn) => btn.setAttribute('aria-expanded', open ? 'true' : 'false'));
+    [html, body].forEach((el) => el && el.classList[open ? 'add' : 'remove']('nv-lock'));
+  }
 
-    // Slot-safe: always work even if nav injected later
-    e.preventDefault();
-    openReservation();
-  });
+  function setupMobile() {
+    if (!mobilePanel || !mobileOverlay) return;
+    setMobile(false);
+    mobileToggles.forEach((btn) => btn.addEventListener('click', () => setMobile(mobilePanel.hidden)));
+    mobileOverlay.addEventListener('click', () => setMobile(false));
+    mobilePanel.addEventListener('click', (event) => {
+      const anchor = event.target instanceof Element ? event.target.closest('a') : null;
+      if (anchor) setMobile(false);
+    });
+    doc.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setMobile(false);
+    });
+  }
+
+  function setupReservation() {
+    const getHandler = () => {
+      if (typeof window.NV_OPEN_RESERVATION === 'function') return window.NV_OPEN_RESERVATION;
+      if (typeof window.nvOpenReservation === 'function') return window.nvOpenReservation;
+      if (typeof window.openReservation === 'function') return window.openReservation;
+      return null;
+    };
+
+    const scrollFallback = () => {
+      const anchor = doc.getElementById('nv-wa') || doc.getElementById('reservation');
+      if (anchor?.scrollIntoView) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else alert('Reservation: WhatsApp');
+    };
+
+    doc.querySelectorAll('[data-nv-open-reservation]').forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const handler = getHandler();
+        if (handler) {
+          handler();
+          return;
+        }
+        scrollFallback();
+      });
+    });
+  }
+
+  function init() {
+    devGuard();
+    applyNavTargets();
+    applyActiveState();
+    setupDropdown();
+    setupMobile();
+    setupReservation();
+  }
+
+  if (doc.readyState === 'loading') {
+    doc.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
