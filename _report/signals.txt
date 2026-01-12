@@ -1,4 +1,4 @@
-﻿C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\assets\js\wa-click-tracker.js:3 // wa-click-tracker.js — capture WhatsApp CTA clicks and write nv_wa_click_* counters
+C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\assets\js\wa-click-tracker.js:3 // wa-click-tracker.js — capture WhatsApp CTA clicks and write nv_wa_click_* counters
 C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\assets\js\wa-click-tracker.js:11   const PREFIX = "nv_wa_click__";
 C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\assets\js\wa-click-tracker.js:29     const tierEl = el.closest("[data-tier]");
 C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\NEUROVA_SITE\assets\js\wa-click-tracker.js:30     const t = tierEl ? tierEl.getAttribute("data-tier") : "";

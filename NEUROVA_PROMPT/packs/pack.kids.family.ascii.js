@@ -1,4 +1,4 @@
-﻿/* pack.kids.family.ascii.js */ (function () {
+/* pack.kids.family.ascii.js */ (function () {
   "use strict";
   const KEY = "KIDS_FAMILY_ASCII";
   window.NV_PROMPT_PACKS = window.NV_PROMPT_PACKS || {};

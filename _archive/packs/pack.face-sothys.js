@@ -1,4 +1,4 @@
-﻿/* pack.face-sothys.js */ (function () {
+/* pack.face-sothys.js */ (function () {
   "use strict";
   const KEY = "FACE_SOTHYS";
   window.NV_PROMPT_PACKS = window.NV_PROMPT_PACKS || {};

@@ -1,4 +1,4 @@
-﻿# NEUROVA Code & Project Report
+# NEUROVA Code & Project Report
 
 ## Executive Summary
 - Site runtime lives under `NEUROVA_SITE` with static HTML pages and shared JS/CSS; WA tracking uses `nv_wa_click__<source>__<tier>__<yyyy-mm-dd>__<lang>` written by `NEUROVA_SITE/assets/js/wa-click-tracker.js` and surfaced by `NEUROVA_SITE/heatmap-overlay.js`.

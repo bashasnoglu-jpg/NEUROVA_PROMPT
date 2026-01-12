@@ -1,4 +1,4 @@
-﻿NEUROVA Optimize Summary | 20251218-173726
+NEUROVA Optimize Summary | 20251218-173726
 Root: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
 Log: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\NV_OPTIMIZE_20251218-173726.log
 Changed files (git status): 3

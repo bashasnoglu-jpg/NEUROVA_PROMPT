@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
   const KEY = "MASSAGE";
   window.NV_PROMPT_PACKS = window.NV_PROMPT_PACKS || {};

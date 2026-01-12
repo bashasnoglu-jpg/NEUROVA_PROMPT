@@ -1,4 +1,4 @@
-﻿
+
 Length FullName                                                                                  
 ------ --------                                                                                  
 185354 C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\printed-guides\qr-assets-package.zip      

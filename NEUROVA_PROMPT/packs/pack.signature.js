@@ -1,4 +1,4 @@
-﻿/* pack.signature.js */ (function () {
+/* pack.signature.js */ (function () {
   "use strict";
   const KEY = "SIGNATURE";
   window.NV_PROMPT_PACKS = window.NV_PROMPT_PACKS || {};

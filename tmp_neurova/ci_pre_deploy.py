@@ -14,8 +14,8 @@ TEXT_EXTS = {".html", ".css", ".js", ".json", ".md", ".txt", ".xml", ".svg"}
 
 # Rule 8: Mojibake patterns
 MOJIBAKE_PATTERNS = [
-    "Ä±", "Ä°", "ÅŸ", "Åž", "ÄŸ", "Äž", "Ã§", "Ã‡", "Ã¶", "Ã–", "Ã¼", "Ãœ",
-    "â€™", "â€œ", "â€", "â€“", "â€”"
+    "ı", "İ", "ş", "Ş", "ğ", "Ğ", "ç", "Ç", "ö", "Ö", "ü", "Ü",
+    "’", "“", "â€", "–", "—"
 ]
 
 def check_encoding_and_mojibake(filepath):

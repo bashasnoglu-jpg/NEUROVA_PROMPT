@@ -1,4 +1,4 @@
-﻿// NAV & MOBILE
+// NAV & MOBILE
 (function () {
     const mobileToggle = document.querySelector('[data-nv-mobile-toggle]');
     const mobilePanel = document.querySelector('[data-nv-mobile-panel]');

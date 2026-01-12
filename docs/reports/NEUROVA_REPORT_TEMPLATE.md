@@ -1,4 +1,4 @@
-﻿# NEUROVA Code & Project Report
+# NEUROVA Code & Project Report
 
 ## Executive Summary
 

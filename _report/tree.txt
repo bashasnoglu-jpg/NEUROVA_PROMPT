@@ -1,4 +1,4 @@
-﻿Folder PATH listing
+Folder PATH listing
 Volume serial number is 561F-DE4B
 C:.
 |   .env

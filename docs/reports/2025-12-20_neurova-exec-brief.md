@@ -1,4 +1,4 @@
-﻿# NEUROVA Exec Brief (2025-12-20)
+# NEUROVA Exec Brief (2025-12-20)
 - Keep 24-48h watch window; do not change copy or CTA placement.
 - Validate Products -> Value vs Entry clicks via heatmap export after the watch window.
 - Confirm WA number consistency between `wa-config.js` and Products hero `wa.me` links.

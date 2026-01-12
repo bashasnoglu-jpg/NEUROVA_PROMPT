@@ -1,4 +1,4 @@
-﻿﻿'use strict';
+'use strict';
 
 (() => {
   const doc = document;
@@ -85,7 +85,7 @@
 
   function devGuard() {
     if (!isDev) return;
-    const badTokens = ['Ãœ', 'â€“', 'â–¾', '�'];
+    const badTokens = ['Ü', '–', 'â–¾', '�'];
     const htmlText = doc.documentElement.innerHTML;
     if (badTokens.some((t) => htmlText.includes(t))) {
       throw new Error('nvdev: mojibake detected');
