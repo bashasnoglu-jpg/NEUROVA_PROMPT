@@ -7,7 +7,7 @@ if (-not $files) { exit 0 }
 $extOk = @(".js",".cjs",".mjs",".ts",".css",".html",".json",".md",".yml",".yaml",".py",".txt")
 $targets = $files | Where-Object { $extOk -contains ([IO.Path]::GetExtension($_).ToLower()) }
 
-# 1) CRLF kontrolÃƒÂ¼: staged iÃƒÂ§erikte CR var mÃ„Â±?
+# 1) CRLF kontrolü: staged içerikte CR var mı?
 $bad = @()
 foreach ($f in $targets) {
   try {
@@ -23,7 +23,7 @@ if ($bad.Count -gt 0) {
   exit 1
 }
 
-# 2) Mojibake kontrolÃƒÂ¼ (bilgilendirme amaÃƒÂ§lÃ„Â±; commit'i bloklamaz)
+# 2) Mojibake kontrolü (bilgilendirme amaçlı; commit'i bloklamaz)
 $fixer = ".\NV_TOOLS\fix_tr_chars.py"
 if (Test-Path $fixer) {
   try { & py -3 $fixer --root . --dry-run | Out-Null } catch { }
