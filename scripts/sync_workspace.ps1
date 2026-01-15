@@ -10,3 +10,8 @@ Get-ChildItem ".\NV_SITE" -Force |
 
 Copy-Item -Recurse -Force ".\NEUROVA_SITE\*" ".\NV_SITE\"
 Write-Host "Synced NEUROVA_SITE -> NV_SITE" -ForegroundColor Green
+
+# ensure index.html exists inside NV_SITE language roots (nav links use relative index.html)
+Copy-Item -Force ".\index.html" ".\NV_SITE\tr\index.html"
+Copy-Item -Force ".\index.html" ".\NV_SITE\en\index.html"
+
