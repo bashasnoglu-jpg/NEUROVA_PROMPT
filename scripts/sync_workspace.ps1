@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 
 New-Item -ItemType Directory -Force ".\NV_SITE" | Out-Null
 
-# clean old workspace files (keep .keep)
+# eski dosyalarÄ± temizle (gizli/system dahil), .keep hariÃ§
 Get-ChildItem ".\NV_SITE" -Force |
   Where-Object { $_.Name -ne ".keep" } |
   Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
