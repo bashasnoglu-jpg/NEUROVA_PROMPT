@@ -56,3 +56,7 @@ test.txt
 NEUROVA_SITE/pages/
 
 NEUROVA_MEGA_REPORT.txt
+
+# workspace folders (local)
+NV_SITE/
+NV_PIPELINE/
