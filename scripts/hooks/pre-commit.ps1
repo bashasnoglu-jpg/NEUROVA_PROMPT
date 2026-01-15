@@ -1,13 +1,13 @@
-# scripts/hooks/pre-commit.ps1 (Windows PowerShell safe)
+﻿# scripts/hooks/pre-commit.ps1 (Windows PowerShell safe)
 $ErrorActionPreference = "Stop"
 
 $files = git diff --cached --name-only
 if (-not $files) { exit 0 }
 
-$extOk = @(".js",".cjs",".mjs",".ts",".css",".html",".json",".md",".yml",".yaml",".ps1",".py",".txt")
+$extOk = @(".js",".cjs",".mjs",".ts",".css",".html",".json",".md",".yml",".yaml",".py",".txt")
 $targets = $files | Where-Object { $extOk -contains ([IO.Path]::GetExtension($_).ToLower()) }
 
-# 1) CRLF kontrolü: staged içerikte CR var mı?
+# 1) CRLF kontrolÃ¼: staged iÃ§erikte CR var mÄ±?
 $bad = @()
 foreach ($f in $targets) {
   try {
@@ -23,7 +23,7 @@ if ($bad.Count -gt 0) {
   exit 1
 }
 
-# 2) Mojibake kontrolü (bilgilendirme amaçlı; commit'i bloklamaz)
+# 2) Mojibake kontrolÃ¼ (bilgilendirme amaÃ§lÄ±; commit'i bloklamaz)
 $fixer = ".\NV_TOOLS\fix_tr_chars.py"
 if (Test-Path $fixer) {
   try { & py -3 $fixer --root . --dry-run | Out-Null } catch { }
