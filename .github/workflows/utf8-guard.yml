@@ -1,0 +1,86 @@
+name: UTF-8 Guard
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  utf8_guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 file
+
+      - name: Check UTF-8 / BOM / Mojibake / JSON
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, sys, json, subprocess
+
+          EXTS = ('.json', '.html', '.js', '.py', '.ps1')
+          SKIP_DIRS = {
+            '.git', 'node_modules', 'dist', 'build',
+            '.venv', 'venv', '.next', 'out', 'coverage'
+          }
+          MOJIBAKE = ['Ã¼','Ã¶','Ã§','ÄŸ','ÅŸ','Ä±','Ä°']  # common TR mojibake
+
+          bad = False
+
+          def file_bi(path: str) -> str:
+              try:
+                  return subprocess.check_output(['file', '-bi', path], text=True).strip()
+              except Exception:
+                  return 'file -bi failed'
+
+          for root, dirs, files in os.walk('.'):
+              dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+              for fn in files:
+                  if not fn.endswith(EXTS):
+                      continue
+                  path = os.path.join(root, fn)
+
+                  try:
+                      data = open(path, 'rb').read()
+                  except Exception as e:
+                      print(f"::error file={path}::Read error: {e}")
+                      bad = True
+                      continue
+
+                  if data.startswith(b'\xEF\xBB\xBF'):
+                      print(f"::error file={path}::UTF-8 BOM found (remove BOM).")
+                      bad = True
+
+                  try:
+                      text = data.decode('utf-8')
+                  except UnicodeDecodeError as e:
+                      print(f"::error file={path}::Not valid UTF-8: {e} | {file_bi(path)}")
+                      bad = True
+                      continue
+
+                  for p in MOJIBAKE:
+                      if p in text:
+                          print(f"::error file={path}::Mojibake detected: '{p}'")
+                          bad = True
+                          break
+
+                  if path.endswith('.json'):
+                      try:
+                          json.loads(text)
+                      except Exception as e:
+                          print(f"::error file={path}::JSON parse error: {e}")
+                          bad = True
+
+          if bad:
+              print("::error::UTF-8/BOM/mojibake/JSON issues found. Fix before merging.")
+              sys.exit(1)
+
+          print("UTF-8 guard passed.")
+          PY
