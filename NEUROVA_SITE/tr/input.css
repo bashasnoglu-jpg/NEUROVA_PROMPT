@@ -5,6 +5,42 @@
 /* NEUROVA Custom Styles (Quiet Luxury) */
 
 @layer base {
+  :root{
+    --NV_BG:#090B0F;
+    --NV_FRAME:#110F11;
+    --NV_PANEL:#19161A;
+    --NV_PANEL_2:#211E21;
+    --NV_SURFACE:#2A282B;
+    --NV_DIVIDER:#353437;
+    --NV_STROKE:#444347;
+    --NV_HIGHLIGHT:#6D6C72;
+    --NV_SOFT:#8F9094;
+    --NV_TEXT:#D6D7DA;
+    --NV_TEXT_MUTED:#8F9094;
+
+    --nv-bg:var(--NV_BG);
+    --nv-frame:var(--NV_FRAME);
+    --nv-panel:var(--NV_PANEL);
+    --nv-panel-2:var(--NV_PANEL_2);
+    --nv-surface:var(--NV_SURFACE);
+    --nv-divider:var(--NV_DIVIDER);
+    --nv-stroke:var(--NV_STROKE);
+    --nv-highlight:var(--NV_HIGHLIGHT);
+    --nv-text:var(--NV_TEXT);
+    --nv-muted:var(--NV_TEXT_MUTED);
+
+    /* Legacy token used across older pages */
+    --nv-gold:var(--NV_HIGHLIGHT);
+
+    /* NEUROVA smoke alias — bronze compatibility */
+    --NV_BRONZE_DARK: var(--NV_HIGHLIGHT);
+    --NV_BRONZE: var(--NV_SOFT);
+    --NV_BRONZE_SOFT: var(--NV_TEXT_MUTED);
+    --NV_ACCENT_BRONZE_DARK: var(--NV_HIGHLIGHT);
+    --NV_ACCENT_BRONZE: var(--NV_SOFT);
+    --NV_ACCENT_BRONZE_SOFT: var(--NV_TEXT_MUTED);
+  }
+
   /* Global Defaults */
   body {
     @apply bg-nv-bg text-nv-text font-sans antialiased selection:bg-nv-highlight selection:text-nv-bg;

@@ -7,7 +7,7 @@
 
   const CANON_KEYS = [
     'home', 'hamam', 'masajlar', 'signature-couples', 'kids-family', 'face',
-    'paketler', 'urunler', 'galeri', 'about', 'team'
+    'paketler', 'urunler', 'galeri', 'about', 'team', 'iletisim'
   ];
 
   const FILE_TO_KEY = {
@@ -26,7 +26,9 @@
     galeri: 'galeri',
     gallery: 'galeri',
     about: 'about',
-    team: 'team'
+    team: 'team',
+    iletisim: 'iletisim',
+    contact: 'iletisim'
   };
 
   const ROUTES_TR = {
@@ -40,7 +42,8 @@
     urunler: 'products.html',
     galeri: 'galeri.html',
     about: 'about.html',
-    team: 'team.html'
+    team: 'team.html',
+    iletisim: 'iletisim.html'
   };
 
   const ROUTES_EN = {
@@ -54,7 +57,8 @@
     urunler: 'products.html',
     galeri: 'gallery.html',
     about: 'about.html',
-    team: 'team.html'
+    team: 'team.html',
+    iletisim: 'contact.html'
   };
 
   const ALIAS_MAP = {
@@ -62,7 +66,42 @@
     packages: 'paketler',
     products: 'urunler',
     gallery: 'galeri',
-    corporate: 'kurumsal'
+    corporate: 'kurumsal',
+    contact: 'iletisim'
+  };
+
+  const LABELS_TR = {
+    home: 'Ana Sayfa',
+    hamam: 'Hamam',
+    masajlar: 'Masajlar',
+    'signature-couples': 'Signature & Couples',
+    'kids-family': 'Kids & Family',
+    face: 'Face',
+    paketler: 'Paketler',
+    urunler: 'Ürünler',
+    kurumsal: 'Kurumsal',
+    galeri: 'Galeri',
+    about: 'Hakkımızda',
+    team: 'Ekibimiz',
+    iletisim: 'İletişim',
+    reservation: 'Rezervasyon'
+  };
+
+  const LABELS_EN = {
+    home: 'Home',
+    hamam: 'Hammam',
+    masajlar: 'Massages',
+    'signature-couples': 'Signature & Couples',
+    'kids-family': 'Kids & Family',
+    face: 'Face',
+    paketler: 'Packages',
+    urunler: 'Products',
+    kurumsal: 'Corporate',
+    galeri: 'Gallery',
+    about: 'About Us',
+    team: 'Our Team',
+    iletisim: 'Contact',
+    reservation: 'Reservation'
   };
 
   const isDev = (() => {
@@ -85,7 +124,7 @@
 
   function devGuard() {
     if (!isDev) return;
-    const badTokens = ['Ü', '–', 'â–¾', '�'];
+    const badTokens = ['Ü', '–', '▾', '�'];
     const htmlText = doc.documentElement.innerHTML;
     if (badTokens.some((t) => htmlText.includes(t))) {
       throw new Error('nvdev: mojibake detected');
@@ -118,6 +157,15 @@
     });
   }
 
+  function applyLabels() {
+    const labels = isEn ? LABELS_EN : LABELS_TR;
+    doc.querySelectorAll('[data-nav-label]').forEach((node) => {
+      const key = canonKey(node.getAttribute('data-nav-label'));
+      const text = key && labels[key] ? labels[key] : null;
+      if (text) node.textContent = text;
+    });
+  }
+
   function currentFileName() {
     const path = window.location.pathname || '';
     if (!path || path === '/') return 'index.html';
@@ -144,6 +192,15 @@
       const key = canonKey(el.dataset.nav);
       if (key === active) el.classList.add('is-active');
     });
+
+    // If a menu item inside Kurumsal is active, also mark the dropdown toggle.
+    const dropdown = doc.querySelector('[data-nv-dropdown]');
+    if (!dropdown) return;
+    const toggle = dropdown.querySelector('[data-nv-dropdown-toggle]');
+    if (!toggle) return;
+    if (dropdown.querySelector('[data-nv-dropdown-menu] .is-active')) {
+      toggle.classList.add('is-active');
+    }
   }
 
   function setupDropdown() {
@@ -236,10 +293,9 @@
 
   function init() {
     devGuard();
+    applyLabels();
     applyNavTargets();
     applyActiveState();
-    setupDropdown();
-    setupMobile();
     setupReservation();
   }
 

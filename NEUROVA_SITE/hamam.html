@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="NEUROVA Hamam Ritüelleri – Geleneksel Türk hamamının modern ve sessiz lüks yorumu.">
+
+    <title>NEUROVA | Hamam Ritüelleri</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/editorial.css" />
+    <link rel="stylesheet" href="./assets/css/nav-active.css" />
+    <link rel="stylesheet" href="./assets/css/smoke-theme.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/nv-palette-smoke.css">
+  <link rel="stylesheet" href="./assets/css/nv-smoke-overrides.css">
+  <script defer src="./assets/js/nav-slot-loader.js"></script>
+</head>
+
+<body data-page="hamam">
+
+    <!-- NAV -->
+    <header id="nv-header" class="nv-nav">
+        <div class="nv-nav-inner">
+            <div class="nv-logo">NEUROVA</div>
+            <nav class="nv-menu">
+                <a href="index.html" data-nav="home">Ana Sayfa</a>
+                <a href="hamam.html" class="is-active" data-nav="hamam">Hamam</a>
+                <a href="masajlar.html" data-nav="masaj">Masaj</a>
+                <a href="cilt-bakimi.html" data-nav="cilt">Cilt Bakımı</a>
+                <a href="iletisim.html" data-nav="iletisim">İletişim</a>
+            </nav>
+            <div class="nv-nav-cta">
+                <button class="nv-btn-reserve" onclick="nvOpenReservationModal()">REZERVASYON</button>
+                <button id="nvBurger" class="nv-burger" aria-label="Menü">☰</button>
+            </div>
+        </div>
+        <div id="nvMobileMenu" class="nv-mobile-menu" aria-hidden="true">
+            <a href="index.html" data-nav="home">Ana Sayfa</a>
+            <a href="hamam.html" data-nav="hamam">Hamam</a>
+            <a href="masajlar.html" data-nav="masaj">Masajlar</a>
+            <a href="kids-family.html" data-nav="kids">Kids & Family</a>
+            <a href="cilt-bakimi.html" data-nav="cilt">Face – Sothys</a>
+            <a href="paketler.html" data-nav="paketler">Paketler</a>
+            <a href="urunler.html" data-nav="urunler">Ürünler</a>
+            <a href="galeri.html" data-nav="galeri">Galeri</a>
+            <a href="hakkimizda.html" data-nav="hakkimizda">Hakkımızda</a>
+            <a href="ekibimiz.html" data-nav="ekip">Ekibimiz</a>
+            <a class="nv-mcta nv-btn-reserve mobile" href="#nv-wa" data-wa="1" data-nv-open-reservation>REZERVASYON</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="nv-hero"
+        style="height: 70vh; display: flex; align-items: center; justify-content: center; position: relative;">
+        <div class="nv-hero-layer" style="background-image: url('assets/img/home/hero-mid.jpg'); opacity: 0.3;"></div>
+        <div class="nv-hero-content" style="z-index: 2; padding: 0 5vw; text-align: center;">
+            <p class="nv-font-sans"
+                style="letter-spacing: 0.3em; font-size: 0.8rem; margin-bottom: 2rem; color: var(--nv-gold);">RİTÜEL
+                KOLEKSİYONU</p>
+            <h1 class="nv-font-serif nv-display-xl">Suyun sessiz<br>iyileştirici gücü.</h1>
+        </div>
+    </section>
+
+    <main id="nv-main">
+
+        <!-- INTRO -->
+        <section style="padding: 10vh 10vw; text-align: center; max-width: 900px; margin: 0 auto;">
+            <p class="nv-font-serif nv-display-lg" style="font-size: 2rem;">
+                "Mermerin sıcaklığı bedeninizi sararken, yüzyıllık arınma gelenekleri modern bir dinginlikle buluşuyor."
+            </p>
+        </section>
+
+        <!-- RITUAL 1: KLASIK ARINMA -->
+        <section class="nv-split-section">
+            <div class="nv-split-visual">
+                <!-- Using placeholder asset, would ideally be specific hamam shot -->
+                <img src="assets/img/home/hero-back.jpg" alt="Kese ve Köpük" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Klasik Arınma</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">30 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Geleneksel Türk hamamının özü. Uzman terapistlerimiz eşliğinde derinlemesine kese uygulaması ve
+                    ardından gelen canlandırıcı köpük masajı ile cildiniz yeniden nefes alır.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Klasik Arınma rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+        <!-- RITUAL 2: SULTAN RITUALI -->
+        <section class="nv-split-section nv-alt">
+            <div class="nv-split-visual">
+                <img src="assets/img/home/hero-front.jpg" alt="Kil Maskesi ve Bakım" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Sultan Ritüeli</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">45 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Arınmanın ötesinde bütünsel bir bakım. Kese ve köpük seremonisine ek olarak, vitamin deposu kil
+                    maskesi ve saç bakımı ile baştan aşağı yenilenme hissi.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Sultan Ritüeli rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+        <!-- RITUAL 3: NEUROVA IMZA -->
+        <section class="nv-split-section">
+            <div class="nv-split-visual">
+                <img src="assets/img/home/hero-mid.jpg" alt="Lüks Hamam Deneyimi" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Neurova İmza</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">60 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Zamanın durduğu an. Aromaterapik yağlarla zenginleştirilmiş uzun köpük ritüeli, ayak refleksolojisi
+                    ve finalde sunduğumuz soğuk şerbet ikramı ile "Sessiz Lüks"ü deneyimleyin.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Neurova İmza Hamam rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+        <!-- ATMOSPHERE BAR (Redesigned) -->
+        <section
+            style="padding: 8vh 5vw; border-top: 1px solid var(--nv-divider); border-bottom: 1px solid var(--nv-divider); text-align: center;">
+            <h3 class="nv-font-sans"
+                style="font-size: 0.8rem; letter-spacing: 0.2rem; margin-bottom: 3rem; color: var(--nv-gold);">ATMOSFER
+                DETAYLARI</h3>
+
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 4rem;">
+                <div>
+                    <span
+                        style="display: block; font-size: 2.5rem; font-family: 'Playfair Display'; margin-bottom: 0.5rem;">42°C</span>
+                    <span class="nv-text-muted" style="font-size: 0.8rem; letter-spacing: 0.1em;">SICAKLIK</span>
+                </div>
+                <div>
+                    <span
+                        style="display: block; font-size: 2.5rem; font-family: 'Playfair Display'; margin-bottom: 0.5rem;">%90</span>
+                    <span class="nv-text-muted" style="font-size: 0.8rem; letter-spacing: 0.1em;">NEM ORANI</span>
+                </div>
+                <div>
+                    <span
+                        style="display: block; font-size: 2.5rem; font-family: 'Playfair Display'; margin-bottom: 0.5rem;">Mermer</span>
+                    <span class="nv-text-muted" style="font-size: 0.8rem; letter-spacing: 0.1em;">DOKU</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="nv-footer" style="padding: 4rem 2rem;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div>
+                <div class="nv-logo" style="margin-bottom: 1rem;">NEUROVA</div>
+                <p class="nv-text-muted">Istanbul'un kalbinde, zamansız bir kaçış.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; opacity: 0.4; font-size: 0.7rem;">
+            © 2026 NEUROVA Spa & Wellness.
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="nv-reservation-modal" class="nv-mobile-overlay" hidden>
+        <div class="nv-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="margin:0; font-size:1.2rem;">Rezervasyon</h3>
+                <button data-action="close-modal"
+                    style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <p class="nv-text-muted" style="font-size:0.9rem; margin-bottom:20px;">
+                Sessiz lüks deneyiminizi tasarlayalım.
+            </p>
+            <form id="nv-reservation-form">
+                <div class="nv-input-group">
+                    <label class="nv-label">Ad Soyad</label>
+                    <input type="text" id="nv-res-name" class="nv-input" required>
+                </div>
+                <div class="nv-input-group">
+                    <label class="nv-label">Deneyim</label>
+                    <select id="nv-res-service" class="nv-input">
+                        <option value="Hamam">Hamam Ritüeli</option>
+                        <option value="Sultan">Sultan Ritüeli</option>
+                        <option value="Neurova İmza">Neurova İmza</option>
+                    </select>
+                </div>
+                <div class="nv-input-group">
+                    <label class="nv-label">Zaman</label>
+                    <input type="text" id="nv-res-date" class="nv-input" placeholder="Tarih tercihi">
+                </div>
+                <button type="submit" class="nv-btn-reserve" style="width:100%; margin-top:10px;">WHATSAPP'A
+                    GEÇ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+</body>
+
+</html>
+

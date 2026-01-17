@@ -1,0 +1,132 @@
+/* =========================================================
+   NEUROVA – MAGAZINE & EDITORIAL LAYOUT v2.0
+   Added by Graphic Designer Context
+   ========================================================= */
+
+/* Typography Overrides for Editorial Look */
+.nv-font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.nv-font-sans {
+    font-family: 'Inter', sans-serif;
+}
+
+.nv-display-xl {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.nv-display-lg {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+/* Split Layout System */
+.nv-split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.nv-split-content {
+    padding: clamp(2rem, 5vw, 6rem);
+}
+
+.nv-split-visual {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.nv-split-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nv-split-visual:hover img {
+    transform: scale(1.05);
+}
+
+/* Alternate Order */
+.nv-split-section.nv-alt .nv-split-content {
+    order: 2;
+}
+
+.nv-split-section.nv-alt .nv-split-visual {
+    order: 1;
+}
+
+/* Full Width Banner */
+.nv-banner-section {
+    position: relative;
+    padding: 12vh 5vw;
+    text-align: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.nv-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 17, 19, 0.4);
+    /* Darkens bg */
+    z-index: 1;
+}
+
+.nv-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Button Refinement - Minimal */
+.nv-btn-minimal {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--nv-text);
+    color: var(--nv-text);
+    padding: 0 0 5px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nv-btn-minimal:hover {
+    color: var(--nv-gold);
+    border-bottom-color: var(--nv-gold);
+    padding-bottom: 8px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .nv-split-section {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .nv-split-section.nv-alt .nv-split-content {
+        order: 0;
+    }
+
+    .nv-split-section.nv-alt .nv-split-visual {
+        order: -1;
+        /* Always image first on mobile usually looks better */
+    }
+
+    .nv-split-visual {
+        height: 50vh;
+    }
+}

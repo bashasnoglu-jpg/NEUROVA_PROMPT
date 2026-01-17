@@ -25,7 +25,18 @@ app.post("/webhook", (req, _res, next) => {
   next();
 }, webhookHandler);
 
-app.use(express.static(path.join(__dirname, "..")));
+app.use(
+  express.static(path.join(__dirname, ".."), {
+    setHeaders(res, servedPath) {
+      const p = String(servedPath || "").toLowerCase();
+      if (p.endsWith(".html")) res.setHeader("Content-Type", "text/html; charset=utf-8");
+      else if (p.endsWith(".css")) res.setHeader("Content-Type", "text/css; charset=utf-8");
+      else if (p.endsWith(".js") || p.endsWith(".mjs")) res.setHeader("Content-Type", "application/javascript; charset=utf-8");
+      else if (p.endsWith(".json")) res.setHeader("Content-Type", "application/json; charset=utf-8");
+      else if (p.endsWith(".svg")) res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
+    },
+  })
+);
 app.use("/server", (_req, res) => res.status(404).end());
 
 app.get("/health", (_req, res) => res.json({ ok: true }));

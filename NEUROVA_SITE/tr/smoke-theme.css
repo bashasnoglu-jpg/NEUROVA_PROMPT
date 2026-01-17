@@ -1,0 +1,40 @@
+:root {
+  --NV_BG: #090B0F;
+  --NV_FRAME: #110F11;
+  --NV_PANEL: #19161A;
+  --NV_PANEL_2: #211E21;
+  --NV_SURFACE: #2A282B;
+  --NV_DIVIDER: #353437;
+  --NV_STROKE: #444347;
+  --NV_HIGHLIGHT: #6D6C72;
+  --NV_SOFT: #8F9094;
+
+  /* readable text (same family, lifted) */
+  --NV_TEXT: #D6D7DA;
+  --NV_TEXT_MUTED: #8F9094;
+}
+
+/* 1) Butonlar */
+.nv-btn, .nv-btn-reserve, .nv-cta, .nv-nav-cta {
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(33, 30, 33, .88); /* NV_PANEL_2 */
+  color: var(--NV_TEXT) !important;
+}
+.nv-btn:hover, .nv-btn-reserve:hover, .nv-cta:hover, .nv-nav-cta:hover {
+  background: rgba(109, 108, 114, .22); /* NV_HIGHLIGHT tint */
+  border-color: rgba(255, 255, 255, .16);
+}
+
+/* 2) Nav link hover / active */
+.nv-menu a:hover { border-bottom-color: rgba(109, 108, 114, .75); }
+.nv-menu a.is-active { border-bottom-color: var(--NV_HIGHLIGHT); }
+.nv-dropdown-content a:hover { background: rgba(109, 108, 114, .18); }
+
+/* 3) Kart hover */
+.nv-card:hover {
+  border-color: rgba(255, 255, 255, .12);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .55);
+}
+.nv-card::before {
+  background: radial-gradient(600px 220px at 30% 10%, rgba(109, 108, 114, .22), transparent 60%);
+}

@@ -19,7 +19,7 @@
 - Karttaki “Ton Rezervasyon” notu referans verir; kopyalamak yerine kartı kullanın.
 
 ## 3. Safe rules (NEUROVA tonu)
-- Çocuk/teen içeriklerinde ebeveyn izni her seferinde sorulmalı; sessizlik, konfor ve izin kurallarına dikkat.
+- Ücuk/teen içeriklerinde ebeveyn izni her seferinde sorulmalı; sessizlik, konfor ve izin kurallarına dikkat.
 - Wellness modunda medikal teşhis ya da tedavi sözü yok; ritüel, konfor ve farkındalık dilini kullanın.
 - Premium/sakin alanlarda ses düzeyini düşük tutun; kartı okuduktan sonra konumu onaylayın.
 - Export kapalı ortamlarda form içinden kopyala, dış ortama transfer etmeyin.

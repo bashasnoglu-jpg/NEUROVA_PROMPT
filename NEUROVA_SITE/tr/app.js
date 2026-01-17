@@ -35,13 +35,26 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// SERVICE WORKER
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js', { scope: './' })
-            .then((registration) => console.log('SW registered:', registration.scope))
-            .catch((err) => console.log('SW registration failed:', err));
-    });
+// SERVICE WORKER (disabled by default; enable via ?nv_sw=1 or localStorage nv_sw=1)
+if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+    try {
+        const params = new URLSearchParams(window.location.search || '');
+        const enabled = params.get('nv_sw') === '1' || localStorage.getItem('nv_sw') === '1';
+
+        if (!enabled) {
+            // Best-effort: unregister existing SWs (avoid stale SW causing 504s)
+            navigator.serviceWorker.getRegistrations()
+                .then((regs) => Promise.all(regs.map((r) => r.unregister())))
+                .catch(() => {});
+        } else {
+            if (params.get('nv_sw') === '1') localStorage.setItem('nv_sw', '1');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('../sw.js', { scope: '../' })
+                    .then((registration) => console.log('SW registered:', registration.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    } catch (_) {}
 }
 
 // LAZY LOADING FALLBACK (native first)

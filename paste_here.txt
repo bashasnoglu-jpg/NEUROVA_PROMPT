@@ -1,0 +1,2 @@
+Buraya yapıştırmak istediğiniz promptu veya metni yapıştırın ve KEYDET (Ctrl+S) yapın.
+Sonra bana "tamam" yazın, ben buradan okuyacağım.

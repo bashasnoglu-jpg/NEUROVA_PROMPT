@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    
+    
+    
+    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | NEUROVA</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="../assets/css/nv-palette-smoke.css">
+  <link rel="stylesheet" href="../assets/css/nv-smoke-overrides.css">
+</head>
+<body data-page="contact">
+
+  <!-- NAV -->
+  
+
+  <!-- MAIN -->
+  <main class="nv-main">
+    
+    <!-- HERO (Minimal) -->
+    <section class="nv-hero">
+      <p class="nv-meta">Bize Ulaşın</p>
+      <h1>Rezervasyon & İletişim</h1>
+    </section>
+
+    <!-- CONTACT FORM & INFO GRID -->
+    <div class="nv-container">
+      <div class="nv-sections" style="grid-template-columns: 1fr 1fr; gap: var(--nv-space-xl);">
+        
+        <!-- INFO -->
+        <div>
+          <article class="nv-card">
+            <h3>Merkez Ofis</h3>
+            <p>Levent, İstanbul</p>
+            <br>
+            <h3>Çalışma Saatleri</h3>
+            <p>Her gün: 10:00 — 22:00</p>
+            <br>
+            <p class="nv-text-muted">
+              Randevularınız için lütfen en az 24 saat öncesinden iletişime geçiniz.
+            </p>
+          </article>
+        </div>
+
+        <!-- FORM (Component Test) -->
+        <div>
+          <form action="#" onsubmit="event.preventDefault(); alert('Form demo: Gönderildi.');">
+            
+            <div class="nv-input-group">
+              <label class="nv-label">Adınız Soyadınız</label>
+              <input type="text" class="nv-input" placeholder="İsim Soyisim">
+            </div>
+
+            <div class="nv-input-group">
+              <label class="nv-label">E-posta Adresi</label>
+              <input type="email" class="nv-input" placeholder="ornek@email.com">
+            </div>
+
+            <div class="nv-input-group">
+              <label class="nv-label">Mesajınız</label>
+              <textarea class="nv-textarea" placeholder="Rezervasyon talebiniz veya sorunuz..."></textarea>
+            </div>
+
+            <div style="margin-top: var(--nv-space-md);">
+              <button type="submit" class="nv-btn nv-btn-primary">Gönder</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="nv-footer">
+    <p>&copy; 2025 NEUROVA Spa & Wellness. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script src="../assets/js/app.js" defer></script>
+</body>
+</html>
+
+

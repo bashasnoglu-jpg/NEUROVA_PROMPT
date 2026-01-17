@@ -1,46 +1,38 @@
-const CACHE_NAME = 'neurova-v3-tr-scope';
-const ASSETS = [
-  './index.html',
-  './hamam.html',
-  './masajlar.html',
-  './about.html',
-  './404.html',
+const CACHE_NAME = 'neurova-tr-v4';
+const CORE = [
   './offline.html',
+  './manifest.json',
   '../assets/css/style.css',
-  './app.js',
-  './manifest.json'
+  '../assets/js/app.js',
 ];
 
-self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install');
-  e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Caching all: app shell and content');
-      return cache.addAll(ASSETS);
-    })
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE)).catch(() => {})
+      .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(keyList.map((key) => {
-        if (key !== CACHE_NAME) {
-          return caches.delete(key);
-        }
-      }));
-    })
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.map((k) => (k === CACHE_NAME ? null : caches.delete(k)))))
+      .then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request).catch(() => {
-        if (e.request.mode === 'navigate') {
-          return caches.match('tr/offline.html');
-        }
-      });
-    })
-  );
+self.addEventListener('fetch', (event) => {
+  const req = event.request;
+  event.respondWith((async () => {
+    try {
+      if (req.method !== 'GET') return await fetch(req);
+      return await fetch(req);
+    } catch (_err) {
+      if (req.mode === 'navigate') {
+        const offline = await caches.match('./offline.html');
+        if (offline) return offline;
+      }
+      return Response.error();
+    }
+  })());
 });

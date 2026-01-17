@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    
+    
+    
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="NEUROVA Cilt Bakımı – Sothys Paris ürünleriyle profesyonel ve sonuç odaklı yüz bakımları.">
+
+    <title>NEUROVA | Cilt Bakımı</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/editorial.css" />
+    <link rel="stylesheet" href="./assets/css/nav-active.css" />
+    <link rel="stylesheet" href="./assets/css/smoke-theme.css" />
+    <link rel="stylesheet" href="./assets/css/nv-palette-smoke.css">
+    <link rel="stylesheet" href="./assets/css/nv-smoke-overrides.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+  <script defer src="./assets/js/nav-slot-loader.js"></script>
+</head>
+
+<body data-page="cilt">
+
+    <!-- NAV -->
+    <header id="nv-header" class="nv-nav">
+    
+    
+    
+    
+    
+    
+        <div class="nv-nav-inner">
+            <div class="nv-logo">NEUROVA</div>
+            <nav class="nv-menu">
+                <a href="index.html" data-nav="home">Ana Sayfa</a>
+                <a href="hamam.html" data-nav="hamam">Hamam</a>
+                <a href="masajlar.html" data-nav="masaj">Masaj</a>
+                <a href="cilt-bakimi.html" class="is-active" data-nav="cilt">Cilt Bak&#305;m&#305;</a>
+                <a href="iletisim.html" data-nav="iletisim">&#304;leti&#351;im</a>
+            </nav>
+            <div class="nv-nav-cta">
+                <button class="nv-btn-reserve" onclick="nvOpenReservationModal()">REZERVASYON</button>
+                <button id="nvBurger" class="nv-burger" aria-label="Menü">☰</button>
+            </div>
+        </div>
+        <div id="nvMobileMenu" class="nv-mobile-menu" aria-hidden="true">
+            <a href="index.html" data-nav="home">Ana Sayfa</a>
+            <a href="hamam.html" data-nav="hamam">Hamam</a>
+            <a href="masajlar.html" data-nav="masaj">Masajlar</a>
+            <a href="kids-family.html" data-nav="kids">Kids & Family</a>
+            <a href="cilt-bakimi.html" data-nav="cilt">Face – Sothys</a>
+            <a href="paketler.html" data-nav="paketler">Paketler</a>
+            <a href="urunler.html" data-nav="urunler">Ürünler</a>
+            <a href="galeri.html" data-nav="galeri">Galeri</a>
+            <a href="hakkimizda.html" data-nav="hakkimizda">Hakkımızda</a>
+            <a href="ekibimiz.html" data-nav="ekip">Ekibimiz</a>
+            <a class="nv-mcta nv-btn-reserve mobile" href="#nv-wa" data-wa="1" data-nv-open-reservation>REZERVASYON</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="nv-hero"
+        style="height: 70vh; display: flex; align-items: center; justify-content: center; position: relative;">
+        <div class="nv-hero-layer" style="background-image: url('assets/img/home/hero-mid.jpg'); opacity: 0.3;"></div>
+        <div class="nv-hero-content" style="z-index: 2; padding: 0 5vw; text-align: center;">
+            <p class="nv-font-sans"
+                style="letter-spacing: 0.3em; font-size: 0.8rem; margin-bottom: 2rem; color: var(--nv-gold);">SOTHYS
+                PARIS ENSTİTÜSÜ</p>
+            <h1 class="nv-font-serif nv-display-xl">Bilim ve doğanın<br>kusursuz uyumu.</h1>
+        </div>
+    </section>
+
+    <main id="nv-main">
+
+        <!-- INTRO -->
+        <section style="padding: 10vh 10vw; text-align: center; max-width: 900px; margin: 0 auto;">
+            <p class="nv-font-serif nv-display-lg" style="font-size: 2rem;">
+                "Fransız zarafeti ve yüksek performanslı formüller. Cildinizin ihtiyaç duyduğu ışıltıyı geri kazanın."
+            </p>
+        </section>
+
+        <!-- RITUAL 1: TEMEL BAKIM -->
+        <section class="nv-split-section">
+            <div class="nv-split-visual">
+                <img src="assets/img/home/hero-front.jpg" alt="Temel Cilt Bakımı" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Classic Care</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">45 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Mevsimsel ihtiyaçlara göre özelleştirilen temel bakım. Derinlemesine temizlik, peeling ve nem
+                    maskesi ile cildi canlandırır ve tazeler.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Temel Cilt Bakımı rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+        <!-- RITUAL 2: HYDRA 3Ha -->
+        <section class="nv-split-section nv-alt">
+            <div class="nv-split-visual">
+                <img src="assets/img/home/hero-back.jpg" alt="Hydra Hyaluronik Asit" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Hydra 3Ha™</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">75 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Sothys'in patentli hyaluronik asit kompleksi ile yoğun nem terapisi. Cilt bariyerini güçlendirir,
+                    dolgunluk sağlar ve yaşlanma belirtilerini geciktirir.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Hydra 3Ha rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+        <!-- RITUAL 3: YOUTH INTENSIVE -->
+        <section class="nv-split-section">
+            <div class="nv-split-visual">
+                <img src="assets/img/home/hero-mid.jpg" alt="Gençlik Bakımı" loading="lazy" decoding="async">
+            </div>
+            <div class="nv-split-content">
+                <h2 class="nv-font-serif nv-display-lg" style="font-size: 2.5rem;">Youth Intensive</h2>
+                <div class="nv-font-sans" style="margin-bottom: 1rem; opacity: 0.6; letter-spacing: 0.1em;">90 DAKİKA
+                </div>
+                <p class="nv-text-muted nv-text">
+                    Zamana meydan okuyan özel protokol. BP3. Tri-complex™ teknolojisi ile kırışıklık görünümünü azaltır
+                    ve cildi sıkılaştırır.
+                </p>
+                <button class="nv-btn-minimal" style="margin-top: 2rem;"
+                    onclick="nvOpenWhatsApp('Youth Intensive rezervasyonu')">Rezervasyon Yap</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="nv-footer" style="padding: 4rem 2rem;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div>
+                <div class="nv-logo" style="margin-bottom: 1rem;">NEUROVA</div>
+                <p class="nv-text-muted">Istanbul'un kalbinde, zamansız bir kaçış.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; opacity: 0.4; font-size: 0.7rem;">
+            © 2026 NEUROVA Spa & Wellness.
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="nv-reservation-modal" class="nv-mobile-overlay" hidden>
+        <div class="nv-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="margin:0; font-size:1.2rem;">Rezervasyon</h3>
+                <button data-action="close-modal"
+                    style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <p class="nv-text-muted" style="font-size:0.9rem; margin-bottom:20px;">
+                Sessiz lüks deneyiminizi tasarlayalım.
+            </p>
+            <form id="nv-reservation-form">
+                <div class="nv-input-group">
+                    <label class="nv-label">Ad Soyad</label>
+                    <input type="text" id="nv-res-name" class="nv-input" required>
+                </div>
+                <div class="nv-input-group">
+                    <label class="nv-label">Deneyim</label>
+                    <select id="nv-res-service" class="nv-input">
+                        <option value="Classic Care">Classic Care</option>
+                        <option value="Hydra 3Ha">Hydra 3Ha</option>
+                        <option value="Youth Intensive">Youth Intensive</option>
+                        <option value="Diğer">Diğer</option>
+                    </select>
+                </div>
+                <div class="nv-input-group">
+                    <label class="nv-label">Zaman</label>
+                    <input type="text" id="nv-res-date" class="nv-input" placeholder="Tarih tercihi">
+                </div>
+                <button type="submit" class="nv-btn-reserve" style="width:100%; margin-top:10px;">WHATSAPP'A
+                    GEÇ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+</body>
+
+</html>
+

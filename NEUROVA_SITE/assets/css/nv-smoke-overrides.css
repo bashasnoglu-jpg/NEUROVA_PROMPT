@@ -1,0 +1,102 @@
+/* ============================================================
+   NEUROVA - SMOKE QUIET LUXURY OVERRIDES (global)
+   Loaded after page CSS to neutralize white/gold remnants.
+   ============================================================ */
+
+html, body{
+  background: var(--nv-bg, #34393D);
+  color: var(--nv-ink, #ECECEC);
+}
+
+/* Normalize: remove warm-gold CTA and white cards -> smoke */
+.nv-hero{
+  background: linear-gradient(135deg, rgba(109,108,114,.18), rgba(33,30,33,.92));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .60);
+}
+
+.nv-hero-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.30;
+  z-index: 1;
+}
+.nv-hero-bg,
+.nv-hero-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nv-hero-bg img {
+  object-fit: cover;
+}
+
+.packages-intro-copy{
+  background: rgba(25,22,26,.92);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, .60);
+}
+.packages-intro-copy p{ color: var(--nv-muted, #8F9094); }
+.packages-intro-copy .lead{ color: var(--nv-ink, #D6D7DA); }
+
+.nv-cta{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(33,30,33,.88);
+  color: var(--nv-ink, #D6D7DA);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+.nv-cta:hover{
+  background: rgba(109,108,114,.22);
+  border-color: rgba(255,255,255,.16);
+}
+
+.nv-cta--secondary{
+  background: rgba(33,30,33,.72);
+  color: var(--nv-ink, #D6D7DA);
+  border-color: rgba(255,255,255,.10);
+}
+
+.nv-card,
+.nv-product-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)), var(--nv-card, #19161A);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 18px 52px rgba(0,0,0,.55);
+}
+
+.nv-card:hover,
+.nv-product-card:hover{
+  border-color: rgba(255,255,255,.10);
+  box-shadow: 0 24px 70px rgba(0,0,0,.68);
+}
+
+.nv-card h3,
+.nv-product-card h3{ color: var(--nv-ink, #D6D7DA); }
+.nv-upgrade{ color: var(--nv-muted, #8F9094); }
+.nv-price{ color: var(--nv-ink, #D6D7DA); }
+
+.nv-wa{
+  background: rgba(17,15,17,.92);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.nv-wa p{ color: rgba(214,215,218,.78); }
+
+.nv-wa .nv-cta{
+  background: rgba(109,108,114,.24);
+  border-color: rgba(255,255,255,.14);
+  color: var(--nv-ink, #D6D7DA);
+  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+}
+.nv-wa .nv-cta:hover{
+  background: rgba(109,108,114,.32);
+  border-color: rgba(255,255,255,.18);
+}
+
+.nv-assurance{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Tailwind utility safety: avoid pure-white hover surfaces in smoke theme */
+.hover\:bg-white\/10:hover { background-color: rgb(255 255 255 / 0.10); }
+
+/* Global stage moved to: assets/css/nv-global-stage.css */

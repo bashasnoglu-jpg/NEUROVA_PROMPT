@@ -63,9 +63,9 @@
     style.id = "nv-reservation-style";
     style.textContent = `
       :root{
-        --nv-ink:#1f1f1f; --nv-muted:#777; --nv-line:#e9e9e9; --nv-bg:rgba(0,0,0,.45);
-        --nv-card:#fff; --nv-r:16px; --nv-shadow:0 18px 60px rgba(0,0,0,.18);
-        --nv-gold:#d4af37;
+        --nv-ink:#D6D7DA; --nv-muted:#8F9094; --nv-line:#353437; --nv-bg:rgba(0,0,0,.55);
+        --nv-card:#19161A; --nv-r:16px; --nv-shadow:0 18px 60px rgba(0,0,0,.55);
+        --nv-gold:#6D6C72;
       }
       html.nv-modal-open, body.nv-modal-open{ overflow:hidden; }
       #nv-reservation-overlay{

@@ -35,24 +35,24 @@ window.NV_PROMPTS = [
     },
     {
         id: "P004",
-        category: "RitÇ¬el Öncesi",
+        category: "Ritüel Öncesi",
         role: "Therapist",
         title: "Basınç ve Hassasiyet Onayı",
         safeNote: "Consent check language; non-medical.",
         lang: {
-            tr: "RitÇ¬ele başlamadan önce basınç tercihlerinizi bir kez daha onaylayalım. Hangi bölgede daha hafif kalmamı veya ekstra dikkat etmemi isterseniz hemen söyleyin.",
+            tr: "Ritüele başlamadan önce basınç tercihlerinizi bir kez daha onaylayalım. Hangi bölgede daha hafif kalmamı veya ekstra dikkat etmemi isterseniz hemen söyleyin.",
             en: "Before we begin, let me reconfirm your pressure preferences. Please say if any area should stay lighter or if you need extra care."
         },
         tags: ["hassasiyet", "basınç", "onay"]
     },
     {
         id: "P005",
-        category: "RitÇ¬el Sonrası",
+        category: "Ritüel Sonrası",
         role: "Reception",
         title: "Sessiz Kapanış",
         safeNote: "Aftercare reminder; non-medical wording.",
         lang: {
-            tr: "RitÇ¬elin kapanışında sessizliği koruyarak nefesinizi sakinleştiriyor ve suyla dinlenmeyi öneriyorum.",
+            tr: "Ritüelin kapanışında sessizliği koruyarak nefesinizi sakinleştiriyor ve suyla dinlenmeyi öneriyorum.",
             en: "As we close the ritual I keep the tone quiet, guiding the breath into stillness and offering water or rest."
         },
         tags: ["kapanış", "sessizlik", "aftercare"]

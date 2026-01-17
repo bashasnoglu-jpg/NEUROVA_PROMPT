@@ -1,0 +1,1262 @@
+/* ===============================
+   NEUROVA — KARASEN DARK v1.0
+   Quiet Luxury • Static • Stable
+   =============================== */
+
+:root {
+  --nv-bg: #090B0F;
+  --nv-frame: #110F11;
+  --nv-panel: #19161A;
+  --nv-divider: #353437;
+  --nv-stroke: #444347;
+  --nv-highlight: #6D6C72;
+
+  --nv-text: #D6D7DA;
+  --nv-muted: #8F9094;
+  --nv-accent: #6D6C72;
+
+  --nv-text-main: var(--nv-text);
+  --nv-text-soft: var(--nv-muted);
+  --nv-text-muted: var(--nv-muted);
+
+  /* Legacy token (was gold/bronze) */
+  --nv-gold: var(--nv-highlight);
+
+  /* Card Tokens */
+  --nv-card-bg: var(--nv-panel);
+  --nv-card-radius: 14px;
+  --nv-card-padding: 1.6rem;
+  --nv-card-gap: 1rem;
+  --nv-card-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  --nv-card-border: 1px solid var(--nv-stroke);
+
+  /* Button Tokens */
+  --nv-btn-radius: 999px;
+  /* soft pill */
+  --nv-btn-padding-y: 0.75rem;
+  --nv-btn-padding-x: 1.75rem;
+  --nv-btn-font-size: var(--nv-text-sm);
+  --nv-btn-letter-spacing: 0.08em;
+  --nv-btn-border: 1px solid transparent;
+
+  /* Header Tokens */
+  --nv-header-padding-y: var(--nv-space-xs);
+  --nv-header-padding-x: var(--nv-space-sm);
+  --nv-header-gap: var(--nv-space-sm);
+  --nv-header-maxw: 1200px;
+
+  /* Drawer Tokens */
+  --nv-drawer-w: min(360px, 92vw);
+  --nv-drawer-padding: var(--nv-space-sm);
+  --nv-drawer-gap: var(--nv-space-xs);
+  --nv-drawer-radius: 18px;
+  --nv-drawer-z: 1000;
+
+  /* Gallery Tokens */
+  --nv-gallery-gap: var(--nv-space-sm);
+  --nv-gallery-padding: var(--nv-space-sm);
+  --nv-gallery-margin-top: var(--nv-space-md);
+  --nv-gallery-radius: 12px;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--nv-bg);
+  color: var(--nv-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+}
+
+/* HEADER / NAV */
+.nv-header {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(20, 23, 26, .85), rgba(20, 23, 26, .65));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--nv-divider);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nv-nav {
+  max-width: var(--nv-header-maxw);
+  margin: 0 auto;
+  padding: var(--nv-header-padding-y) var(--nv-header-padding-x);
+  display: flex;
+  gap: var(--nv-header-gap);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nv-nav a {
+  color: var(--nv-muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: color var(--nv-motion-fast) var(--nv-ease);
+}
+
+.nv-nav a:hover {
+  color: var(--nv-text);
+}
+
+.nv-nav a.is-active {
+  color: var(--nv-gold);
+}
+
+.nv-nav .lang {
+  margin-left: auto;
+  color: var(--nv-muted);
+  font-size: .85rem;
+  opacity: .7;
+}
+
+/* MOBILE DRAWER */
+[data-nv-mobile-panel],
+.nv-mobile-panel,
+.nv-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: var(--nv-drawer-w) !important;
+  height: 100dvh;
+  background: linear-gradient(180deg, var(--nv-panel), var(--nv-frame));
+  border-left: 1px solid var(--nv-divider);
+  border-radius: 0 var(--nv-drawer-radius) var(--nv-drawer-radius) 0;
+  padding: var(--nv-drawer-padding) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nv-drawer-gap);
+  z-index: var(--nv-drawer-z);
+  transform: translateX(100%);
+  transition: transform var(--nv-motion-slow) var(--nv-ease);
+}
+
+[data-nv-mobile-panel]:not([hidden]),
+.nv-mobile-panel:not([hidden]),
+.nv-drawer.is-open {
+  transform: translateX(0);
+}
+
+[data-nv-mobile-panel] .nv-nav,
+.nv-mobile-panel .nv-nav,
+.nv-drawer .nv-nav {
+  flex-direction: column;
+  gap: var(--nv-space-xs);
+}
+
+[data-nv-mobile-panel] .nv-nav a,
+.nv-mobile-panel .nv-nav a,
+.nv-drawer .nv-nav a {
+  padding: var(--nv-space-xs) 0;
+  font-size: .95rem;
+}
+
+[data-nv-mobile-panel] a,
+.nv-mobile-panel a,
+.nv-drawer a {
+  display: block;
+  text-decoration: none;
+}
+
+[data-nv-mobile-overlay],
+.nv-mobile-overlay,
+.nv-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--nv-motion-slow) var(--nv-ease);
+  z-index: calc(var(--nv-drawer-z) - 1);
+}
+
+[data-nv-mobile-overlay]:not([hidden]),
+.nv-mobile-overlay:not([hidden]),
+.nv-drawer-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nv-gallery {
+  margin-top: var(--nv-gallery-margin-top);
+  padding: var(--nv-gallery-padding);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--nv-gallery-gap);
+}
+
+.nv-gallery-item {
+  border-radius: var(--nv-gallery-radius);
+  overflow: hidden;
+  background: var(--nv-panel);
+}
+
+.nv-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* MAIN */
+.nv-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+}
+
+/* HERO */
+.nv-hero {
+  padding: 80px 0 100px;
+  border-bottom: 1px solid var(--nv-divider);
+  margin-bottom: var(--nv-space-lg);
+}
+
+.nv-hero h1 {
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: .12em;
+  margin: 0 0 16px;
+}
+
+.nv-hero p {
+  color: var(--nv-muted);
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+.nv-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding-top: var(--nv-space-md);
+  padding-bottom: var(--nv-space-lg);
+}
+
+
+
+/* ===============================
+   SECTION INTRO — v1.0
+   =============================== */
+
+.nv-section-intro {
+  max-width: 720px;
+  margin: 0 auto var(--nv-space-lg);
+  text-align: center;
+}
+
+.nv-section-intro h2 {
+  margin: 0 0 var(--nv-space-xs);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: .12em;
+}
+
+.nv-section-intro p {
+  margin: 0;
+  color: var(--nv-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===============================
+   CONTENT GRID — v1.0
+   =============================== */
+
+.nv-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--nv-space-md);
+  margin-bottom: var(--nv-space-xl);
+}
+
+
+
+/* ===============================
+   FEATURE STRIP — v1.0
+   =============================== */
+
+.nv-feature-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--nv-space-sm);
+  border-top: 1px solid var(--nv-divider);
+  border-bottom: 1px solid var(--nv-divider);
+  padding: var(--nv-space-md) 0;
+  margin-bottom: var(--nv-space-lg);
+  text-align: center;
+}
+
+.nv-feature-strip strong {
+  display: block;
+  font-weight: 400;
+  letter-spacing: .1em;
+  font-size: 12px;
+  color: var(--nv-muted);
+  text-transform: uppercase;
+}
+
+.nv-feature-strip span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ===============================
+   STORY INTRO — v1.0
+   =============================== */
+
+.nv-story-intro {
+  max-width: 760px;
+  margin: 0 auto var(--nv-space-xl);
+  text-align: center;
+}
+
+.nv-story-intro h2 {
+  margin-bottom: var(--nv-space-sm);
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: .14em;
+}
+
+.nv-story-intro p {
+  color: var(--nv-muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ===============================
+   RITUAL FLOW — v1.0
+   =============================== */
+
+.nv-ritual-flow ol {
+  max-width: 820px;
+  margin: 0 auto var(--nv-space-xl);
+  padding: 0;
+  list-style: none;
+}
+
+.nv-ritual-flow li {
+  margin-bottom: var(--nv-space-md);
+}
+
+.nv-ritual-flow h3 {
+  margin: 0 0 8px;
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+
+.nv-ritual-flow p {
+  margin: 0;
+  color: var(--nv-muted);
+  line-height: 1.7;
+}
+
+/* ===============================
+   SENSORY NOTES — v1.0
+   =============================== */
+
+.nv-sensory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--nv-space-md);
+  margin-bottom: var(--nv-space-xl);
+  text-align: center;
+}
+
+.nv-sensory strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: var(--nv-muted);
+  text-transform: uppercase;
+}
+
+.nv-sensory span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* ===============================
+   WHO IT’S FOR — v1.0
+   =============================== */
+
+.nv-who {
+  max-width: 700px;
+  margin: 0 auto var(--nv-space-xl);
+  text-align: center;
+}
+
+.nv-who h3 {
+  margin-bottom: 12px;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
+
+.nv-who p {
+  color: var(--nv-muted);
+  line-height: 1.8;
+}
+
+/* ===============================
+   GALLERY GRID — v1.0
+   =============================== */
+
+.nv-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--nv-space-md);
+  margin-bottom: var(--nv-space-xl);
+}
+
+.nv-gallery figure {
+  margin: 0;
+}
+
+/* ===============================
+   OVERRIDE NORMALIZATION — v1.0
+   (Legacy utility drift → tokens)
+   =============================== */
+
+.px-\[18px\] {
+  padding-left: var(--nv-space-sm) !important;
+  padding-right: var(--nv-space-sm) !important;
+}
+
+.py-\[14px\] {
+  padding-top: var(--nv-space-xs) !important;
+  padding-bottom: var(--nv-space-xs) !important;
+}
+
+.py-\[32px\] {
+  padding-top: var(--nv-space-sm) !important;
+  padding-bottom: var(--nv-space-sm) !important;
+}
+
+.pb-\[72px\] {
+  padding-bottom: var(--nv-space-lg) !important;
+}
+
+.mt-\[40px\] {
+  margin-top: var(--nv-space-md) !important;
+}
+
+.mb-\[18px\] {
+  margin-bottom: var(--nv-space-xs) !important;
+}
+
+.gap-\[14px\] {
+  gap: var(--nv-space-xs) !important;
+}
+
+.gap-\[10px\] {
+  gap: var(--nv-space-xxs) !important;
+}
+
+.px-\[12px\] {
+  padding-left: var(--nv-space-xxs) !important;
+  padding-right: var(--nv-space-xxs) !important;
+}
+
+.py-\[10px\] {
+  padding-top: var(--nv-space-xxs) !important;
+  padding-bottom: var(--nv-space-xxs) !important;
+}
+
+.max-w-\[1100px\] {
+  max-width: 1200px !important;
+}
+
+/* FOOTER */
+.nv-footer {
+  border-top: 1px solid var(--nv-divider);
+  margin-top: 80px;
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--nv-muted);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+  .nv-hero h1 {
+    font-size: 30px
+  }
+
+  .nv-main {
+    padding-top: 60px
+  }
+
+  .nv-hero {
+    margin-bottom: var(--nv-space-md)
+  }
+
+  .nv-sections {
+    padding-bottom: var(--nv-space-md)
+  }
+
+  .nv-reserve {
+    margin-top: var(--nv-space-lg)
+  }
+}
+
+/* ===============================
+   HERO PARALLAX — v1.0
+   =============================== */
+
+.nv-hero-parallax {
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.nv-hero-layer {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 40% at 50% 20%, rgba(255, 255, 255, .06), transparent 70%),
+    linear-gradient(180deg, rgba(15, 17, 19, .2), rgba(15, 17, 19, .9));
+  will-change: transform;
+  background-attachment: scroll;
+}
+
+.nv-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nv-hero-layer {
+    background-attachment: scroll;
+  }
+}
+
+/* ===============================
+   RESERVATION CTA — KARASEN v1.0
+   =============================== */
+
+.nv-reserve {
+  margin-top: var(--nv-space-xl);
+  margin-bottom: var(--nv-space-lg);
+  padding: 80px 20px;
+  border-top: 1px solid var(--nv-divider);
+}
+
+.nv-reserve-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nv-reserve h2 {
+  margin: 0 0 12px;
+  font-weight: 300;
+  letter-spacing: .12em;
+  font-size: 26px;
+}
+
+.nv-reserve p {
+  margin: 0 0 28px;
+  color: var(--nv-muted);
+  font-size: 14px;
+  letter-spacing: .08em;
+}
+
+
+
+/* ===============================
+   SCROLL REVEAL — QUIET v1.0
+   JS-FREE • SAFE • ELEGANT
+   =============================== */
+
+.nv-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--nv-motion-slow) var(--nv-ease),
+    transform var(--nv-motion-slow) var(--nv-ease);
+}
+
+/* Modern browsers */
+@supports (animation-timeline: view()) {
+  .nv-reveal {
+    animation: nvReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+  }
+
+  @keyframes nvReveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Fallback (older browsers) */
+@supports not (animation-timeline: view()) {
+  .nv-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===============================
+   STICKY NAV — SOFT v1.0
+   =============================== */
+
+.nv-header {
+  transition:
+    background .35s ease,
+    box-shadow .35s ease;
+}
+
+.nv-header.is-stuck {
+  background: rgba(20, 23, 26, .92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+/* ===============================
+   SPACING & RHYTHM — v1.0
+   Editorial • Quiet Luxury
+   =============================== */
+
+:root {
+  --nv-space-xs: 0.75rem;
+  --nv-space-sm: 1.25rem;
+  --nv-space-md: clamp(2.5rem, 4vw, 4rem);
+  --nv-space-lg: clamp(4rem, 6vw, 6.5rem);
+  --nv-space-xl: clamp(6rem, 8vw, 9rem);
+}
+
+/* Section Breath */
+section {
+  padding-block: var(--nv-space-lg);
+}
+
+/* Editorial Grid */
+.nv-container {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.nv-text {
+  max-width: 62ch;
+}
+
+/* Micro-Spacing */
+h1 {
+  margin-bottom: var(--nv-space-sm);
+}
+
+h2 {
+  margin-bottom: var(--nv-space-xs);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--nv-space-sm);
+}
+
+ul,
+ol {
+  margin-top: var(--nv-space-xs);
+  margin-bottom: var(--nv-space-md);
+}
+
+small {
+  font-size: .8rem;
+  opacity: .75;
+}
+
+/* Visual Rhythm */
+figure {
+  margin-block: var(--nv-space-md);
+  margin-inline: 0;
+}
+
+figure+h2,
+figure+h3 {
+  margin-top: var(--nv-space-sm);
+}
+
+/* ===============================
+   IMAGE RATIO SYSTEM — v1.0
+   =============================== */
+
+.nv-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 16:9 — Hero */
+.nv-ratio-16x9 {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* 3:2 — Editorial */
+.nv-ratio-3x2 {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* 4:5 — Cards */
+.nv-ratio-4x5 {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* 1:1 — Detail */
+.nv-ratio-1x1 {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* ===============================
+   TYPOGRAPHY FLOW — v1.0
+   Fluid • Editorial • Karasen
+   =============================== */
+
+:root {
+  /* Fluid Type Scale (Major Third) */
+  --nv-text-xs: 0.75rem;
+  --nv-text-sm: 0.875rem;
+  --nv-text-base: 1rem;
+  --nv-text-lg: 1.25rem;
+  --nv-text-xl: clamp(1.5rem, 3vw, 1.75rem);
+  --nv-text-2xl: clamp(2rem, 4vw, 2.5rem);
+  --nv-text-3xl: clamp(2.5rem, 5vw, 3.5rem);
+  --nv-text-4xl: clamp(3rem, 6vw, 4.5rem);
+}
+
+body {
+  font-size: var(--nv-text-base);
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  color: var(--nv-text);
+}
+
+h1 {
+  font-size: var(--nv-text-4xl);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--nv-text-3xl);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--nv-text-2xl);
+  font-weight: 400;
+}
+
+h4 {
+  font-size: var(--nv-text-lg);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Muted Text Variant */
+.nv-text-muted {
+  color: var(--nv-text-muted);
+  font-size: var(--nv-text-sm);
+  line-height: 1.6;
+}
+
+/* Editorial Quote */
+blockquote {
+  font-size: var(--nv-text-xl);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--nv-gold);
+  border-left: 2px solid var(--nv-gold);
+  padding-left: var(--nv-space-sm);
+  margin-block: var(--nv-space-md);
+}
+
+/* ===============================
+   COLOR & CONTRAST — v1.0
+   Accessibility • Quiet Luxury
+   =============================== */
+
+::selection {
+  background: rgba(185, 163, 107, 0.25);
+  color: var(--nv-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--nv-gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ===============================
+   MOTION & TRANSITION — v1.0
+   Restraint • Quiet • Standard
+   =============================== */
+
+:root {
+  --nv-ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --nv-motion-fast: 150ms;
+  --nv-motion-base: 250ms;
+  --nv-motion-slow: 400ms;
+}
+
+/* Global Transition Reset */
+a,
+button,
+.nv-card,
+.nv-btn,
+.nv-sections article {
+  transition:
+    color var(--nv-motion-fast) var(--nv-ease),
+    background-color var(--nv-motion-fast) var(--nv-ease),
+    box-shadow var(--nv-motion-fast) var(--nv-ease),
+    opacity var(--nv-motion-fast) var(--nv-ease);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ===============================
+   COMPONENT ARCHITECTURE — v1.0
+   Buttons • Inputs • Cards
+   =============================== */
+
+/* CARDS */
+.nv-card,
+.nv-sections article {
+  background: var(--nv-card-bg);
+  border-radius: var(--nv-card-radius);
+  padding: var(--nv-card-padding);
+  border: var(--nv-card-border);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--nv-card-gap);
+
+  box-shadow: var(--nv-card-shadow);
+
+  transition:
+    opacity var(--nv-motion-base) var(--nv-ease),
+    box-shadow var(--nv-motion-base) var(--nv-ease);
+}
+
+.nv-card:hover,
+.nv-sections article:hover {
+  box-shadow: var(--nv-card-shadow);
+}
+
+/* Card Content Hierarchy */
+.nv-card h3,
+.nv-sections article h3 {
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+.nv-meta {
+  font-size: .85rem;
+  line-height: 1.5;
+  opacity: .65;
+}
+
+.nv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.nv-list li {
+  opacity: .85;
+}
+
+/* BUTTONS */
+.nv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: var(--nv-btn-padding-y) var(--nv-btn-padding-x);
+  border-radius: var(--nv-btn-radius);
+  border: var(--nv-btn-border);
+
+  font-size: var(--nv-btn-font-size);
+  font-weight: 400;
+  letter-spacing: var(--nv-btn-letter-spacing);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: inherit;
+
+  background: transparent;
+  color: var(--nv-text);
+
+  cursor: pointer;
+}
+
+.nv-btn:disabled,
+.nv-btn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.nv-btn--primary {
+  background: var(--nv-gold);
+  color: #111;
+}
+
+.nv-btn--primary:hover,
+.nv-btn--primary:focus-visible {
+  opacity: 0.92;
+}
+
+.nv-btn--secondary {
+  background: transparent;
+  color: var(--nv-text);
+  border: 1px solid var(--nv-stroke);
+}
+
+.nv-btn--secondary:hover,
+.nv-btn--secondary:focus-visible {
+  border-color: var(--nv-gold);
+}
+
+.nv-btn--ghost {
+  background: transparent;
+  padding-inline: 0;
+  border: none;
+  letter-spacing: 0.04em;
+}
+
+.nv-btn--ghost:hover {
+  color: var(--nv-text);
+}
+
+/* INPUTS */
+.nv-input-group {
+  margin-bottom: var(--nv-space-sm);
+}
+
+.nv-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--nv-muted);
+  margin-bottom: 8px;
+}
+
+.nv-input,
+.nv-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--nv-divider);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--nv-text);
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color .3s ease, background .3s ease;
+}
+
+.nv-input:focus,
+.nv-textarea:focus {
+  outline: none;
+  border-color: var(--nv-gold);
+  background: rgba(255, 255, 255, .05);
+}
+
+.nv-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================================================
+   NEUROVA – GLOBAL NAVIGATION v1.0
+   ========================================================= */
+
+.nv-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nv-frame);
+  border-bottom: 1px solid var(--nv-divider);
+}
+
+.nv-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nv-logo {
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+}
+
+.nv-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nv-menu a {
+  color: var(--nv-text-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.nv-menu a:hover {
+  color: var(--nv-text-main);
+}
+
+
+
+.nv-btn-reserve {
+  background: transparent;
+  border: 1px solid var(--nv-stroke);
+  color: var(--nv-text-main);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nv-btn-reserve:hover {
+  border-color: var(--nv-highlight);
+}
+
+.nv-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--nv-text-main);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nv-mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--nv-panel);
+  border-top: 1px solid var(--nv-divider);
+  padding: 1.5rem;
+}
+
+.nv-mobile-menu a {
+  padding: 0.8rem 0;
+  color: var(--nv-text-main);
+  text-decoration: none;
+  border-bottom: 1px solid var(--nv-divider);
+}
+
+.nv-mobile-menu .nv-btn-reserve.mobile {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .nv-menu {
+    display: none;
+  }
+
+  .nv-burger {
+    display: block;
+  }
+
+  .nv-mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* DROPDOWN MENU */
+.nv-dropdown-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Match nav link padding if necessary, or just rely on flex gap */
+}
+
+.nv-dropdown-trigger>button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--nv-text-soft);
+  /* Using existing var */
+  font-family: inherit;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.nv-dropdown-trigger:hover>button {
+  color: var(--nv-text-main);
+}
+
+.nv-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--nv-panel);
+  border: 1px solid var(--nv-divider);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nv-dropdown-trigger:hover .nv-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nv-dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+  color: var(--nv-text-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  text-transform: none;
+  /* Reset uppercase if inherited */
+  letter-spacing: normal;
+}
+
+.nv-dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--nv-text-main);
+}
+
+/* =========================================================
+   NEUROVA – HERO PARALLAX v1.0
+   ========================================================= */
+
+.nv-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  background: var(--nv-bg);
+}
+
+.nv-hero-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.nv-layer-back {
+  background-image: url("../img/hero-back.jpg");
+  opacity: 0.35;
+  transform: translateY(0);
+}
+
+.nv-layer-mid {
+  background-image: url("../img/hero-mid.jpg");
+  opacity: 0.5;
+  transform: translateY(0);
+}
+
+.nv-layer-front {
+  background-image: url("../img/hero-front.jpg");
+  opacity: 0.65;
+  transform: translateY(0);
+}
+
+.nv-hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nv-hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.3em;
+  margin-bottom: 0.5rem;
+}
+
+.nv-hero-content p {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  color: var(--nv-text-soft);
+  margin-bottom: 2.5rem;
+}
+
+.nv-btn-reserve.hero {
+  font-size: 0.75rem;
+  padding: 0.7rem 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .nv-hero {
+    height: 75vh;
+  }
+
+  .nv-hero-layer {
+    transform: none !important;
+  }
+}

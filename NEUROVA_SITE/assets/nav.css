@@ -1,19 +1,19 @@
 :root {
-  --nv-ink: #1f1f1f;
-  --nv-muted: #777;
-  --nv-line: #e9e9e9;
-  --nv-card: #fff;
-  --nv-bg: #f4f4f4;
-  --nv-gold: #d4af37;
+  --nv-ink: #D6D7DA;
+  --nv-muted: #8F9094;
+  --nv-line: #353437;
+  --nv-card: #19161A;
+  --nv-bg: #090B0F;
+  --nv-gold: #6D6C72;
   --nv-r: 14px;
-  --nv-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+  --nv-shadow: 0 10px 30px rgba(0, 0, 0, .55);
 }
 
 .nv-header {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(244, 244, 244, .86);
+  background: rgba(9, 11, 15, .86);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--nv-line);
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -65,14 +65,14 @@
 }
 
 .nv-link:hover {
-  border-color: var(--nv-line);
-  background: rgba(255, 255, 255, .65);
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .05);
 }
 
 .nv-link.is-active {
-  border-color: rgba(212, 175, 55, .45);
-  background: rgba(255, 247, 223, .9);
-  box-shadow: 0 8px 22px rgba(212, 175, 55, .18);
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(109, 108, 114, .18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .35);
 }
 
 .nv-actions {
@@ -82,25 +82,29 @@
 }
 
 .nv-cta {
-  border: 1px solid rgba(212, 175, 55, .45);
-  background: rgba(255, 247, 223, .9);
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(33, 30, 33, .88);
   border-radius: 999px;
   padding: 10px 12px;
   cursor: pointer;
   font-size: 13px;
-  transition: box-shadow .2s ease;
+  color: var(--nv-ink);
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
 .nv-cta:hover {
-  box-shadow: 0 10px 26px rgba(212, 175, 55, .18);
+  background: rgba(109, 108, 114, .22);
+  border-color: rgba(255, 255, 255, .18);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45);
 }
 
 .nv-burger {
   width: 42px;
   height: 38px;
   border-radius: 999px;
-  border: 1px solid var(--nv-line);
-  background: rgba(255, 255, 255, .7);
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(33, 30, 33, .72);
   display: none;
   cursor: pointer;
   position: relative;
@@ -138,38 +142,37 @@
 .nv-mpanel {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .25);
   display: flex;
   justify-content: flex-end;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .18s ease-out;
   z-index: 9999;
-  visibility: hidden;
+  background: transparent;
 }
 
-.nv-mpanel.is-open {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
+.nv-mpanel[hidden] {
+  display: none;
 }
 
 .nv-mpanel__inner {
   width: min(420px, 88vw);
-  background: rgba(244, 244, 244, .98);
-  border-left: 1px solid var(--nv-line);
+  background: rgba(17, 15, 17, .96);
+  border-left: 1px solid rgba(255, 255, 255, .10);
   box-shadow: var(--nv-shadow);
   padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transform: translateX(10px);
-  transition: transform .18s ease-out;
   pointer-events: auto;
 }
 
-.nv-mpanel.is-open .nv-mpanel__inner {
-  transform: translateX(0);
+.nv-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  z-index: 9998;
+}
+
+.nv-mobile-overlay[hidden] {
+  display: none;
 }
 
 .nv-mlink {
@@ -177,32 +180,34 @@
   color: var(--nv-ink);
   padding: 12px 12px;
   border-radius: 12px;
-  border: 1px solid var(--nv-line);
-  background: rgba(255, 255, 255, .65);
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(33, 30, 33, .72);
   display: block;
 }
 
 .nv-mlink.is-active {
-  border-color: rgba(212, 175, 55, .45);
-  background: rgba(255, 247, 223, .9);
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(109, 108, 114, .18);
 }
 
 .nv-mcta {
   margin-top: 10px;
-  border: 1px solid rgba(212, 175, 55, .45);
-  background: rgba(255, 247, 223, .9);
+  border: 1px solid rgba(255, 255, 255, .14);
+  background: rgba(109, 108, 114, .24);
   border-radius: 14px;
   padding: 12px;
   font-size: 14px;
   cursor: pointer;
+  color: var(--nv-ink);
+  text-decoration: none;
 }
 
 .nv-mobile__cta--sticky {
   position: sticky;
   bottom: 0;
-  background: #fff;
+  background: rgba(17, 15, 17, .96);
   padding: 16px 0 8px;
-  border-top: 1px solid var(--nv-line);
+  border-top: 1px solid rgba(255, 255, 255, .10);
   display: flex;
   gap: 8px;
   justify-content: flex-end;
@@ -296,7 +301,7 @@
 }
 
 .nv-dropdown__menu .nv-link:hover {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, .06);
 }
 
 /* ===== NAV CLICK PRIORITY — NEUROVA ===== */
@@ -347,4 +352,104 @@ body::before,
   position: sticky;
   top: 0;
   z-index: 2147483647 !important;
+}
+
+/* ============================================================
+   NEUROVA NAV - quiet luxury refinements
+   (kept as overrides to avoid breaking existing pages)
+   ============================================================ */
+.nv-shell{
+  gap: 20px;
+}
+
+.nv-brand__word{
+  font-size: 14px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.nv-nav{
+  gap: 18px;
+}
+
+.nv-link,
+.nv-link--dropdown{
+  font-size: 13.5px;
+  letter-spacing: .02em;
+  opacity: .86;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  padding: 9px 6px;
+  transition: opacity 220ms ease, transform 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.nv-link:hover,
+.nv-link--dropdown:hover{
+  opacity: .98;
+  border-bottom-color: rgba(109,108,114,.55);
+  background: transparent;
+}
+
+.nv-link.is-active,
+.nv-link--dropdown.is-active{
+  opacity: 1;
+  border-bottom-color: rgba(109,108,114,.95);
+  box-shadow: 0 10px 28px rgba(109,108,114,.10);
+}
+
+/* CTA: outline pill (more premium than solid block) */
+.nv-cta{
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(33,30,33,.42);
+  border: 1px solid rgba(255,255,255,.14);
+  text-transform: none;
+  letter-spacing: .04em;
+  font-weight: 600;
+}
+
+.nv-cta:hover{
+  background: rgba(109,108,114,.16);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+/* Dropdown panel refinement */
+.nv-dropdown__menu{
+  border-radius: 16px;
+  padding: 6px;
+}
+
+.nv-dropdown__menu .nv-link{
+  border-radius: 12px;
+  border-bottom: 0;
+  padding: 10px 12px;
+}
+
+.nv-dropdown__menu .nv-link:hover{
+  background: rgba(109,108,114,.14);
+}
+
+/* Mobile: keep CTA pinned at bottom */
+.nv-mpanel__inner{
+  gap: 10px;
+  overflow: auto;
+}
+
+.nv-mcta{
+  margin-top: 0;
+  border-radius: 999px;
+}
+
+.nv-mobile__cta--sticky{
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  background: rgba(17, 15, 17, .96);
+  padding: 12px 0 4px;
+  border-top: 1px solid rgba(255,255,255,.10);
 }

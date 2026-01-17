@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="NEUROVA İletişim – İstanbul'un merkezinde, gürültüden uzak. Adres, telefon ve ulaşım bilgileri.">
+
+    <title>NEUROVA | &#304;leti&#351;im</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/editorial.css" />
+    <link rel="stylesheet" href="./assets/css/nav-active.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/nv-palette-smoke.css">
+  <link rel="stylesheet" href="./assets/css/nv-smoke-overrides.css">
+  <script defer src="./assets/js/nav-slot-loader.js"></script>
+</head>
+
+<body data-page="iletisim">
+
+    <!-- NAV -->
+    <!-- NAV SLOT -->
+    <div id="nv-nav-slot" data-nav-fallback></div>
+
+    <!-- HERO -->
+    <section class="nv-hero"
+        style="height: 60vh; display: flex; align-items: center; justify-content: center; position: relative;">
+        <!-- Placeholder visual -->
+        <div class="nv-hero-layer" style="background-image: url('assets/img/home/hero-back.jpg'); opacity: 0.3;"></div>
+        <div class="nv-hero-content" style="z-index: 2; padding: 0 5vw; text-align: center;">
+            <p class="nv-font-sans"
+                style="letter-spacing: 0.3em; font-size: 0.8rem; margin-bottom: 2rem; color: var(--nv-gold);">LOKASYON
+            </p>
+            <h1 class="nv-font-serif nv-display-xl">Şehrin merkezinde<br>size özel bir sığınak.</h1>
+        </div>
+    </section>
+
+    <main id="nv-main">
+
+        <!-- CONTACT GRID -->
+        <section style="padding: 10vh 5vw; max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+
+                <!-- Info -->
+                <div class="nv-contact-info">
+                    <h2 class="nv-font-serif nv-display-lg" style="margin-bottom: 2rem;">Bize Ulaşın</h2>
+
+                    <div style="margin-bottom: 3rem;">
+                        <h4 class="nv-font-sans"
+                            style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--nv-gold); margin-bottom: 1rem;">
+                            ADRES</h4>
+                        <p class="nv-text-muted nv-text">
+                            NEUROVA Spa & Wellness<br>
+                            Büyükdere Caddesi No:123<br>
+                            Levent, İstanbul
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 3rem;">
+                        <h4 class="nv-font-sans"
+                            style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--nv-gold); margin-bottom: 1rem;">
+                            İLETİŞİM</h4>
+                        <p class="nv-text-muted nv-text">
+                            T: +90 212 000 00 00<br>
+                            M: +90 530 000 00 00 (WhatsApp)<br>
+                            E: info@neurovaspa.com
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 3rem;">
+                        <h4 class="nv-font-sans"
+                            style="font-size: 0.9rem; letter-spacing: 0.1em; color: var(--nv-gold); margin-bottom: 1rem;">
+                            SAATLER</h4>
+                        <p class="nv-text-muted nv-text">
+                            Hafta İçi: 10:00 - 22:00<br>
+                            Hafta Sonu: 10:00 - 22:00
+                        </p>
+                    </div>
+
+                    <button class="nv-btn-reserve" onclick="nvOpenWhatsApp('Yol tarifi almak istiyorum')">WHATSAPP İLE
+                        ULAŞIN</button>
+                </div>
+
+                <!-- Map / Visual -->
+                <div class="nv-contact-visual">
+                    <img src="assets/img/home/hero-mid.jpg" alt="Lokasyon"
+                        style="width: 100%; height: auto; border-radius: 4px; filter: grayscale(20%);" decoding="async">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="nv-footer" style="padding: 4rem 2rem;">
+        <div
+            style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div>
+                <div class="nv-logo" style="margin-bottom: 1rem;">NEUROVA</div>
+                <p class="nv-text-muted">Istanbul'un kalbinde, zamansız bir kaçış.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem; opacity: 0.4; font-size: 0.7rem;">
+            © 2026 NEUROVA Spa & Wellness.
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="nv-reservation-modal" class="nv-mobile-overlay" hidden>
+        <div class="nv-drawer">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 style="margin:0; font-size:1.2rem;">Rezervasyon</h3>
+                <button data-action="close-modal"
+                    style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <p class="nv-text-muted" style="font-size:0.9rem; margin-bottom:20px;">
+                Sessiz lüks deneyiminizi tasarlayalım.
+            </p>
+            <form id="nv-reservation-form">
+                <div class="nv-input-group">
+                    <label class="nv-label">Ad Soyad</label>
+                    <input type="text" id="nv-res-name" class="nv-input" required>
+                </div>
+                <!-- Service selection simplified for general contact -->
+                <div class="nv-input-group">
+                    <label class="nv-label">Deneyim</label>
+                    <select id="nv-res-service" class="nv-input">
+                        <option value="Genel Bilgi">Genel Bilgi</option>
+                        <option value="Rezervasyon">Rezervasyon</option>
+                    </select>
+                </div>
+                <div class="nv-input-group">
+                    <label class="nv-label">Mesajınız</label>
+                    <input type="text" id="nv-res-date" class="nv-input" placeholder="Tarih veya notunuz">
+                </div>
+                <button type="submit" class="nv-btn-reserve" style="width:100%; margin-top:10px;">WHATSAPP'A
+                    GEÇ</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+</body>
+
+</html>
+
+
+

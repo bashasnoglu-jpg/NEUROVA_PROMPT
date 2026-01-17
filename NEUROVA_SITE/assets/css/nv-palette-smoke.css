@@ -1,0 +1,27 @@
+:root{
+  /* NEUROVA каноник palette (quiet luxury) */
+  --nv-panel:#41464A;
+  --nv-bg:#34393D;
+  --nv-frame:#2C2F32;
+  --nv-divider:#32363A;
+  --nv-stroke:#55595D;
+  --nv-highlight:#9F9F9F;
+
+  /* Type */
+  --nv-ink:#ECECEC;
+  --nv-muted:#B6B8BB;
+
+  /* Surfaces (legacy + compatibility) */
+  --nv-card:var(--nv-frame);
+  --nv-line:var(--nv-divider);
+  --nv-surface:var(--nv-panel);
+  --nv-surface-2:color-mix(in srgb, var(--nv-panel), var(--nv-frame) 55%);
+  --nv-soft:var(--nv-muted);
+
+  /* Shape */
+  --nv-radius:16px;
+  --nv-shadow:0 14px 40px rgba(0,0,0,.45);
+
+  /* Legacy token compatibility */
+  --nv-gold:var(--nv-highlight);
+}

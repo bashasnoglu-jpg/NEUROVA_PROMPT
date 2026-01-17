@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   theme: {
@@ -13,11 +13,16 @@ module.exports = {
     extend: {
       colors: {
         // Mevcut Renkler (Geri uyumluluk için korundu)
-        'nv-bg': '#34393D',
-        'nv-panel': '#41464A',
-        'nv-frame': '#2C2F32',
-        'nv-highlight': '#9F9F9F',
-        'nv-text': '#ECECEC',
+        'nv-bg': '#090B0F',
+        'nv-frame': '#110F11',
+        'nv-panel': '#19161A',
+        'nv-panel-2': '#211E21',
+        'nv-surface': '#2A282B',
+        'nv-divider': '#353437',
+        'nv-stroke': '#444347',
+        'nv-highlight': '#6D6C72',
+        'nv-text': '#D6D7DA',
+        'nv-muted': '#8F9094',
         'nv-stone': '#E6E2DC',
         
         // YENİ PALET (İyileştirme Planı)
@@ -27,7 +32,7 @@ module.exports = {
         'nv-warm': '#F5E6D3',           // Sıcak krem
         'nv-dark': '#1A1D1A',           // Koyu gri-yeşil
         'nv-light': '#F8F9F8',          // Açık gri
-        'nv-muted': '#6B7B6E',          // Güncellenmiş orta ton
+        'nv-muted-green': '#6B7B6E',
       },
       backgroundImage: {
         'nv-gradient-primary': 'linear-gradient(135deg, #2C5530 0%, #8B9A8C 100%)',
@@ -108,3 +113,4 @@ module.exports = {
     }
   ],
 }
+

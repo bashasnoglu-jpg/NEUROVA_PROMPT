@@ -1,0 +1,21 @@
+name: Asset Hygiene Check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  asset-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm i; fi
+      - name: Check Asset Filenames
+        run: npm run sanitize:assets:check
+      - name: Check for Broken Asset References
+        run: npm run scan:assets

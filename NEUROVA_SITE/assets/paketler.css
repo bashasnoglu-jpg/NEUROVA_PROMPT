@@ -1,16 +1,16 @@
 /* Paketler & Products shared layout */
 :root {
-  --nv-ink: #111;
-  --nv-muted: #4d4d4d;
-  --nv-line: #e7e2d7;
-  --nv-card: #fffdf8;
-  --nv-bg: #f6f2ea;
-  --nv-gold: #d4af37;
+  --nv-ink: #D6D7DA;
+  --nv-muted: #8F9094;
+  --nv-line: #353437;
+  --nv-card: #19161A;
+  --nv-bg: #090B0F;
+  --nv-gold: #6D6C72;
   --nv-entry: #6ea86f;
   --nv-value: #4a84d8;
   --nv-premium: #7c5ac2;
   --nv-radius: 16px;
-  --nv-shadow: 0 14px 40px rgba(0, 0, 0, .08);
+  --nv-shadow: 0 14px 40px rgba(0, 0, 0, .55);
 }
 
 *,
@@ -37,8 +37,8 @@ a {
 }
 
 .nv-hero {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(255, 255, 255, 0.85));
-  border: 1px solid rgba(212, 175, 55, .3);
+  background: linear-gradient(135deg, rgba(109, 108, 114, 0.18), rgba(33, 30, 33, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   padding: 26px 22px;
   box-shadow: var(--nv-shadow);
@@ -327,4 +327,181 @@ a {
   .nv-hero { padding: 22px 16px; }
   .nv-wa { flex-direction: column; align-items: flex-start; }
   .nv-wa .nv-cta { width: 100%; text-align: center; justify-content: center; }
+}
+
+/* ============================================================
+   NEUROVA — SMOKE QUIET LUXURY OVERRIDE v1.0
+   Paste at END of paketler.css
+   ============================================================ */
+
+/* Normalize: remove warm-gold CTA and white cards -> smoke */
+:root{
+  /* keep your current tokens, add a couple helpers */
+  --nv-frame: #110F11;
+  --nv-surface: #211E21;
+  --nv-surface-2: #2A282B;
+  --nv-stroke: #444347;
+  --nv-highlight: #6D6C72;
+  --nv-shadow-soft: 0 14px 40px rgba(0, 0, 0, .60);
+  --nv-shadow-deep: 0 22px 60px rgba(0, 0, 0, .70);
+}
+
+/* Hero + intro copy: make it smoke (no white paper) */
+.nv-hero{
+  background: linear-gradient(135deg, rgba(109,108,114,.18), rgba(33,30,33,.92));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: var(--nv-shadow-soft);
+}
+
+.packages-intro-copy{
+  background: rgba(25,22,26,.92);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: var(--nv-shadow-soft);
+}
+.packages-intro-copy p{ color: var(--nv-muted); }
+.packages-intro-copy .lead{ color: var(--nv-ink); }
+
+/* CTA: replace gold with smoke highlight */
+.nv-cta{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(33,30,33,.88);
+  color: var(--nv-ink);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+.nv-cta:hover{
+  background: rgba(109,108,114,.22);
+  border-color: rgba(255,255,255,.16);
+}
+
+/* Secondary CTA: stop using pure white */
+.nv-cta--secondary{
+  background: rgba(33,30,33,.72);
+  color: var(--nv-ink);
+  border-color: rgba(255,255,255,.10);
+}
+
+/* Cards: remove white, align to smoke */
+.nv-card,
+.nv-product-card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)), var(--nv-card);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 18px 52px rgba(0,0,0,.55);
+}
+
+.nv-card:hover,
+.nv-product-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.10);
+  box-shadow: 0 24px 70px rgba(0,0,0,.68);
+}
+
+/* Text inside cards */
+.nv-card h3,
+.nv-product-card h3{ color: var(--nv-ink); }
+.nv-upgrade{ color: var(--nv-muted); }
+.nv-price{ color: var(--nv-ink); }
+
+/* Badges: keep colors but slightly mute for luxury */
+.nv-badge{ filter: saturate(.85) contrast(.95); }
+
+/* Slot chip/toast: align stroke */
+.nv-slot-chip{
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(17,15,17,.92);
+  color: var(--nv-ink);
+  box-shadow: 0 12px 28px rgba(0,0,0,.45);
+}
+.nv-slot-toast{
+  background: rgba(17,15,17,.92);
+  color: var(--nv-ink);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* WA block: remove gold button, make it smoke */
+.nv-wa{
+  background: rgba(17,15,17,.92);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.nv-wa p{ color: rgba(214,215,218,.78); }
+
+.nv-wa .nv-cta{
+  background: rgba(109,108,114,.24);
+  border-color: rgba(255,255,255,.14);
+  color: var(--nv-ink);
+  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+}
+.nv-wa .nv-cta:hover{
+  background: rgba(109,108,114,.32);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* Assurance box: stop light grey paper */
+.nv-assurance{
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* NEUROVA — Badge tones (smoke, low saturation) */
+:root{
+  /* Entry: muted sage (soft, calm) */
+  --nv-entry: #5E7062;
+
+  /* Value: muted steel blue (quiet, trustworthy) */
+  --nv-value: #5B6672;
+
+  /* Premium: muted aubergine (premium, subtle) */
+  --nv-premium: #6A5A72;
+}
+
+/* Optional: make badges feel more "lux" */
+.nv-badge{
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.10);
+  color: #ECEDEF;
+}
+
+/* NEUROVA — Badge sheen (quiet metallic) */
+.nv-badge{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 10px 22px rgba(0,0,0,.35);
+  color: #ECEDEF;
+}
+
+/* subtle metallic sheen */
+.nv-badge::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  pointer-events:none;
+
+  /* two-layer sheen: soft top glow + diagonal sweep */
+  background:
+    radial-gradient(120% 80% at 20% 15%, rgba(255,255,255,.22), transparent 55%),
+    linear-gradient(135deg, transparent 0%, rgba(255,255,255,.12) 38%, rgba(255,255,255,.06) 52%, transparent 72%);
+  opacity:.55;
+  mix-blend-mode: screen;
+}
+
+/* keep text above sheen */
+.nv-badge{
+  z-index:0;
+}
+.nv-badge > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Accessibility + mobile safety */
+@media (prefers-reduced-motion: reduce){
+  .nv-badge::before{ transition: none; }
+}
+
+@media (hover: hover){
+  .nv-card:hover .nv-badge::before,
+  .nv-product-card:hover .nv-badge::before{
+    opacity: .66;
+    transform: translateY(-1px);
+  }
 }

@@ -1,0 +1,99 @@
+.nv-menu a.is-active,
+.nv-mobile-menu a.is-active,
+.nv-dropdown-btn.is-active {
+  color: var(--nv-highlight);
+}
+
+.nv-menu a.is-active {
+  position: relative;
+}
+
+.nv-menu a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.nv-menu a:focus-visible,
+.nv-mobile-menu a:focus-visible,
+.nv-dropdown-btn:focus-visible {
+  outline: 2px solid var(--nv-highlight);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   NEUROVA NAV — quiet luxury refinements (legacy nav.html)
+   ============================================================ */
+.nv-nav-inner{
+  gap: 20px;
+}
+
+.nv-logo{
+  font-size: 14px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.nv-menu{
+  gap: 18px;
+}
+
+.nv-menu a,
+.nv-dropdown-btn{
+  font-size: 13.5px;
+  letter-spacing: .02em;
+  opacity: .86;
+  transition: opacity 220ms ease, transform 220ms ease, color 220ms ease, border-color 220ms ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nv-menu a:hover,
+.nv-dropdown-btn:hover{
+  opacity: .98;
+  border-bottom-color: rgba(109,108,114,.55);
+}
+
+.nv-menu a.is-active,
+.nv-dropdown-btn.is-active{
+  opacity: 1;
+  border-bottom-color: rgba(109,108,114,.95);
+}
+
+/* CTA: outline pill */
+.nv-btn-reserve{
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(33,30,33,.42);
+  border: 1px solid rgba(255,255,255,.14);
+  text-transform: none;
+  letter-spacing: .04em;
+  font-weight: 600;
+}
+
+.nv-btn-reserve:hover{
+  background: rgba(109,108,114,.16);
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
+/* Dropdown panel refinement */
+.nv-dropdown-content{
+  border-radius: 16px;
+  padding: 6px;
+}
+
+.nv-dropdown-content a{
+  border-radius: 12px;
+  border-bottom: 0;
+}
+
+.nv-dropdown-content a:hover{
+  background: rgba(109,108,114,.14);
+}

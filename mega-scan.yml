@@ -1,0 +1,28 @@
+name: NEUROVA MEGA SCAN
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  mega-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: npm ci
+
+      - name: Run MEGA SCAN
+        run: npm run mega:scan
+
+      - name: CI Fail Summary
+        if: failure()
+        run: node tools/nv-ci-summary.mjs

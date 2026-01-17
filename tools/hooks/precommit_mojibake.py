@@ -1,18 +1,18 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Pre-commit mojibake guard for NEUROVA.
-- Blocks commits containing common Turkish encoding artefacts.
+- Blocks commits containing common Turkish encoding artefacts (mojibake).
 - Verifies staged text files are UTF-8 decodable.
 - Does not modify files; fails fast with a summary.
 """
 
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Iterable, List, Set
-import re
+from typing import List, Set
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -32,6 +32,7 @@ ALLOWED_EXTS: Set[str] = {
     ".md",
     ".txt",
     ".py",
+    ".ps1",
 }
 
 IGNORE_FRAGMENTS = (
@@ -44,12 +45,13 @@ IGNORE_FRAGMENTS = (
     "/vendor/",
 )
 
+# Common UTF-8 decoded as latin1/cp1252 artefacts (Turkish + punctuation).
 MOJIBAKE_REGEX = re.compile(
-    r"Ä±|Ä°|ÅŸ|Åž|ÄŸ|Äž|Ã§|Ã‡|Ã¶|Ã–|Ã¼|Ãœ|â€™|â€œ|â€�|â€“|â€”"
+    r"Ã§|Ã‡|Ã¶|Ã–|Ã¼|Ãœ|Ä±|Ä°|ÄŸ|Äž|ÅŸ|Åž|â€“|â€”|â€œ|â€|â€™|Â©|Â®|Â·"
 )
 
 
-def run(cmd: List[str]) -> subprocess.CompletedProcess:
+def run(cmd: List[str]) -> subprocess.CompletedProcess[bytes]:
     return subprocess.run(cmd, cwd=ROOT, capture_output=True)
 
 
@@ -58,7 +60,7 @@ def staged_files() -> List[Path]:
     if proc.returncode != 0:
         print(proc.stderr.decode("utf-8", errors="replace"))
         sys.exit(proc.returncode)
-    files = []
+    files: List[Path] = []
     for line in proc.stdout.decode("utf-8", errors="replace").splitlines():
         line = line.strip()
         if not line:
@@ -81,10 +83,6 @@ def read_staged(path: Path) -> bytes:
     return proc.stdout
 
 
-def find_mojibake(text: str) -> List[str]:
-    return MOJIBAKE_REGEX.findall(text)
-
-
 def check_file(path: Path) -> dict:
     blob = read_staged(path)
     if b"\0" in blob:
@@ -94,13 +92,13 @@ def check_file(path: Path) -> dict:
     except UnicodeDecodeError:
         return {"path": path, "status": "fail", "reason": "not UTF-8"}
 
-    hits = find_mojibake(decoded)
+    hits = MOJIBAKE_REGEX.findall(decoded)
     if hits:
         return {
             "path": path,
             "status": "fail",
             "reason": f"mojibake patterns ({len(hits)})",
-            "samples": hits[:3],
+            "samples": sorted(set(hits))[:6],
         }
     return {"path": path, "status": "ok"}
 
@@ -123,7 +121,7 @@ def main() -> int:
             print("\nSkipped (binary/ignored):")
             for r in skipped:
                 print(f" - {r['path'].relative_to(ROOT)} :: {r['reason']}")
-        print("\nHint: run `python NEUROVA_SITE/fix_tr_chars.py --write` to fix.")
+        print("\nHint: run `python NV_TOOLS/fix_tr_chars.py --root . --apply --backup --stats` to fix.")
         return 1
 
     if skipped:
@@ -134,4 +132,5 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
+

@@ -1,0 +1,72 @@
+Evet — aşağıdaki gibi **nav.html’i tek seferde temizlenmiş (kanonik) sürüme** çeviriyoruz. `href="#"` olanların hepsi gerçek sayfalara bağlandı, inline `onclick` kaldırıldı, Rezervasyon CTA aynı kaldı.
+
+```html
+<!-- NEUROVA GLOBAL NAV v1.0 (clean links) -->
+<div class="nv-nav-inner">
+  <a class="nv-logo" href="index.html" data-nav="home" aria-label="NEUROVA Ana Sayfa">NEUROVA</a>
+
+  <nav class="nv-menu" aria-label="Ana Menü">
+    <a href="index.html" data-nav="home">Ana Sayfa</a>
+    <a href="hamam.html" data-nav="hamam">Hamam</a>
+    <a href="masajlar.html" data-nav="masaj">Masajlar</a>
+    <a href="kids-family.html" data-nav="kids">Kids &amp; Family</a>
+    <a href="cilt-bakimi.html" data-nav="cilt">Face – Sothys</a>
+    <a href="paketler.html" data-nav="paketler">Paketler</a>
+    <a href="urunler.html" data-nav="urunler">Ürünler</a>
+
+    <div class="nv-dropdown-trigger">
+      <button class="nv-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">
+        Kurumsal
+      </button>
+      <div class="nv-dropdown-content" role="menu">
+        <a href="galeri.html" data-nav="galeri" role="menuitem">Galeri</a>
+        <a href="hakkimizda.html" data-nav="hakkimizda" role="menuitem">Hakkımızda</a>
+        <a href="ekibimiz.html" data-nav="ekip" role="menuitem">Ekibimiz</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nv-nav-cta">
+    <a class="nv-btn-reserve"
+       href="#nv-wa"
+       data-wa="1"
+       data-nv-open-reservation>
+      REZERVASYON
+    </a>
+    <button id="nvBurger"
+            class="nv-burger"
+            type="button"
+            aria-label="Menü"
+            aria-controls="nvMobileMenu"
+            aria-expanded="false">☰</button>
+  </div>
+</div>
+
+<div id="nvMobileMenu" class="nv-mobile-menu" aria-hidden="true">
+  <a href="index.html">Ana Sayfa</a>
+  <a href="hamam.html">Hamam</a>
+  <a href="masajlar.html">Masajlar</a>
+  <a href="kids-family.html">Kids &amp; Family</a>
+  <a href="cilt-bakimi.html">Face – Sothys</a>
+  <a href="paketler.html">Paketler</a>
+  <a href="urunler.html">Ürünler</a>
+  <a href="galeri.html">Galeri</a>
+  <a href="hakkimizda.html">Hakkımızda</a>
+  <a href="ekibimiz.html">Ekibimiz</a>
+
+  <a class="nv-mcta nv-btn-reserve mobile"
+     href="#nv-wa"
+     data-wa="1"
+     data-nv-open-reservation>
+    REZERVASYON
+  </a>
+</div>
+```
+
+### Ek not (bizim standarda uygun)
+
+* **Rezervasyon**: sadece `data-nv-open-reservation` ile yakalanacak (inline `onclick` yok).
+* **Kids/Paketler/Ürünler**: hub sayfalara gider (`kids-family.html`, `paketler.html`, `urunler.html`).
+* **Kurumsal**: `galeri.html`, `hakkimizda.html`, `ekibimiz.html`.
+
+İstersen bir sonraki adımda `nvMobileMenu` içinde de “aktif sayfa” highlight (örn `data-nav` eşleşmesi) ekleyip nav.js tarafında otomatik seçtirelim.
