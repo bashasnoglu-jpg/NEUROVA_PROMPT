@@ -53,14 +53,14 @@ async function runScoring() {
         });
       }
     } catch (e) {
-      console.warn(`⚠️  Could not score pack ${file}: ${e.message}`);
+      console.warn(`� ️  Could not score pack ${file}: ${e.message}`);
     }
   }
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   fs.writeFileSync(OUT_PATH, JSON.stringify(results, null, 2));
 
-  console.log(`🧠 PROMPT QUALITY SCORED (${results.length} prompts)`);
+  console.log(`�  PROMPT QUALITY SCORED (${results.length} prompts)`);
 }
 
 runScoring();

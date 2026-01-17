@@ -53,7 +53,7 @@ for (const file of fs.readdirSync(PACKS_DIR)) {
   }
 
   if (!promptsBlock) {
-    console.warn(`⚠️  Could not migrate (unrecognized format): ${file}`);
+    console.warn(`� ️  Could not migrate (unrecognized format): ${file}`);
     continue;
   }
 

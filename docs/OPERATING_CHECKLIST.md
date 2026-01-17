@@ -304,7 +304,7 @@ Six-field log: `eventName,dryRun,recipientsCount,templateKey,runId,durationMs`
 > **WC 30dk Kontrol (Z{zone})**  
 > Saat: {hh:mm} — Tur ID: {runIdShort}  
 > ✅ Bitince **OK {runIdShort}** yaz.  
-> ⚠ Sorun varsa: **E1/E2/E3/E4 {runIdShort}**  
+> �  Sorun varsa: **E1/E2/E3/E4 {runIdShort}**  
 > E1=Stok bitti  E2=Kir/yoğun  E3=Arıza  E4=Koku/derin temizlik  
 >
 > Checklist (tek satır): Kağıt/Sabun/Dezenfektan • Klozet/Lavabo • Zemin • Çöp • Koku
@@ -318,7 +318,7 @@ Logs: `eventName=OPS_WC30_DONE`, `templateKey=OPS_WC30_ACK_TR`, `recipientsCount
 
 ### 4) Eskalasyon mesajı (`OPS_WC30_ESC_TR`)
 
-> ⚠ **WC Alarm (Z{zone})** — {hh:mm} — {runIdShort}  
+> �  **WC Alarm (Z{zone})** — {hh:mm} — {runIdShort}  
 > Kod: {Ecode}  
 > Not: {optionalNote}  
 > Aksiyon: {actionHint}  

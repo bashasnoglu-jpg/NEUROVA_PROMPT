@@ -20,7 +20,7 @@
 * QR alanı: (QR kod burada)
 * ALT (Yönerge):
   * `Scan → Task Card`
-  * `✅ OK  |  ⚠ E1 Stok  E2 Kir  E3 Arıza  E4 Koku`
+  * `✅ OK  |  �  E1 Stok  E2 Kir  E3 Arıza  E4 Koku`
   * küçük satır: `No personal data • Log-based verification`
 
 ### A.3 Z1–Z4 hazır metinler

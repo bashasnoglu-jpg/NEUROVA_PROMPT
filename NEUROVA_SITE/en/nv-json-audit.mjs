@@ -83,7 +83,7 @@ function writeReport() {
 ## ❌ Errors (${results.ERROR.length})
 ${results.ERROR.map(e => `- ${e}`).join('\n') || 'None'}
 
-## ⚠️ Warnings (${results.WARN.length})
+## � ️ Warnings (${results.WARN.length})
 ${results.WARN.map(w => `- ${w}`).join('\n') || 'None'}
 
 ## ℹ️ Info (${results.INFO.length})

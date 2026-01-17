@@ -60,7 +60,7 @@ async function runDriftCheck() {
       const prev = state[file];
       if (prev && prev.hash !== contentHash && prev.version === version) {
         warnings++;
-        console.warn(`⚠️  DRIFT: ${file} prompts changed but version not bumped (v${version})`);
+        console.warn(`� ️  DRIFT: ${file} prompts changed but version not bumped (v${version})`);
       }
     } catch (e) {
       console.error(`❌ Error processing ${file} for drift check: ${e.message}`);
@@ -70,7 +70,7 @@ async function runDriftCheck() {
   saveState(nextState);
 
   if (warnings > 0) {
-    console.warn(`\n⚠️  PACK DRIFT WARNINGS: ${warnings}`);
+    console.warn(`\n� ️  PACK DRIFT WARNINGS: ${warnings}`);
   } else {
     console.log('✅ PACK DRIFT CHECK OK');
   }

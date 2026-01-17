@@ -1,4 +1,4 @@
-# 🧠 **NEUROVA — ULTRA MEGA PROMPT v1.0**
+# �  **NEUROVA — ULTRA MEGA PROMPT v1.0**
 
 ### (Canonical Site Architecture & Maintenance Contract)
 
@@ -153,7 +153,7 @@ WhatsApp mesajları:
 
 ---
 
-## 🧠 6. NAV & DAVRANIŞ KURALLARI
+## �  6. NAV & DAVRANIŞ KURALLARI
 
 * Nav **her zaman** slot üzerinden gelir
 * Nav logic:
@@ -250,7 +250,7 @@ Ben:
 
 ---
 
-## 🧠 SON SÖZ (MÜHENDİSLİK YEMİNİ)
+## �  SON SÖZ (MÜHENDİSLİK YEMİNİ)
 
 Bu prompt ile:
 

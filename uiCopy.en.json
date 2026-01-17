@@ -77,7 +77,7 @@
   "zones": {
     "header": "Restroom Check",
     "scanToOpen": "Scan → Task Card",
-    "codesHint": "✅ OK  |  ⚠ E1 Stock  E2 Soil  E3 Maintenance  E4 Odor",
+    "codesHint": "✅ OK  |  �  E1 Stock  E2 Soil  E3 Maintenance  E4 Odor",
     "z1": "Z1 — Lobby WC",
     "z2": "Z2 — Spa WC",
     "z3": "Z3 — Gym WC",

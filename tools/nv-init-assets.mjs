@@ -13,7 +13,7 @@ const CANONICAL_DIRS = [
 console.log('Ensuring canonical asset structure...');
 
 if (!fs.existsSync(SITE_DIR)) {
-  console.warn(`⚠️  Site directory not found at ${SITE_DIR}. Creating it.`);
+  console.warn(`� ️  Site directory not found at ${SITE_DIR}. Creating it.`);
   fs.mkdirSync(SITE_DIR, { recursive: true });
 }
 

@@ -26,7 +26,7 @@ for (const file of walk(ROOT)) {
   BAD_PATTERNS.forEach(rx => {
     if (rx.test(content)) {
       hits++;
-      console.log(`⚠️  ${path.relative(process.cwd(), file)}`);
+      console.log(`� ️  ${path.relative(process.cwd(), file)}`);
       console.log(`   → matched: ${rx}`);
     }
   });

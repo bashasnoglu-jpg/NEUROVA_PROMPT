@@ -28,7 +28,7 @@ Bu rehberler: Doğru rol seçimi / TR↔EN kuralı / Kids & Family güvenlik kur
 QA, yalnızca yönetici: http://127.0.0.1:5500/prompt-library.html?qa=1
 
 ---
-⚠️ Önemli
+� ️ Önemli
 
 • Prompt metinleri değiştirilmeyecek  
 • Emin olmadığın durumlarda yöneticiye sorulacak  

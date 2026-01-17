@@ -77,7 +77,7 @@
   "zones": {
     "header": "WC Kontrol",
     "scanToOpen": "Scan → Task Card",
-    "codesHint": "✅ OK  |  ⚠ E1 Stok  E2 Kir  E3 Arıza  E4 Koku",
+    "codesHint": "✅ OK  |  �  E1 Stok  E2 Kir  E3 Arıza  E4 Koku",
     "z1": "Z1 — Lobby WC",
     "z2": "Z2 — Spa WC",
     "z3": "Z3 — Gym WC",
