@@ -25,33 +25,33 @@ TEXT_EXTS = {
 
 # Prefer explicit mojibake sequences (less false positives than single letters)
 MOJI_SEQS = (
-    "Ã§",
-    "Ã‡",
-    "Ã¶",
-    "Ã–",
-    "Ã¼",
-    "Ãœ",
-    "Ä±",
-    "Ä°",
-    "ÄŸ",
-    "Äž",
-    "ÅŸ",
-    "Åž",
+    "ÃƒÂ§",
+    "Ãƒâ€¡",
+    "ÃƒÂ¶",
+    "Ãƒâ€“",
+    "ÃƒÂ¼",
+    "ÃƒÅ“",
+    "Ã„Â±",
+    "Ã„Â°",
+    "Ã„Å¸",
+    "Ã„Å¾",
+    "Ã…Å¸",
+    "Ã…Å¾",
     # Common cp1252 punctuation/emoji mojibake starters
-    "â€",
-    "â„",
-    "âœ",
-    "â˜",
-    "â� ",
-    "âš",
+    "Ã¢â‚¬",
+    "Ã¢â€",
+    "Ã¢Å“",
+    "Ã¢Ëœ",
+    "Ã¢â€ ",
+    "Ã¢Å¡",
 )
 
 # Broad suspects (fallback)
-SUSPECT_CHARS = ("Ã", "Å", "Ä", "Â", "Î", "ï")
+SUSPECT_CHARS = ("Ãƒ", "Ã…", "Ã„", "Ã‚", "Ã", "Ã¯")
 
-TR_CHARS = set("çÇğĞıİöÖşŞüÜ")
+TR_CHARS = set("Ã§Ã‡ÄŸÄÄ±Ä°Ã¶Ã–ÅŸÅÃ¼Ãœ")
 
-DIRECT_TARGETS = "çÇğĞıİöÖşŞüÜâÂîÎûÛêÊôÔβ…–—“”’•©®·☰™▾→✓²✉� ️"
+DIRECT_TARGETS = "Ã§Ã‡ÄŸÄÄ±Ä°Ã¶Ã–ÅŸÅÃ¼ÃœÃ¢Ã‚Ã®ÃÃ»Ã›ÃªÃŠÃ´Ã”Î²â€¦â€“â€”â€œâ€â€™â€¢Â©Â®Â·â˜°â„¢â–¾â†’âœ“Â²âœ‰âš ï¸"
 
 
 def build_direct_replacements() -> dict[str, str]:
@@ -59,7 +59,7 @@ def build_direct_replacements() -> dict[str, str]:
     Build a safe replacement map for common mojibake where UTF-8 bytes were
     decoded as a single-byte encoding (latin-1 / Windows-1252) and later saved.
 
-    Using latin-1 decoding preserves bytes 1:1, including C1 controls (0x80–0x9F),
+    Using latin-1 decoding preserves bytes 1:1, including C1 controls (0x80â€“0x9F),
     which appear frequently as invisible/odd characters in mojibake strings.
     """
     mapping: dict[str, str] = {}

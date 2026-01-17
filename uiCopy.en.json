@@ -1,7 +1,7 @@
 {
   "app": {
     "brand": "NEUROVA OPS",
-    "tagline": "Log-based verification • No personal data"
+    "tagline": "Log-based verification â€¢ No personal data"
   },
   "nav": {
     "today": "Today",
@@ -47,7 +47,7 @@
       "e4": "E4 Odor / Deep clean"
     },
     "status": {
-      "receivedLogged": "Received ✅ Logged.",
+      "receivedLogged": "Received âœ… Logged.",
       "offlineQueued": "Offline. Queued.",
       "submitFailedRetry": "Submit failed. Retry.",
       "taskClosed": "This run is closed."
@@ -76,11 +76,11 @@
   },
   "zones": {
     "header": "Restroom Check",
-    "scanToOpen": "Scan → Task Card",
-    "codesHint": "✅ OK  |  �  E1 Stock  E2 Soil  E3 Maintenance  E4 Odor",
-    "z1": "Z1 — Lobby WC",
-    "z2": "Z2 — Spa WC",
-    "z3": "Z3 — Gym WC",
-    "z4": "Z4 — Pool WC"
+    "scanToOpen": "Scan â†’ Task Card",
+    "codesHint": "âœ… OK  |  âš  E1 Stock  E2 Soil  E3 Maintenance  E4 Odor",
+    "z1": "Z1 â€” Lobby WC",
+    "z2": "Z2 â€” Spa WC",
+    "z3": "Z3 â€” Gym WC",
+    "z4": "Z4 â€” Pool WC"
   }
 }
