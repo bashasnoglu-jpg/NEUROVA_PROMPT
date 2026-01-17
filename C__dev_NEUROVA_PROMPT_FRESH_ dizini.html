@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)file:///C:/dev/NEUROVA_PROMPT_FRESH/ -->
+<html dir="ltr" lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="color-scheme" content="light dark">
+<meta name="google" value="notranslate">
+
+<script>
+function addRow(name, url, isdir,
+    size, size_string, date_modified, date_modified_string) {
+  if (name == "." || name == "..")
+    return;
+
+  // This file is a listing of the parent directory's contents.
+  // To make links work when served over HTTP, they must be relative to the parent.
+  const root = "../";
+  const tbody = document.getElementById("tbody");
+  const row = document.createElement("tr");
+  const file_cell = document.createElement("td");
+  const link = document.createElement("a");
+
+  link.className = isdir ? "icon dir" : "icon file";
+
+  if (isdir) {
+    name = name + "/";
+    url = url + "/";
+    size = 0;
+    size_string = "";
+  } else {
+    link.draggable = "true";
+    link.addEventListener("dragstart", onDragStart, false);
+  }
+  link.textContent = name;
+  link.href = root + url;
+
+  file_cell.dataset.value = name;
+  file_cell.appendChild(link);
+
+  row.appendChild(file_cell);
+  row.appendChild(createCell(size, size_string));
+  row.appendChild(createCell(date_modified, date_modified_string));
+
+  tbody.appendChild(row);
+}
+
+function onDragStart(e) {
+  const el = e.target;
+  const name = el.textContent.replace(":", "");
+  const download_url_data = "application/octet-stream:" + name + ":" + el.href;
+  e.dataTransfer.setData("DownloadURL", download_url_data);
+  e.dataTransfer.effectAllowed = "copy";
+}
+
+function createCell(value, text) {
+  const cell = document.createElement("td");
+  cell.setAttribute("class", "detailsColumn");
+  cell.dataset.value = value;
+  cell.textContent = text;
+  return cell;
+}
+
+function start(location) {
+  const header = document.getElementById("header");
+  header.textContent = header.textContent.replace("LOCATION", location);
+
+  document.getElementById("title").textContent = header.textContent;
+}
+
+function onHasParentDirectory() {
+  const box = document.getElementById("parentDirLinkBox");
+  box.style.display = "block";
+
+  var link = document.getElementById("parentDirLink");
+  // The parent directory link should go up two levels from this file's location.
+  link.href = "../../";
+}
+
+function sortTable(column) {
+  const theader = document.getElementById("theader");
+  let oldOrder = theader.cells[column].dataset.order || '1';
+  oldOrder = parseInt(oldOrder, 10)
+  const newOrder = 0 - oldOrder;
+  theader.cells[column].dataset.order = newOrder;
+
+  const tbody = document.getElementById("tbody");
+  const rows = tbody.rows;
+  const list = [];
+  let i;
+  for (i = 0; i < rows.length; i++) {
+    list.push(rows[i]);
+  }
+
+  list.sort(function(row1, row2) {
+    let a = row1.cells[column].dataset.value;
+    let b = row2.cells[column].dataset.value;
+    if (column) {
+      a = parseInt(a, 10);
+      b = parseInt(b, 10);
+      return a > b ? newOrder : a < b ? oldOrder : 0;
+    }
+
+    // Column 0 is text.
+    if (a > b)
+      return newOrder;
+    if (a < b)
+      return oldOrder;
+    return 0;
+  });
+
+  // Appending an existing child again just moves it.
+  for (i = 0; i < list.length; i++) {
+    tbody.appendChild(list[i]);
+  }
+}
+
+// Add event handlers to column headers.
+function addHandlers(element, column) {
+  element.onclick = (e) => sortTable(column);
+  element.onkeydown = (e) => {
+    if (e.key == 'Enter' || e.key == ' ') {
+      sortTable(column);
+      e.preventDefault();
+    }
+  };
+}
+
+function onLoad() {
+  addHandlers(document.getElementById('nameColumnHeader'), 0);
+  addHandlers(document.getElementById('sizeColumnHeader'), 1);
+  addHandlers(document.getElementById('dateColumnHeader'), 2);
+}
+
+window.addEventListener('DOMContentLoaded', onLoad);
+</script>
+
+<style>
+
+  h1 {
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th {
+    cursor: pointer;
+  }
+
+  td.detailsColumn {
+    padding-inline-start: 2em;
+    text-align: end;
+    white-space: nowrap;
+  }
+
+  a.icon {
+    padding-inline-start: 1.5em;
+    text-decoration: none;
+    user-select: auto;
+  }
+
+  a.icon:hover {
+    text-decoration: underline;
+  }
+
+  a.file {
+    background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABnRSTlMAAAAAAABupgeRAAABEElEQVR42nRRx3HDMBC846AHZ7sP54BmWAyrsP588qnwlhqw/k4v5ZwWxM1hzmGRgV1cYqrRarXoH2w2m6qqiqKIR6cPtzc3xMSML2Te7XZZlnW7Pe/91/dX47WRBHuA9oyGmRknzGDjab1ePzw8bLfb6WRalmW4ip9FDVpYSWZgOp12Oh3nXJ7nxoJSGEciteP9y+fH52q1euv38WosqA6T2gGOT44vry7BEQtJkMAMMpa6JagAMcUfWYa4hkkzAc7fFlSjwqCoOUYAF5RjHZPVCFBOtSBGfgUDji3c3jpibeEMQhIMh8NwshqyRsBJgvF4jMs/YlVR5KhgNpuBLzk0OcUiR3CMhcPaOzsZiAAA/AjmaB3WZIkAAAAASUVORK5CYII=") left top no-repeat;
+  }
+
+  a.dir {
+    background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABt0lEQVR42oxStZoWQRCs2cXdHTLcHZ6EjAwnQWIkJyQlRt4Cd3d3d1n5d7q7ju1zv/q+mh6taQsk8fn29kPDRo87SDMQcNAUJgIQkBjdAoRKdXjm2mOH0AqS+PlkP8sfp0h93iu/PDji9s2FzSSJVg5ykZqWgfGRr9rAAAQiDFoB1OfyESZEB7iAI0lHwLREQBcQQKqo8p+gNUCguwCNAAUQAcFOb0NNGjT+BbUC2YsHZpWLhC6/m0chqIoM1LKbQIIBwlTQE1xAo9QDGDPYf6rkTpPc92gCUYVJAZjhyZltJ95f3zuvLYRGWWCUNkDL2333McBh4kaLlxg+aTmyL7c2xTjkN4Bt7oE3DBP/3SRz65R/bkmBRPGzcRNHYuzMjaj+fdnaFoJUEdTSXfaHbe7XNnMPyqryPcmfY+zURaAB7SHk9cXSH4fQ5rojgCAVIuqCNWgRhLYLhJB4k3iZfIPtnQiCpjAzeBIRXMA6emAqoEbQSoDdGxFUrxS1AYcpaNbBgyQBGJEOnYOeENKR/iAd1npusI4C75/c3539+nbUjOgZV5CkAU27df40lH+agUdIuA/EAgDmZnwZlhDc0wAAAABJRU5ErkJggg==") left top no-repeat;
+  }
+
+  a.up {
+    background : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACM0lEQVR42myTA+w1RxRHz+zftmrbdlTbtq04qRGrCmvbDWp9tq3a7tPcub8mj9XZ3eHOGQdJAHw77/LbZuvnWy+c/CIAd+91CMf3bo+bgcBiBAGIZKXb19/zodsAkFT+3px+ssYfyHTQW5tr05dCOf3xN49KaVX9+2zy1dX4XMk+5JflN5MBPL30oVsvnvEyp+18Nt3ZAErQMSFOfelCFvw0HcUloDayljZkX+MmamTAMTe+d+ltZ+1wEaRAX/MAnkJdcujzZyErIiVSzCEvIiq4O83AG7LAkwsfIgAnbncag82jfPPdd9RQyhPkpNJvKJWQBKlYFmQA315n4YPNjwMAZYy0TgAweedLmLzTJSTLIxkWDaVCVfAbbiKjytgmm+EGpMBYW0WwwbZ7lL8anox/UxekaOW544HO0ANAshxuORT/RG5YSrjlwZ3lM955tlQqbtVMlWIhjwzkAVFB8Q9EAAA3AFJ+DR3DO/Pnd3NPi7H117rAzWjpEs8vfIqsGZpaweOfEAAFJKuM0v6kf2iC5pZ9+fmLSZfWBVaKfLLNOXj6lYY0V2lfyVCIsVzmcRV9Y0fx02eTaEwhl2PDrXcjFdYRAohQmS8QEFLCLKGYA0AeEakhCCFDXqxsE0AQACgAQp5w96o0lAXuNASeDKWIvADiHwigfBINpWKtAXJvCEKWgSJNbRvxf4SmrnKDpvZavePu1K/zu/due1X/6Nj90MBd/J2Cic7WjBp/jUdIuA8AUtd65M+PzXIAAAAASUVORK5CYII=") left top no-repeat;
+  }
+
+  html[dir=rtl] a {
+    background-position-x: right;
+  }
+
+  #parentDirLinkBox {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+</style>
+
+<title id="title">C:\dev\NEUROVA_PROMPT_FRESH\ dizini</title>
+
+</head>
+
+<body>
+
+<h1 id="header">C:\dev\NEUROVA_PROMPT_FRESH\ dizini</h1>
+
+<div id="parentDirLinkBox" style="display: block;">
+  <a id="parentDirLink" class="icon up" href="file:///C:/dev/">
+    <span id="parentDirText">[üst dizin]</span>
+  </a>
+</div>
+
+<table>
+  <thead>
+    <tr class="header" id="theader">
+      <th id="nameColumnHeader" tabindex="0" role="button">Ad</th>
+      <th id="sizeColumnHeader" class="detailsColumn" tabindex="0" role="button">
+        Boyut
+      </th>
+      <th id="dateColumnHeader" class="detailsColumn" tabindex="0" role="button">
+        Değiştirilme Tarihi
+      </th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+  <tr><td data-value="_archive/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/_archive/">_archive/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="_audit/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/_audit/">_audit/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="_quarantine/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/_quarantine/">_quarantine/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="_report/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/_report/">_report/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value=".git/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/.git/">.git/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value=".github/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/.github/">.github/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="docs/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/docs/">docs/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="exports/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/exports/">exports/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NEUROVA_PROMPT/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NEUROVA_PROMPT/">NEUROVA_PROMPT/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NEUROVA_SITE/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NEUROVA_SITE/">NEUROVA_SITE/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NV_PIPELINE/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NV_PIPELINE/">NV_PIPELINE/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NV_SITE/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NV_SITE/">NV_SITE/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NV_TOOLS/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NV_TOOLS/">NV_TOOLS/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="packs/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/packs/">packs/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="printed-guides/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/printed-guides/">printed-guides/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="scripts/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/scripts/">scripts/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="server/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/server/">server/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="tmp_neurova/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/tmp_neurova/">tmp_neurova/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="tools/"><a class="icon dir" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/tools/">tools/</a></td><td class="detailsColumn" data-value="0"></td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value=".editorconfig"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/.editorconfig">.editorconfig</a></td><td class="detailsColumn" data-value="365">365 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value=".gitattributes"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/.gitattributes">.gitattributes</a></td><td class="detailsColumn" data-value="446">446 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value=".gitignore"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/.gitignore">.gitignore</a></td><td class="detailsColumn" data-value="635">635 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="CHANGELOG.md"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/CHANGELOG.md">CHANGELOG.md</a></td><td class="detailsColumn" data-value="399">399 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="Default project-project-members.csv"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/Default%20project-project-members.csv">Default project-project-members.csv</a></td><td class="detailsColumn" data-value="156">156 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="hamam-cleaning-en.pdf"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/hamam-cleaning-en.pdf">hamam-cleaning-en.pdf</a></td><td class="detailsColumn" data-value="3015">2.9 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="hamam-cleaning-tr.pdf"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/hamam-cleaning-tr.pdf">hamam-cleaning-tr.pdf</a></td><td class="detailsColumn" data-value="3364">3.3 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="index.html"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/index.html">index.html</a></td><td class="detailsColumn" data-value="1519">1.5 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="jest.config.js"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/jest.config.js">jest.config.js</a></td><td class="detailsColumn" data-value="128">128 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="main.js"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/main.js">main.js</a></td><td class="detailsColumn" data-value="11544">11.3 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="mega.ps1"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/mega.ps1">mega.ps1</a></td><td class="detailsColumn" data-value="6784">6.6 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NEUROVA_MEGA_SCAN_REPORT.txt"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NEUROVA_MEGA_SCAN_REPORT.txt">NEUROVA_MEGA_SCAN_REPORT.txt</a></td><td class="detailsColumn" data-value="1025">1.0 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NEUROVA_ULTRA_MEGA_PROMPT_v1.0.md"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NEUROVA_ULTRA_MEGA_PROMPT_v1.0.md">NEUROVA_ULTRA_MEGA_PROMPT_v1.0.md</a></td><td class="detailsColumn" data-value="4706">4.6 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="new_pack_template.py"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/new_pack_template.py">new_pack_template.py</a></td><td class="detailsColumn" data-value="2267">2.2 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="NV_MEGA_REPORT.txt"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/NV_MEGA_REPORT.txt">NV_MEGA_REPORT.txt</a></td><td class="detailsColumn" data-value="7876">7.7 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="nv-agent-fix-report.json.bak"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/nv-agent-fix-report.json.bak">nv-agent-fix-report.json.bak</a></td><td class="detailsColumn" data-value="1538">1.5 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="package-lock.json"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/package-lock.json">package-lock.json</a></td><td class="detailsColumn" data-value="29326">28.6 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="package.json"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/package.json">package.json</a></td><td class="detailsColumn" data-value="587">587 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="production-plan.md"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/production-plan.md">production-plan.md</a></td><td class="detailsColumn" data-value="2794">2.7 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="prompt-library.html"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/prompt-library.html">prompt-library.html</a></td><td class="detailsColumn" data-value="217">217 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="t-Path .index.html"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/t-Path%20.index.html">t-Path .index.html</a></td><td class="detailsColumn" data-value="233">233 B</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="tmp_budget_patch.py"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/tmp_budget_patch.py">tmp_budget_patch.py</a></td><td class="detailsColumn" data-value="4888">4.8 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="uiCopy.en.json"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/uiCopy.en.json">uiCopy.en.json</a></td><td class="detailsColumn" data-value="2029">2.0 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr><tr><td data-value="uiCopy.tr.json"><a class="icon file" draggable="true" href="file:///C:/dev/NEUROVA_PROMPT_FRESH/uiCopy.tr.json">uiCopy.tr.json</a></td><td class="detailsColumn" data-value="2124">2.1 kB</td><td class="detailsColumn" data-value="1768500633">15.01.2026 21:10:33</td></tr></tbody>
+</table>
+
+
+</body></html>
