@@ -1,24 +1,8 @@
 #!/bin/sh
-# NEUROVA UTF-8 KODEKS - pre-commit guard
-# Blocks commits if staged files contain mojibake markers or are not UTF-8 decodable.
-
-set -eu
-
-cd "$(git rev-parse --show-toplevel)"
-
-if command -v python3 >/dev/null 2>&1; then
-  PY="python3"
-elif command -v python >/dev/null 2>&1; then
-  PY="python"
-elif command -v py >/dev/null 2>&1; then
-  PY="py -3"
-else
-  echo "ERROR: Python not found. Install Python or disable the hook." >&2
-  exit 1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "server/validate_visual_library_lock.ps1"
+status=$?
+if [ $status -ne 0 ]; then
+  echo "VISUAL_LIBRARY_LOCK validator failed."
+  exit $status
 fi
-
-# Optional auto-fix (uncomment if you want auto repair before commit)
-# $PY NV_TOOLS/fix_tr_chars.py --root . --apply --backup --stats >/dev/null 2>&1 || true
-# git add -A
-
-$PY tools/hooks/precommit_mojibake.py
+exit 0
