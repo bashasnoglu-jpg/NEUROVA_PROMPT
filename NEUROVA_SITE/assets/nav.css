@@ -299,7 +299,7 @@
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* ===== NAV CLICK PRIORITY — NEUROVA ===== */
+/* ===== NAV CLICK PRIORITY Ã¢â‚¬â€ NEUROVA ===== */
 #nv-nav-slot,
 #nv-nav-slot * {
   pointer-events: auto !important;
@@ -320,7 +320,7 @@ nav,
   z-index: 10002;
 }
 
-/* nav üstüne hiçbir şey binemez */
+/* nav ÃƒÂ¼stÃƒÂ¼ne hiÃƒÂ§bir Ã…Å¸ey binemez */
 body::before,
 .nv-page::before,
 .nv-page::after,
@@ -330,9 +330,9 @@ body::before,
   pointer-events: none !important;
 }
 
-/* ===== NUCLEAR NAV INTERACTION FIX — NEUROVA ===== */
+/* ===== NUCLEAR NAV INTERACTION FIX Ã¢â‚¬â€ NEUROVA ===== */
 
-/* Nav ve içindeki HER ŞEY daima tıklanabilir */
+/* Nav ve iÃƒÂ§indeki HER Ã…ÂEY daima tÃ„Â±klanabilir */
 .nv-header,
 .nv-header * {
   pointer-events: auto !important;
@@ -342,7 +342,7 @@ body::before,
   pointer-events: auto !important;
 }
 
-/* Nav en üstte, tartışmasız */
+/* Nav en ÃƒÂ¼stte, tartÃ„Â±Ã…Å¸masÃ„Â±z */
 .nv-header {
   position: sticky;
   top: 0;

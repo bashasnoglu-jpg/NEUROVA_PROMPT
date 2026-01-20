@@ -28,6 +28,6 @@ describe('PWA & Offline Support', () => {
   it('should serve the offline fallback page', () => {
     cy.visit('/tr/offline.html');
     cy.get('h1').should('contain', 'Offline');
-    cy.contains('İnternet Bağlantısı Yok').should('be.visible');
+    cy.contains('Ã„Â°nternet BaÃ„Å¸lantÃ„Â±sÃ„Â± Yok').should('be.visible');
   });
 });

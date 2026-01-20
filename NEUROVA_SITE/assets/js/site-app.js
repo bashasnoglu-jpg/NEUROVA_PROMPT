@@ -1,7 +1,7 @@
 "use strict";
 
 /* =========================
-   NEUROVA Prompt UI — app.js (RESET FINAL)
+   NEUROVA Prompt UI Ã¢â‚¬â€ app.js (RESET FINAL)
    ========================= */
 
 // --- Safe globals ---
@@ -175,13 +175,13 @@ function renderCards(data) {
             const tr = item?.lang?.tr || "";
             const en = item?.lang?.en || "";
 
-            // Kart içi export: debug prod-safe açıkken zaten kapalı.
+            // Kart iÃƒÂ§i export: debug prod-safe aÃƒÂ§Ã„Â±kken zaten kapalÃ„Â±.
             const exportActions = PROD_SAFE_DEBUG_MODE
                 ? ""
                 : `
   <div class="actions">
-    <button class="btn btn--gold" data-export="json">JSON Gönder</button>
-    <button class="btn" data-export="md">MD Gönder</button>
+    <button class="btn btn--gold" data-export="json">JSON GÃƒÂ¶nder</button>
+    <button class="btn" data-export="md">MD GÃƒÂ¶nder</button>
   </div>`;
 
             return `
@@ -191,7 +191,7 @@ function renderCards(data) {
   data-role="${esc(item.role)}"
   data-tags="${esc(tags.join(" "))}"
   data-search="${esc(searchText(item))}">
-  <div class="meta">${esc(item.category)} • ${esc(item.role)} • ${esc(item.id)}</div>
+  <div class="meta">${esc(item.category)} Ã¢â‚¬Â¢ ${esc(item.role)} Ã¢â‚¬Â¢ ${esc(item.id)}</div>
   <h3 class="title">${esc(item.title)}</h3>
 
   <p class="p"><b>TR:</b> ${esc(tr)}</p>
@@ -289,7 +289,7 @@ function getVisibleItems() {
     return data.filter((p) => ids.has(String(p.id)));
 }
 
-// Export helpers — prefer window helpers from prompt-export.js
+// Export helpers Ã¢â‚¬â€ prefer window helpers from prompt-export.js
 function nvGetExportHelpers() {
     const dl = typeof window.nvDownloadText === "function" ? window.nvDownloadText : null;
     const md = typeof window.nvBuildMD === "function" ? window.nvBuildMD : null;
@@ -301,7 +301,7 @@ function initUI(data) {
         el.grid.innerHTML = `
       <div class="card">
         <h3 class="title">Veri yok</h3>
-        <p class="p">Pack dosyaları yüklenmedi veya içerik bulunamadı.</p>
+        <p class="p">Pack dosyalarÃ„Â± yÃƒÂ¼klenmedi veya iÃƒÂ§erik bulunamadÃ„Â±.</p>
       </div>`;
         if (el.count) el.count.textContent = "0/0";
         return;
@@ -369,7 +369,7 @@ function wireEvents() {
         }
     });
 
-    // visible export — always uses window helpers
+    // visible export Ã¢â‚¬â€ always uses window helpers
     const visibleMdBtn = document.getElementById("nv-export-visible-md");
     const visibleJsonBtn = document.getElementById("nv-export-visible-json");
 
@@ -389,7 +389,7 @@ function wireEvents() {
     });
 }
 
-// Loader callback: packs yüklenince burası çalışır
+// Loader callback: packs yÃƒÂ¼klenince burasÃ„Â± ÃƒÂ§alÃ„Â±Ã…Å¸Ã„Â±r
 window.nvOnPromptsReady = function (merged) {
     const policy = window.__NV_DEDUPE_POLICY__ || "overwrite";
     const { deduped, dups } = nvDedupePrompts(merged, policy);
@@ -426,7 +426,7 @@ window.nvOnPromptsReady = function (merged) {
     initUI(window.NV_PROMPTS);
 };
 
-// --- Bootstrapping: loader app.js’den önce callback’i tetiklediyse yakala ---
+// --- Bootstrapping: loader app.jsÃ¢â‚¬â„¢den ÃƒÂ¶nce callbackÃ¢â‚¬â„¢i tetiklediyse yakala ---
 (function nvConsumePendingPrompts() {
     try {
         const pending = window.__NV_PENDING_PROMPTS__;
@@ -450,7 +450,7 @@ window.nvOnPromptsReady = function (merged) {
 // Boot
 wireEvents();
 
-// Eğer loader pack’leri otomatik yüklemiyorsa burada çağır:
+// EÃ„Å¸er loader packÃ¢â‚¬â„¢leri otomatik yÃƒÂ¼klemiyorsa burada ÃƒÂ§aÃ„Å¸Ã„Â±r:
 const sitePackList = Array.isArray(window.NV_SITE_PACK_LIST) ? window.NV_SITE_PACK_LIST : [];
 if (typeof window.nvLoadPromptPacks === "function" && sitePackList.length) {
     window.nvLoadPromptPacks(sitePackList).catch((err) => {

@@ -1,438 +1,179 @@
-document.addEventListener('DOMContentLoaded', () => {
-  initMobileMenu();
-  initDropdowns();
-  initActiveState();
-  initWhatsApp();
-  initScrollEffects();
-  initServiceWorker();
-  initScrollToTop();
-  initThemeToggle();
-  initSkipLink();
-  initLoadingSpinner();
-  initCookieConsent();
-  initScrollProgress();
-  initLanguageSwitcher();
-  initScrollReveal();
-  initParallax();
-  initBlurLoad();
-  initLightbox();
-});
+/* =========================================
+   NEUROVA MASTER APP.JS
+   Updated: 2026-01-20
+   ========================================= */
 
-function initMobileMenu() {
-  const toggle = document.querySelector('[data-nv-mobile-toggle]');
-  const panel = document.querySelector('[data-nv-mobile-panel]');
-  const overlay = document.querySelector('[data-nv-mobile-overlay]');
-  
-  if (!toggle || !panel) return;
+(function () {
+  "use strict";
 
-  const closeMenu = () => {
-    toggle.setAttribute('aria-expanded', 'false');
-    panel.hidden = true;
-    if (overlay) overlay.hidden = true;
-    document.body.style.overflow = '';
+  // Configuration
+  const CONFIG = {
+    conciergeNumber: window.NV_CONCIERGE_NUMBER || "905320000000",
+    scrollThreshold: 10
   };
 
-  const openMenu = () => {
-    toggle.setAttribute('aria-expanded', 'true');
-    panel.hidden = false;
-    if (overlay) overlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-  };
-
-  toggle.addEventListener('click', () => {
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-    if (isExpanded) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
-  });
-
-  overlay?.addEventListener('click', closeMenu);
-  panel.querySelectorAll('a, button').forEach(item => {
-    item.addEventListener('click', closeMenu);
-  });
-}
-
-function initDropdowns() {
-  const dropdowns = document.querySelectorAll('[data-nv-dropdown]');
-
-  dropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('[data-nv-dropdown-toggle]');
-    const menu = dropdown.querySelector('[data-nv-dropdown-menu]');
-
-    if (!toggle || !menu) return;
-
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-      
-      // Close all other dropdowns first
-      closeAllDropdowns();
-
-      if (!isExpanded) {
-        toggle.setAttribute('aria-expanded', 'true');
-        menu.hidden = false;
-      }
-    });
-  });
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('[data-nv-dropdown]')) {
-      closeAllDropdowns();
-    }
-  });
-}
-
-function closeAllDropdowns() {
-  document.querySelectorAll('[data-nv-dropdown-toggle]').forEach(t => t.setAttribute('aria-expanded', 'false'));
-  document.querySelectorAll('[data-nv-dropdown-menu]').forEach(m => m.hidden = true);
-}
-
-function initActiveState() {
-  const page = document.body.getAttribute('data-page');
-  if (!page) return;
-
-  const links = document.querySelectorAll(`[data-nav="${page}"]`);
-  links.forEach(link => {
-    link.classList.add('is-active');
-
-    // Highlight parent dropdown if exists
-    const dropdown = link.closest('[data-nv-dropdown]');
-    if (dropdown) {
-      const toggle = dropdown.querySelector('[data-nv-dropdown-toggle]');
-      if (toggle) {
-        toggle.classList.add('is-active');
-        toggle.classList.add('bg-gray-100', 'dark:bg-white/10');
-      }
-    }
-  });
-}
-
-function initWhatsApp() {
-  const buttons = document.querySelectorAll('[data-wa="1"], .wa-cta');
-  
-  buttons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const phone = '905348350169';
-      const isEn = document.documentElement.lang.startsWith('en');
-      const text = isEn 
-        ? 'Hello, I would like to get information about NEUROVA Spa & Wellness reservations and services.'
-        : 'Merhaba, NEUROVA Spa & Wellness rezervasyon ve hizmetleri hakkında bilgi almak istiyorum.';
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-  });
-}
-
-function initScrollEffects() {
-  const header = document.querySelector('[data-nv-header]');
-  if (!header) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
-  }, { passive: true });
-}
-
-function initServiceWorker() {
-  // Service Workers require HTTPS or localhost and do not work on file:// protocol
-  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
-    // Register service worker from the root directory
-    navigator.serviceWorker.register('../sw.js')
-      .then(() => console.log('Service Worker Registered'))
-      .catch(e => console.error('SW Registration Failed:', e));
-  }
-}
-
-function initScrollToTop() {
-  const btn = document.getElementById('scrollToTopBtn');
-  if (!btn) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      btn.classList.remove('opacity-0', 'invisible');
-      btn.classList.add('opacity-100', 'visible');
-    } else {
-      btn.classList.add('opacity-0', 'invisible');
-      btn.classList.remove('opacity-100', 'visible');
-    }
-  }, { passive: true });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-function initThemeToggle() {
-  const toggleBtn = document.getElementById('themeToggle');
-  
-  // Check local storage or system preference on load
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
+  function log(msg) {
+    console.log(`[NV] ${msg}`);
   }
 
-  if (!toggleBtn) return;
+  /* =========================================
+     NEUROVA â€“ GLOBAL NAVIGATION v1.0
+     ========================================= */
+  function initNavigation() {
+    log("Initializing Navigation...");
 
-  toggleBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.theme = isDark ? 'dark' : 'light';
-  });
-}
+    // 1. Identify Current Page
+    const path = window.location.pathname;
+    let page = path.split("/").pop().split(".")[0];
+    if (!page || page === "") page = "index";
 
-function initSkipLink() {
-  const main = document.querySelector('main');
-  if (!main) return;
+    // 2. Highlight Active Link
+    const navLinks = document.querySelectorAll('[data-nav]');
+    navLinks.forEach(link => {
+      const target = link.getAttribute('data-nav');
+      // If target is home, it matches index or empty
+      const isHome = (target === 'home' && (page === 'index' || page === ''));
+      const isMatch = (target === page) || isHome;
 
-  if (!main.id) {
-    main.id = 'main-content';
-  }
-
-  if (document.querySelector('a[href="#main-content"]')) return;
-
-  const skipLink = document.createElement('a');
-  skipLink.href = '#main-content';
-  skipLink.className = 'sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-2.5 focus:bg-white focus:text-gray-900 focus:rounded-full focus:shadow-xl focus:font-medium transition-transform duration-200';
-  skipLink.textContent = 'Ana İçeriğe Atla';
-  document.body.prepend(skipLink);
-}
-
-function initLoadingSpinner() {
-  if (document.getElementById('loading-spinner')) return;
-
-  const spinner = document.createElement('div');
-  spinner.id = 'loading-spinner';
-  spinner.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-nv-bg/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none';
-  spinner.setAttribute('aria-hidden', 'true');
-  spinner.innerHTML = '<div class="w-12 h-12 border-4 border-white/10 border-t-white rounded-full animate-spin"></div>';
-  
-  document.body.appendChild(spinner);
-
-  window.nvShowSpinner = () => {
-    spinner.classList.remove('opacity-0', 'pointer-events-none');
-    spinner.setAttribute('aria-hidden', 'false');
-  };
-
-  window.nvHideSpinner = () => {
-    spinner.classList.add('opacity-0', 'pointer-events-none');
-    spinner.setAttribute('aria-hidden', 'true');
-  };
-}
-
-function initCookieConsent() {
-  const banner = document.getElementById('cookie-consent');
-  const acceptBtn = document.getElementById('cookie-accept');
-  const rejectBtn = document.getElementById('cookie-reject');
-
-  if (!banner || !acceptBtn || !rejectBtn) return;
-
-  if (!localStorage.getItem('nv_cookie_consent')) {
-    setTimeout(() => {
-      banner.classList.remove('translate-y-full');
-      banner.setAttribute('aria-hidden', 'false');
-    }, 1000);
-  }
-
-  const hide = () => {
-    banner.classList.add('translate-y-full');
-    banner.setAttribute('aria-hidden', 'true');
-  };
-
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('nv_cookie_consent', 'accepted');
-    hide();
-  });
-
-  rejectBtn.addEventListener('click', () => {
-    localStorage.setItem('nv_cookie_consent', 'rejected');
-    hide();
-  });
-}
-
-function initScrollProgress() {
-  if (document.getElementById('scroll-progress-bar')) return;
-
-  const container = document.createElement('div');
-  container.className = 'fixed top-0 left-0 w-full h-1 z-[100] bg-transparent pointer-events-none';
-  
-  const bar = document.createElement('div');
-  bar.id = 'scroll-progress-bar';
-  bar.className = 'h-full bg-gray-900 dark:bg-white w-0 transition-all duration-100 ease-out';
-  
-  container.appendChild(bar);
-  document.body.prepend(container);
-
-  const updateProgress = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = `${scrolled}%`;
-  };
-
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-}
-
-function initLanguageSwitcher() {
-  const buttons = document.querySelectorAll('[data-lang-switch]');
-  
-  buttons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetLang = btn.dataset.langSwitch;
-      const currentPath = window.location.pathname;
-      
-      if (targetLang === 'en' && currentPath.includes('/tr/')) {
-        window.location.href = currentPath.replace('/tr/', '/en/');
-      } else if (targetLang === 'tr' && currentPath.includes('/en/')) {
-        window.location.href = currentPath.replace('/en/', '/tr/');
+      if (isMatch) {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('is-active');
+        link.removeAttribute('aria-current');
       }
     });
-  });
-}
 
-function initScrollReveal() {
-  // Otomatik olarak ana bölümlere ve kartlara uygula
-  const elements = document.querySelectorAll('main section, .nv-card, .hero__content, .grid > div');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // Sadece bir kez çalışsın
-      }
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    // 3. Mobile Menu Toggle
+    const toggle = document.querySelector('[data-nv-mobile-toggle]');
+    const panel = document.querySelector('[data-nv-mobile-panel]');
 
-  elements.forEach(el => {
-    el.classList.add('nv-reveal');
-    observer.observe(el);
-  });
-}
+    if (toggle && panel) {
+      // Remove old listeners to be safe (though cloning is better, simple listener is fine for unmount/mount)
+      const newToggle = toggle.cloneNode(true);
+      toggle.parentNode.replaceChild(newToggle, toggle);
 
-function initParallax() {
-  const items = document.querySelectorAll('.nv-parallax');
-  if (!items.length) return;
-  
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    items.forEach(item => {
-      const speed = item.dataset.speed || 0.05; // Çok hafif hız
-      item.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-  }, { passive: true });
-}
-
-function initBlurLoad() {
-  const images = document.querySelectorAll('main img');
-  images.forEach(img => {
-    img.classList.add('nv-blur-load');
-    if (img.complete) {
-      img.classList.add('is-loaded');
-    } else {
-      img.addEventListener('load', () => img.classList.add('is-loaded'));
-    }
-  });
-}
-
-function initLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxVideo = document.getElementById('lightbox-video');
-  const lightboxIframe = document.getElementById('lightbox-iframe');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.getElementById('lightbox-close');
-  const triggers = document.querySelectorAll('[data-lightbox-src]');
-
-  if (!lightbox || !triggers.length) return;
-
-  const openLightbox = (src, caption, type) => {
-    if (type === 'video') {
-      lightboxImg.classList.add('hidden');
-      lightboxVideo.classList.remove('hidden');
-      if (lightboxIframe) lightboxIframe.src = src;
-      requestAnimationFrame(() => {
-        lightboxVideo.classList.remove('scale-95');
+      newToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const expanded = newToggle.getAttribute('aria-expanded') === 'true';
+        newToggle.setAttribute('aria-expanded', !expanded);
+        panel.classList.toggle('hidden');
       });
-    } else {
-      lightboxVideo.classList.add('hidden');
-      lightboxImg.classList.remove('hidden');
-      lightboxImg.src = src;
-      requestAnimationFrame(() => {
-        lightboxImg.classList.remove('scale-95');
+
+      // Close when clicking outside or on a link
+      document.addEventListener('click', (e) => {
+        if (panel && !panel.classList.contains('hidden') && !panel.contains(e.target) && !newToggle.contains(e.target)) {
+          panel.classList.add('hidden');
+          newToggle.setAttribute('aria-expanded', 'false');
+        }
       });
     }
 
-    if (lightboxCaption) lightboxCaption.textContent = caption || '';
-    lightbox.classList.remove('hidden');
-    
-    // Small delay to allow display:block to apply before opacity transition
-    requestAnimationFrame(() => {
-      lightbox.classList.remove('opacity-0');
+    // 4. Dropdowns
+    const dropdowns = document.querySelectorAll('[data-nv-dropdown]');
+    dropdowns.forEach(dd => {
+      const btn = dd.querySelector('[data-nv-dropdown-toggle]');
+      const menu = dd.querySelector('[data-nv-dropdown-menu]');
+
+      if (btn && menu) {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+
+        newBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const expanded = newBtn.getAttribute('aria-expanded') === 'true';
+
+          // Close others
+          dropdowns.forEach(other => {
+            if (other !== dd) {
+              other.querySelector('[data-nv-dropdown-menu]')?.classList.add('hidden');
+              other.querySelector('[data-nv-dropdown-toggle]')?.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          newBtn.setAttribute('aria-expanded', !expanded);
+          menu.classList.toggle('hidden');
+        });
+      }
     });
-    document.body.style.overflow = 'hidden';
-  };
 
-  const closeLightbox = () => {
-    lightbox.classList.add('opacity-0');
-    if (!lightboxImg.classList.contains('hidden')) lightboxImg.classList.add('scale-95');
-    if (!lightboxVideo.classList.contains('hidden')) lightboxVideo.classList.add('scale-95');
-    
-    setTimeout(() => {
-      lightbox.classList.add('hidden');
-      lightboxImg.src = '';
-      if (lightboxIframe) lightboxIframe.src = ''; // Stop video
-      document.body.style.overflow = '';
-    }, 300);
-  };
-
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const src = trigger.dataset.lightboxSrc;
-      const type = trigger.dataset.lightboxType || 'image';
-      const caption = trigger.querySelector('h3')?.textContent;
-      openLightbox(src, caption, type);
-    });
-  });
-
-  closeBtn?.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-      closeLightbox();
+    // Global click closer for dropdowns (ensure single listener)
+    if (!window._nvGlobalClickAttached) {
+      document.addEventListener('click', () => {
+        dropdowns.forEach(dd => {
+          dd.querySelector('[data-nv-dropdown-menu]')?.classList.add('hidden');
+          dd.querySelector('[data-nv-dropdown-toggle]')?.setAttribute('aria-expanded', 'false');
+        });
+      });
+      window._nvGlobalClickAttached = true;
     }
-  });
-}
 
-// Export functions for unit testing
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = {
-    initMobileMenu,
-    initDropdowns,
-    closeAllDropdowns,
-    initActiveState,
-    initWhatsApp,
-    initScrollEffects,
-    initServiceWorker,
-    initScrollToTop,
-    initThemeToggle,
-    initSkipLink,
-    initLoadingSpinner,
-    initCookieConsent,
-    initScrollProgress,
-    initLanguageSwitcher,
-    initScrollReveal,
-    initParallax,
-    initBlurLoad
-  };
-}
+    // 5. Sticky Header
+    const header = document.querySelector('[data-nv-header]');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > CONFIG.scrollThreshold) {
+          header.classList.add('is-sticky');
+        } else {
+          header.classList.remove('is-sticky');
+        }
+      });
+    }
+  }
+
+  /* =========================================
+     NEUROVA â€“ RESERVATION MODAL MASTER BLOÄU v1.1 (WhatsApp Entegre)
+     ========================================= */
+  function initReservation() {
+    log("Initializing Reservation System...");
+
+    // Start from scratch to avoid dupes
+    window.NV_OPEN_RESERVATION = function (data) {
+      const message = data?.note
+        ? `Merhaba, rezervasyon hakkÄ±nda bilgi almak istiyorum: ${data.note}`
+        : "Merhaba, NEUROVA'dan rezervasyon yapmak istiyorum.";
+
+      // Check if modal exists
+      const modal = document.getElementById('nv-reservation-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        // Assume standard close button exists inside
+        const close = modal.querySelector('[data-close-modal]');
+        if (close) {
+          close.onclick = () => modal.classList.add('hidden');
+        }
+      } else {
+        // Fallback: WhatsApp Direct
+        const url = `https://wa.me/${CONFIG.conciergeNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      }
+    };
+
+    // Wire up trigger buttons
+    // We use delegation on document to catch any button even if added later
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-nv-open-reservation]');
+      if (btn) {
+        e.preventDefault();
+        const product = btn.getAttribute('data-product-name') || "";
+        window.NV_OPEN_RESERVATION({ note: product });
+      }
+    });
+  }
+
+  /* =========================================
+     BOOTSTRAP
+     ========================================= */
+  function bootNV() {
+    initNavigation();
+    initReservation();
+    log("Boot Complete.");
+  }
+
+  // Initialize when slots are ready
+  document.addEventListener('nv:slots:ready', bootNV);
+
+  // Also expose bootNV globally just in case
+  window.bootNV = bootNV;
+
+})();
