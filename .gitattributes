@@ -1,28 +1,17 @@
-# --- NEUROVA UTF-8 + LF policy ---
-* text=auto eol=lf
+# Text files: normalize line endings
+* text=auto
 
-# Source
-*.js   text eol=lf
-*.cjs  text eol=lf
-*.mjs  text eol=lf
-*.ts   text eol=lf
-*.css  text eol=lf
-*.html text eol=lf
-*.json text eol=lf
-*.md   text eol=lf
-*.yml  text eol=lf
-*.yaml text eol=lf
-*.ps1  text eol=lf
-*.py   text eol=lf
+# Web text assets
+*.html text
+*.css  text
+*.js   text
+*.json text
+*.svg  text
+*.webmanifest text
 
-# Binary
+# Binary assets
 *.png  binary
 *.jpg  binary
 *.jpeg binary
-*.gif  binary
 *.webp binary
 *.ico  binary
-*.pdf  binary
-*.woff  binary
-*.woff2 binary
-*.ttf   binary
