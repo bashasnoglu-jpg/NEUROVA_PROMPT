@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masaj RitÃ¼elleri | NEUROVA</title>
+    <meta name="description"
+        content="NEUROVA masaj ritÃ¼elleri: derin gevÅŸeme, performans odaklÄ± dokunuÅŸlar ve bÃ¼tÃ¼nsel terapi akÄ±ÅŸlarÄ±.">
+    <!-- Tailwind CSS Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/site-config.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        #nv-nav-slot {
+            min-height: 80px;
+        }
+
+        #nv-footer-slot {
+            min-height: 300px;
+        }
+
+        .nv-card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+        }
+    </style>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body class="bg-nv-bg text-nv-text font-sans antialiased selection:bg-nv-highlight selection:text-nv-bg"
+    data-page="masajlar">
+
+    <!-- NAVIGATION SLOT -->
+    <div id="nv-nav-slot"></div>
+
+    <main id="nv-main">
+        <!-- Hero Section -->
+        <section class="nv-hero relative h-[70vh] min-h-[520px] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1600&q=80"
+                    alt="LoÅŸ Ä±ÅŸÄ±kta masaj yataÄŸÄ± ve doÄŸal kumaÅŸlar" class="w-full h-full object-cover"
+                    fetchpriority="high" decoding="async" width="1600" height="900">
+                <div class="absolute inset-0 bg-gradient-to-t from-nv-bg via-nv-bg/20 to-transparent"></div>
+            </div>
+
+            <div class="nv-hero__content relative z-10 text-center max-w-3xl px-6 animate-fade-in-up">
+                <span class="block text-nv-highlight uppercase tracking-[0.2em] text-sm mb-4 font-medium">Terapi &
+                    Denge</span>
+                <h1 class="text-5xl md:text-6xl font-light mb-6 leading-tight text-white">
+                    DokunuÅŸun GÃ¼cÃ¼.
+                </h1>
+                <p class="text-lg text-nv-muted mb-8 max-w-xl mx-auto font-light">
+                    Kas hafÄ±zasÄ±nÄ± sÄ±fÄ±rlayan, sinir sistemini sakinleÅŸtiren ve bedeni yeniden yapÄ±landÄ±ran uzman masaj
+                    akÄ±ÅŸlarÄ±.
+                </p>
+            </div>
+        </section>
+
+        <!-- Intro -->
+        <section class="py-20 px-6 bg-nv-bg">
+            <div class="max-w-[1100px] mx-auto text-center">
+                <h2 class="text-3xl font-light mb-6 text-nv-text">Bedenin Dili</h2>
+                <p class="text-nv-muted max-w-2xl mx-auto leading-relaxed text-lg">
+                    Terapistlerimiz, bedenin ihtiyaÃ§ duyduÄŸu ritmi sezgisel olarak belirler. BaskÄ±, tempo ve nefes
+                    birbirini tamamlar; sonuÃ§: dingin bir zihin, hafiflemiÅŸ kaslar.
+                </p>
+            </div>
+        </section>
+
+        <!-- Masajlar Grid -->
+        <section class="py-20 bg-nv-panel/20">
+            <div class="max-w-[1100px] mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article
+                        class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft nv-card-hover">
+                        <div class="nv-card__media aspect-[4/3] overflow-hidden bg-nv-frame relative">
+                            <img src="https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=900&q=80"
+                                alt="Klasik Ä°sveÃ§ masajÄ± uygulanÄ±rken"
+                                class="h-full w-full object-cover transition-transform duration-nv-slow group-hover:scale-105"
+                                loading="lazy" decoding="async" width="800" height="600">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text">Klasik Masaj (Ä°sveÃ§)</h3>
+                            <p class="text-sm text-nv-muted mb-4 leading-relaxed">Dengeli dokunuÅŸ, ritmik akÄ±ÅŸ ve
+                                zamansÄ±z rahatlama.</p>
+                        </div>
+                    </article>
+
+                    <article
+                        class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft nv-card-hover">
+                        <div class="nv-card__media aspect-[4/3] overflow-hidden bg-nv-frame relative">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80"
+                                alt="Derin doku masajÄ±"
+                                class="h-full w-full object-cover transition-transform duration-nv-slow group-hover:scale-105"
+                                loading="lazy" decoding="async" width="800" height="600">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text">Deep Tissue</h3>
+                            <p class="text-sm text-nv-muted mb-4 leading-relaxed">Kronik gerginlikleri Ã§Ã¶zen derin baskÄ±
+                                ve yavaÅŸ tempo.</p>
+                        </div>
+                    </article>
+
+                    <article
+                        class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft nv-card-hover">
+                        <div class="nv-card__media aspect-[4/3] overflow-hidden bg-nv-frame relative">
+                            <img src="https://images.unsplash.com/photo-1556228724-4a744de0b8c8?auto=format&fit=crop&w=900&q=80"
+                                alt="Bali masajÄ±"
+                                class="h-full w-full object-cover transition-transform duration-nv-slow group-hover:scale-105"
+                                loading="lazy" decoding="async" width="800" height="600">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mt-2 mb-3 text-nv-text">Bali Aroma</h3>
+                            <p class="text-sm text-nv-muted mb-4 leading-relaxed">Aromaterapi yaÄŸlarÄ± ve uzun, akÄ±cÄ±
+                                vuruÅŸlarla yapÄ±lan Bali ritÃ¼eli.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SLOT -->
+    <div id="nv-footer-slot"></div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/nv-slots.js"></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>

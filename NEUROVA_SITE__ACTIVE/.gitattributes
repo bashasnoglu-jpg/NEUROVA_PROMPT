@@ -1,0 +1,17 @@
+# Text files: normalize line endings
+* text=auto
+
+# Web text assets
+*.html text
+*.css  text
+*.js   text
+*.json text
+*.svg  text
+*.webmanifest text
+
+# Binary assets
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.ico  binary

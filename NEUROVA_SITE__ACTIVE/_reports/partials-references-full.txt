@@ -1,0 +1,4 @@
+﻿C:\dev\NEUROVA_PROMPT_FRESH\NEUROVA_SITE\assets\js\nv-slots.js:103: join(BASE, "partials/nav.html"),
+C:\dev\NEUROVA_PROMPT_FRESH\NEUROVA_SITE\assets\js\nv-slots.js:105: "/partials/nav.html",
+C:\dev\NEUROVA_PROMPT_FRESH\NEUROVA_SITE\assets\js\nv-slots.js:111: join(BASE, "partials/footer.html"),
+C:\dev\NEUROVA_PROMPT_FRESH\NEUROVA_SITE\assets\js\nv-slots.js:113: "/partials/footer.html",
