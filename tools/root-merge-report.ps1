@@ -13,7 +13,9 @@ New-Item -ItemType Directory -Path $outDir | Out-Null
 $report = Join-Path $outDir "NV_ROOT_MERGE_REPORT.txt"
 
 function W($line = "") {
-  Add-Content -Path $report -Value $line
+  # UTF-8 (no BOM) append
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::AppendAllText($report, ($line + [Environment]::NewLine), $utf8NoBom)
 }
 
 function FileIndex($root) {
@@ -237,5 +239,5 @@ W "REPORT PATH:"
 W $report
 W "OUTDIR:"
 W $outDir
-W "✅ NV ROOT+MERGE REPORT hazır:"
+W "âœ… NV ROOT+MERGE REPORT hazÄ±r:"
 W $report
