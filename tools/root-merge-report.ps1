@@ -12,9 +12,8 @@ $outDir = Join-Path $env:TEMP ("NV_MERGE_REPORT_" + $stamp)
 New-Item -ItemType Directory -Path $outDir | Out-Null
 $report = Join-Path $outDir "NV_ROOT_MERGE_REPORT.txt"
 
-function W($line = "") {
-  # UTF-8 (no BOM) append
-  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+function W([string]$line = "") {
   [System.IO.File]::AppendAllText($report, ($line + [Environment]::NewLine), $utf8NoBom)
 }
 
@@ -239,5 +238,5 @@ W "REPORT PATH:"
 W $report
 W "OUTDIR:"
 W $outDir
-W "âœ… NV ROOT+MERGE REPORT hazÄ±r:"
+W "ÃƒÂ¢Ã…â€œÃ¢â‚¬Â¦ NV ROOT+MERGE REPORT hazÃƒâ€Ã‚Â±r:"
 W $report
