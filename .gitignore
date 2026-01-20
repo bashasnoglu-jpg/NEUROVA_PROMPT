@@ -1,5 +1,4 @@
-# Work copies / backups
-NEUROVA_SITE__ACTIVE/
+﻿# Work copies / backups
 _backup/
 NEUROVA_SITE/_backup/
 
@@ -28,18 +27,12 @@ C__dev_NEUROVA_PROMPT_FRESH_*dizini*.html
 **/*_bak_*.zip
 
 # Probes / generated scratch
-**/__probe_root.txt
-**/__serve_root_probe.txt
-**/_inventory_dirs.txt
-**/_inventory_files.txt
-**/00__INDEX_*.txt
 **/assets/test.txt
 
 # Temp / backups
 *.bak
 *~
 ~$*
-**/assets/test.txt
 **/_archive/
 **/_backup/
 **/_ops/
@@ -48,11 +41,8 @@ C__dev_NEUROVA_PROMPT_FRESH_*dizini*.html
 
 __resp.html
 
-__resp.html
 
 # NEUROVA_SITE__ACTIVE local build artifacts
 NEUROVA_SITE__ACTIVE/**/node_modules/
 NEUROVA_SITE__ACTIVE/_ops/numbered/
-# NEUROVA_SITE__ACTIVE local build artifacts
-NEUROVA_SITE__ACTIVE/**/node_modules/
-NEUROVA_SITE__ACTIVE/_ops/numbered/
+
