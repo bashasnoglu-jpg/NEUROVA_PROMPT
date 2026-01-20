@@ -1,62 +1,47 @@
-﻿# dependencies
-node_modules/
+﻿# Work copies / backups
+NEUROVA_SITE__ACTIVE/
+_backup/
+NEUROVA_SITE/_backup/
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Ops & reports
+_ops/
+_reports/
+_reports
+_ops
 
-# build / cache
-dist/
-build/
-.cache/
-.parcel-cache/
-.next/
-out/
-coverage/
+# Probes / inventories / generated indexes
+**/__probe_root.txt
+**/__serve_root_probe.txt
+**/_inventory_dirs.txt
+**/_inventory_files.txt
+**/00__INDEX_*.txt
 
-# env
-.env
-.env.* 
+# Office temp files
+**/~$*
+**/*.tmp
 
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-# --- NEUROVA FE cleanup ---
-node_modules/
-_archive/
-_audit/
-_report/
-tmp/
-*.log
+# Local one-off exports
+C__dev_NEUROVA_PROMPT_FRESH_*dizini*.html
+
+# Backups
+**/*.bak
+**/*_bak_*.zip
+
+# Probes / generated scratch
+**/__probe_root.txt
+**/__serve_root_probe.txt
+**/_inventory_dirs.txt
+**/_inventory_files.txt
+**/00__INDEX_*.txt
+**/assets/test.txt
+
+# Temp / backups
 *.bak
-.DS_Store
-desktop.ini
-
-# local inventories
-dosya-listesi.txt
-git-dosyalari.txt
-
-
-index.html
-# archives / big binaries
-*.zip
-*.7z
-*.rar
-# temp / backups
-*.bak
-*.bak2
-*.tmp
-test.txt
-
-# generated / scratch
-NEUROVA_SITE/pages/
-
-NEUROVA_MEGA_REPORT.txt
-
-# workspace folders (local)
-NV_SITE/
-NV_PIPELINE/
+*~
+~$*
+**/assets/test.txt
+**/_archive/
+**/_backup/
+**/_ops/
+**/_reports/
+**/*.zip
