@@ -1,5 +1,5 @@
 /* NEUROVA Galeri Ã¢â‚¬â€ clean skeleton
-   Not: Global paketler.css zaten varsa burada sadece galeriye ÃƒÂ¶zel dokunuyoruz.
+   Not: Global paketler.css zaten varsa burada sadece galeriye Ãƒ¶zel dokunuyoruz.
 */
 
 :root{
@@ -172,7 +172,7 @@
 }
 @media (max-width: 620px){
   .nv-card{ grid-column: span 12; }
-  .nv-nav{ display:none; } /* sizde mobil nav varsa bunu kaldÃ„Â±rÃ„Â±n */
+  .nv-nav{ display:none; } /* sizde mobil nav varsa bunu kaldÃ„Â±rÃ„±n */
 }
 
 .nv-card__btn{

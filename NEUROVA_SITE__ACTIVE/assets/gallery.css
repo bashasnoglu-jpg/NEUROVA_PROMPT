@@ -627,7 +627,7 @@ body[data-page="galeri"]::before {
   z-index: 0;
 }
 
-/* hero background sadece gÃƒÂ¶rsel */
+/* hero background sadece gÃƒ¶rsel */
 body[data-page="galeri"] .nv-hero--gallery .nv-hero-bg {
   z-index: 0;
 }
@@ -644,7 +644,7 @@ body[data-page="galeri"] .nv-page {
   z-index: 1;
 }
 
-/* navigation her zaman ÃƒÂ¼stte */
+/* navigation her zaman Ãƒ¼stte */
 #nv-nav-slot,
 nav,
 .nv-nav {
@@ -683,7 +683,7 @@ nav,
   z-index: 10000 !important;
 }
 
-/* Galeri dekoratif katmanlarÃ„Â± nav alanÃ„Â±na girmesin */
+/* Galeri dekoratif katmanlarÃ„Â± nav alanÃ„±na girmesin */
 body[data-page="galeri"]::before {
   top: var(--nv-nav-h, 72px);
 }

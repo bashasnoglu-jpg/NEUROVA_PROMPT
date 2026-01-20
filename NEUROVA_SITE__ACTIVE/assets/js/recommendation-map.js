@@ -5,19 +5,19 @@ window.NV_RECO_MAP = {
     "hamam-feature": {
       topic: "hammam",
       label: "Hammam Rituals",
-      waTR: "Hamam ritÃƒÂ¼elleri",
+      waTR: "Hamam ritÃƒ¼elleri",
       waEN: "Hammam rituals",
     },
     "masaj-feature": {
       topic: "massage",
       label: "Massage Rituals",
-      waTR: "Masaj ritÃƒÂ¼elleri",
+      waTR: "Masaj ritÃƒ¼elleri",
       waEN: "Massage rituals",
     },
     "face-feature": {
       topic: "face",
-      label: "Face Ã‚Â· Sothys",
-      waTR: "Cilt bakÃ„Â±mÃ„Â±",
+      label: "Face Ã‚· Sothys",
+      waTR: "Cilt bakÃ„Â±mÃ„±",
       waEN: "Facial care",
     },
     packages: {
@@ -32,7 +32,7 @@ window.NV_RECO_MAP = {
     "hamam-details": {
       topic: "hammam",
       label: "Classic Hammam",
-      waTR: "Klasik hamam ritÃƒÂ¼eli",
+      waTR: "Klasik hamam ritÃƒ¼eli",
       waEN: "Classic hammam ritual",
     },
   },
@@ -41,7 +41,7 @@ window.NV_RECO_MAP = {
     "massages-details": {
       topic: "massage",
       label: "Massage Rituals",
-      waTR: "Masaj ritÃƒÂ¼elleri",
+      waTR: "Masaj ritÃƒ¼elleri",
       waEN: "Massage rituals",
     },
   },
@@ -49,8 +49,8 @@ window.NV_RECO_MAP = {
   face: {
     "face-programs": {
       topic: "face",
-      label: "Face Ã‚Â· Sothys",
-      waTR: "Sothys cilt bakÃ„Â±mÃ„Â±",
+      label: "Face Ã‚· Sothys",
+      waTR: "Sothys cilt bakÃ„Â±mÃ„±",
       waEN: "Sothys facial care",
     },
   },

@@ -175,13 +175,13 @@ function renderCards(data) {
             const tr = item?.lang?.tr || "";
             const en = item?.lang?.en || "";
 
-            // Kart iÃƒÂ§i export: debug prod-safe aÃƒÂ§Ã„Â±kken zaten kapalÃ„Â±.
+            // Kart iÃƒÂ§i export: debug prod-safe aÃƒÂ§Ã„Â±kken zaten kapalÃ„±.
             const exportActions = PROD_SAFE_DEBUG_MODE
                 ? ""
                 : `
   <div class="actions">
-    <button class="btn btn--gold" data-export="json">JSON GÃƒÂ¶nder</button>
-    <button class="btn" data-export="md">MD GÃƒÂ¶nder</button>
+    <button class="btn btn--gold" data-export="json">JSON GÃƒ¶nder</button>
+    <button class="btn" data-export="md">MD GÃƒ¶nder</button>
   </div>`;
 
             return `
@@ -301,7 +301,7 @@ function initUI(data) {
         el.grid.innerHTML = `
       <div class="card">
         <h3 class="title">Veri yok</h3>
-        <p class="p">Pack dosyalarÃ„Â± yÃƒÂ¼klenmedi veya iÃƒÂ§erik bulunamadÃ„Â±.</p>
+        <p class="p">Pack dosyalarÃ„Â± yÃƒÂ¼klenmedi veya iÃƒÂ§erik bulunamadÃ„±.</p>
       </div>`;
         if (el.count) el.count.textContent = "0/0";
         return;
@@ -389,7 +389,7 @@ function wireEvents() {
     });
 }
 
-// Loader callback: packs yÃƒÂ¼klenince burasÃ„Â± ÃƒÂ§alÃ„Â±Ã…Å¸Ã„Â±r
+// Loader callback: packs yÃƒÂ¼klenince burasÃ„Â± ÃƒÂ§alÃ„Â±Ã…Å¸Ã„±r
 window.nvOnPromptsReady = function (merged) {
     const policy = window.__NV_DEDUPE_POLICY__ || "overwrite";
     const { deduped, dups } = nvDedupePrompts(merged, policy);
@@ -450,7 +450,7 @@ window.nvOnPromptsReady = function (merged) {
 // Boot
 wireEvents();
 
-// EÃ„Å¸er loader packÃ¢â‚¬â„¢leri otomatik yÃƒÂ¼klemiyorsa burada ÃƒÂ§aÃ„Å¸Ã„Â±r:
+// EÃ„Å¸er loader packÃ¢â‚¬â„¢leri otomatik yÃƒÂ¼klemiyorsa burada ÃƒÂ§aÃ„Å¸Ã„±r:
 const sitePackList = Array.isArray(window.NV_SITE_PACK_LIST) ? window.NV_SITE_PACK_LIST : [];
 if (typeof window.nvLoadPromptPacks === "function" && sitePackList.length) {
     window.nvLoadPromptPacks(sitePackList).catch((err) => {

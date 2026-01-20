@@ -2,7 +2,7 @@
 
 **(Single Figma / PSD Structure)**
 
-Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kanonik (ana) yapÄ±**yÄ± tanÄ±mlar.
+Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) yapı**yı tanımlar.
 
 ## 0) COVER & INDEX
 
@@ -26,7 +26,7 @@ Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kano
 
 *   `NV_BG` `#34393D` (Ana Zemin)
 *   `NV_PANEL` `#41464A` (Ä°kincil Zemin / Kart)
-*   `NV_FRAME` `#2C2F32` (Koyu Ã‡erÃ§eve / KenarlÄ±k)
+*   `NV_FRAME` `#2C2F32` (Koyu Ã‡erçeve / Kenarlık)
 *   `NV_DIVIDER` `#32363A` (AyÄ±rÄ±cÄ±)
 *   `NV_STROKE` `#55595D` (Ä°nce Ã‡izgi)
 *   `NV_HIGHLIGHT` `#9F9F9F` (Vurgu)
@@ -76,7 +76,7 @@ Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kano
 ## 5) INFORMATION BLOCKS
 
 *   RitÃ¼el AkÄ±ÅŸÄ± (1â€“2â€“3)
-*   Kimler iÃ§in ideal?
+*   Kimler için ideal?
 *   Faydalar
 *   UyarÄ±lar
 
@@ -116,7 +116,7 @@ Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kano
 
 ## 9) A4 / PRINT TEMPLATES
 
-*   MenÃ¼ A4
+*   Menü A4
 *   Paket katalog
 *   EÄŸitim kartlarÄ±
 
@@ -143,7 +143,7 @@ Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kano
 
 ## Figma vs PSD Ã–neri
 
-**Figma (Ã¶nerilen):** Web + UI + component, Team work, Version control
+**Figma (önerilen):** Web + UI + component, Team work, Version control
 **PSD:** Print aÄŸÄ±rlÄ±klÄ± iÅŸler, Foto manipulation
 
 ---
