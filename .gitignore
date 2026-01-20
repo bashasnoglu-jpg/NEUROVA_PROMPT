@@ -26,3 +26,6 @@ NEUROVA_SITE__ACTIVE/_ops/*.txt
 NEUROVA_SITE__ACTIVE/_reports/*.txt
 NEUROVA_SITE__ACTIVE/clean_nv_slots.ps1
 NEUROVA_SITE__ACTIVE/fix_project.ps1
+
+# NEUROVA local ops (do not commit)
+__ops/
