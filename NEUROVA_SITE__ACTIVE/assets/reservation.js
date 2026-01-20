@@ -468,3 +468,4 @@
   window.NV_CLOSE_RESERVATION = closeModal;
 
 })();
+

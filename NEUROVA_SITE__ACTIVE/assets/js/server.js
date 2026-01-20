@@ -30,7 +30,7 @@ http.createServer((req, res) => {
   // Remove query strings and leading slash to ensure relative path joining
   const cleanUrl = req.url.split('?')[0].replace(/^\//, '');
   let filePath = path.join(__dirname, cleanUrl);
-  
+
   // Basic security: prevent directory traversal
   if (!filePath.startsWith(__dirname)) {
     res.writeHead(403);

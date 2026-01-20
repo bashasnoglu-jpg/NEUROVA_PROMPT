@@ -1,7 +1,7 @@
 describe('PWA & Service Worker', () => {
   it('should register the service worker successfully', () => {
     cy.visit('/tr/index.html');
-    
+
     // Wait for the load event and SW registration
     cy.window().then((win) => {
       return new Promise((resolve) => {

@@ -60,7 +60,7 @@ describe('Theme Toggle Logic', () => {
   // The function to test (replicating logic from app.js for unit testing isolation)
   function initThemeToggle() {
     const btn = document.getElementById('themeToggle');
-    
+
     // Check local storage or system preference on load
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -93,7 +93,7 @@ describe('Theme Toggle Logic', () => {
       matches: query === '(prefers-color-scheme: dark)',
       media: query,
     }));
-    
+
     initThemeToggle();
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });

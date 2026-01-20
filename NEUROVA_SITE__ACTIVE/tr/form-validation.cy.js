@@ -27,10 +27,10 @@ describe('Form Validation Logic', () => {
     cy.get('input[name="name"]').type('Test User');
     cy.get('input[name="phone"]').type('05551234567');
     cy.get('textarea[name="message"]').type('Testing email validation.');
-    
+
     // Type invalid email
     cy.get('input[name="email"]').type('invalid-email-format');
-    
+
     cy.get('form button[type="submit"]').click();
 
     // Verify email input is still invalid

@@ -5,10 +5,10 @@ describe('Mobile Menu Functionality', () => {
 
   it('should be hidden on desktop viewports', () => {
     cy.viewport('macbook-13');
-    
+
     // Toggle button should not be visible
     cy.get('[data-nv-mobile-toggle]').should('not.be.visible');
-    
+
     // Panel should be hidden (via hidden attribute or CSS)
     cy.get('[data-nv-mobile-panel]').should('have.attr', 'hidden');
     cy.get('[data-nv-mobile-panel]').should('not.be.visible');
@@ -24,7 +24,7 @@ describe('Mobile Menu Functionality', () => {
       cy.get('[data-nv-mobile-toggle]')
         .should('be.visible')
         .and('have.attr', 'aria-expanded', 'false');
-      
+
       cy.get('[data-nv-mobile-panel]')
         .should('have.attr', 'hidden')
         .and('not.be.visible');

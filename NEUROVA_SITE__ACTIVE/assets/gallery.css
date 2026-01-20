@@ -738,3 +738,4 @@ body[data-page="galeri"] .nv-ba-frame::after {
 body[data-page="galeri"] .nv-ba-frame.is-used::after {
   opacity: 0 !important;
 }
+

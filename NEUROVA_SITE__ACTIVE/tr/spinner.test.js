@@ -19,7 +19,7 @@ describe('Loading Spinner Logic', () => {
     spinner.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-nv-bg/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none';
     spinner.setAttribute('aria-hidden', 'true');
     spinner.innerHTML = '<div class="w-12 h-12 border-4 border-white/10 border-t-white rounded-full animate-spin"></div>';
-    
+
     document.body.appendChild(spinner);
 
     window.nvShowSpinner = () => {

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(link => {
     const navKey = link.getAttribute('data-nav');
-    
+
     // Validation: Check for broken links
     const href = link.getAttribute('href');
     if (!href || href.includes('../')) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navKey === currentPage) {
       link.classList.add('active');
       matchFound = true;
-      
+
       // Handle Dropdown Parent Active State
       const parentDropdown = link.closest('.dropdown');
       if (parentDropdown) {

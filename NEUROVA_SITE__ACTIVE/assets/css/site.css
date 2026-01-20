@@ -65,3 +65,4 @@ p { margin: 0 0 14px; color: var(--nv-muted); }
 @media (min-width: 861px) {
   .nv-overlay, .nv-panel { display: none !important; }
 }
+

@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, .font-serif {
 /* Overrides default nav.html classes to support Transparent -> Sticky transition */
 [data-nv-header] {
     position: fixed !important; /* Force fixed to overlay hero */
-    top: 0; 
+    top: 0;
     width: 100%;
     background-color: transparent !important;
     border-bottom-color: transparent !important;
