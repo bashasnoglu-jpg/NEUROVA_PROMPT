@@ -53,3 +53,6 @@ __resp.html
 # NEUROVA_SITE__ACTIVE local build artifacts
 NEUROVA_SITE__ACTIVE/**/node_modules/
 NEUROVA_SITE__ACTIVE/_ops/numbered/
+# NEUROVA_SITE__ACTIVE local build artifacts
+NEUROVA_SITE__ACTIVE/**/node_modules/
+NEUROVA_SITE__ACTIVE/_ops/numbered/

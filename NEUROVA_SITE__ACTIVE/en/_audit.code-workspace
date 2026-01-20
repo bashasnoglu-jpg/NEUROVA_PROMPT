@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../_audit"
+		},
+		{
+			"path": "../assets"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../tr"
+		}
+	]
+}

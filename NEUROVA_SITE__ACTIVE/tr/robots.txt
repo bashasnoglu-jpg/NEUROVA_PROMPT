@@ -1,0 +1,4 @@
+# NEUROVA Robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://www.neurova.com/sitemap.xml
