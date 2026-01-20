@@ -1,111 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEUROVA Spa & Wellness</title>
-    <meta name="description"
-        content="Sessiz lüksün yeni tanımı. NEUROVA ile bedeni ve zihni yenileyen modern spa ve hamam ritüellerini keşfedin.">
-    <!-- Tailwind CSS (via CDN for local preview) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/site-config.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEUROVA Spa & Wellness</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
-
-        body {
-            background-color: #1a1d21;
-            color: #f3f4f6;
-        }
-
-        /* Slot placeholders to prevent layout shift */
-        #nv-nav-slot {
-            min-height: 80px;
-        }
-
-        #nv-footer-slot {
-            min-height: 200px;
-        }
-
-        .nv-hero {
-            position: relative;
-            height: 85vh;
-            min-height: 600px;
-            overflow: hidden;
-        }
-
-        .nv-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .nv-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(26, 29, 33, 0.3), rgba(26, 29, 33, 0.8));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-    </style>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS (projendeki mevcut dosya adlarini gerekirse guncelle) -->
+  <link rel="stylesheet" href="/assets/css/site.css" />
 </head>
 
-<body class="antialiased">
+<body class="nv-body">
+  <!-- NAV SLOT -->
+  <div id="nv-nav-slot"></div>
 
-    <!-- NAVIGATION SLOT -->
-    <div id="nv-nav-slot"></div>
+  <main id="main" class="nv-main">
+    <section class="nv-hero">
+      <div class="nv-hero-inner">
+        <h1 class="nv-h1">NEUROVA</h1>
+        <p class="nv-lead">Spa & Wellness</p>
+      </div>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <main id="nv-main">
+    <section class="nv-section">
+      <div class="nv-container">
+        <h2 class="nv-h2">Hoş geldiniz</h2>
+        <p class="nv-p">
+          Bu sayfa yeniden oluşturuldu. İçerik bloklarını eski index’ten geri alıp buraya taşıyabiliriz.
+        </p>
+      </div>
+    </section>
+  </main>
 
-        <!-- Hero Section -->
-        <section class="nv-hero">
-            <!-- Placeholder Hero Image -->
-            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop"
-                alt="NEUROVA Spa Atmosphere" fetchpriority="high" decoding="async">
+  <!-- FOOTER SLOT -->
+  <div id="nv-footer-slot"></div>
 
-            <div class="nv-hero-overlay">
-                <div class="px-6 max-w-4xl">
-                    <h1
-                        class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 tracking-wide drop-shadow-lg">
-                        Sessiz Lüksün<br>Yeni Tanımı
-                    </h1>
-                    <p class="text-white/90 text-lg md:text-xl font-light tracking-wider mb-10 max-w-2xl mx-auto">
-                        Bedeni ve zihni yenileyen modern ritüeller.
-                    </p>
-                    <a href="#booking" data-nv-open-reservation
-                        class="inline-block px-8 py-4 border border-white/30 bg-white/10 backdrop-blur-sm text-white text-sm tracking-[0.2em] uppercase hover:bg-white/20 transition-all duration-300">
-                        Rezervasyon Yap
-                    </a>
-                </div>
-            </div>
-        </section>
+  <!-- SLOT LOADER (defer OLMADAN) -->
+  <script src="/assets/js/nv-slots.js"></script>
 
-        <!-- Intro / Philosophy -->
-        <section class="py-24 px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <span class="text-nv-gold text-xs tracking-[0.2em] uppercase mb-4 block">Felsefemiz</span>
-                <h2 class="font-serif text-3xl md:text-4xl mb-8">Arınma ve Yeniden Doğuş</h2>
-                <p class="text-nv-muted leading-relaxed font-light">
-                    NEUROVA, şehrin karmaşasından uzak, kendinizle baş başa kalabileceğiniz bir sığınak.
-                    Geleneksel hamam ritüellerinden modern masaj terapilerine kadar her detay,
-                    sizi en saf halinize döndürmek için tasarlandı.
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER SLOT -->
-    <div id="nv-footer-slot"></div>
-
-    <!-- SCRIPTS -->
-    <script src="assets/js/nv-slots.js"></script>
-    <script src="assets/js/app.js" defer></script>
+  <!-- APP -->
+  <script src="/assets/js/app.js" defer></script>
 </body>
-
 </html>
+
+
+
+
