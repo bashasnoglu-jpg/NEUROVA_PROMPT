@@ -54,7 +54,7 @@
             @apply hidden;
         }
     }
-    
+
     /* Video yüklendiğinde görünecek ve posteri gizleyecek */
     .nv-hero--video-loaded .nv-hero__video-wrapper video {
         @apply opacity-100;

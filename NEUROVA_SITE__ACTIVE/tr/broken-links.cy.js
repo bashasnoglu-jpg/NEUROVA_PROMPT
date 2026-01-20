@@ -17,7 +17,7 @@ describe('Broken Links Check', () => {
 
   it('should verify all internal links on the homepage return 200', () => {
     cy.visit('/tr/index.html');
-    
+
     cy.get('a').each(($a) => {
       const href = $a.prop('href');
       const isInternal = href.includes(Cypress.config('baseUrl')) || (!href.startsWith('http') && !href.startsWith('//'));

@@ -25,7 +25,7 @@ describe('Mobile Menu Interaction', () => {
 
   it('should display correct navigation links in mobile menu', () => {
     cy.get('[data-nv-mobile-toggle]').click();
-    
+
     cy.get('[data-nv-mobile-panel]').within(() => {
       cy.contains('Ana Sayfa').should('be.visible').and('have.attr', 'href', 'index.html');
       cy.contains('Hamam').should('be.visible').and('have.attr', 'href', 'hamam.html');

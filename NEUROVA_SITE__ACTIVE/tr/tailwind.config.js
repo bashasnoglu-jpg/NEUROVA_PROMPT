@@ -19,7 +19,7 @@ module.exports = {
         'nv-highlight': '#9F9F9F',
         'nv-text': '#ECECEC',
         'nv-stone': '#E6E2DC',
-        
+
         // YENİ PALET (İyileştirme Planı)
         'nv-primary': '#2C5530',        // Derin yeşil
         'nv-secondary': '#8B9A8C',      // Yumuşak yeşil
@@ -41,7 +41,7 @@ module.exports = {
         'nv-soft': '0 8px 24px rgba(0,0,0,0.15)',
       },
       transitionDuration: {
-        'nv': '400ms', 
+        'nv': '400ms',
         'nv-slow': '700ms',
       },
       transitionTimingFunction: {

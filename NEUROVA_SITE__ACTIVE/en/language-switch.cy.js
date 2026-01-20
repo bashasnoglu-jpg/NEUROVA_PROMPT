@@ -10,10 +10,10 @@ describe('Language Switching', () => {
     cy.visit('/tr/hamam.html');
     // Verify we are on TR page
     cy.get('h1').should('contain', 'Hamam Ritüelleri');
-    
+
     // Click EN switcher
     cy.get('[data-lang-switch="en"]').click();
-    
+
     // Verify URL and Content
     cy.url().should('include', '/en/hamam.html');
     cy.get('h1').should('contain', 'Hammam Rituals');
@@ -23,10 +23,10 @@ describe('Language Switching', () => {
     cy.visit('/en/hamam.html');
     // Verify we are on EN page
     cy.get('h1').should('contain', 'Hammam Rituals');
-    
+
     // Click TR switcher
     cy.get('[data-lang-switch="tr"]').click();
-    
+
     // Verify URL and Content
     cy.url().should('include', '/tr/hamam.html');
     cy.get('h1').should('contain', 'Hamam Ritüelleri');

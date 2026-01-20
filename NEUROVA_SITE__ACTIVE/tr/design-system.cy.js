@@ -16,7 +16,7 @@ describe('Design System & UI Interactions', () => {
 
     // 1. Verify static properties
     cy.get('@card').should('have.css', 'transition-duration', '0.4s');
-    
+
     // 2. Verify initial state (no transform)
     cy.get('@card').should('have.css', 'transform', 'none');
 

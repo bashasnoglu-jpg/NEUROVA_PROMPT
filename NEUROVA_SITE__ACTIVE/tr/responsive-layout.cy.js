@@ -12,9 +12,9 @@ describe('Responsive Layout', () => {
       } else {
         cy.viewport(viewport.width, viewport.height);
       }
-      
+
       cy.visit('/tr/index.html');
-      
+
       // Check header visibility
       cy.get('[data-nv-header]').should('be.visible');
 

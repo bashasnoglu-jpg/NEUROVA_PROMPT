@@ -19,7 +19,7 @@ describe('Cookie Consent Banner', () => {
     // Verify banner hides
     cy.get('#cookie-consent').should('have.class', 'translate-y-full');
     cy.get('#cookie-consent').should('have.attr', 'aria-hidden', 'true');
-    
+
     // Verify storage update
     cy.window().then((win) => {
       expect(win.localStorage.getItem('nv_cookie_consent')).to.eq('accepted');
@@ -31,7 +31,7 @@ describe('Cookie Consent Banner', () => {
     cy.get('#cookie-reject').should('be.visible').click();
 
     cy.get('#cookie-consent').should('have.class', 'translate-y-full');
-    
+
     cy.window().then((win) => {
       expect(win.localStorage.getItem('nv_cookie_consent')).to.eq('rejected');
     });

@@ -73,3 +73,4 @@ window.tailwind.config = {
         },
     }
 }
+

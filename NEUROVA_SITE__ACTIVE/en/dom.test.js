@@ -23,7 +23,7 @@ describe('DOM Structure & Interaction Tests', () => {
   test('Mobil menü bileşenleri mevcut ve başlangıçta gizli olmalı', () => {
     const toggle = document.querySelector('[data-nv-mobile-toggle]');
     const panel = document.querySelector('[data-nv-mobile-panel]');
-    
+
     expect(toggle).toBeTruthy();
     expect(panel).toBeTruthy();
     expect(panel.hidden).toBe(true);
@@ -33,7 +33,7 @@ describe('DOM Structure & Interaction Tests', () => {
   test('Navigasyon linkleri doğru veri özniteliklerine sahip olmalı', () => {
     const links = document.querySelectorAll('a[data-nav]');
     expect(links.length).toBeGreaterThan(0);
-    
+
     links.forEach(link => {
       expect(link.getAttribute('data-nav')).toBeTruthy();
     });

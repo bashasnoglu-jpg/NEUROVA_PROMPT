@@ -1,5 +1,5 @@
 describe('UX Enhancements (Quiet Luxury)', () => {
-  
+
   context('Homepage Hero Video', () => {
     beforeEach(() => {
       // Mock video to prevent 404s and save bandwidth
@@ -28,7 +28,7 @@ describe('UX Enhancements (Quiet Luxury)', () => {
         }
       });
       // Video durdurulmuş veya DOM'dan kaldırılmış olmalı
-      cy.get('video#hero-video').should('not.be.visible'); 
+      cy.get('video#hero-video').should('not.be.visible');
     });
   });
 

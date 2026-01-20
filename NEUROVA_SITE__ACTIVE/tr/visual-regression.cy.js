@@ -41,7 +41,7 @@ describe('Visual Stability & Layout Shifts', () => {
 
     it(`should verify sticky header stability on ${page}`, () => {
       cy.visit(page);
-      
+
       // Ensure header is sticky
       cy.get('[data-nv-header]')
         .should('have.css', 'position', 'sticky')

@@ -47,7 +47,7 @@ describe('DOM Interaction Logic', () => {
   test('Scroll to Top button logic', () => {
     document.body.innerHTML = '<button id="scrollToTopBtn" class="opacity-0 invisible">Top</button>';
     const btn = document.getElementById('scrollToTopBtn');
-    
+
     // Mock window.scrollTo
     window.scrollTo = jest.fn();
 
@@ -70,13 +70,13 @@ describe('DOM Interaction Logic', () => {
     // Simulate scroll down
     Object.defineProperty(window, 'scrollY', { value: 301, writable: true, configurable: true });
     window.dispatchEvent(new Event('scroll'));
-    
+
     expect(btn.classList.contains('opacity-100')).toBe(true);
 
     // Simulate scroll up
     window.scrollY = 100;
     window.dispatchEvent(new Event('scroll'));
-    
+
     expect(btn.classList.contains('opacity-0')).toBe(true);
 
     // Simulate click

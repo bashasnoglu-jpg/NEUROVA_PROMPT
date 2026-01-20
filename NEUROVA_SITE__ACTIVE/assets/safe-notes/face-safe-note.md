@@ -5,3 +5,4 @@
 - Keep the tone nurturing: â€œWe support the skinâ€™s glow,â€ â€œWe honor sensitive zones.â€
 - Reference soothing rituals (cool towels, slow breath, gentle palms) instead of cures.
 - Mention the importance of sunscreen and gentle movement post-treatment without insisting on results.
+

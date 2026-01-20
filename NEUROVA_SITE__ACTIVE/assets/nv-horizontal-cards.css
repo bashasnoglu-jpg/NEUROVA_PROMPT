@@ -186,7 +186,7 @@
     opacity: 1;
     border-color: transparent;
   }
-  
+
   .nv-h-card:hover .nv-h-card__action {
     transform: none;
     background: var(--nv-hc-ink);

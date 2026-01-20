@@ -43,7 +43,7 @@ describe('Basic Accessibility Checks', () => {
           const text = $btn.text().trim();
           const ariaLabel = $btn.attr('aria-label');
           const ariaLabelledBy = $btn.attr('aria-labelledby');
-          
+
           if (!text) {
             expect(ariaLabel || ariaLabelledBy, 'Button should have text or aria-label').to.be.ok;
           }
@@ -58,7 +58,7 @@ describe('Basic Accessibility Checks', () => {
           const ariaLabel = $input.attr('aria-label');
           const ariaLabelledBy = $input.attr('aria-labelledby');
           const isWrapped = $input.parents('label').length > 0;
-          
+
           const hasForLabel = id ? $input[0].ownerDocument.querySelector(`label[for="${id}"]`) : false;
           const hasAria = !!(ariaLabel || ariaLabelledBy);
 
