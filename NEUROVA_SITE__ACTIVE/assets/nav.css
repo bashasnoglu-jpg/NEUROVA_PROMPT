@@ -332,7 +332,7 @@ body::before,
 
 /* ===== NUCLEAR NAV INTERACTION FIX Ã¢â‚¬â€ NEUROVA ===== */
 
-/* Nav ve iÃƒÂ§indeki HER Ã…ÂEY daima tÃ„Â±klanabilir */
+/* Nav ve iÃƒÂ§indeki HER Ã…ÂEY daima tÃ„±klanabilir */
 .nv-header,
 .nv-header * {
   pointer-events: auto !important;
@@ -342,7 +342,7 @@ body::before,
   pointer-events: auto !important;
 }
 
-/* Nav en ÃƒÂ¼stte, tartÃ„Â±Ã…Å¸masÃ„Â±z */
+/* Nav en ÃƒÂ¼stte, tartÃ„Â±Ã…Å¸masÃ„±z */
 .nv-header {
   position: sticky;
   top: 0;

@@ -85,7 +85,7 @@
 
   function devGuard() {
     if (!isDev) return;
-    const badTokens = ['ÃƒÅ“', 'Ã¢â‚¬â€œ', 'ÃƒÂ¢Ã¢â‚¬â€œÃ‚Â¾', 'Ã¯Â¿Â½'];
+    const badTokens = ['ÃƒÅ“', 'Ã¢â‚¬â€œ', 'ÃƒÂ¢Ã¢â‚¬â€œÃ‚¾', 'ï¿½'];
     const htmlText = doc.documentElement.innerHTML;
     if (badTokens.some((t) => htmlText.includes(t))) {
       throw new Error('nvdev: mojibake detected');
