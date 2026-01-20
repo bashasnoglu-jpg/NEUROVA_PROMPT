@@ -123,7 +123,7 @@
 }
 
 .nv-h-card__meta span:not(:last-child)::after {
-  content: "•";
+  content: "Ã¢â‚¬Â¢";
   margin-left: 12px;
   opacity: 0.4;
 }

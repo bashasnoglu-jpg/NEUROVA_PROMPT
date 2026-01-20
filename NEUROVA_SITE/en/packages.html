@@ -1,70 +1,398 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-lang="en">Packages - NEUROVA</title>
-  <title data-lang="tr" hidden>Paketler - NEUROVA</title>
+  <title>Packages â€“ NEUROVA</title>
+  <meta name="description"
+    content="NEUROVA Packages: Curated combinations designed for deep relaxation, recovery, and radiant skin â€” crafted in our quiet luxury ritual style.">
 
-  <meta name="description" data-lang="en" content="NEUROVA Packages: Curated packages combine multiple rituals into clear, time-smart journeys.">
-  <meta name="description" data-lang="tr" hidden content="NEUROVA Paketler: Özel olarak hazırlanmış paketler, birden fazla ritüeli bir araya getirerek net ve zaman açısından verimli yolculuklar sunar.">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/nav.css">
+  <link rel="stylesheet" href="/assets/css/nv-palette-smoke.css">
   <link rel="manifest" href="../manifest.json">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-  </script>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
 </head>
-<body data-page="paketler" class="bg-nv-bg text-nv-text font-sans antialiased h-full selection:bg-nv-highlight selection:text-white">
 
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-nv-bg/70 border-b border-gray-200 dark:border-white/5 transition-colors duration-300" data-nv-header></header>
+<body data-page="packages">
 
-  <main class="max-w-[1100px] mx-auto px-[18px] py-[34px] pb-[72px]">
-    <section class="pt-8 pb-16 px-4 text-center md:text-left">
-      <h1 class="text-[28px] tracking-wide mb-2.5 font-normal" data-lang="en">Packages</h1>
-      <h1 class="text-[28px] tracking-wide mb-2.5 font-normal" data-lang="tr" hidden>Paketler</h1>
-      <p class="text-gray-600 dark:text-nv-muted mb-[18px] leading-relaxed" data-lang="en">Curated packages combine multiple rituals into clear, time-smart journeys.</p>
-      <p class="text-gray-600 dark:text-nv-muted mb-[18px] leading-relaxed" data-lang="tr" hidden>Özel olarak hazırlanmış paketler, birden fazla ritüeli bir araya getirerek net ve zaman açısından verimli yolculuklar sunar.</p>
-      <a class="inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full border border-gray-200 dark:border-white/15 bg-gray-100 dark:bg-white/5 shadow-nv text-xs tracking-wider text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors wa-cta" href="#" target="_blank" rel="noopener">
-        <span data-lang="en">Reservation (WhatsApp)</span>
-        <span data-lang="tr" hidden>Rezervasyon (WhatsApp)</span>
-      </a>
+  <!-- Slot: Nav -->
+  <div id="nv-nav-slot"></div>
+
+  <main class="nv-page nv-packages">
+    <!-- Hero -->
+    <section class="nv-hero"
+      style="height: 60vh; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+      <div class="nv-hero-bg"
+        style="position: absolute; top:0; left:0; width:100%; height:100%; background-image: url('../assets/img/home/hero-mid.jpg'); background-size: cover; background-position: center; opacity: 0.4;">
+      </div>
+      <div class="nv-hero-content"
+        style="z-index: 2; position: relative; text-align: center; max-width: 800px; padding: 2rem;">
+        <h1 class="nv-font-serif nv-display-xl" style="font-size: 3.5rem; margin-bottom: 1.5rem;">Packages</h1>
+        <p class="nv-font-sans nv-text"
+          style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2.5rem; line-height: 1.6;">
+          Curated combinations designed for deep relaxation, recovery, and radiant skin â€” crafted in our quiet luxury
+          ritual style.
+        </p>
+        <a href="#nv-wa" data-wa="1" class="nv-btn-reserve" style="text-decoration: none;">Reserve</a>
+      </div>
     </section>
-    
-    <!-- Packages content will be added here -->
 
-    <section id="reservation" class="mt-20 text-center" aria-labelledby="reservation-title">
-      <h2 id="reservation-title" class="text-[28px] tracking-wide mb-2.5 font-normal" data-lang="en">Reservation</h2>
-      <h2 id="reservation-title" class="text-[28px] tracking-wide mb-2.5 font-normal" data-lang="tr" hidden>Rezervasyon</h2>
-      <p class="text-gray-600 dark:text-nv-muted mb-[18px] leading-relaxed" data-lang="en">Reserve your ritual at the pace you prefer.</p>
-      <p class="text-gray-600 dark:text-nv-muted mb-[18px] leading-relaxed" data-lang="tr" hidden>Ritüelinizi tercih ettiğiniz hızda rezerve edin.</p>
-      <a class="inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full border border-gray-200 dark:border-white/15 bg-gray-100 dark:bg-white/5 shadow-nv text-xs tracking-wider text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors wa-cta" href="#" target="_blank" rel="noopener">
-        <span data-lang="en">Reservation (WhatsApp)</span>
-        <span data-lang="tr" hidden>Rezervasyon (WhatsApp)</span>
-      </a>
+    <!-- Container -->
+    <div class="max-w-[1200px] mx-auto px-6 py-16">
+
+      <!-- 1. HAMMAM & MASSAGE -->
+      <section class="nv-section mb-24">
+        <header class="text-center mb-12">
+          <h2 class="nv-font-serif text-3xl mb-3">Hammam & Massage</h2>
+          <p class="nv-text-muted text-sm tracking-wide uppercase">Iconic pairings â€” marble, steam, and calm touch</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/hamam/01.jpg" alt="Classic Hammam & Relax"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Classic Hammam & Relax</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A timeless hammam ritual followed by a gentle
+                relaxation massage.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">90 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/hamam/02.jpg" alt="Ottoman & Hot Stone Deluxe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Ottoman & Hot Stone Deluxe</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">Warm stones and slow pressure to release deep
+                tension after hammam.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">120 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/hamam/03.jpg" alt="Sea Salt Glow & Swedish"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Sea Salt Glow & Swedish</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A clarifying scrub and classic flow for lightness
+                and clarity.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">90 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2. MASSAGE SIGNATURE PICKS -->
+      <section class="nv-section mb-24">
+        <header class="text-center mb-12">
+          <h2 class="nv-font-serif text-3xl mb-3">Massage Signature Picks</h2>
+          <p class="nv-text-muted text-sm tracking-wide uppercase">Card library hooked â€” swap images anytime</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/masaj/01.jpg" alt="Aromatherapy"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Aromatherapy</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A gentle, rhythmic massage using custom-blended
+                organic oils. Designed to calm the mind.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">60 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/masaj/02.jpg" alt="Deep Tissue"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Deep Tissue</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">Ideal for chronic pain and muscle tension. Focused
+                pressure techniques.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">60 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/masaj/03.jpg" alt="Traditional Balinese"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Traditional Balinese</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">Indonesian healing tradition. Integrates acupressure
+                and long strokes.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">60 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. FACE - SOTHYS -->
+      <section class="nv-section mb-24">
+        <header class="text-center mb-12">
+          <h2 class="nv-font-serif text-3xl mb-3">Face â€“ Sothys</h2>
+          <p class="nv-text-muted text-sm tracking-wide uppercase">Clean, minimal, luminous â€” aligned with quiet luxury
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/cilt/01.jpg" alt="Classic Care"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Classic Care</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A refined reset for balance, comfort, and clarity.
+              </p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">45 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/cilt/02.jpg" alt="Hydra 3Ha"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Hydra 3Haâ„¢</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">Deep hydration support for softness and a calm glow.
+              </p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">60 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/cilt/03.jpg" alt="Youth Intensive"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Youth Intensive</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A targeted anti-age ritual for firmness and
+                radiance.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">75 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. SIGNATURE & COUPLES -->
+      <section class="nv-section mb-24">
+        <header class="text-center mb-12">
+          <h2 class="nv-font-serif text-3xl mb-3">Signature & Couples</h2>
+          <p class="nv-text-muted text-sm tracking-wide uppercase">Quietly celebratory rituals â€” slow, warm, and deeply
+            restoring</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/signature/01.jpg" alt="Couple's Retreat"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Coupleâ€™s Retreat</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A shared ritual designed for calm connection and
+                deep release.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">120 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/signature/02.jpg" alt="Four Hands Ritual"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Four Hands Ritual</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">Two therapists, one flowing rhythm â€” immersive and
+                clarifying.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">60 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/signature/03.jpg" alt="Celebration Ritual"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Celebration Ritual</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A refined, uplifting journey â€” ideal for special
+                days and milestones.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">90 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. KIDS & FAMILY -->
+      <section class="nv-section mb-24">
+        <header class="text-center mb-12">
+          <h2 class="nv-font-serif text-3xl mb-3">Kids & Family</h2>
+          <p class="nv-text-muted text-sm tracking-wide uppercase">Soft, safe, and calm â€” designed with family comfort
+            in mind</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/kids/01.jpg" alt="Kids First Hammam"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Kids First Hammam</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A gentle introduction to hammam â€” warm, reassuring,
+                and unhurried.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">45 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/kids/02.jpg" alt="Teen Glow"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Teen Glow</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A clean, confidence-boosting ritual with a soft,
+                modern finish.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">45 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="nv-card group relative overflow-hidden rounded-nv bg-nv-panel shadow-nv-soft hover:-translate-y-1 transition-all duration-300">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="/assets/img/cards/kids/03.jpg" alt="Family Hammam"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+            </div>
+            <div class="p-6">
+              <h3 class="nv-font-serif text-xl mb-2">Family Hammam</h3>
+              <p class="nv-text-muted text-sm mb-4 leading-relaxed">A shared family reset â€” gentle rituals paired with
+                quiet relaxation.</p>
+              <div class="flex justify-between items-center border-t border-white/5 pt-4">
+                <span class="text-xs uppercase tracking-wider font-bold text-nv-gold">90 Min</span>
+                <a href="#nv-wa" data-wa="1"
+                  class="text-sm font-bold text-nv-text hover:text-white transition-colors">Reserve</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Canonical Reservation Section -->
+    <section id="nv-wa" data-section="nv-wa" class="mt-20 text-center pb-20">
+      <h2 class="nv-font-serif text-3xl font-light mb-4 text-nv-text">Reservation</h2>
+      <p class="nv-text-muted mb-8 max-w-md mx-auto leading-relaxed">Book your ritual at your preferred pace.</p>
+      <a href="#nv-wa" data-wa="1" class="nv-btn-reserve">Reserve (WhatsApp)</a>
     </section>
+
   </main>
 
-  <footer class="max-w-[1100px] mx-auto px-[18px] py-[32px] border-t border-gray-200 dark:border-white/5 text-gray-500 dark:text-white/70">
-    <div class="flex flex-col gap-1">
-      <p class="m-0">© 2026 NEUROVA Spa & Wellness</p>
-      <p class="m-0 text-sm opacity-80" data-lang="en">Silence • Ritual • Balance</p>
-      <p class="m-0 text-sm opacity-80" data-lang="tr" hidden>Sessizlik • Ritüel • Denge</p>
-    </div>
-  </footer>
+  <!-- Slot: Footer -->
+  <div id="nv-footer-slot"></div>
 
-  <a class="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2.5 px-3.5 py-2.5 rounded-full border border-gray-200 dark:border-white/15 bg-gray-100 dark:bg-white/5 shadow-nv text-xs tracking-wider text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 transition-colors wa-cta md:hidden" href="#" target="_blank" rel="noopener">
-      <span data-lang="en">Reservation</span>
-      <span data-lang="tr" hidden>Rezervasyon</span>
-  </a>
-
-  <script src="../assets/js/app.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 </body>
+
 </html>

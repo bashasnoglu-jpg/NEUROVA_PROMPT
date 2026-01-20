@@ -10,12 +10,12 @@
 
   const DEFAULTS = {
     brand: "NEUROVA",
-    phoneE164: "", // ör: "905551112233" (başında + yok)
+    phoneE164: "", // ÃƒÂ¶r: "905551112233" (baÃ…Å¸Ã„Â±nda + yok)
     defaultMsgTR:
       "Merhaba NEUROVA, rezervasyon yapmak istiyorum.\n" +
-      "Tarih: \nSaat: \nKişi sayısı: \nProgram: \nNot: ",
+      "Tarih: \nSaat: \nKiÃ…Å¸i sayÃ„Â±sÃ„Â±: \nProgram: \nNot: ",
     defaultMsgEN:
-      "Hello NEUROVA, I’d like to make a reservation.\n" +
+      "Hello NEUROVA, IÃ¢â‚¬â„¢d like to make a reservation.\n" +
       "Date: \nTime: \nGuests: \nProgram: \nNote: ",
   };
 
@@ -43,7 +43,7 @@
 
   function buildWAUrl(phoneE164, text) {
     const msg = encodeURIComponent(text || "");
-    // phone boşsa sadece wa.me açar, ama ideal olan phone set etmek.
+    // phone boÃ…Å¸sa sadece wa.me aÃƒÂ§ar, ama ideal olan phone set etmek.
     if (phoneE164) return `https://wa.me/${phoneE164}?text=${msg}`;
     return `https://wa.me/?text=${msg}`;
   }
@@ -183,9 +183,9 @@
         <div class="nv-res-head">
           <div class="nv-res-title">
             <h3>Rezervasyon</h3>
-            <span class="sub">WhatsApp ile hızlı onay</span>
+            <span class="sub">WhatsApp ile hÃ„Â±zlÃ„Â± onay</span>
           </div>
-          <button class="nv-res-close" type="button" data-nv-res-close>✕</button>
+          <button class="nv-res-close" type="button" data-nv-res-close>Ã¢Å“â€¢</button>
         </div>
 
         <div class="nv-res-body">
@@ -193,11 +193,11 @@
             <div class="nv-res-grid">
               <div class="nv-field">
                 <label>Ad Soyad</label>
-                <input id="nv-res-name" autocomplete="name" placeholder="Adınız" />
+                <input id="nv-res-name" autocomplete="name" placeholder="AdÃ„Â±nÃ„Â±z" />
               </div>
               <div class="nv-field">
                 <label>Telefon (opsiyonel)</label>
-                <input id="nv-res-phone" autocomplete="tel" placeholder="+90…" />
+                <input id="nv-res-phone" autocomplete="tel" placeholder="+90Ã¢â‚¬Â¦" />
               </div>
               <div class="nv-field">
                 <label>Tarih</label>
@@ -208,7 +208,7 @@
                 <input id="nv-res-time" type="time" />
               </div>
               <div class="nv-field">
-                <label>Kişi</label>
+                <label>KiÃ…Å¸i</label>
                 <select id="nv-res-guests">
                   ${[1,2,3,4,5,6].map(n=>`<option value="${n}">${n}</option>`).join("")}
                 </select>
@@ -224,28 +224,28 @@
 
             <div class="nv-field" style="margin-top:10px;">
               <label>Program / Not</label>
-              <textarea id="nv-res-note" placeholder="İstediğiniz program veya özel not..."></textarea>
+              <textarea id="nv-res-note" placeholder="Ã„Â°stediÃ„Å¸iniz program veya ÃƒÂ¶zel not..."></textarea>
             </div>
 
             <div class="nv-actions">
-              <button class="nv-btn primary" type="button" data-nv-wa>WhatsApp ile Gönder</button>
-              <button class="nv-btn" type="button" data-nv-copy>Mesajı Kopyala</button>
+              <button class="nv-btn primary" type="button" data-nv-wa>WhatsApp ile GÃƒÂ¶nder</button>
+              <button class="nv-btn" type="button" data-nv-copy>MesajÃ„Â± Kopyala</button>
               <button class="nv-btn" type="button" data-nv-res-close>Kapat</button>
             </div>
 
             <p class="nv-mini" style="margin:10px 0 0;">
-              Not: Bu modal, gerçek rezervasyon sistemi gelene kadar “WhatsApp akışı” ile çalışır.
+              Not: Bu modal, gerÃƒÂ§ek rezervasyon sistemi gelene kadar Ã¢â‚¬Å“WhatsApp akÃ„Â±Ã…Å¸Ã„Â±Ã¢â‚¬Â ile ÃƒÂ§alÃ„Â±Ã…Å¸Ã„Â±r.
             </p>
           </div>
 
           <div class="nv-res-pane">
             <div class="nv-kv">
-              <b>Gönderilecek mesaj önizleme</b>
+              <b>GÃƒÂ¶nderilecek mesaj ÃƒÂ¶nizleme</b>
               <span id="nv-res-preview"></span>
             </div>
             <div style="height:10px"></div>
             <p class="nv-mini">
-              WhatsApp düğmesi yeni sekmede açılır. İstersen mesajı kopyalayıp WhatsApp’a yapıştırabilirsin.
+              WhatsApp dÃƒÂ¼Ã„Å¸mesi yeni sekmede aÃƒÂ§Ã„Â±lÃ„Â±r. Ã„Â°stersen mesajÃ„Â± kopyalayÃ„Â±p WhatsAppÃ¢â‚¬â„¢a yapÃ„Â±Ã…Å¸tÃ„Â±rabilirsin.
             </p>
           </div>
         </div>
@@ -282,14 +282,14 @@
       const msg = buildMessage();
       try {
         await navigator.clipboard.writeText(msg);
-        toast("Kopyalandı ✅");
+        toast("KopyalandÃ„Â± Ã¢Å“â€¦");
       } catch {
         // fallback
         const ta = document.getElementById("nv-res-note");
         ta.value = msg;
         ta.focus();
         ta.select();
-        toast("Clipboard izin yok — mesaj seçildi.");
+        toast("Clipboard izin yok Ã¢â‚¬â€ mesaj seÃƒÂ§ildi.");
       }
       const note = (document.getElementById("nv-res-note").value || "").trim();
       sendReservationEvent("copy", {
@@ -349,7 +349,7 @@
         phone ? `Tel: ${phone}` : "",
         date ? `Tarih/Date: ${date}` : "",
         time ? `Saat/Time: ${time}` : "",
-        guests ? `Kişi/Guests: ${guests}` : "",
+        guests ? `KiÃ…Å¸i/Guests: ${guests}` : "",
         note ? `Not/Note: ${note}` : "",
       ].filter(Boolean);
 

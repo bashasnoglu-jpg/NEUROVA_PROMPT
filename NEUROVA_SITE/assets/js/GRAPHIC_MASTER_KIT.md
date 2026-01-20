@@ -1,17 +1,17 @@
-# NEUROVA – GRAPHIC MASTER KIT
+# NEUROVA â€“ GRAPHIC MASTER KIT
 
 **(Single Figma / PSD Structure)**
 
-Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) yapı**yı tanımlar.
+Bu belge, NEUROVA markasÄ±nÄ±n tÃ¼m gÃ¶rsel Ã¼retimleri iÃ§in **kanonik (ana) yapÄ±**yÄ± tanÄ±mlar.
 
 ## 0) COVER & INDEX
 
 *   **Kapak:** NEUROVA logo + mood visual
-*   **Index sayfası (tıklanabilir):**
+*   **Index sayfasÄ± (tÄ±klanabilir):**
     *   Hero
     *   Cards
     *   Packages
-    *   Face – Sothys
+    *   Face â€“ Sothys
     *   Kids & Family
     *   Social
     *   A4 / Print
@@ -25,17 +25,17 @@ Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) ya
 **Renkler (Global)**
 
 *   `NV_BG` `#34393D` (Ana Zemin)
-*   `NV_PANEL` `#41464A` (İkincil Zemin / Kart)
-*   `NV_FRAME` `#2C2F32` (Koyu Çerçeve / Kenarlık)
-*   `NV_DIVIDER` `#32363A` (Ayırıcı)
-*   `NV_STROKE` `#55595D` (İnce Çizgi)
+*   `NV_PANEL` `#41464A` (Ä°kincil Zemin / Kart)
+*   `NV_FRAME` `#2C2F32` (Koyu Ã‡erÃ§eve / KenarlÄ±k)
+*   `NV_DIVIDER` `#32363A` (AyÄ±rÄ±cÄ±)
+*   `NV_STROKE` `#55595D` (Ä°nce Ã‡izgi)
 *   `NV_HIGHLIGHT` `#9F9F9F` (Vurgu)
 
 **Typography**
 
 *   **Primary:** modern serif / soft grotesk
-*   **Sizes:** H1–H6 / Body / Caption
-*   **Letter-spacing rules:** luxury spacing (geniş aralık)
+*   **Sizes:** H1â€“H6 / Body / Caption
+*   **Letter-spacing rules:** luxury spacing (geniÅŸ aralÄ±k)
 
 **Spacing & Radius**
 
@@ -51,7 +51,7 @@ Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) ya
 *   Campaign Hero
 
 **Variants:** Dark / Light, Center / Left aligned
-**Notes:** Soft gradient overlay, Minimal text (1–2 satır)
+**Notes:** Soft gradient overlay, Minimal text (1â€“2 satÄ±r)
 
 ---
 
@@ -65,32 +65,32 @@ Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) ya
 
 ## 4) PACKAGE & COMBO LAYOUTS
 
-*   2’li kombin
-*   3’lü ritüel akışı
+*   2â€™li kombin
+*   3â€™lÃ¼ ritÃ¼el akÄ±ÅŸÄ±
 *   Signature / Prestige blok
 
-**A4 & Web shared grid:** Aynı oran, aynı ikon dili.
+**A4 & Web shared grid:** AynÄ± oran, aynÄ± ikon dili.
 
 ---
 
 ## 5) INFORMATION BLOCKS
 
-*   Ritüel Akışı (1–2–3)
-*   Kimler için ideal?
+*   RitÃ¼el AkÄ±ÅŸÄ± (1â€“2â€“3)
+*   Kimler iÃ§in ideal?
 *   Faydalar
-*   Uyarılar
+*   UyarÄ±lar
 
-**Style:** İnce çizgi, minimal ikon, bol boşluk.
+**Style:** Ä°nce Ã§izgi, minimal ikon, bol boÅŸluk.
 
 ---
 
-## 6) FACE – SOTHYS MODULES
+## 6) FACE â€“ SOTHYS MODULES
 
 *   Category cards
 *   Treatment blocks
 *   Comparison layout
 
-**Tone:** Daha aydınlık, daha temiz, daha medikal-spa.
+**Tone:** Daha aydÄ±nlÄ±k, daha temiz, daha medikal-spa.
 
 ---
 
@@ -116,9 +116,9 @@ Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) ya
 
 ## 9) A4 / PRINT TEMPLATES
 
-*   Menü A4
+*   MenÃ¼ A4
 *   Paket katalog
-*   Eğitim kartları
+*   EÄŸitim kartlarÄ±
 
 **Export ready:** 300 DPI, CMYK safe margins.
 
@@ -141,11 +141,11 @@ Bu belge, NEUROVA markasının tüm görsel üretimleri için **kanonik (ana) ya
 
 ---
 
-## Figma vs PSD Öneri
+## Figma vs PSD Ã–neri
 
-**Figma (önerilen):** Web + UI + component, Team work, Version control
-**PSD:** Print ağırlıklı işler, Foto manipulation
+**Figma (Ã¶nerilen):** Web + UI + component, Team work, Version control
+**PSD:** Print aÄŸÄ±rlÄ±klÄ± iÅŸler, Foto manipulation
 
 ---
 
-> **Sonuç:** NEUROVA Grafik Master Kit, tüm web, sosyal medya, A4 ve kampanya grafiklerinin **tek dosyadan**, **tek dilde**, **tek standartla** üretilmesini sağlar.
+> **SonuÃ§:** NEUROVA Grafik Master Kit, tÃ¼m web, sosyal medya, A4 ve kampanya grafiklerinin **tek dosyadan**, **tek dilde**, **tek standartla** Ã¼retilmesini saÄŸlar.

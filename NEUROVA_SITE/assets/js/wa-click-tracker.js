@@ -1,6 +1,6 @@
 "use strict";
 
-// wa-click-tracker.js — capture WhatsApp CTA clicks and write nv_wa_click_* counters
+// wa-click-tracker.js Ã¢â‚¬â€ capture WhatsApp CTA clicks and write nv_wa_click_* counters
 (function () {
   const alreadyV2 =
     (window.__NV_WA_TRACKER__ && window.__NV_WA_TRACKER__ === "v2") ||

@@ -1,5 +1,5 @@
 /* =========================
-   NEUROVA — Gallery Aesthetic v1.1
+   NEUROVA Ã¢â‚¬â€ Gallery Aesthetic v1.1
    Scope: body[data-page="galeri"]
    ========================= */
 
@@ -503,7 +503,7 @@ body[data-page="galeri"] .nv-wa p {
   }
 }
 
-/* ===== Modal styling (YT + IMG) — page-scoped ===== */
+/* ===== Modal styling (YT + IMG) Ã¢â‚¬â€ page-scoped ===== */
 body[data-page="galeri"] .nv-ytbox,
 body[data-page="galeri"] .nv-imgbox {
   position: fixed;
@@ -620,31 +620,31 @@ body[data-page="galeri"] .nv-imgbox__nav--next {
   }
 }
 
-/* ===== Z-INDEX HIERARCHY FIX — NEUROVA ===== */
+/* ===== Z-INDEX HIERARCHY FIX Ã¢â‚¬â€ NEUROVA ===== */
 
 /* dekoratif arka plan EN ALTA */
 body[data-page="galeri"]::before {
   z-index: 0;
 }
 
-/* hero background sadece görsel */
+/* hero background sadece gÃƒÂ¶rsel */
 body[data-page="galeri"] .nv-hero--gallery .nv-hero-bg {
   z-index: 0;
 }
 
-/* hero içeriği */
+/* hero iÃƒÂ§eriÃ„Å¸i */
 body[data-page="galeri"] .nv-hero-inner {
   position: relative;
   z-index: 2;
 }
 
-/* sayfa içeriği */
+/* sayfa iÃƒÂ§eriÃ„Å¸i */
 body[data-page="galeri"] .nv-page {
   position: relative;
   z-index: 1;
 }
 
-/* navigation her zaman üstte */
+/* navigation her zaman ÃƒÂ¼stte */
 #nv-nav-slot,
 nav,
 .nv-nav {
@@ -668,7 +668,7 @@ body[data-page="galeri"] .nv-hero-inner {
     inset 0 0 0 1px rgba(255, 255, 255, .45);
 }
 
-/* ===== NAV CLICK FIX — FORCE TOP ===== */
+/* ===== NAV CLICK FIX Ã¢â‚¬â€ FORCE TOP ===== */
 
 #nv-nav-slot,
 #nv-nav-slot * {
@@ -683,12 +683,12 @@ nav,
   z-index: 10000 !important;
 }
 
-/* Galeri dekoratif katmanları nav alanına girmesin */
+/* Galeri dekoratif katmanlarÃ„Â± nav alanÃ„Â±na girmesin */
 body[data-page="galeri"]::before {
   top: var(--nv-nav-h, 72px);
 }
 
-/* ===== BEFORE / AFTER — INTERACTION FIX ===== */
+/* ===== BEFORE / AFTER Ã¢â‚¬â€ INTERACTION FIX ===== */
 
 body[data-page="galeri"] .nv-ba-frame {
   position: relative;
@@ -709,9 +709,9 @@ body[data-page="galeri"] .nv-ba-handle {
   z-index: 4;
 }
 
-/* BEFORE/AFTER — subtle hint */
+/* BEFORE/AFTER Ã¢â‚¬â€ subtle hint */
 body[data-page="galeri"] .nv-ba-frame::after {
-  content: "← Kaydır →";
+  content: "Ã¢â€ Â KaydÃ„Â±r Ã¢â€ â€™";
   position: absolute;
   left: 50%;
   bottom: 44px;
