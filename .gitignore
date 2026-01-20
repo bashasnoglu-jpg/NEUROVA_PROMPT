@@ -49,3 +49,7 @@ C__dev_NEUROVA_PROMPT_FRESH_*dizini*.html
 __resp.html
 
 __resp.html
+
+# NEUROVA_SITE__ACTIVE local build artifacts
+NEUROVA_SITE__ACTIVE/**/node_modules/
+NEUROVA_SITE__ACTIVE/_ops/numbered/
