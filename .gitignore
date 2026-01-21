@@ -46,3 +46,7 @@ __ops/
 # backups
 *.bak3
 
+
+# local scratch
+NEUROVA_SITE__ACTIVE/assets/*.ps1
+
