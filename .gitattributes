@@ -1,6 +1,5 @@
 # NEUROVA: canonical text normalization
 * text=auto eol=lf
-
 # Code / content
 *.html text eol=lf
 *.css  text eol=lf
@@ -11,7 +10,6 @@
 *.txt  text eol=lf
 *.svg  text eol=lf
 *.ps1  text eol=lf
-
 # Binary assets (never normalize)
 *.png  -text
 *.jpg  -text
@@ -28,3 +26,4 @@
 *.mp3  -text
 *.mp4  -text
 *.webm -text
+NEUROVA_SITE__ACTIVE/*.ps1 filter=lfs diff=lfs merge=lfs -text
