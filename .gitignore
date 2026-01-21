@@ -34,3 +34,7 @@ __ops/
 NEUROVA_SITE__ACTIVE/_ops/_mojibake_backup_*/
 __ops/
 ~$*
+
+# mojibake backups
+*.bak3
+
