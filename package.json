@@ -7,7 +7,7 @@
     "quality:gate": "node tools/quality-gate.mjs",
     "export:prompts": "node tools/export-prompts.mjs",
     "check:syntax": "node --check app.js main.js",
-    "dev": "node server/index.cjs",
+    "dev": "node NEUROVA_SITE__ACTIVE/tr/server.js",
     "nv:verify": "node tools/nv-verify.js",
     "nv:selftest": "node tools/nv-selftest.js",
     "test": "jest"
@@ -20,3 +20,4 @@
     "jest-environment-jsdom": "^29.7.0"
   }
 }
+
