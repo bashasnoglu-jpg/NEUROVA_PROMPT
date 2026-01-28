@@ -8,8 +8,8 @@
 ## 1. Tek kısayol dosyası
 
 - Masaüstüne iki kısayol sabitleyin:
-  1. **NEUROVA Prompt (Kullanım)** → `http://127.0.0.1:5500/prompt-library.html`
-  2. **NEUROVA Prompt (QA / Yönetici)** → `http://127.0.0.1:5500/prompt-library.html?qa=1`
+  1. **SANTIS Prompt (Kullanım)** → `http://127.0.0.1:5500/prompt-library.html`
+  2. **SANTIS Prompt (QA / Yönetici)** → `http://127.0.0.1:5500/prompt-library.html?qa=1`
 - Kısayol adlarını kısaltarak, kullanıcıların doğru moda yanlışlıkla geçmesini engelleyebilirsin.
 
 ## 2. 30 saniyelik gün başı kontrolü

@@ -1,6 +1,6 @@
-# NEUROVA Prompt Style Guide (v1.0)
+# SANTIS Prompt Style Guide (v1.0)
 
-## Quiet Luxury / NEUROVA LOOK
+## Quiet Luxury / SANTIS LOOK
 - Marble / brass / muted neutrals.
 - Ambient diffusion + low-motion pacing.
 - Language: "guide", "wrap", "support", "steady"; keep all verbs intention-driven.
@@ -14,9 +14,9 @@
 
 ## Quality & Export
 - Run `npm run quality:gate` before every publish; results live in `exports/quality-report.*`.
-- Use `npm run export:prompts` to refresh `exports/neurova-prompts.*` for catalogs.
+- Use `npm run export:prompts` to refresh `exports/santis-prompts.*` for catalogs.
 - Print panel is meant for quick briefs; open via top-right Print Panel button (A4-friendly header/footer included).
 
 ## Reference Assets
-- `assets/NEUROVA_REFERANS.md` contains the default tone blocks (Hamam kese, kids safe note wording, NEUROVA Look reminders).
+- `assets/SANTIS_REFERANS.md` contains the default tone blocks (Hamam kese, kids safe note wording, SANTIS Look reminders).
 - Link to this guide when building new packs: `docs/pack-checklist.md` lists required fields + safe note examples.

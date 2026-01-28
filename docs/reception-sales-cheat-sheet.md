@@ -1,4 +1,4 @@
-# NEUROVA Resepsiyon Satış Cheat Sheet (v1.0)
+# SANTIS Resepsiyon Satış Cheat Sheet (v1.0)
 
 ## TR (tek sayfa)
 - **Mantık:** Entry = hızlı reset; Value = daha derin rahatlama; Premium = tam kaçış/suite hissi.

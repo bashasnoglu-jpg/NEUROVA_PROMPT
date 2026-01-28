@@ -1,4 +1,4 @@
-# Neurova Pack Checklist
+# Santis Pack Checklist
 
 - **2 dakikalık acil kontrol:** ID benzersiz mi? `lang.tr`/`lang.en` dolu mu? SafeNote gerekli kategoride var mı? Tag'ler slug (ascii) mi? `npm run nv:guard` → PASS mı?
 - **Zorunlu alanlar:** `id`, `category`, `role`, `title`, `lang.tr`, `lang.en`, `tags` (dizi). `safeNote` opsiyonel ama bazı kategorilerde mecburi.

@@ -1,4 +1,4 @@
-# NEUROVA_PROMPT (NEUROVA İstemleri)
+# SANTIS_PROMPT (SANTIS İstemleri)
 
 README now documents the preview/checklist flow, root `package.json` declares the hygiene scripts, and `tools/nv-asset-hygiene.mjs` runs them so “missing script” failures should go away (README.md, package.json, tools/nv-asset-hygiene.mjs). Scope: docs + CI scripting only — no runtime behavior changes.
 

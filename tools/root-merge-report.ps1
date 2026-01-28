@@ -105,7 +105,7 @@ function DupReport($index, $label) {
   W ""
 }
 
-W "NEUROVA ROOT+MERGE REPORT v1.0"
+W "SANTIS ROOT+MERGE REPORT v1.0"
 W ("Timestamp: " + (Get-Date).ToString("s"))
 W ""
 W ("A: $RootA")

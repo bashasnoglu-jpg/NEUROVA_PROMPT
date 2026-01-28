@@ -1,4 +1,4 @@
-# A6 QR + PWA UI COPY — Neurova Ops
+# A6 QR + PWA UI COPY — Santis Ops
 
 ## A) A6 QR Sticker Baskı Metni (Standart)
 
@@ -13,7 +13,7 @@
 ### A.2 Ortak şablon (A6)
 
 * ÜST (Header):
-  * `NEUROVA OPS`
+  * `SANTIS OPS`
   * `WC Kontrol / Restroom Check`
 * ORTA (Zone):
   * `Z{zone} — {zoneName}`

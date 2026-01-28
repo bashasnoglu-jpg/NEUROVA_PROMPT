@@ -1,4 +1,4 @@
-# MOBILE INTEGRATION — Neurova Ops PWA & Task Link v1.0
+# MOBILE INTEGRATION — Santis Ops PWA & Task Link v1.0
 
 ## 1) Amaç ve Kapsam
 
@@ -271,7 +271,7 @@ Go-Live öncesi:
 
 QR etiketi metni **tek format**:
 
-* Üst satır: `NEUROVA OPS`
+* Üst satır: `SANTIS OPS`
 * Orta: `WC Kontrol — Z{zone}`
 * Alt: `Scan → Task Card`
 
@@ -410,7 +410,7 @@ Bu endpointler PWA’deki `logs` ve `dashboard` kartlarını besler; UI copy ana
 
 ### Node/Express (Vercel/Render/Fly)
 
-* Base URL: `https://ops.neurova.com/task-card`
+* Base URL: `https://ops.santis.com/task-card`
 * Query format: `/task-card?event={EVENT}&zone={ZONE}&ts={unix}&sig={hmac}`
 * Sig/Ts: `&ts={unix}&sig={hmac}` (HMAC(secret, event|zone|ts), TTL=24h)
 * Zones: Z1 = Lobby WC, Z2 = Spa WC, Z3 = Gym WC, Z4 = Pool WC

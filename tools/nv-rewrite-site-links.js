@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const f = path.join(process.cwd(), "NEUROVA_SITE", "nav.html");
+const f = path.join(process.cwd(), "SANTIS_SITE", "nav.html");
 if (!fs.existsSync(f)) {
-  console.log("SKIP: NEUROVA_SITE/nav.html not found");
+  console.log("SKIP: SANTIS_SITE/nav.html not found");
   process.exit(0);
 }
 
@@ -19,11 +19,11 @@ function escapeForRegExp(s){
 
 for (const p of pages) {
   const safe = escapeForRegExp(p);
-  const re = new RegExp("(href\\s*=\\s*[\"'])(?:\\/)?(?:NEUROVA_SITE\\/)?"+safe+"([\"'])", "gi");
+  const re = new RegExp("(href\\s*=\\s*[\"'])(?:\\/)?(?:SANTIS_SITE\\/)?"+safe+"([\"'])", "gi");
   t = t.replace(re, `$1./${p}$2`);
 }
 
-t = t.replace(/(src|href)\s*=\s*["']\/NEUROVA_SITE\/(assets\/[^"']+)["']/gi, `$1="./$2"`);
+t = t.replace(/(src|href)\s*=\s*["']\/SANTIS_SITE\/(assets\/[^"']+)["']/gi, `$1="./$2"`);
 
 fs.writeFileSync(f, t, "utf8");
-console.log("OK: rewrote links in NEUROVA_SITE/nav.html");
+console.log("OK: rewrote links in SANTIS_SITE/nav.html");

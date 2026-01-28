@@ -1,0 +1,1294 @@
+<!--
+  SANTIS | FACE - SOTHYS (OPTIMIZED v2.0 - ACCORDION)
+  ----------------------------------------
+  1. KANONIK KATEGORİLER: Cilt Analizi & Klasik, Nem & Bariyer, Glow & Şehir Detoks, Youth Anti-Age, Prestige, Men.
+  2. DUPLICATE TEMİZLİĞİ: Tekrarlanan Express Glow kaldırıldı.
+  3. MEN EKLENDİ: Eksik olan Men Facial kategorisi eklendi.
+  4. UI/UX: İki katmanlı yapı (Kategori -> Programlar). Accordion paneller.
+  5. KOD TEMİZLİĞİ: Dev scriptler kaldırıldı, inline stiller azaltıldı.
+  6. I18N: data-lang="tr", data-lang-mode="bi" korundu. Kart metinleri rafine edildi.
+  7. ASSETS: Mevcut data-nv-asset yapısı korundu ve optimize edildi.
+  8. ERİŞİLEBİLİRLİK: aria-expanded/controls ile erişilebilir accordion.
+-->
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr" data-lang-mode="bi">
+
+<head>
+  <script src="./assets/nv-assets.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Face – Sothys — SANTIS</title>
+  
+  <meta name="description" content="Sothys uzmanlığı ile profesyonel yüz bakımları: nem, glow, youth ve prestige kategorileri. WhatsApp ile rezervasyon." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#34393D" />
+  <link rel="canonical" href="./face-sothys.html" />
+  <meta property="og:site_name" content="SANTIS" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Face – Sothys — SANTIS" />
+  <meta property="og:description" content="Sothys uzmanlığı ile profesyonel yüz bakımları: nem, glow, youth ve prestige kategorileri. WhatsApp ile rezervasyon." />
+  <meta property="og:url" content="./face-sothys.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Face – Sothys — SANTIS" />
+  <meta name="twitter:description" content="Sothys uzmanlığı ile profesyonel yüz bakımları: nem, glow, youth ve prestige kategorileri. WhatsApp ile rezervasyon." />
+<link rel="icon" href="./assets/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="./assets/base.css" />
+  <link rel="stylesheet" href="./assets/nav.css" />
+  <link rel="stylesheet" href="./assets/page.css" />
+  <link rel="stylesheet" href="./assets/paketler.css" />
+  <link rel="stylesheet" href="./assets/heatmap.css" />
+  <link rel="stylesheet" href="./assets/visual-templates.css" />
+  <link rel="stylesheet" href="./assets/nv-cards.css" />
+
+  <style>
+    .nv-mt-24 { margin-top: 24px; }
+    .nv-list-cols-2 { columns: 2; column-gap: 40px; }
+    @media (max-width: 720px) { .nv-list-cols-2 { columns: 1; } }
+    
+    /* Accordion Styles */
+    .nv-cat-btn { width: 100%; margin-top: 10px; }
+    .nv-cat-btn.is-open { opacity: .92; }
+    .nv-acc-panel { overflow: clip; border-radius: 18px; opacity: 0; transform: translateY(6px); transition: opacity .24s ease, transform .24s ease; }
+    .nv-acc-panel[hidden] { display: none !important; }
+    .nv-acc-panel.is-open { opacity: 1; transform: translateY(0); }
+    .nv-acc-panels { padding-top: 0; }
+    
+    @media (prefers-reduced-motion: reduce){
+      .nv-acc-panel { transition: none; }
+    }
+
+    /* Clickable Category Card */
+    .nv-cat[role="button"] { cursor: pointer; }
+    .nv-cat[role="button"]:focus-visible {
+      outline: 2px solid rgba(159,159,159,.6);
+      outline-offset: 4px;
+      border-radius: 18px;
+    }
+
+    /* Bottom nav inside panels */
+    .nv-acc-panel > .nv-anchorbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      border-top: 1px solid var(--nv-line);
+    }
+
+    /* Active category card highlight */
+    .nv-cat.is-active {
+      outline: 1px solid rgba(159,159,159,.55);
+      box-shadow: 0 0 0 6px rgba(159,159,159,.06);
+    }
+    .nv-cat.is-active .nv-badge {
+      filter: brightness(1.05);
+    }
+
+    /* =========================================
+       SANTIS STYLE OVERRIDES (Quiet Luxury)
+       ========================================= */
+
+    /* Nav Contrast & Ghost Button */
+    [data-nv-global="nav"] {
+      position: sticky; top: 0; z-index: 999;
+      background: rgba(44,47,50,.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    header [data-nv-global="nav"] .nv-cta,
+    header [data-nv-global="nav"] a[data-wa="1"] {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #F2F2F2;
+      padding: 0.5rem 1.1rem;
+      margin-left: 0.5rem;
+      opacity: 1;
+    }
+    header [data-nv-global="nav"] .nv-cta:hover,
+    header [data-nv-global="nav"] a[data-wa="1"]:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-1px);
+    }
+
+    /* Hero & Buttons */
+    body[data-page="face-sothys"] .nv-hero {
+      background-color: #1a1a1a;
+      color: #f2f2f2;
+      border: none;
+    }
+    body[data-page="face-sothys"] .nv-hero-bg { opacity: 0.6; }
+    body[data-page="face-sothys"] .nv-hero h1 { color: #fff; }
+    body[data-page="face-sothys"] .nv-hero p { color: rgba(255,255,255,0.9); }
+
+    .nv-cta::after {
+      content: "\2192"; display: inline-block; margin-left: .55rem;
+      font-size: 1em; line-height: 1; opacity: .85;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+    .nv-cta:hover::after { transform: translateX(2px); opacity: 1; }
+    .nv-wa-link::after { content: ""; margin: 0; }
+
+    /* Card Button Minimalist */
+    .nv-card .nv-cta {
+      padding: .6rem 1rem; font-size: .72rem; letter-spacing: .10em;
+      box-shadow: none; border-color: rgba(255,255,255,.12);
+    }
+    .nv-card .nv-cta:hover { transform: translateY(-1px); box-shadow: none; }
+  </style>
+</head>
+
+<body data-lang="tr" data-lang-mode="bi" data-page="face-sothys" data-tier="value" data-year="2026">
+  <!-- GLOBAL NAV -->
+  <div data-nv-global="nav" data-nv-vars="page:face,lang:tr"></div>
+
+  <!-- HERO -->
+  <section class="nv-hero" id="hero" data-nv-section="hero" data-section="face-hero">
+      <img data-nv-asset="nv_face_hero_16x9_v1" alt="" aria-hidden="true" class="nv-hero-bg">
+      <h1>Face &amp; Skincare</h1>
+      <p>Sothys uzmanlığı ile cildinize özel çözümler. Nem, ışıltı ve gençlik odaklı profesyonel bakımlar.</p>
+
+      <div class="nv-hero-actions">
+        <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>Rezervasyon Yap</a>
+        <a class="nv-cta nv-cta-ghost" href="#face-cats">Bakımları İncele</a>
+      </div>
+    </section>
+
+  <main class="nv-main">
+    <!-- CATEGORY GRID (Tier-1) -->
+    <section class="nv-pack-section" id="face-cats" data-family="Face Kategorileri" data-section="face-programs">
+      <div class="nv-shell">
+        <header class="nv-pack-header">
+          <h2>Yüz Bakım Kategorileri</h2>
+          <p>Önce kategoriyi seçin, ardından programları açın.</p>
+        </header>
+
+        <div class="nv-card-grid nv-cat-grid">
+
+          <!-- CLASSIC -->
+          <article class="nv-card nv-tier-value nv-cat" data-cat="classic">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="CLASSIC"
+                 data-title-tr="Cilt Analizi &amp; Klasik" data-sub-tr="Dengeli başlangıç, konforlu akış."
+                 data-title-en="Consultation &amp; Classic" data-sub-en="A balanced, comfortable start.">
+              <img data-nv-asset="nv_face_card-cat-01_1x1_v1" loading="lazy" decoding="async" alt="Cilt Analizi & Klasik">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">CLASSIC</div>
+                  <div class="nv-vtitle" data-i18n="title">Cilt Analizi &amp; Klasik</div>
+                  <div class="nv-vsub" data-i18n="sub">Dengeli başlangıç, konforlu akış.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Cilt Analizi &amp; Klasik</h3>
+            <p class="nv-meta"><b>Odak:</b> analiz, temel bakım, konfor.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-classic">Programları Aç</button>
+          </article>
+
+          <!-- HYDRA -->
+          <article class="nv-card nv-tier-value nv-cat" data-cat="hydra">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="HYDRA"
+                 data-title-tr="Nem &amp; Bariyer" data-sub-tr="Dolgun nem, sakin cilt hissi."
+                 data-title-en="Hydration &amp; Barrier" data-sub-en="Plump hydration, calm feel.">
+              <img data-nv-asset="nv_face_card-cat-02_1x1_v1" loading="lazy" decoding="async" alt="Nem & Bariyer">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">HYDRA</div>
+                  <div class="nv-vtitle" data-i18n="title">Nem &amp; Bariyer</div>
+                  <div class="nv-vsub" data-i18n="sub">Dolgun nem, sakin cilt hissi.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Nem &amp; Bariyer</h3>
+            <p class="nv-meta"><b>Odak:</b> Hydra3Ha, Spa Thermal, Organics.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-hydra">Programları Aç</button>
+          </article>
+
+          <!-- GLOW -->
+          <article class="nv-card nv-tier-value nv-cat" data-cat="glow">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="GLOW"
+                 data-title-tr="Glow &amp; Şehir Detoks" data-sub-tr="Daha aydınlık, daha canlı bitiş."
+                 data-title-en="Glow &amp; City Detox" data-sub-en="Brighter, fresher finish.">
+              <img data-nv-asset="nv_face_card-cat-03_1x1_v1" loading="lazy" decoding="async" alt="Glow & Şehir Detoks">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">GLOW</div>
+                  <div class="nv-vtitle" data-i18n="title">Glow &amp; Şehir Detoks</div>
+                  <div class="nv-vsub" data-i18n="sub">Daha aydınlık, daha canlı bitiş.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Glow &amp; Şehir Detoks</h3>
+            <p class="nv-meta"><b>Odak:</b> DX Glow, City Glow, Express Glow.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-glow">Programları Aç</button>
+          </article>
+
+          <!-- YOUTH -->
+          <article class="nv-card nv-tier-value nv-cat" data-cat="youth">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="YOUTH"
+                 data-title-tr="Youth Anti-Age" data-sub-tr="Daha dinlenmiş görünüm, toparlanmış his."
+                 data-title-en="Youth Anti-Age" data-sub-en="Rested look, lifted feel.">
+              <img data-nv-asset="nv_face_card-cat-04_1x1_v1" loading="lazy" decoding="async" alt="Youth Anti-Age">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">YOUTH</div>
+                  <div class="nv-vtitle" data-i18n="title">Youth Anti-Age</div>
+                  <div class="nv-vsub" data-i18n="sub">Daha dinlenmiş görünüm, toparlanmış his.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Youth Anti-Age</h3>
+            <p class="nv-meta"><b>Odak:</b> Youth Intensive, Youth Eye.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-youth">Programları Aç</button>
+          </article>
+
+          <!-- PRESTIGE -->
+          <article class="nv-card nv-tier-premium nv-cat" data-cat="prestige">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="PRESTIGE"
+                 data-title-tr="Secrets Prestige" data-sub-tr="Premium ritüel, sessiz ışıltı."
+                 data-title-en="Secrets Prestige" data-sub-en="Premium ritual, quiet radiance.">
+              <img data-nv-asset="nv_face_card-cat-05_1x1_v1" loading="lazy" decoding="async" alt="Secrets Prestige">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">PRESTIGE</div>
+                  <div class="nv-vtitle" data-i18n="title">Secrets Prestige</div>
+                  <div class="nv-vsub" data-i18n="sub">Premium ritüel, sessiz ışıltı.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Secrets Prestige</h3>
+            <p class="nv-meta"><b>Odak:</b> Secrets Prestige Ritual.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-prestige">Programları Aç</button>
+          </article>
+
+          <!-- MEN -->
+          <article class="nv-card nv-tier-value nv-cat" data-cat="men">
+            <div class="nv-vcard nv-media nv-media-1x1" data-role="MEN"
+                 data-title-tr="Men" data-sub-tr="Pratik, net ve etkili akış."
+                 data-title-en="Men" data-sub-en="Practical, clean, effective flow.">
+              <img data-nv-asset="nv_face_card-cat-06_1x1_v1" loading="lazy" decoding="async" alt="Men Yüz Bakımı">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">MEN</div>
+                  <div class="nv-vtitle" data-i18n="title">Men</div>
+                  <div class="nv-vsub" data-i18n="sub">Pratik, net ve etkili akış.</div>
+                </div>
+              </div>
+            </div>
+            <h3><span class="nv-badge">KATEGORİ</span> Men</h3>
+            <p class="nv-meta"><b>Odak:</b> Men Facial.</p>
+            <button class="nv-cta nv-cat-btn" type="button" data-nv-acc-btn aria-expanded="false" aria-controls="panel-men">Programları Aç</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PANELS (Tier-2: Program cards) -->
+    <section class="nv-pack-section nv-acc-panels" aria-label="Kategori Programları" data-section="face-accordions">
+      <div class="nv-shell">
+
+        <!-- PANEL: CLASSIC -->
+        <section class="nv-acc-panel" id="panel-classic" data-
+            <h2>Cilt Analizi &amp; Klasik</h2>
+            <p>İlk görüşmeden günlük bakım rutinine kadar net bir başlangıç.</p>
+            <div class="nv-anchorbar" style="margin-top:10px;">
+              <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+              <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-hydra" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+            </div>
+          </header>
+          <div class="nv-card-grid">
+        <!-- Skin Consultation -->
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="ANALYSIS"
+               data-title-tr="Skin Consultation"
+               data-sub-tr="Kısa cilt analizi ve hedef belirleme."
+               data-title-en="Skin Consultation"
+               data-sub-en="Brief skin analysis and goal setting.">
+            <img data-nv-asset="nv_face_card-cat-01_1x1_v1" loading="lazy" decoding="async" alt="Skin Consultation">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">ANALYSIS</div>
+                <div class="nv-vtitle" data-i18n="title">Skin Consultation</div>
+                <div class="nv-vsub" data-i18n="sub">Kısa cilt analizi ve hedef belirleme.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-skin-consultation" 
+             data-nv-category="face" 
+             data-nv-title="Skin Consultation" 
+             data-nv-subtitle="Analiz" 
+             data-nv-intensity="1" 
+             data-nv-goal="analysis" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Skin Consultation</h3>
+              <h4 class="nv-card-subtitle">Analiz</h4>
+              <p class="nv-card-desc">Kısa cilt analizi ve hedef belirleme. İlk kez Sothys deneyimleyenler için net plan ve rahat başlangıç.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">ANALİZ</span> Skin Consultation</h3>
+          <p class="nv-meta"><b>Kimler için:</b> İlk kez Sothys, hedef net değil.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Net plan ve rahat başlangıç.</p>
+          <ul class="nv-list">
+            <li>Kısa cilt analizi</li>
+            <li>Hedef belirleme: nem / glow / konfor</li>
+            <li>Bakım önerisi</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-skin-consultation.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classic Sothys Facial -->
+        <article class="nv-card nv-tier-value" data-tier="Value">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="CLASSIC"
+               data-title-tr="Classic Sothys Facial"
+               data-sub-tr="Temizleme, tonik, maske ve masaj."
+               data-title-en="Classic Sothys Facial"
+               data-sub-en="Cleansing, tonic, mask, and massage.">
+            <img data-nv-asset="nv_face_card-cat-01_1x1_v1" loading="lazy" decoding="async" alt="Classic Sothys">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">CLASSIC</div>
+                <div class="nv-vtitle" data-i18n="title">Classic Sothys Facial</div>
+                <div class="nv-vsub" data-i18n="sub">Temizleme, tonik, maske ve masaj.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-classic-sothys-facial" 
+             data-nv-category="face" 
+             data-nv-title="Classic Sothys Facial" 
+             data-nv-subtitle="Klasik" 
+             data-nv-intensity="2" 
+             data-nv-goal="balance" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Classic Sothys Facial</h3>
+              <h4 class="nv-card-subtitle">Klasik</h4>
+              <p class="nv-card-desc">Temizleme, tonik, maske ve masaj. Dengeli bakım isteyenler için temiz, nemli ve konforlu bir cilt.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">KLASİK</span> Classic Sothys Facial</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Dengeli bakım isteyenler.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Temiz, nemli, konforlu cilt.</p>
+          <ul class="nv-list">
+            <li>Temizleme + tonik</li>
+            <li>Maske + masaj</li>
+            <li>Konfor kapanışı</li>
+          </ul>
+          <p class="nv-upgrade"><b>Upgrade:</b> Eye / neck add-on</p>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-classic-sothys-facial.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="GLOW"
+               data-title-tr="Express Glow"
+               data-sub-tr="Kısa temizleme, hızlı maske ve nem."
+               data-title-en="Express Glow"
+               data-sub-en="Quick cleanse, fast mask, and hydration.">
+            <img data-nv-asset="nv_face_card-cat-03_1x1_v1" loading="lazy" decoding="async" alt="Express Glow">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">GLOW</div>
+                <div class="nv-vtitle" data-i18n="title">Express Glow</div>
+                <div class="nv-vsub" data-i18n="sub">Kısa temizleme, hızlı maske ve nem.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-express-glow" 
+             data-nv-category="face" 
+             data-nv-title="Express Glow" 
+             data-nv-subtitle="Hızlı" 
+             data-nv-intensity="1" 
+             data-nv-goal="glow" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Express Glow</h3>
+              <h4 class="nv-card-subtitle">Hızlı</h4>
+              <p class="nv-card-desc">Kısa temizleme, hızlı maske ve nem. Zamanı az olanlar için taze ve canlı görünüm.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">HIZLI</span> Express Glow</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Zamanı az, etkisi net bakım.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Taze ve canlı görünüm.</p>
+          <ul class="nv-list">
+            <li>Kısa temizleme</li>
+            <li>Hızlı maske</li>
+            <li>Nem kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-express-glow.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sensitive Comfort -->
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="COMFORT"
+               data-title-tr="Sensitive Comfort"
+               data-sub-tr="Nazik temizleme ve konfor odaklı maske."
+               data-title-en="Sensitive Comfort"
+               data-sub-en="Gentle cleansing and comfort-focused mask.">
+            <img data-nv-asset="nv_face_card-cat-04_1x1_v1" loading="lazy" decoding="async" alt="Sensitive Comfort">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">COMFORT</div>
+                <div class="nv-vtitle" data-i18n="title">Sensitive Comfort</div>
+                <div class="nv-vsub" data-i18n="sub">Nazik temizleme ve konfor odaklı maske.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-sensitive-comfort" 
+             data-nv-category="face" 
+             data-nv-title="Sensitive Comfort" 
+             data-nv-subtitle="Konfor" 
+             data-nv-intensity="1" 
+             data-nv-goal="relax" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Sensitive Comfort</h3>
+              <h4 class="nv-card-subtitle">Konfor</h4>
+              <p class="nv-card-desc">Nazik temizleme ve konfor odaklı maske. Hassasiyet eğilimi olanlar için sakin ve yumuşak cilt hissi.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">KONFOR</span> Sensitive Comfort</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Hassasiyet eğilimi.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Sakin, yumuşak cilt hissi.</p>
+          <ul class="nv-list">
+            <li>Nazik temizleme</li>
+            <li>Konfor odak maske</li>
+            <li>Minimalist kapanış</li>
+          </ul>
+          <p class="nv-upgrade"><b>Not:</b> Ürün seçimi hassasiyete göre yapılır.</p>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-sensitive-comfort.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Purifying Balance (4. program – kanonik 4’lü tamamlamak için) -->
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="BALANCE"
+               data-title-tr="Purifying Balance"
+               data-sub-tr="Daha dengeli bir görünüm için arındırıcı kısa akış."
+               data-title-en="Purifying Balance"
+               data-sub-en="A clarifying short flow for a more balanced look.">
+            <img data-nv-asset="nv_face_card-cat-01_1x1_v1" loading="lazy" decoding="async" alt="Purifying Balance">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">BALANCE</div>
+                <div class="nv-vtitle" data-i18n="title">Purifying Balance</div>
+                <div class="nv-vsub" data-i18n="sub">Daha dengeli bir görünüm için arındırıcı kısa akış.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-purifying-balance" 
+             data-nv-category="face" 
+             data-nv-title="Purifying Balance" 
+             data-nv-subtitle="Denge" 
+             data-nv-intensity="2" 
+             data-nv-goal="detox" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Purifying Balance</h3>
+              <h4 class="nv-card-subtitle">Denge</h4>
+              <p class="nv-card-desc">Daha dengeli bir görünüm için arındırıcı kısa akış. Parlama ve tıkanıklık hissi için hafif ve temiz sonuç.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">DENGE</span> Purifying Balance</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Parlama / tıkanıklık hissi.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Hafif, temiz, dengeli.</p>
+          <ul class="nv-list">
+            <li>Arındırıcı temizleme</li>
+            <li>Hafif maske</li>
+            <li>Denge kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-purifying-balance.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-hydra" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+          </div>
+        </section>
+
+        <!-- PANEL: HYDRA -->
+        <section class="ne
+            <h2>Nem &amp; Bariyer</h2>
+            <p>Dolgun nem ve sakin konfor hissi.</p>
+          </header>
+          <div class="nv-card-grid">
+        <article class="nv-card nv-tier-value" data-tier="Value">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="HYDRA"
+               data-title-tr="Hydra3Ha"
+               data-sub-tr="Nem odak serum, maske ve masaj ritmi."
+               data-title-en="Hydra3Ha"
+               data-sub-en="Hydration serum, mask, and massage rhythm.">
+            <img data-nv-asset="nv_face_card-cat-02_1x1_v1" loading="lazy" decoding="async" alt="Hydra3Ha">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">HYDRA</div>
+                <div class="nv-vtitle" data-i18n="title">Hydra3Ha</div>
+                <div class="nv-vsub" data-i18n="sub">Nem odak serum, maske ve masaj ritmi.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-hydra3ha" 
+             data-nv-category="face" 
+             data-nv-title="Hydra3Ha" 
+             data-nv-subtitle="Nem" 
+             data-nv-intensity="2" 
+             data-nv-goal="relax" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Hydra3Ha</h3>
+              <h4 class="nv-card-subtitle">Nem</h4>
+              <p class="nv-card-desc">Nem odaklı serum, maske ve masaj ritmi. Kuruluk ve matlık hissi için dolgun nem ve konfor.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">NEM</span> Hydra3Ha</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Kuruluk, matlık hissi.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Dolgun nem, konfor.</p>
+          <ul class="nv-list">
+            <li>Nem odak serum + maske</li>
+            <li>Masaj ritmi</li>
+            <li>Nem kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-hydra3ha.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="nv-card nv-tier-value" data-tier="Value">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="THERMAL"
+               data-title-tr="Spa Thermal"
+               data-sub-tr="Yatıştırıcı akış, maske ve kapanış."
+               data-title-en="Spa Thermal"
+               data-sub-en="Soothing flow, mask, and closing.">
+            <img data-nv-asset="nv_face_card-cat-02_1x1_v1" loading="lazy" decoding="async" alt="Spa Thermal">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">THERMAL</div>
+                <div class="nv-vtitle" data-i18n="title">Spa Thermal</div>
+                <div class="nv-vsub" data-i18n="sub">Yatıştırıcı akış, maske ve kapanış.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-spa-thermal" 
+             data-nv-category="face" 
+             data-nv-title="Spa Thermal" 
+             data-nv-subtitle="Termal" 
+             data-nv-intensity="1" 
+             data-nv-goal="relax" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Spa Thermal</h3>
+              <h4 class="nv-card-subtitle">Termal</h4>
+              <p class="nv-card-desc">Yatıştırıcı akış, maske ve kapanış. Konfor arayan ciltler için sakin ve dengeli bir deneyim.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">TERMAL</span> Spa Thermal</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Konfor arayan cilt.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Sakin ve dengeli.</p>
+          <ul class="nv-list">
+            <li>Yatıştırıcı akış</li>
+            <li>Maske + kapanış</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-spa-thermal.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-3x2"
+               data-role="ORGANIC"
+               data-title-tr="Organics"
+               data-sub-tr="Nazik temizleme ve hafif maske."
+               data-title-en="Organics"
+               data-sub-en="Gentle cleansing and light mask.">
+            <img data-nv-asset="nv_face_highlight-01_3x2_v1" loading="lazy" decoding="async" alt="Organics">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">ORGANIC</div>
+                <div class="nv-vtitle" data-i18n="title">Organics</div>
+                <div class="nv-vsub" data-i18n="sub">Nazik temizleme ve hafif maske.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-organics" 
+             data-nv-category="face" 
+             data-nv-title="Organics" 
+             data-nv-subtitle="Organic" 
+             data-nv-intensity="1" 
+             data-nv-goal="relax" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Organics</h3>
+              <h4 class="nv-card-subtitle">Organic</h4>
+              <p class="nv-card-desc">Nazik temizleme ve hafif maske. Daha hafif doku tercihleri için temiz ve ferah bir bakım.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">ORGANIC</span> Organics</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Daha hafif doku tercihleri.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Temiz ve ferah.</p>
+          <ul class="nv-list">
+            <li>Nazik temizleme</li>
+            <li>Hafif maske</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-organics.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-glow" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+          </div>
+        </section>
+
+        <!-- PANEL: GLOW -->
+        <section class="nv-acc-panel" id="panel-glow" data-section="face-panel-glow" data-nv-acc-panel hidden>
+          <header class=G 
+            <p>Daha aydınlık ve canlı bir bitiş için.</p>
+          </header>
+          <div class="nv-card-grid">
+        <article class="nv-card nv-tier-value" data-tier="Value">
+          <div class="nv-vcard nv-media nv-media-3x2"
+               data-role="GLOW"
+               data-title-tr="DX Glow"
+               data-sub-tr="Işıltı odak serum, maske ve masaj akışı."
+               data-title-en="DX Glow"
+               data-sub-en="Radiance serum, mask, and massage flow.">
+            <img data-nv-asset="nv_face_highlight-02_3x2_v1" loading="lazy" decoding="async" alt="DX Glow">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">GLOW</div>
+                <div class="nv-vtitle" data-i18n="title">DX Glow</div>
+                <div class="nv-vsub" data-i18n="sub">Işıltı odak serum, maske ve masaj akışı.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-dx-glow" 
+             data-nv-category="face" 
+             data-nv-title="DX Glow" 
+             data-nv-subtitle="Glow" 
+             data-nv-intensity="2" 
+             data-nv-goal="glow" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">DX Glow</h3>
+              <h4 class="nv-card-subtitle">Glow</h4>
+              <p class="nv-card-desc">Işıltı odaklı serum, maske ve masaj akışı. Matlık ve şehir temposu için daha canlı bir görünüm.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">GLOW</span> DX Glow</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Matlık, şehir temposu.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Daha canlı görünüm.</p>
+          <ul class="nv-list">
+            <li>Işıltı odak serum + maske</li>
+            <li>Masaj akışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-dx-glow.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="CITY"
+               data-title-tr="City Glow"
+               data-sub-tr="Temizleme, hafif peeling ve glow kapanışı."
+               data-title-en="City Glow"
+               data-sub-en="Cleansing, light peeling, and glow finish.">
+            <img data-nv-asset="nv_face_card-cat-03_1x1_v1" loading="lazy" decoding="async" alt="City Glow">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">CITY</div>
+                <div class="nv-vtitle" data-i18n="title">City Glow</div>
+                <div class="nv-vsub" data-i18n="sub">Temizleme, hafif peeling ve glow kapanışı.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-city-glow" 
+             data-nv-category="face" 
+             data-nv-title="City Glow" 
+             data-nv-subtitle="City" 
+             data-nv-intensity="1" 
+             data-nv-goal="glow" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">City Glow</h3>
+              <h4 class="nv-card-subtitle">City</h4>
+              <p class="nv-card-desc">Temizleme, hafif peeling ve glow kapanışı. Şehir yorgunluğu için taze ve rahat bir bakım.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">CITY</span> City Glow</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Şehir yorgunluğu.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Taze ve rahat.</p>
+          <ul class="nv-list">
+            <li>Temizleme + hafif peeling</li>
+            <li>Glow kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-city-glow.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Express Glow (tek kez) -->
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="EXPRESS"
+               data-title-tr="Express Glow"
+               data-sub-tr="Kısa akış, nem ve glow bitiş."
+               data-title-en="Express Glow"
+               data-sub-en="Short flow, hydration, and glow finish.">
+            <img data-nv-asset="nv_face_card-cat-03_1x1_v1" loading="lazy" decoding="async" alt="Express Glow">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">EXPRESS</div>
+                <div class="nv-vtitle" data-i18n="title">Express Glow</div>
+                <div class="nv-vsub" data-i18n="sub">Kısa akış, nem ve glow bitiş.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-express-glow-2" 
+             data-nv-category="face" 
+             data-nv-title="Express Glow" 
+             data-nv-subtitle="Hızlı" 
+             data-nv-intensity="1" 
+             data-nv-goal="glow" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Express Glow</h3>
+              <h4 class="nv-card-subtitle">Hızlı</h4>
+              <p class="nv-card-desc">Kısa akış, nem ve glow bitiş. Hızlı tazeleme ve fresh görünüm.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">HIZLI</span> Express Glow</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Hızlı tazeleme.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Fresh görünüm.</p>
+          <ul class="nv-list">
+            <li>Kısa akış</li>
+            <li>Nem + glow bitiş</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-express-glow.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-youth" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+          </div>
+        </section>
+
+        <!-- PANEL: YOUTH -->
+        <section class="nv-acc-panel" id="panel-youth" data-section="face-panel-youth" data-nv-acc-panel hidden>
+          <header class="nv-pack-header">
+            <h2>Youth Anti-Age</h2>
+            <p>Daha dinlenmiş görünüm ve toparlanmış his.</p
+          <div class="nv-card-grid">
+        <article class="nv-card nv-tier-value" data-tier="Value">
+          <div class="nv-vcard nv-media nv-media-3x2"
+               data-role="YOUTH"
+               data-title-tr="Youth Intensive"
+               data-sub-tr="Serum, maske, masaj odak ve konfor kapanışı."
+               data-title-en="Youth Intensive"
+               data-sub-en="Serum, mask, massage focus, and comfort closing.">
+            <img data-nv-asset="nv_face_highlight-01_3x2_v1" loading="lazy" decoding="async" alt="Youth Intensive">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">YOUTH</div>
+                <div class="nv-vtitle" data-i18n="title">Youth Intensive</div>
+                <div class="nv-vsub" data-i18n="sub">Serum, maske, masaj odak ve konfor kapanışı.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-youth-intensive" 
+             data-nv-category="face" 
+             data-nv-title="Youth Intensive" 
+             data-nv-subtitle="Youth" 
+             data-nv-intensity="3" 
+             data-nv-goal="antiage" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Youth Intensive</h3>
+              <h4 class="nv-card-subtitle">Youth</h4>
+              <p class="nv-card-desc">Serum, maske, masaj odak ve konfor kapanışı. Yorgun görünüm ve elastikiyet hissi için daha dolu ve toparlanmış bir cilt.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">YOUTH</span> Youth Intensive</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Yorgun görünüm, elastikiyet hissi.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Daha dolu ve toparlanmış his.</p>
+          <ul class="nv-list">
+            <li>Serum + maske</li>
+            <li>Masaj odak</li>
+            <li>Konfor kapanışı</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-youth-intensive.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="nv-card nv-tier-entry" data-tier="Entry">
+          <div class="nv-vcard nv-media nv-media-1x1"
+               data-role="EYE"
+               data-title-tr="Youth Eye"
+               data-sub-tr="Göz çevresi odak, soğuk jel veya taş opsiyonu."
+               data-title-en="Youth Eye"
+               data-sub-en="Eye contour focus, cold gel or stone option.">
+            <img data-nv-asset="nv_face_card-cat-04_1x1_v1" loading="lazy" decoding="async" alt="Youth Eye">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">EYE</div>
+                <div class="nv-vtitle" data-i18n="title">Youth Eye</div>
+                <div class="nv-vsub" data-i18n="sub">Göz çevresi odak, soğuk jel veya taş opsiyonu.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-youth-eye" 
+             data-nv-category="face" 
+             data-nv-title="Youth Eye" 
+             data-nv-subtitle="Eye" 
+             data-nv-intensity="1" 
+             data-nv-goal="antiage" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Youth Eye</h3>
+              <h4 class="nv-card-subtitle">Eye</h4>
+              <p class="nv-card-desc">Göz çevresi odak, soğuk jel veya taş opsiyonu. Göz çevresi yorgunluğu için ferah ve dinlenmiş görünüm.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">EYE</span> Youth Eye</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Göz çevresi yorgunluğu.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Ferah ve dinlenmiş görünüm.</p>
+          <ul class="nv-list">
+            <li>Göz çevresi odak</li>
+            <li>Soğuk jel / taş opsiyonu</li>
+          </ul>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-youth-eye.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-prestige" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+          </div>
+        </section>
+
+        <!-- PANEL: PRESTIGE -->
+        <section class="nv-acc-panel" id="panel-prestige" data-section="face-panel-prestige" data-nv-acc-panel hidden>
+          <header class="nv-pack-header">
+            <h2>Secrets Prestige</h2>
+            <p>Premium ritüe r
+              <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+              <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-men" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+            </div>
+          </header>
+          <div class="nv-card-grid">
+        <article class="nv-card nv-tier-premium" data-tier="Premium">
+          <div class="nv-vcard nv-media nv-media-3x2"
+               data-role="PRESTIGE"
+               data-title-tr="Secrets Prestige Ritual"
+               data-sub-tr="Secrets de Sothys Prestige krem, 60 dk ritüel, serin taş masajı."
+               data-title-en="Secrets Prestige Ritual"
+               data-sub-en="Secrets de Sothys Prestige cream, 60-min ritual, cool stone massage.">
+            <img data-nv-asset="nv_face_highlight-02_3x2_v1" loading="lazy" decoding="async" alt="Prestige">
+            <div class="nv-voverlay">
+              <div class="nv-vmeta">
+                <div class="nv-vkicker">PRESTIGE</div>
+                <div class="nv-vtitle" data-i18n="title">Secrets Prestige Ritual</div>
+                <div class="nv-vsub" data-i18n="sub">Secrets de Sothys Prestige krem, 60 dk ritüel, serin taş masajı.</div>
+              </div>
+        <div class="nv-card nv-card--h" 
+             data-nv-id="face-secrets-prestige-ritual" 
+             data-nv-category="face" 
+             data-nv-title="Secrets Prestige Ritual" 
+             data-nv-subtitle="Prestige" 
+             data-nv-intensity="3" 
+             data-nv-goal="luxury" 
+             data-nv-guest="adult">
+          <div class="nv-card-main">
+            <div class="nv-card-body">
+              <h3 class="nv-card-title">Secrets Prestige Ritual</h3>
+              <h4 class="nv-card-subtitle">Prestige</h4>
+              <p class="nv-card-desc">Secrets de Sothys Prestige krem, 60 dk ritüel, serin taş masajı. Özel gün ve premium bakım arayanlar için sessiz ışıltı ve kadife doku.</p>
+            </div>
+          </div>
+          <h3><span class="nv-badge">PRESTIGE</span> Secrets Prestige Ritual</h3>
+          <p class="nv-meta"><b>Kimler için:</b> Özel gün, premium bakım arayanlar.</p>
+          <p class="nv-meta"><b>Hissiyat:</b> Sessiz ışıltı, kadife doku.</p>
+          <ul class="nv-list">
+            <li>Secrets de Sothys Prestige krem</li>
+            <li>60 dk ritüel</li>
+            <li>Serin taş masajı</li>
+          </ul>
+          <p class="nv-upgrade"><b>Upgrade:</b> Ampul uygulama</p>
+          <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp'tan ayırt</a>
+        </article>
+          <div class="nv-card-side">
+            <div class="nv-card-actions">
+              <a class="nv-btn nv-btn-outline" href="face-secrets-prestige-ritual.html">Detayları Gör</a>
+              <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-men" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+          </div>
+        </section>
+
+        <!-- PANEL: MEN -->
+        <section class="nv-acc-panel" id="panel-men" data-section="face-panel-men" data-nv-acc-panel hidden>
+          <header class="nv-pack-header">
+            <h2>Men</h2>
+            <p>Pratik ve etkili bir akış.</p>
+            <div class=u=tlose aria-label="Kapat">Kapat</button>
+              <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-classic" aria-label="Bir sonraki kategori">Bir Sonraki →</button>
+            </div>
+          </header>
+          <div class="nv-card-grid">
+          <article class="nv-card nv-tier-value" data-tier="Value">
+            <div class="nv-vcard nv-media nv-media-1x1"
+                 data-role="MEN"
+                 data-title-tr="Men Facial"
+                 data-sub-tr="Temizleme, maske ve konfor kapanışı."
+                 data-title-en="Men Facial"
+                 data-sub-en="Cleansing, mask, and comfort closing.">
+              <img data-nv-asset="nv_face_card-cat-06_1x1_v1" loading="lazy" decoding="async" alt="Men Facial">
+              <div class="nv-voverlay">
+                <div class="nv-vmeta">
+                  <div class="nv-vkicker">MEN</div>
+                  <div class="nv-vtitle" data-i18n="title">Men Facial</div>
+                  <div class="nv-vsub" data-i18n="sub">Temizleme, maske ve konfor kapanışı.</div>
+                </div>
+          <div class="nv-card nv-card--h" 
+               data-nv-id="face-men-facial" 
+               data-nv-category="face" 
+               data-nv-title="Men Facial" 
+               data-nv-subtitle="Men" 
+               data-nv-intensity="2" 
+               data-nv-goal="balance" 
+               data-nv-guest="adult">
+            <div class="nv-card-main">
+              <div class="nv-card-body">
+                <h3 class="nv-card-title">Men Facial</h3>
+                <h4 class="nv-card-subtitle">Men</h4>
+                <p class="nv-card-desc">Temizleme, maske ve konfor kapanışı. Daha pratik, net bakım isteyenler için ferah ve bakımlı görünüm.</p>
+              </div>
+            </div>
+            <h3><span class="nv-badge">MEN</span> Men Facial</h3>
+            <p class="nv-meta"><b>Kimler için:</b> Daha pratik, net bakım isteyenler.</p>
+            <p class="nv-meta"><b>Hissiyat:</b> Daha ferah ve bakımlı görünüm.</p>
+            <ul class="nv-list">
+              <li>Temizleme + maske</li>
+              <li>Konfor kapanışı</li>
+              <li>İhtiyaca göre ürün seçimi</li>
+            </ul>
+            <a class="nv-cta" href="#nv-wa" data-wa="1" data-nv-open-reservation>WhatsApp ile Rezervasyon</a>
+          </article>
+            <div class="nv-card-side">
+              <div class="nv-card-actions">
+                <a class="nv-btn nv-btn-outline" href="face-men-facial.html">Detayları Gör</a>
+                <button class="nv-btn nv-btn-primary" type="button" data-nv-action="reserve">Rezervasyon</button>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="nv-anchorbar" style="margin-top:14px; justify-content:space-between;">
+            <button type="button" class="nv-cta nv-cta-ghost" data-nv-acc-close aria-label="Kapat">Kapat</button>
+            <button type="button" class="nv-cta" data-nv-acc-next data-nv-next="panel-classic" aria-label="Başa Dön">Başa Dön ↺</button>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="nv-pack-section" id="flow" data-section="face-flow">
+      <div class="nv-shell">
+      <header class="nv-pack-header">
+        <h2>Bakım Akışı</h2>
+        <p>Profesyonel dokunuşlarla adım adım yenilenme.</p>
+      </header>
+      <div class="nv-card">
+        <ul class="nv-list nv-list-cols-2">
+          <li><strong>1. Analiz:</strong> Cilt tipi ve ihtiyaç belirleme.</li>
+          <li><strong>2. Temizleme:</strong> Derinlemesine arındırma ve hazırlık.</li>
+          <li><strong>3. Aktif Bakım:</strong> Serum ve maske uygulaması.</li>
+          <li><strong>4. Masaj:</strong> Yüz kaslarını rahatlatan özel teknikler.</li>
+          <li><strong>5. Kapanış:</strong> Nemlendirme ve koruma.</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="nv-band" id="cta" data-section="face-cta">
+      <div class="nv-shell">
+      <img data-nv-asset="nv_face_band-cta_16x9_v1" alt="Face Rezervasyon">
+      <div class="nv-band-content">
+        <h2>Cildinize Yatırım Yapın</h2>
+        <p>Uzmanlarımızla görüşerek size en uygun bakımı planlayın.</p>
+        <a href="#nv-wa" class="nv-cta" data-wa="1" data-nv-open-reservation>Rezervasyon Yap</a>
+      </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp anchor -->
+    <section id="nv-wa" class="nv-wa" data-section="nv-wa">
+      <div class="nv-shell">
+      <div>
+        <h2>WhatsApp ile Rezervasyon</h2>
+        <p>Hızlı seçim: Hedef → kategori → bakım → saat → 15 dk hold → onay.</p>
+      </div>
+      <a class="nv-cta nv-wa-link" href="#" data-wa="1" data-nv-open-reservation>WhatsApp'tan yaz</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING CTA -->
+  <div data-nv-global="floating-cta"></div>
+
+  <!-- FOOTER -->
+  <footer data-nv-global="footer"></footer>
+
+  <!-- RESERVATION MODAL -->
+  <div data-nv-global="reservation-modal"></div>
+
+  <!-- SCRIPTS -->
+  <script src="./assets/js/nv-slots.js" defer></script>
+  <script src="./assets/nav.js" defer></script>
+  <script src="./assets/js/nv-reservation.js" defer></script>
+  <script src="./assets/js/nv-assets-loader.js" defer></script>
+  <script src="./assets/js/nv-visual-templates.js" defer></script>
+  <script src="./assets/js/nv-active-nav.js" defer></script>
+  <script src="./assets/nv-cards.js" defer></script>
+  <script src="./assets/js/nv-lang-mode.js" defer></script>
+<script>
+    (() => {
+      const btns = Array.from(document.querySelectorAll('[data-nv-acc-btn]'));
+      const cats = Array.from(document.querySelectorAll('.nv-cat')); // category cards
+      const panels = Array.from(document.querySelectorAll('[data-nv-acc-panel]'));
+
+      const getBtnByPanelId = (id) => btns.find(b => b.getAttribute('aria-controls') === id);
+
+      function setActiveCategory(panelId) {
+        cats.forEach(c => c.classList.remove('is-active'));
+        const btn = getBtnByPanelId(panelId);
+        const cat = btn?.closest('.nv-cat');
+        if (cat) cat.classList.add('is-active');
+      }
+
+      function syncCategoryButtons(openPanelId = null) {
+        btns.forEach(b => {
+          const id = b.getAttribute('aria-controls');
+          const isOpen = id === openPanelId && b.getAttribute('aria-expanded') === 'true';
+          b.textContent = isOpen ? 'Kapat ✓' : 'Programları Aç';
+          b.classList.toggle('is-open', isOpen);
+        });
+      }
+
+      function setClosed(panelId, { clearActive = true } = {}) {
+        const panel = document.getElementById(panelId);
+        const btn = getBtnByPanelId(panelId);
+        if (!panel || !btn) return;
+
+        panel.hidden = true;
+        panel.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+
+        if (clearActive) btn.closest('.nv-cat')?.classList.remove('is-active');
+      }
+
+      function closeAll(exceptId) {
+        panels.forEach(p => {
+          if (p.id !== exceptId) setClosed(p.id, { clearActive: true });
+        });
+        // After closing others, normalize button texts
+        syncCategoryButtons(exceptId);
+      }
+
+      function openPanel(id, {scroll=true} = {}) {
+        const panel = document.getElementById(id);
+        const btn = getBtnByPanelId(id);
+        if (!panel || !btn) return;
+
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Toggle off if already open
+        if (isOpen) {
+          setClosed(id, { clearActive: true });
+          syncCategoryButtons(null);
+          return;
+        }
+
+        // Single-open behavior
+        closeAll(id);
+
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add('is-open'));
+        btn.setAttribute('aria-expanded', 'true');
+
+        setActiveCategory(id);
+        syncCategoryButtons(id);
+
+        if (scroll) {
+          panel.scrollIntoView({behavior: 'smooth', block: 'start'});
+          history.replaceState(null, '', '#' + id);
+        }
+      }
+
+      // 1) Button click opens/closes panel (and prevents double toggle)
+      btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openPanel(btn.getAttribute('aria-controls'));
+        });
+      });
+
+      // 2) Whole category card clickable (ignore interactive elements inside)
+      const shouldIgnore = (target) =>
+        !!target.closest('a, button, input, textarea, select, [data-wa], [data-nv-open-reservation]');
+
+      cats.forEach(card => {
+        const panelId = card.querySelector('[data-nv-acc-btn]')?.getAttribute('aria-controls');
+        if (!panelId) return;
+
+        // Keyboard-friendly
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-controls', panelId);
+
+        card.addEventListener('click', (e) => {
+          if (shouldIgnore(e.target)) return;
+          openPanel(panelId);
+        });
+
+        card.addEventListener('keydown', (e) => {
+          if (shouldIgnore(e.target)) return;
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPanel(panelId);
+          }
+        });
+      });
+
+      // 3) Panel controls: Close + Next (works both in header and bottom bars)
+      document.addEventListener('click', (e) => {
+        const closeBtn = e.target.closest('[data-nv-acc-close]');
+        if (closeBtn) {
+          const panel = closeBtn.closest('[data-nv-acc-panel]');
+          if (panel) {
+            setClosed(panel.id, { clearActive: true });
+            syncCategoryButtons(null);
+          }
+          return;
+        }
+
+        const nextBtn = e.target.closest('[data-nv-acc-next]');
+        if (nextBtn) {
+          const nextId = nextBtn.getAttribute('data-nv-next');
+          if (nextId) openPanel(nextId);
+          return;
+        }
+      });
+
+      // 4) Deep-link: open panel by hash
+      const hash = (location.hash || '').replace('#','');
+      if (hash && document.getElementById(hash)?.matches('[data-nv-acc-panel]')) {
+        openPanel(hash, {scroll:false});
+        setTimeout(() => {
+          document.getElementById(hash)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }, 50);
+      } else {
+        // Initial state: ensure labels are normalized
+        syncCategoryButtons(null);
+      }
+    })();
+  </script>
+  <script src="./wa-config.js" defer></script>
+  <script src="./wa-linker.js" defer></script>
+</body>
+
+</html>

@@ -15,8 +15,8 @@ function hasSpaceDir(p){ return p.split("/").some(seg => seg.includes(" ")); }
 
 function guessDomain(file){
   const f = file.toLowerCase();
-  if (f.includes("neurova_prompt/")) return "PROMPT";
-  if (f.includes("neurova_site/")) return "SITE";
+  if (f.includes("santis_prompt/")) return "PROMPT";
+  if (f.includes("santis_site/")) return "SITE";
   if (f.includes("prompt-library") || f.includes("packs/") || f.includes("prompts-loader") || f.includes("health-check")) return "PROMPT";
   return "UNKNOWN";
 }
@@ -26,25 +26,25 @@ function targetFor(file){
   const name = path.posix.basename(file);
 
   if (domain === "PROMPT"){
-    if (name.endsWith(".html")) return "NEUROVA_PROMPT/" + name;
+    if (name.endsWith(".html")) return "SANTIS_PROMPT/" + name;
     if (name.endsWith(".js")){
-      if (name.startsWith("pack.") || name.includes("pack.")) return "NEUROVA_PROMPT/packs/" + name;
+      if (name.startsWith("pack.") || name.includes("pack.")) return "SANTIS_PROMPT/packs/" + name;
       if (file.includes("/tools/")) return file;
-      return "NEUROVA_PROMPT/" + name;
+      return "SANTIS_PROMPT/" + name;
     }
-    if (name.endsWith(".css")) return "NEUROVA_PROMPT/assets/css/" + name;
-    return "NEUROVA_PROMPT/assets/" + name;
+    if (name.endsWith(".css")) return "SANTIS_PROMPT/assets/css/" + name;
+    return "SANTIS_PROMPT/assets/" + name;
   }
 
   if (domain === "SITE"){
-    if (name.endsWith(".html")) return "NEUROVA_SITE/" + name;
-    if (name.endsWith(".js")) return "NEUROVA_SITE/assets/js/" + name;
-    if (name.endsWith(".css")) return "NEUROVA_SITE/assets/css/" + name;
-    if (/\.(png|jpg|jpeg|webp|svg|gif)$/.test(name)) return "NEUROVA_SITE/assets/img/" + name;
-    return "NEUROVA_SITE/assets/" + name;
+    if (name.endsWith(".html")) return "SANTIS_SITE/" + name;
+    if (name.endsWith(".js")) return "SANTIS_SITE/assets/js/" + name;
+    if (name.endsWith(".css")) return "SANTIS_SITE/assets/css/" + name;
+    if (/\.(png|jpg|jpeg|webp|svg|gif)$/.test(name)) return "SANTIS_SITE/assets/img/" + name;
+    return "SANTIS_SITE/assets/" + name;
   }
 
-  if (name.includes("prompt") || name.includes("pack.") || name.includes("health-check")) return "NEUROVA_PROMPT/" + name;
+  if (name.includes("prompt") || name.includes("pack.") || name.includes("health-check")) return "SANTIS_PROMPT/" + name;
   return file;
 }
 

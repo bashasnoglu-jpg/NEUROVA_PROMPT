@@ -1,0 +1,48 @@
+# EN — PAGES
+001  404.html
+002  abhyanga.html
+003  about.html
+004  algae-detox.html
+005  anti-stress.html
+006  aroma-relax.html
+007  ayak-refleks.html
+008  ayurvedik-bas-sac.html
+009  bali-aroma.html
+010  bas-boyun-rahatlatma.html
+011  classic-hammam.html
+012  classic-massage.html
+013  coffee-detox.html
+014  contact.html
+015  couples-retreat.html
+016  deep-tissue.html
+017  face-sothys.html
+018  gallery.html
+019  geleneksel-thai.html
+020  hamam.html
+021  honey-chocolate.html
+022  index.html
+023  kids-family.html
+024  masajlar.html
+025  massages.html
+026  santis-signature.html
+027  offline.html
+028  ottoman-hammam.html
+029  packages.html
+030  paketler.html
+031  products.html
+032  sea-salt-glow.html
+033  shiatsu.html
+034  shirodhara.html
+035  sicak-tas.html
+036  signature-couples.html
+037  sirt-boyun-omuz.html
+038  skin-care.html
+039  sporcu-masaji.html
+040  team.html
+041  thai-aroma.html
+
+# EN — PARTIALS
+001  footer.html
+002  global-nav.html
+003  nav.html
+

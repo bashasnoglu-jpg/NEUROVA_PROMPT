@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  santis-site:
+    container_name: santis-site
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/node_modules

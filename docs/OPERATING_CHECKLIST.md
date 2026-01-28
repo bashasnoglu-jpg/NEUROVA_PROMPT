@@ -53,7 +53,7 @@
 1. Apps Script’te `nvSendNextDayPlan()` fonksiyonu yaz; `APPOINTMENTS` tablosundan yarın tarihli `Status=BOOKED` satırları alır, terapist bazında seansları listeler ve yukarıdaki WhatsApp şablonunu her terapistin telefonuna gönderir. (Varsa `TherapistPhone`’u kullan; telefon yoksa satırı atla.)
 2. `CFG.CHANNEL` SMS/WhatsApp tercihini kontrol eder; WhatsApp için `to` alanını `whatsapp:+90…` formatına çeviren helper kullan. Yöneticinin numarası (`CFG.MANAGER_PHONE`) da aynı template ile toplu planı alır.
 3. Trigger: Apps Script → `nvSendNextDayPlan`, Time-driven → Daily → 17:45 (Europe/Istanbul). Run-once guard olarak `PropertiesService.getScriptProperties()` içinde `lastNextDayPlan=${date}` kaydı tut; sonraki çalışmalarda aynı gün için tekrar gönderimi engelle.
-4. Hazır mesaj şablonu (kopyala/yapıştır) grupta paylaşıma uygun; sahadaki rutine `docs/NEUROVA_WHATSAPP_TEMPLATES.md` gibi yeni bir belgeyle destek sağlamayı düşünebilirsin (hazır kurguyu alt dosyada detaylandırdım).
+4. Hazır mesaj şablonu (kopyala/yapıştır) grupta paylaşıma uygun; sahadaki rutine `docs/SANTIS_WHATSAPP_TEMPLATES.md` gibi yeni bir belgeyle destek sağlamayı düşünebilirsin (hazır kurguyu alt dosyada detaylandırdım).
 
 ## Test Modu + Sahte Veri ile Doğrulama
 

@@ -1,12 +1,12 @@
-# NEUROVA Personel Bilgilendirme + QR’lar
+# SANTIS Personel Bilgilendirme + QR’lar
 
 ## Sabit mesaj içeriği
 Bu metni WhatsApp/Slack/posta/pano gibi sabit kanallarda paylaş; paylaşıma şu QR/görselleri ilave et:
 
 ```
-📌 NEUROVA – PERSONEL BİLGİLENDİRME
+📌 SANTIS – PERSONEL BİLGİLENDİRME
 
-NEUROVA İstek Kütüphanesi (Prompt Library) – Personel Kullanımı
+SANTIS İstek Kütüphanesi (Prompt Library) – Personel Kullanımı
 
 Lütfen aşağıdaki bağlantıyı günlük kullanım için kullanın:
 
@@ -35,12 +35,12 @@ QA, yalnızca yönetici: http://127.0.0.1:5500/prompt-library.html?qa=1
 • Sistem standart üretim içindir
 
 Teşekkürler,  
-NEUROVA Management
+SANTIS Management
 ```
 
 ## QR’lar
 
-1. **NEUROVA İstek Kütüphanesi (Prompt Library):** `printed-guides/prompt_library.png`
+1. **SANTIS İstek Kütüphanesi (Prompt Library):** `printed-guides/prompt_library.png`
 2. **Staff Guide (TR):** `printed-guides/staff_tr.png`
 3. **Staff Guide (EN):** `printed-guides/staff_en.png`
 4. **Reception Sales Playbook v1.0:** `printed-guides/reception_playbook.png`

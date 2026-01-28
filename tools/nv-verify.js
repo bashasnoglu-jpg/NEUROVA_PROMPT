@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * NEUROVA nv:verify v1.1
+ * SANTIS nv:verify v1.1
  * - scans packs/*.js
  * - detects duplicate ids, missing heuristic fields (role/category/safeNote/TR/EN)
  * - cross-checks NV_PACK_LIST style references in prompt-library.html (and fallbacks)
@@ -10,11 +10,11 @@ const path = require("path");
 
 const ROOT = process.cwd();
 const PACKS_DIR_CANDIDATES = [
-  path.join(ROOT, "NEUROVA_PROMPT", "packs"),
+  path.join(ROOT, "SANTIS_PROMPT", "packs"),
   path.join(ROOT, "packs"),
 ];
 const ENTRY_CANDIDATES = [
-  path.join(ROOT, "NEUROVA_PROMPT", "prompt-library.html"),
+  path.join(ROOT, "SANTIS_PROMPT", "prompt-library.html"),
   path.join(ROOT, "prompt-library.html"),
   path.join(ROOT, "index.html"),
   path.join(ROOT, "public", "prompt-library.html"),
@@ -94,7 +94,7 @@ function main() {
   const packFiles = listPackFiles(packsDir);
 
   if (packFiles.length === 0) {
-    problems.push({ where: "packs/", issue: "No pack files found under NEUROVA_PROMPT/packs or /packs. Expected pack.*.js" });
+    problems.push({ where: "packs/", issue: "No pack files found under SANTIS_PROMPT/packs or /packs. Expected pack.*.js" });
   }
 
   // Scan packs

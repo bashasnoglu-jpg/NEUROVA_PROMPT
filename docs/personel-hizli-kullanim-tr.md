@@ -1,6 +1,6 @@
 # Personel Hızlı Kullanım Talimatı (TR)
 
-**NEUROVA İstek Kütüphanesi (Prompt Library)**
+**SANTIS İstek Kütüphanesi (Prompt Library)**
 
 **Sabit linkler**
 - Personel erişimi: `http://127.0.0.1:5500/prompt-library.html` (packs yerelde, internet bağımlılığı yok).
@@ -18,7 +18,7 @@
 - Kategori çubuğu (Ayurveda, Recovery, Kids, Signature vs.) doğru tema bazlı prompt’ları öne çıkarır; butonlardan hızlı seçim yapın.
 - Karttaki “Ton Rezervasyon” notu referans verir; kopyalamak yerine kartı kullanın.
 
-## 3. Safe rules (NEUROVA tonu)
+## 3. Safe rules (SANTIS tonu)
 - Çocuk/teen içeriklerinde ebeveyn izni her seferinde sorulmalı; sessizlik, konfor ve izin kurallarına dikkat.
 - Wellness modunda medikal teşhis ya da tedavi sözü yok; ritüel, konfor ve farkındalık dilini kullanın.
 - Premium/sakin alanlarda ses düzeyini düşük tutun; kartı okuduktan sonra konumu onaylayın.
@@ -41,7 +41,7 @@
 - `http://127.0.0.1:5500/prompt-library.html?qa=abc` – geçersiz parametre, normal mod kalır.
 
 ## 7. Personel Hızlı Kullanım + Sorun Çözme
-- **Kısayolları sabitleyin:** Masaüstüne “NEUROVA Prompt (Kullanım)” ve “NEUROVA Prompt (QA / Yönetici)” linklerini koyarak doğru sayfaya tek tıklamada ulaşın.
+- **Kısayolları sabitleyin:** Masaüstüne “SANTIS Prompt (Kullanım)” ve “SANTIS Prompt (QA / Yönetici)” linklerini koyarak doğru sayfaya tek tıklamada ulaşın.
 - **30 saniye vardiya rutini:** Her vardiyada selftest panelini aç, `promptsLen > 0` ve `packErrors = 0` olduğundan emin ol; haftada bir `?qa=1` ile “Run QA Tests” butonunu çalıştır.
 - **Ekran boşsa 3 hamle:** İçerik gelmiyorsa sırasıyla `Ctrl+Shift+R`, linkin `127.0.0.1:5500/prompt-library.html` olduğunu doğrula, hâlâ boşsa yönetici/IT’ye haber ver.
 - **Rol kilidi:** Resepsiyon cihazlarında varsayılan “Reception”, terapist cihazlarında “Therapist” seçili kalsın; bu sayede açık kalması muhtemel yanlış role geçişleri engellenir.

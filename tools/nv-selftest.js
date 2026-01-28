@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * NEUROVA nv:selftest v1.1 (safe smoke)
+ * SANTIS nv:selftest v1.1 (safe smoke)
  * - entry HTML exists?
  * - packs folder exists?
  * - nv:verify proof ok?

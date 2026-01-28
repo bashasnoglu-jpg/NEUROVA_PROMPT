@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANTIS - Face Sothys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nv-bg': '#1a1d21',
+                        'nv-muted': '#9ca3af'
+                    },
+                    boxShadow: {
+                        'nv': '0 4px 20px -2px rgba(0, 0, 0, 0.2)'
+                    },
+                    borderRadius: {
+                        'nv': '12px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chip { @apply px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs text-white/80 hover:bg-white/10 transition-colors; }
+        .chip.is-on { @apply bg-white/20 border-white/30 text-white; }
+        .card { @apply p-5 rounded-xl border border-white/10 bg-[#2C2F32] flex flex-col gap-3; }
+        .tag { @apply text-[10px] text-white/50 bg-white/5 px-2 py-1 rounded; }
+        .btn { @apply px-3 py-1.5 rounded border border-white/10 text-xs hover:bg-white/5 transition-colors; }
+        .btn--gold { @apply border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10; }
+        .ok { color: #4ade80; }
+        .bad { color: #f87171; }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="bg-nv-bg text-white min-h-screen flex flex-col font-sans">
+
+    <!-- Header Container -->
+    <div id="header-placeholder"></div>
+
+    <main class="flex-1 max-w-[1100px] w-full mx-auto px-[18px] py-8">
+        <div class="flex flex-col gap-4 mb-8">
+            <input id="nv-search" type="text" placeholder="Prompt ara..." class="w-full px-4 py-3 rounded-xl bg-[#2C2F32] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-colors">
+
+            <div id="nv-cat-chips" class="flex flex-wrap gap-2"></div>
+            <div id="nv-role-chips" class="flex flex-wrap gap-2"></div>
+            <div id="nv-tag-chips" class="flex flex-wrap gap-2"></div>
+            <div id="nv-count" class="text-xs text-white/40 text-right"></div>
+        </div>
+
+        <div id="nv-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </main>
+
+    <div id="nv-health" class="hidden fixed bottom-4 right-4 p-4 bg-black/90 border border-white/10 rounded-lg text-xs font-mono z-50"></div>
+
+    <script>window.NV_PAGE_CATEGORY = "Face";</script>
+    <script src="prompts-data.js"></script>
+    <script src="../main.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>fetch('nav.html').then(r=>r.text()).then(h=>{document.getElementById('header-placeholder').innerHTML=h; if(window.nvInitApp) window.nvInitApp();}); window.NV_PROMPTS=window.NV_PROMPTS||[]; if(window.nvOnPromptsReady) window.nvOnPromptsReady();</script>
+</body>
+</html>
+

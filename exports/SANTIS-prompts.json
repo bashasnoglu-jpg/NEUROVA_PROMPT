@@ -1,0 +1,1033 @@
+{
+  "generatedAt": "2025-12-17T09:51:28.551Z",
+  "manifest": [
+    "pack.ayurveda.js",
+    "pack.brand-look.js",
+    "pack.face-sothys.js",
+    "pack.hamam.js",
+    "pack.kids.js",
+    "pack.kids.premium.js",
+    "pack.recovery.js",
+    "pack.seasonal-detox.js",
+    "pack.signature-family-teen.js",
+    "pack.signature.js"
+  ],
+  "total": 53,
+  "prompts": [
+    {
+      "id": "AYU_01",
+      "category": "Ayurveda",
+      "role": "Therapist",
+      "title": "Abhyanga Yağlı Masaj Akışı",
+      "tags": [
+        "ayurveda",
+        "abhyanga",
+        "denge"
+      ],
+      "safeNote": "Non-medical wellness; fully draped; respectful, non-sexual service.",
+      "lang": {
+        "tr": "Sıcak yağla uzun ve akışkan hareketlerle dengeyi destekleyen bir uygulama yapıyoruz.",
+        "en": "We apply a balancing flow with warm oil and long, grounding strokes."
+      },
+      "__pack": "pack.ayurveda.js"
+    },
+    {
+      "id": "AYU_02",
+      "category": "Ayurveda",
+      "role": "Therapist",
+      "title": "Shirodhara Zihin Sakinliği",
+      "tags": [
+        "shirodhara",
+        "anti-stress",
+        "rituel"
+      ],
+      "safeNote": "Non-medical; calm/relax focus; fully draped.",
+      "lang": {
+        "tr": "Ritmik akış ve sessiz ortamla zihni sakinleştirmeye odaklanıyoruz.",
+        "en": "We focus on calming the mind through rhythmic flow and a quiet setting."
+      },
+      "__pack": "pack.ayurveda.js"
+    },
+    {
+      "id": "BL_01",
+      "category": "SANTIS Look",
+      "role": "Designer",
+      "title": "Quiet Luxury Mood",
+      "safeNote": "Reference language; describes style, no procedural claims.",
+      "prompt": "Spell out the quiet luxury mood: marble plateaus, brushed brass, and soft diffusion that keeps light warm.",
+      "lang": {
+        "tr": "SANTIS sessiz lüksünü mermer, fırçalanmış pirinç ve yumuşak ışıklarla tanımlıyoruz.",
+        "en": "We describe the SANTIS quiet luxury through marble planes, brushed brass, and warm diffused light."
+      },
+      "tags": [
+        "brand",
+        "quiet-luxury",
+        "marble",
+        "brass",
+        "light"
+      ],
+      "__pack": "pack.brand-look.js"
+    },
+    {
+      "id": "BL_02",
+      "category": "SANTIS Look",
+      "role": "Designer",
+      "title": "SANTIS Palette",
+      "safeNote": "Reference language only.",
+      "prompt": "Frame the palette as warm neutrals with charcoal contrast, pairing soft textures with reflective surfaces.",
+      "lang": {
+        "tr": "Paleti sıcak nötrlerle koyu kontrastlar bir araya getirir; yumuşak dokularla yansıtıcı yüzeyleri dengeler.",
+        "en": "The palette blends warm neutrals with charcoal contrast, balancing soft textures against reflective surfaces."
+      },
+      "tags": [
+        "brand",
+        "palette",
+        "quiet-luxury",
+        "texture"
+      ],
+      "__pack": "pack.brand-look.js"
+    },
+    {
+      "id": "BL_03",
+      "category": "SANTIS Look",
+      "role": "Photographer",
+      "title": "Atmospheric Quiet",
+      "safeNote": "Reference imagery only.",
+      "prompt": "Suggest capturing atmospheric quiet with steam echoes, low light, and close-up marble details.",
+      "lang": {
+        "tr": "Atmosferi, buhar izleri, loş ışık ve close-up mermer detaylarla yakalayın.",
+        "en": "Capture atmospheric quiet using steam echoes, muted light, and close-up marble details."
+      },
+      "tags": [
+        "brand",
+        "photography",
+        "close-up",
+        "quiet-luxury"
+      ],
+      "__pack": "pack.brand-look.js"
+    },
+    {
+      "id": "FACE_01",
+      "category": "Face – Sothys",
+      "role": "Therapist",
+      "title": "Skin Safety Check",
+      "safeNote": "Face – Sothys; non-medical skincare language; no before/after promises or medical claims.",
+      "prompt": "Frame the face consultation as a calm check-in: ask about sensitivity, note hydration, and keep language rooted in nurture without claims.",
+      "lang": {
+        "tr": "Cilt danışmanlığında hassasiyet, hidrasyon ve konfor ön planda; hiçbir tıbbi iddia veya before-after vurgusu yok.",
+        "en": "During the face consultation we explore sensitivity, hydration, and comfort—always staying within nurturing, non-medical language."
+      },
+      "tags": [
+        "face",
+        "sothys",
+        "safety",
+        "consultation"
+      ],
+      "__pack": "pack.face-sothys.js"
+    },
+    {
+      "id": "FACE_02",
+      "category": "Face – Sothys",
+      "role": "Therapist",
+      "title": "Hydration + Soothe",
+      "safeNote": "Gentle hydration focus; no medical claims; full consent.",
+      "prompt": "Describe the hydration sequence using lightweight touches and cellular-respect cues, mentioning cool marble bowls and soft towels.",
+      "lang": {
+        "tr": "Hidrasyon bölümünde hafif dokunuşlar, soğuk mermer kaseler ve yumuşak havlular eşlik eder.",
+        "en": "In the hydration sequence we apply lightweight, respectful touches with marble bowls and soft towels nearby."
+      },
+      "tags": [
+        "face",
+        "hydration",
+        "sothys",
+        "soothe"
+      ],
+      "__pack": "pack.face-sothys.js"
+    },
+    {
+      "id": "FACE_03",
+      "category": "Face – Sothys",
+      "role": "Therapist",
+      "title": "Calm Radiance Pause",
+      "safeNote": "Relaxing pause; no acceleration, no claims of reversing aging.",
+      "prompt": "Highlight the calm radiance pause as a breath-friendly moment where the skin rests beneath slow, rhythmic palms and quiet lighting.",
+      "lang": {
+        "tr": "Cildin sessizce nefes aldığı an; eller yavaşça palpe edilirken ışık düşük tutulur.",
+        "en": "We honor the calm radiance pause with slow palming, dim light, and your breath guiding the rhythm."
+      },
+      "tags": [
+        "face",
+        "radiance",
+        "sothys",
+        "calm"
+      ],
+      "__pack": "pack.face-sothys.js"
+    },
+    {
+      "id": "FACE_04",
+      "category": "Face – Sothys",
+      "role": "Reception",
+      "title": "Skin Reminder",
+      "safeNote": "Non-medical aftercare; hints to keep skin calm and hydrated.",
+      "prompt": "Close the face moment with a reminder about cool water, gentle movement, and a quiet, hydrated pause before makeup.",
+      "lang": {
+        "tr": "Cilt kapanışında serin su ve yumuşak hareketlerle sakin kalmasını öneriyoruz.",
+        "en": "At the end we suggest cool water, gentle movements, and giving the skin a quiet, hydrated pause."
+      },
+      "tags": [
+        "face",
+        "aftercare",
+        "sothys"
+      ],
+      "__pack": "pack.face-sothys.js"
+    },
+    {
+      "id": "HAMAM_01",
+      "category": "Hamam Ritüelleri",
+      "role": "Therapist",
+      "title": "Nazik Karşılama & Akış",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Hoş geldiniz. Bugünkü ritüel ısınma, kontrollü kese, köpük ve dinlenme akışında ilerleyecek. Basınç ve sıcaklığı tercihlerinize göre ayarlayacağım.",
+        "en": "Welcome. Today’s ritual follows a warm-up, measured exfoliation, foam cleanse, and rest. I’ll adjust pressure and heat to your preference."
+      },
+      "tags": [
+        "hamam",
+        "karsilama",
+        "akis",
+        "konfor",
+        "guven"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_02",
+      "category": "Hamam Ritüelleri",
+      "role": "Therapist",
+      "title": "Isınma & Nefes Ayarı",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Isınma bölümündeyiz. Nefesi yavaşlatıp omuzları bırakıyoruz. Isıyı bedeninizin verdiği sinyallere göre ayarlayacağım.",
+        "en": "We’re in the warming phase. We’ll slow the breath and soften the shoulders. I’ll adjust the heat based on your body’s signals."
+      },
+      "tags": [
+        "hamam",
+        "isinma",
+        "nefes",
+        "rahatlama",
+        "guven"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_03",
+      "category": "Hamam Ritüelleri",
+      "role": "Therapist",
+      "title": "Kese Öncesi Onay",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Kese öncesi küçük bir ayar yapalım. Basıncı hafif, orta ya da daha derin tercih edebilirsiniz. Hassas bir alan varsa bana bildirmeniz yeterli.",
+        "en": "Before exfoliation, let’s set the tone. You can choose light, medium, or deeper pressure. Tell me if any area feels sensitive."
+      },
+      "tags": [
+        "hamam",
+        "kese",
+        "onay",
+        "basinc",
+        "hassasiyet"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_04",
+      "category": "Hamam Ritüelleri",
+      "role": "Therapist",
+      "title": "Köpük & Temizlenme",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Şimdi köpük temizliğine geçiyoruz. Köpüğü yumuşak bir katman gibi uygulayıp ritmi bilinçli olarak yavaşlatacağım.",
+        "en": "We’re moving into the foam cleanse. I’ll apply the foam as a soft layer and intentionally slow the rhythm."
+      },
+      "tags": [
+        "hamam",
+        "kopuk",
+        "temizlik",
+        "sakinlik"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_05",
+      "category": "Hamam Ritüelleri",
+      "role": "Reception",
+      "title": "Ritüel Sonrası Öneri",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Ritüel sonrası su tüketimini artırmanızı öneririm. Dilerseniz dinlenme alanında biraz daha kalabilirsiniz.",
+        "en": "After the ritual, I recommend increasing hydration. You’re welcome to spend more time in the resting area if you wish."
+      },
+      "tags": [
+        "hamam",
+        "aftercare",
+        "hidrasyon",
+        "dinlenme"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_06",
+      "category": "Hamam Ritüelleri",
+      "role": "Therapist",
+      "title": "Nazik Kapanış",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "lang": {
+        "tr": "Kapanışta beden ısısını dengeliyorum. Kısa ve yumuşak dokunuşlarla ritüeli tamamlıyoruz.",
+        "en": "In the closing phase I balance body temperature and finish with brief, gentle grounding touches."
+      },
+      "tags": [
+        "hamam",
+        "kapanis",
+        "denge",
+        "rahatlama"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_07",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "Signature Hamam – Sessiz Başlangıç",
+      "safeNote": "Non-medical hammam ritual; silence on request; guest comfort first.",
+      "lang": {
+        "tr": "Bu ritüeli sakin ve mümkün olduğunca sessiz yöneteceğim. Sessizlik isterseniz, dokunuş ve ritim konuşmanın yerini alır.",
+        "en": "I’ll guide this ritual calmly and as quietly as you prefer. If you choose silence, touch and rhythm will speak instead."
+      },
+      "tags": [
+        "signature",
+        "couples",
+        "quiet-luxury",
+        "sessizlik",
+        "akis"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_08",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "Çiftler için Senkron Akış",
+      "safeNote": "Non-medical hammam ritual; synchronized touch; guest comfort first.",
+      "lang": {
+        "tr": "Şimdi ritmi senkronluyorum. Dokunuşlar aynı anda başlar; nefes ve ısı dengesiyle birlikte ilerler.",
+        "en": "I’m synchronizing the rhythm now. Touch begins together and moves with breath and temperature in balance."
+      },
+      "tags": [
+        "signature",
+        "couples",
+        "senkron",
+        "denge",
+        "premium"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_09",
+      "category": "Hamam RitǬelleri",
+      "role": "Therapist",
+      "title": "Close-up Kese Detay",
+      "safeNote": "Non-medical hammam ritual; pressure/heat adjusted on request; guest comfort first.",
+      "prompt": "Describe the close-up kese texture, the warmth of marble, and the filtered steam hovering around the shoulder line.",
+      "lang": {
+        "tr": "Close-up kese annda yumu�Yak ama net dokunu�Ylarla ciltteki gǬveni sǬfǬra indiriyoruz.",
+        "en": "In this close-up moment we slow the motion, letting the kese glide over marble while the steam gently wraps the shoulders."
+      },
+      "tags": [
+        "hamam",
+        "kese",
+        "close-up",
+        "marble",
+        "detail"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "HAMAM_10",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "SANTIS Close-up Kese",
+      "safeNote": "Non-medical signature ritual; silence and comfort paired; guest preference leads the flow.",
+      "prompt": "Capture the quiet luxury of a close-up kese shot where hands, steam, and marble meet in perfect stillness.",
+      "lang": {
+        "tr": "SANTIS sessizli�Yiyle close-up kese dokunu�Yunu anlatıyoruz; eller, buhar ve mermer bir araya gelerek ritmi belirliyor.",
+        "en": "We narrate the SANTIS quiet luxury in a close-up kese sequence, where hands, steam, and marble choreograph a soft rhythm."
+      },
+      "tags": [
+        "signature",
+        "quiet-luxury",
+        "kese",
+        "marble",
+        "close-up"
+      ],
+      "__pack": "pack.hamam.js"
+    },
+    {
+      "id": "KID_01",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Nazik Karşılama",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "Welcome. Everything here moves slowly and gently. You can look around first, and we’ll begin only when you feel ready.",
+      "lang": {
+        "tr": "Hoş geldin. Burada her şey yavaş ve yumuşak ilerler. İstersen önce etrafa bakabilir, hazır olduğunda başlayabiliriz.",
+        "en": "Welcome. Everything here moves slowly and gently. You can look around first, and we’ll begin only when you feel ready."
+      },
+      "tags": [
+        "kids",
+        "karsilama",
+        "guven",
+        "yumusak"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KID_02",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Dokunuş Öncesi İzin",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "Before we start, I’ll ask you. Would you like the touch to be very light, or a little bit more noticeable?",
+      "lang": {
+        "tr": "Başlamadan önce sana soracağım. Dokunuşun çok hafif mi yoksa biraz daha belirgin mi olsun istersin?",
+        "en": "Before we start, I’ll ask you. Would you like the touch to be very light, or a little bit more noticeable?"
+      },
+      "tags": [
+        "kids",
+        "izin",
+        "secim",
+        "dokunus"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KID_03",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Rahatlatıcı Nefes",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "Now we’ll breathe slowly together. Imagine filling a balloon, then gently letting it float away.",
+      "lang": {
+        "tr": "Şimdi birlikte yavaşça nefes alıyoruz. Nefesini balon gibi şişirip, sonra yavaşça bırakabilirsin.",
+        "en": "Now we’ll breathe slowly together. Imagine filling a balloon, then gently letting it float away."
+      },
+      "tags": [
+        "kids",
+        "nefes",
+        "rahatlama",
+        "oyun"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KID_04",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Yumuşak Dokunuş Akışı",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "The touches will be very gentle. If you want me to stop anywhere, just tell me right away.",
+      "lang": {
+        "tr": "Dokunuşlar çok yumuşak olacak. Bir yerde durmamı istersen bana hemen söyleyebilirsin.",
+        "en": "The touches will be very gentle. If you want me to stop anywhere, just tell me right away."
+      },
+      "tags": [
+        "kids",
+        "yumusak",
+        "guven",
+        "kontrol"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KID_05",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Ebeveynle Birlikte Güven",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "Your parent is here with you. They can hold your hand or simply stay close—whichever you prefer.",
+      "lang": {
+        "tr": "Anne ya da baban burada seninle. İstersen elini tutabilir ya da sadece yanında durabilir.",
+        "en": "Your parent is here with you. They can hold your hand or simply stay close—whichever you prefer."
+      },
+      "tags": [
+        "kids",
+        "family",
+        "guven",
+        "ebeveyn"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KID_06",
+      "category": "Kids & Family",
+      "role": "Reception",
+      "kidsOnly": true,
+      "title": "Nazik Kapanış",
+      "safeNote": "Kids & Family; always ask consent; parent can be present; non-medical, non-invasive.",
+      "prompt": "We’re finishing slowly now. Drinking some water and taking a short rest can feel really nice.",
+      "lang": {
+        "tr": "Şimdi yavaşça bitiriyoruz. Biraz su içmek ve kısa bir dinlenme iyi hissettirebilir.",
+        "en": "We’re finishing slowly now. Drinking some water and taking a short rest can feel really nice."
+      },
+      "tags": [
+        "kids",
+        "kapanis",
+        "aftercare",
+        "dinlenme"
+      ],
+      "__pack": "pack.kids.js"
+    },
+    {
+      "id": "KIDP_01",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Premium Karşılama – Yumuşak Başlangıç",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "Welcome. Everything here moves slowly and with care. You can take a moment to settle in, and we’ll begin when you’re ready.",
+      "lang": {
+        "tr": "Hoş geldin. Burada her şey yavaş ve özenle ilerler. İstersen önce alanı tanıyıp hazır olduğunda başlayabiliriz.",
+        "en": "Welcome. Everything here moves slowly and with care. You can take a moment to settle in, and we’ll begin when you’re ready."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "karsilama",
+        "guven",
+        "yavas"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_02",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "İzin & Seçim – Kontrol Sende",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "I’ll ask you at each step. Would you like the touch very light, or a bit more noticeable? We can pause anytime.",
+      "lang": {
+        "tr": "Her adımda sana soracağım. Dokunuş çok hafif mi olsun, yoksa biraz daha belirgin mi? İstersen durabiliriz.",
+        "en": "I’ll ask you at each step. Would you like the touch very light, or a bit more noticeable? We can pause anytime."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "izin",
+        "secim",
+        "kontrol"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_03",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Dingin Nefes – Ritmi Yavaşlatma",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "Now we slow the rhythm. As you breathe softly, your shoulders may start to relax on their own.",
+      "lang": {
+        "tr": "Şimdi ritmi yavaşlatıyoruz. Nefesini yumuşakça alıp verirken omuzların kendiliğinden gevşeyebilir.",
+        "en": "Now we slow the rhythm. As you breathe softly, your shoulders may start to relax on their own."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "nefes",
+        "dinginlik",
+        "rahatlama"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_04",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Nazik Dokunuş Akışı – Güvenli Çerçeve",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "Touch will stay gentle and safe. If you prefer, we can stay shorter on an area, or skip it entirely.",
+      "lang": {
+        "tr": "Dokunuşlar yumuşak ve güvenli kalacak. İstersen bir bölgede daha kısa kalır, istersen atlarız.",
+        "en": "Touch will stay gentle and safe. If you prefer, we can stay shorter on an area, or skip it entirely."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "nazik",
+        "guvenli",
+        "sinir"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_05",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Aileyle Premium Uyum",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "Your parent can stay close. They can hold your hand, or simply remain nearby in quiet support.",
+      "lang": {
+        "tr": "Anne/baban yanında kalabilir. İstersen elini tutar, istersen sadece sessizce yakınında durur.",
+        "en": "Your parent can stay close. They can hold your hand, or simply remain nearby in quiet support."
+      },
+      "tags": [
+        "kids",
+        "family",
+        "premium",
+        "yakinlik",
+        "destek"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_06",
+      "category": "Kids & Family",
+      "role": "Reception",
+      "kidsOnly": true,
+      "title": "Premium Kapanış – Yumuşak Entegrasyon",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "We’re finishing slowly now. A little water and a short rest help the body keep this good feeling.",
+      "lang": {
+        "tr": "Şimdi yavaşça bitiriyoruz. Biraz su ve kısa bir dinlenme, bedenin bu güzel hissi korumasına yardımcı olur.",
+        "en": "We’re finishing slowly now. A little water and a short rest help the body keep this good feeling."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "kapanis",
+        "aftercare",
+        "dinlenme"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_07",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Mini Signature Family – Senkron Başlangıç",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "We’re starting softly together with the family. Touch begins at the same time; pace and intensity follow the child’s signals.",
+      "lang": {
+        "tr": "Şimdi aileyle birlikte yumuşak bir başlangıç yapıyoruz. Dokunuşlar aynı anda başlar; hız ve yoğunluk çocuğun verdiği sinyallere göre ayarlanır.",
+        "en": "We’re starting softly together with the family. Touch begins at the same time; pace and intensity follow the child’s signals."
+      },
+      "tags": [
+        "kids",
+        "family",
+        "signature",
+        "senkron",
+        "uyum"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "KIDP_08",
+      "category": "Kids & Family",
+      "role": "Therapist",
+      "kidsOnly": true,
+      "title": "Sessiz Premium Kapanış",
+      "safeNote": "Kids & Family; consent first; parent can be present; non-medical, non-invasive.",
+      "prompt": "In closing, we keep conversation low. We leave a quiet space for the body to settle the rhythm.",
+      "lang": {
+        "tr": "Kapanışta konuşmayı azaltıyoruz. Bedenin ritmi sakinleştirmesine sessizce alan bırakıyoruz.",
+        "en": "In closing, we keep conversation low. We leave a quiet space for the body to settle the rhythm."
+      },
+      "tags": [
+        "kids",
+        "premium",
+        "kapanis",
+        "sessizlik",
+        "entegrasyon"
+      ],
+      "__pack": "pack.kids.premium.js"
+    },
+    {
+      "id": "REC_01",
+      "category": "Recovery & Performance",
+      "role": "Therapist",
+      "title": "Hızlı Check-in (Ağrı/Yoğunluk)",
+      "lang": {
+        "tr": "Başlamadan önce iki şey soracağım: en çok gerginlik nerede ve basınç tercihiniz nedir (hafif/orta/yoğun)?",
+        "en": "Before we start: where do you feel the most tension, and what pressure do you prefer (light/medium/firm)?"
+      },
+      "tags": [
+        "recovery",
+        "check-in",
+        "basinc",
+        "agri"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_02",
+      "category": "Recovery & Performance",
+      "role": "Therapist",
+      "title": "Nefesle Sinir Sistemi İnişi",
+      "lang": {
+        "tr": "Nefesi uzatarak sinir sistemini daha düşük bir vitese alıyoruz. Bu, kas çalışmasının etkisini yumuşatır.",
+        "en": "We’ll lengthen the breath to downshift the nervous system, softening the impact of the muscle work."
+      },
+      "tags": [
+        "recovery",
+        "nefes",
+        "sinir-sistemi",
+        "gevseme"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_03",
+      "category": "Recovery & Performance",
+      "role": "Therapist",
+      "title": "Bacak Recovery (Dolaşım)",
+      "lang": {
+        "tr": "Bacaklarda dolaşımı destekleyen akıcı ve ritmik bir çalışma yapacağım. Herhangi bir hassasiyet olursa hemen ayarlarız.",
+        "en": "I’ll use a flowing, rhythmic approach to support circulation in the legs. We’ll adjust immediately if anything feels sensitive."
+      },
+      "tags": [
+        "recovery",
+        "bacak",
+        "dolasim",
+        "ritim"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_04",
+      "category": "Recovery & Performance",
+      "role": "Therapist",
+      "title": "Omuz-Boyun Reset",
+      "lang": {
+        "tr": "Omuz ve boyun hattında ölçülü, derin ama kontrollü bir baskıyla ilerliyorum. Amaç gevşeme, zorlamak değil.",
+        "en": "I’ll work the shoulders and neck with measured, deep yet controlled pressure. The intention is release, not force."
+      },
+      "tags": [
+        "recovery",
+        "boyun",
+        "omuz",
+        "reset",
+        "kontrollu"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_05",
+      "category": "Recovery & Performance",
+      "role": "Reception",
+      "title": "Seans Sonrası Mini Plan",
+      "lang": {
+        "tr": "Seans sonrası için basit bir plan yeterli: su, hafif hareket ve mümkünse erken bir akşam.",
+        "en": "A simple post-session plan is enough: hydrate, gentle movement, and if possible, an early evening."
+      },
+      "tags": [
+        "recovery",
+        "aftercare",
+        "uyku",
+        "hidrasyon"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_06",
+      "category": "Recovery & Performance",
+      "role": "Therapist",
+      "title": "Yoğunluk Kademesi",
+      "lang": {
+        "tr": "Yoğunluğu kademeli tutuyorum. Dilerseniz burada bir adım derinleşebilir ya da aynı yumuşaklıkta kalabiliriz.",
+        "en": "I’m keeping intensity gradual. If you’d like, we can deepen one step here or stay at the same softness."
+      },
+      "tags": [
+        "recovery",
+        "yogunluk",
+        "iletisim",
+        "guven"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_07",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "Signature Recovery – Derin Reset",
+      "safeNote": "Non-medical; calm, deep recovery focus; guest comfort first.",
+      "lang": {
+        "tr": "Niyet performans değil; sinir sistemine derin bir reset alanı açmak. Dokunuşlar yavaş, net ve topraklayıcı olacak.",
+        "en": "The intention isn’t performance; it’s space for a deep nervous-system reset. Touch will be slow, clear, and grounding."
+      },
+      "tags": [
+        "signature",
+        "recovery",
+        "reset",
+        "sinir-sistemi",
+        "quiet-luxury"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "REC_08",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "Premium Kapanış – Sessiz Entegrasyon",
+      "safeNote": "Non-medical; calm closing; guest comfort first.",
+      "lang": {
+        "tr": "Kapanışta konuşmayı azaltıyoruz. Bedenin çalışmayı sindirmesi için sessiz bir entegrasyon alanı bırakıyorum.",
+        "en": "In the closing phase, we reduce conversation. I’ll leave a quiet space for the body to integrate the work."
+      },
+      "tags": [
+        "signature",
+        "recovery",
+        "kapanis",
+        "entegrasyon",
+        "premium"
+      ],
+      "__pack": "pack.recovery.js"
+    },
+    {
+      "id": "SD_01",
+      "category": "Seasonal Detox",
+      "role": "Therapist",
+      "title": "Seasonal Intake",
+      "safeNote": "Detox language stays non-medical; focus on warmth, hydration, and seasonal cues.",
+      "prompt": "Introduce the seasonal detox through warm notes, citrus steam, and a gentle request for current stress points.",
+      "lang": {
+        "tr": "Mevsimsel detoksu sıcak notalar, turunçgil buharı ve güncel gerilim noktalarını sorarak açıyoruz.",
+        "en": "We open the seasonal detox with warm citrus steam, asking about current tension points and aligning the rhythm to the season."
+      },
+      "tags": [
+        "seasonal",
+        "detox",
+        "citrus",
+        "warm"
+      ],
+      "__pack": "pack.seasonal-detox.js"
+    },
+    {
+      "id": "SD_02",
+      "category": "Seasonal Detox",
+      "role": "Therapist",
+      "title": "Water Balance Rhythm",
+      "safeNote": "Focus on hydration cues; non-medical.",
+      "prompt": "Describe the water balance step as a slow, fluid sweep that encourages gentle movement and cool glass vessels.",
+      "lang": {
+        "tr": "Su denge bölümünde yavaş, akışkan hareketler ve serin cam kaseler kullanıyoruz.",
+        "en": "During the water balance step we use slow, fluid sweeps and cool glass vessels to encourage gentle flow."
+      },
+      "tags": [
+        "seasonal",
+        "hydration",
+        "detox",
+        "water"
+      ],
+      "__pack": "pack.seasonal-detox.js"
+    },
+    {
+      "id": "SD_03",
+      "category": "Seasonal Detox",
+      "role": "Therapist",
+      "title": "Purifying Breath Focus",
+      "safeNote": "Breath guidance only; no claims of purification beyond experience.",
+      "prompt": "Highlight breathing as the channel to flush warmth through limbs, pairing it with textured towels and neutral lighting.",
+      "lang": {
+        "tr": "Nefes odaklı bölümde dokulu havlular eşlik ederken ışık nötr kalarak alanı sakinleştirir.",
+        "en": "We pair breath focus with textured towels and neutral lighting to let warmth move freely through the limbs."
+      },
+      "tags": [
+        "seasonal",
+        "breath",
+        "detox",
+        "neutral"
+      ],
+      "__pack": "pack.seasonal-detox.js"
+    },
+    {
+      "id": "SD_04",
+      "category": "Seasonal Detox",
+      "role": "Reception",
+      "title": "Seasonal Aftercare",
+      "safeNote": "Gentle, non-medical aftercare suggestions only.",
+      "prompt": "Suggest a quiet pause with herbal water, describing how the seasonal shift invites slowing down.",
+      "lang": {
+        "tr": "Mevsimsel değişimde sakin kalmak için bitki suları ve kısa bir dinlenme öneriyoruz.",
+        "en": "After the ritual we invite a quiet herbal water pause, letting the seasonal shift encourage slowing down."
+      },
+      "tags": [
+        "seasonal",
+        "aftercare",
+        "detox"
+      ],
+      "__pack": "pack.seasonal-detox.js"
+    },
+    {
+      "id": "SFT_01",
+      "category": "Signature & Family",
+      "role": "Therapist",
+      "title": "Signature Karşılama – Güvenli Alan",
+      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "lang": {
+        "tr": "Bu ritüel, birlikte ama saygılı bir alanda ilerler. Her adım, teen’in konforuna göre ayarlanır; kontrol her zaman onda.",
+        "en": "This ritual unfolds together, in a respectful shared space. Every step adjusts to the teen’s comfort; control always stays with them."
+      },
+      "tags": [
+        "signature",
+        "family",
+        "teen",
+        "guven",
+        "premium"
+      ],
+      "__pack": "pack.signature-family-teen.js"
+    },
+    {
+      "id": "SFT_02",
+      "category": "Signature & Family",
+      "role": "Therapist",
+      "title": "Senkron Başlangıç – Yumuşak Uyum",
+      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "lang": {
+        "tr": "Şimdi ritmi yumuşakça senkronluyoruz. Dokunuşlar aynı anda başlar; yoğunluk teen’in verdiği sinyallere göre şekillenir.",
+        "en": "We now gently synchronize the rhythm. Touch begins together, with intensity shaped by the teen’s signals."
+      },
+      "tags": [
+        "signature",
+        "family",
+        "senkron",
+        "uyum",
+        "saygi"
+      ],
+      "__pack": "pack.signature-family-teen.js"
+    },
+    {
+      "id": "SFT_03",
+      "category": "Signature & Family",
+      "role": "Therapist",
+      "title": "Teen Odaklı Premium Akış",
+      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "lang": {
+        "tr": "Bu bölüm teen’e ayrılmıştır. Dokunuşlar yavaş, ölçülü ve sade ilerler; konuşma minimumda tutulur.",
+        "en": "This section is dedicated to the teen. Touch moves slowly, measured, and minimal, with conversation kept low."
+      },
+      "tags": [
+        "signature",
+        "teen",
+        "premium",
+        "mahremiyet",
+        "quiet-luxury"
+      ],
+      "__pack": "pack.signature-family-teen.js"
+    },
+    {
+      "id": "SFT_04",
+      "category": "Signature & Family",
+      "role": "Reception",
+      "title": "Sessiz Kapanış – Birlikte Entegrasyon",
+      "safeNote": "Signature & Family; teen consent first; respectful, non-medical, non-sexual.",
+      "lang": {
+        "tr": "Kapanışta ritmi yavaşlatıyoruz. Aileyle birlikte, konuşmadan, bedenin çalışmayı sindirmesine alan açıyoruz.",
+        "en": "In the closing phase, we slow the rhythm further. Together, in silence, we allow the body to integrate the work."
+      },
+      "tags": [
+        "signature",
+        "family",
+        "kapanis",
+        "entegrasyon",
+        "premium"
+      ],
+      "__pack": "pack.signature-family-teen.js"
+    },
+    {
+      "id": "SIG_01",
+      "category": "Signature",
+      "role": "Therapist",
+      "title": "Quiet Luxury Welcome",
+      "safeNote": "Signature ritual; non-medical, comfort-first language; flow slows at guest request.",
+      "prompt": "Frame the SANTIS quiet-luxury welcome as a slow inhale, marble steps, and gentle lighting that envelopes the guest.",
+      "lang": {
+        "tr": "Bu Signature karşılama, mermer zemin, sıcak tonlar ve sakin ışıklarla yavaşça kabullenilir. Konforunuz her adımda sorulur.",
+        "en": "This Signature welcome absorbs you with marble steps, warm light, and a gentle rhythm that asks for consent at every turn."
+      },
+      "tags": [
+        "signature",
+        "quiet-luxury",
+        "marble",
+        "welcome",
+        "slow"
+      ],
+      "__pack": "pack.signature.js"
+    },
+    {
+      "id": "SIG_02",
+      "category": "Signature",
+      "role": "Therapist",
+      "title": "Synchronized Breath Path",
+      "safeNote": "Non-medical, calming breath focus; pressure always adjustable.",
+      "prompt": "Guide synchronized breath cues as choreography: hands, marble columns, and a slow rhythm that mirrors the guest's own inhale.",
+      "lang": {
+        "tr": "Nefeslerimizi senkronize ediyoruz; eller mermer sütunlara nazikçe değiyor, ritim sizin nefesinizle uyumlanıyor.",
+        "en": "We sync our breath flow to yours, letting hands glide alongside marble pillars while the rhythm mirrors your inhale."
+      },
+      "tags": [
+        "signature",
+        "breath",
+        "quiet-luxury",
+        "marble",
+        "sync"
+      ],
+      "__pack": "pack.signature.js"
+    },
+    {
+      "id": "SIG_03",
+      "category": "Signature & Couples",
+      "role": "Therapist",
+      "title": "Premium Couples Pause",
+      "safeNote": "Non-medical couple focus; comfortable silence honored; fully draped.",
+      "prompt": "Describe the couples pause as a mirrored stillness where marble benches and soft steam cradle both bodies in sync.",
+      "lang": {
+        "tr": "Çiftler için bu an, mermer banklarda sessizlikte senkronludur; yavaş buhar ve dokunuşlar birlikte uyumlanır.",
+        "en": "This couples pause is mirrored stillness: marble benches, soft steam, and synchronized touches that respect comfort."
+      },
+      "tags": [
+        "signature",
+        "couples",
+        "quiet-luxury",
+        "sync",
+        "pause"
+      ],
+      "__pack": "pack.signature.js"
+    },
+    {
+      "id": "SIG_04",
+      "category": "Signature",
+      "role": "Reception",
+      "title": "Grounding Departure",
+      "safeNote": "Quiet aftercare reminder; hydration and rest suggested without claims.",
+      "prompt": "Wrap the signature finish with marble fountain reflections, whispering reminders to hydrate and pause before stepping back into daylight.",
+      "lang": {
+        "tr": "Signature kapanışta mermer havuzun yansıması eşliğinde suyunuzu tamamlamanızı ve güneş öncesi kısa bir dinlenme yapmanızı öneriyoruz.",
+        "en": "We close the signature ritual with marble reflections, soft whispers to hydrate, and a short pause before you return to daylight."
+      },
+      "tags": [
+        "signature",
+        "aftercare",
+        "quiet-luxury",
+        "hydration"
+      ],
+      "__pack": "pack.signature.js"
+    }
+  ]
+}

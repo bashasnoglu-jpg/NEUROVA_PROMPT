@@ -1,10 +1,10 @@
-# NEUROVA LAN IP Sabitleme & Firewall Talimatı
+# SANTIS LAN IP Sabitleme & Firewall Talimatı
 
 ## 1) Router Arayüzü Checklist
 **IP Reservation / DHCP Reservation ile PC’ye Sabit IP**
 
 ### Hazırlık
-* PC adı: `NEUROVA-PROMPT-SERVER`
+* PC adı: `SANTIS-PROMPT-SERVER`
 * Hedef sabit IP: `192.168.1.20`
 * PC'nin aktif adaptörünün MAC adresi
 
@@ -20,7 +20,7 @@
 5. Kayıt girilir:
    * MAC: `AA-BB-CC-DD-EE-FF`
    * IP: `192.168.1.20`
-   * Name: `NEUROVA-PROMPT-SERVER`
+   * Name: `SANTIS-PROMPT-SERVER`
 6. Save / Apply ile kaydedilir.
 7. Gerekirse DHCP lease renew veya router reboot yapılır.
 
@@ -42,7 +42,7 @@
 6. Specific local ports: `5500` (gerekirse `8080`).
 7. Action = **Allow the connection**.
 8. Profile = Domain + Private (Public gerekmez).
-9. Name = `NEUROVA Prompt Server TCP 5500`.
+9. Name = `SANTIS Prompt Server TCP 5500`.
 10. Finish.
 
 ### Hızlı Doğrulama

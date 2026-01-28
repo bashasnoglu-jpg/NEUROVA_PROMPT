@@ -12,7 +12,7 @@ const ROOT = process.cwd();
 const PACKS_DIR = path.join(ROOT, "packs");
 const MANIFEST_PATH = path.join(PACKS_DIR, "manifest.json");
 const OUTPUT_DIR = path.join(ROOT, "exports");
-const REFERENCE_FILE = path.join(ROOT, "assets", "NEUROVA_REFERANS.md");
+const REFERENCE_FILE = path.join(ROOT, "assets", "SANTIS_REFERANS.md");
 
 function die(msg) {
   console.error("[NV_EXPORT][ERROR]", msg);
@@ -101,7 +101,7 @@ function buildMarkdown(prompts) {
     const tr = item.lang?.tr || "";
     const en = item.lang?.en || "";
     return [
-      `## ${item.title || "NEUROVA Prompt"}`,
+      `## ${item.title || "SANTIS Prompt"}`,
       ``,
       item.id ? `**ID:** ${item.id}` : null,
       `**Pack:** ${pack}`,
@@ -126,7 +126,7 @@ function buildMarkdown(prompts) {
   });
 
   return [
-    "# NEUROVA Prompt Export",
+    "# SANTIS Prompt Export",
     `Generated: ${new Date().toISOString()}`,
     `Reference snapshot:\n${buildReferenceSnippet()}`,
     "",
@@ -146,10 +146,10 @@ function writeExports(prompts, packs) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  const jsonPath = path.join(OUTPUT_DIR, "neurova-prompts.json");
+  const jsonPath = path.join(OUTPUT_DIR, "santis-prompts.json");
   writeJsonAtomic(jsonPath, payload);
 
-  const mdPath = path.join(OUTPUT_DIR, "neurova-prompts.md");
+  const mdPath = path.join(OUTPUT_DIR, "santis-prompts.md");
   fs.writeFileSync(mdPath, buildMarkdown(prompts), "utf8");
 
   info(`Wrote ${jsonPath} (${prompts.length} prompts)`);
