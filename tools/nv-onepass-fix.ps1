@@ -2,7 +2,7 @@ $ErrorActionPreference="Stop"
 
 # 0) Ensure folders
 New-Item -ItemType Directory -Force -Path ".\tools" | Out-Null
-New-Item -ItemType Directory -Force -Path ".\SANTIS_PROMPT\packs" | Out-Null
+New-Item -ItemType Directory -Force -Path ".\NEUROVA_PROMPT\packs" | Out-Null
 
 # 1) NV_PROMPT bootstrap (minimal working prompt app + sample pack)
 @'
@@ -11,7 +11,7 @@ New-Item -ItemType Directory -Force -Path ".\SANTIS_PROMPT\packs" | Out-Null
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SANTIS Prompt Kütüphanesi</title>
+  <title>NEUROVA Prompt Kütüphanesi</title>
   <style>
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:24px}
     .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
@@ -30,7 +30,7 @@ New-Item -ItemType Directory -Force -Path ".\SANTIS_PROMPT\packs" | Out-Null
   <script defer src="./app.js"></script>
 </head>
 <body>
-  <h1>SANTIS Prompt Kütüphanesi</h1>
+  <h1>NEUROVA Prompt Kütüphanesi</h1>
   <div class="row">
     <input id="nv-q" placeholder="Ara (id / title / tag)..." />
     <select id="nv-cat"><option value="ALL">ALL</option></select>
@@ -47,7 +47,7 @@ New-Item -ItemType Directory -Force -Path ".\SANTIS_PROMPT\packs" | Out-Null
   <div class="muted" id="nv-health"></div>
 </body>
 </html>
-'@ | Set-Content -Encoding UTF8 ".\SANTIS_PROMPT\prompt-library.html"
+'@ | Set-Content -Encoding UTF8 ".\NEUROVA_PROMPT\prompt-library.html"
 
 @'
 "use strict";
@@ -79,7 +79,7 @@ async function nvLoadAllPacks(){
 
 window.NV_LOAD_PACKS = nvLoadAllPacks;
 nvLoadAllPacks();
-'@ | Set-Content -Encoding UTF8 ".\SANTIS_PROMPT\prompts-loader.js"
+'@ | Set-Content -Encoding UTF8 ".\NEUROVA_PROMPT\prompts-loader.js"
 
 @'
 "use strict";
@@ -148,7 +148,7 @@ function render(){
 });
 document.addEventListener("nv:packs:loaded", render);
 setTimeout(render, 250);
-'@ | Set-Content -Encoding UTF8 ".\SANTIS_PROMPT\app.js"
+'@ | Set-Content -Encoding UTF8 ".\NEUROVA_PROMPT\app.js"
 
 @'
 (() => {
@@ -161,13 +161,13 @@ setTimeout(render, 250);
     role:"Therapist",
     tags:["sample","hamam","akış"],
     safeNote:"Fully draped. Non-medical. Non-sexual.",
-    tr:"Bu bir örnek karttır. Gerçek pack.*.js dosyalarını SANTIS_PROMPT/packs/ içine koyduğunda otomatik görünecek.",
-    en:"This is a sample card. Put real pack.*.js files into SANTIS_PROMPT/packs/ and they will appear automatically."
+    tr:"Bu bir örnek karttır. Gerçek pack.*.js dosyalarını NEUROVA_PROMPT/packs/ içine koyduğunda otomatik görünecek.",
+    en:"This is a sample card. Put real pack.*.js files into NEUROVA_PROMPT/packs/ and they will appear automatically."
   }];
   const seen = new Set(window.NV_PROMPTS.map(x => x && x.id).filter(Boolean));
   for (const x of P) if (!seen.has(x.id)) window.NV_PROMPTS.push(x);
 })();
-'@ | Set-Content -Encoding UTF8 ".\SANTIS_PROMPT\packs\pack.sample.js"
+'@ | Set-Content -Encoding UTF8 ".\NEUROVA_PROMPT\packs\pack.sample.js"
 
 # 2) Apply layout
 if (!(Test-Path ".\tools\nv-apply-layout.ps1")) {
@@ -180,17 +180,17 @@ if (!(Test-Path ".\tools\nv-rewrite-site-links.js")) {
 @'
 const fs = require("fs");
 const path = require("path");
-const f = path.join(process.cwd(), "SANTIS_SITE", "nav.html");
-if (!fs.existsSync(f)) { console.log("SKIP: SANTIS_SITE/nav.html not found"); process.exit(0); }
+const f = path.join(process.cwd(), "NEUROVA_SITE", "nav.html");
+if (!fs.existsSync(f)) { console.log("SKIP: NEUROVA_SITE/nav.html not found"); process.exit(0); }
 let t = fs.readFileSync(f, "utf8");
 const pages = ["index.html","hamam.html","masajlar.html","kids-family.html","face-sothys.html","yoga.html","products.html","about.html","team.html","packages.html","nav.html"];
 for (const p of pages) {
-  const re = new RegExp("(href\\s*=\\s*[\\"'])(?:\\/)?(?:SANTIS_SITE\\/)?"+p+"([\\"'])", "gi");
+  const re = new RegExp("(href\\s*=\\s*[\\"'])(?:\\/)?(?:NEUROVA_SITE\\/)?"+p+"([\\"'])", "gi");
   t = t.replace(re, "$1./"+p+"$2");
 }
-t = t.replace(/(src|href)\s*=\\s*[\\"']\\/SANTIS_SITE\\/(assets\\/[^\\"']+)[\\"']/gi, "$1=\"./$2\"");
+t = t.replace(/(src|href)\s*=\\s*[\\"']\\/NEUROVA_SITE\\/(assets\\/[^\\"']+)[\\"']/gi, "$1=\"./$2\"");
 fs.writeFileSync(f, t, "utf8");
-console.log("OK: rewrote links in SANTIS_SITE/nav.html");
+console.log("OK: rewrote links in NEUROVA_SITE/nav.html");
 '@ | Set-Content -Encoding UTF8 ".\tools\nv-rewrite-site-links.js"
 }
 node .\tools\nv-rewrite-site-links.js

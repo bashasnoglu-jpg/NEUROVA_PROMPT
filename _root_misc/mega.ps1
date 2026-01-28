@@ -1,5 +1,5 @@
 # =========================
-# SANTIS MEGA SCAN v1.1
+# NEUROVA MEGA SCAN v1.1
 # Hata ayıkla + raporla
 # =========================
 $ErrorActionPreference = "SilentlyContinue"
@@ -9,7 +9,7 @@ if (Test-Path $out) { Remove-Item $out -Force }
 
 function W($s=""){ Add-Content -Path $out -Value $s }
 
-W "SANTIS MEGA SCAN v1.1"
+W "NEUROVA MEGA SCAN v1.1"
 W ("ROOT: " + $root)
 W ("TIME: " + (Get-Date).ToString("s"))
 W ""

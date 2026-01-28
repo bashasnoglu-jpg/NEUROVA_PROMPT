@@ -1,6 +1,6 @@
-param(
+﻿param(
   [string]$Root = (Get-Location).Path,
-  [string[]]$Keep = @("SANTIS_SITE__ACTIVE")
+  [string[]]$Keep = @("NEUROVA_SITE__ACTIVE")
 )
 
 # If Keep arrives as a single comma-separated string, split it

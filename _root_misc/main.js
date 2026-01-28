@@ -2,7 +2,7 @@
 
 /*
  * ==================================================================
- * SANTIS TAG NORMALIZE PATCH v1.0
+ * NEUROVA TAG NORMALIZE PATCH v1.0
  * ==================================================================
  * Bu fonksiyonlar, prompt kartlarının `tags` alanını
  * her zaman temiz, standart ve deterministik bir array'e dönüştürür.
@@ -112,7 +112,7 @@ function buildMD(item) {
     const trBlock = wrapCodeFence(item?.lang?.tr || "");
     const enBlock = wrapCodeFence(item?.lang?.en || "");
     return [
-        `## ${item.title || "SANTIS Prompt"}`,
+        `## ${item.title || "NEUROVA Prompt"}`,
         ``,
         item.id ? `**ID:** ${item.id}` : null,
         item.category ? `**Category:** ${item.category}` : null,
@@ -311,9 +311,9 @@ document.addEventListener("click", (e) => {
     if (!item) return;
 
     if (mode === "json") {
-        downloadText(`santis-prompt-${id}.json`, "application/json", JSON.stringify(item, null, 2));
+        downloadText(`neurova-prompt-${id}.json`, "application/json", JSON.stringify(item, null, 2));
     } else if (mode === "md") {
-        downloadText(`santis-prompt-${id}.md`, "text/markdown", buildMD(item));
+        downloadText(`neurova-prompt-${id}.md`, "text/markdown", buildMD(item));
     }
 });
 

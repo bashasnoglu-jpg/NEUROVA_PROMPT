@@ -1,37 +1,37 @@
-# SANTIS - ignore local diagnostics / labs
+# NEUROVA - ignore local diagnostics / labs
 **/.vscode/
 __ops/
-SANTIS_SITE__ACTIVE/debug_*.txt
-SANTIS_SITE__ACTIVE/diagnose*.ps1
-SANTIS_SITE__ACTIVE/test_encoding_lab*.ps1
-SANTIS_SITE__ACTIVE/fixpack_v*.ps1
-SANTIS_SITE__ACTIVE/restore_mojibake.py
+NEUROVA_SITE__ACTIVE/debug_*.txt
+NEUROVA_SITE__ACTIVE/diagnose*.ps1
+NEUROVA_SITE__ACTIVE/test_encoding_lab*.ps1
+NEUROVA_SITE__ACTIVE/fixpack_v*.ps1
+NEUROVA_SITE__ACTIVE/restore_mojibake.py
 
-# SANTIS - local diagnostics / labs
+# NEUROVA - local diagnostics / labs
 **/.vscode/
 __ops/
-SANTIS_SITE__ACTIVE/.gitignore
-SANTIS_SITE__ACTIVE/_PROMPT_WORKBENCH.json
-SANTIS_SITE__ACTIVE/debug_*.txt
-SANTIS_SITE__ACTIVE/diagnose*.ps1
-SANTIS_SITE__ACTIVE/test_encoding_lab*.ps1
-SANTIS_SITE__ACTIVE/fixpack_v*.ps1
-SANTIS_SITE__ACTIVE/restore_mojibake.py
-SANTIS_SITE__ACTIVE/tr/force_fix_tr.ps1
+NEUROVA_SITE__ACTIVE/.gitignore
+NEUROVA_SITE__ACTIVE/_PROMPT_WORKBENCH.json
+NEUROVA_SITE__ACTIVE/debug_*.txt
+NEUROVA_SITE__ACTIVE/diagnose*.ps1
+NEUROVA_SITE__ACTIVE/test_encoding_lab*.ps1
+NEUROVA_SITE__ACTIVE/fixpack_v*.ps1
+NEUROVA_SITE__ACTIVE/restore_mojibake.py
+NEUROVA_SITE__ACTIVE/tr/force_fix_tr.ps1
 
-# SANTIS - local ops / diagnostics (do not commit)
+# NEUROVA - local ops / diagnostics (do not commit)
 __ops/
-SANTIS_SITE__ACTIVE/__ops/
-SANTIS_SITE__ACTIVE/_ops/*.txt
-SANTIS_SITE__ACTIVE/_reports/*.txt
-SANTIS_SITE__ACTIVE/clean_nv_slots.ps1
-SANTIS_SITE__ACTIVE/fix_project.ps1
+NEUROVA_SITE__ACTIVE/__ops/
+NEUROVA_SITE__ACTIVE/_ops/*.txt
+NEUROVA_SITE__ACTIVE/_reports/*.txt
+NEUROVA_SITE__ACTIVE/clean_nv_slots.ps1
+NEUROVA_SITE__ACTIVE/fix_project.ps1
 
-# SANTIS local ops (do not commit)
+# NEUROVA local ops (do not commit)
 __ops/
 
-# SANTIS: generated backups / scratch
-SANTIS_SITE__ACTIVE/_ops/_mojibake_backup_*/
+# NEUROVA: generated backups / scratch
+NEUROVA_SITE__ACTIVE/_ops/_mojibake_backup_*/
 __ops/
 ~$*
 
@@ -48,9 +48,5 @@ __ops/
 
 
 # local scratch
-SANTIS_SITE__ACTIVE/assets/*.ps1
-
-
-# dependencies
-node_modules/
+NEUROVA_SITE__ACTIVE/assets/*.ps1
 

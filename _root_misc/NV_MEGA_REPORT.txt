@@ -1,5 +1,5 @@
-SANTIS MEGA SCAN v1.1
-ROOT: C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT
+NEUROVA MEGA SCAN v1.1
+ROOT: C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT
 TIME: 2025-12-18T14:24:34
 
 == 0) BASIC CHECKS ==
@@ -18,16 +18,16 @@ dev = node server/index.cjs
 Node --check tamamlandÄ±.
 
 == 3) JSON FILE PARSE CHECK ==
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\call-bind-apply-helpers\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\call-bound\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\dunder-proto\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\es-define-property\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\es-errors\tsconfig.json
-   Geï¿½ersiz nesne geï¿½irildi, ':' veya '}' bekleniyor. (27): {
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bind-apply-helpers\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\call-bound\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\dunder-proto\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-define-property\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-errors\tsconfig.json
+   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (27): {
 	"compilerOptions": {
 		/* Visit https://aka.ms/tsconfig.json to read more about this file */
 
@@ -77,10 +77,10 @@ Node --check tamamlandÄ±.
 	],
 }
 
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\es-object-atoms\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\get-proto\tsconfig.json
-   Geï¿½ersiz nesne geï¿½irildi, ':' veya '}' bekleniyor. (59): {
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\es-object-atoms\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\get-proto\tsconfig.json
+   Geçersiz nesne geçirildi, ':' veya '}' bekleniyor. (59): {
 	"extends": "@ljharb/tsconfig",
 	"compilerOptions": {
 		//"target": "es2021",
@@ -90,29 +90,29 @@ Node --check tamamlandÄ±.
 	],
 }
 
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\gopd\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\has-symbols\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\hasown\tsconfig.json
-   Geï¿½ersiz dizi geï¿½irildi, fazladan izleyen ',' var. (69): {
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\gopd\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\has-symbols\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\hasown\tsconfig.json
+   Geçersiz dizi geçirildi, fazladan izleyen ',' var. (69): {
   "extends": "@ljharb/tsconfig",
   "exclude": [
     "coverage",
   ],
 }
 
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\math-intrinsics\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\side-channel\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\side-channel-list\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\side-channel-map\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\node_modules\side-channel-weakmap\tsconfig.json
-   Geï¿½ersiz JSON basit ï¿½ï¿½esi: .
-[BAD JSON] C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\package-lock.json
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\math-intrinsics\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-list\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-map\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\node_modules\side-channel-weakmap\tsconfig.json
+   Geçersiz JSON basit öðesi: .
+[BAD JSON] C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\package-lock.json
    Cannot process argument because the value of argument "name" is not valid. Change the value of the "name" argument and run the operation again.
 JSON parse check tamamlandÄ±.
 
@@ -135,19 +135,19 @@ total prompts = 53
 
 == 5) COMMON OOPS PATTERNS ==
 [HIT] NV_PACK_LIST  (6)
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\nv-audit.js
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\nv-build-pack-index.js
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\app.js
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\health-check.js
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\prompt-library.html
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\prompts-loader.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-audit.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-build-pack-index.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\app.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\health-check.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompt-library.html
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
 [HIT] manifest.json  (6)
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\export-prompts.mjs
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\mega-metrics.mjs
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\nv-guard-packs.mjs
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\tools\quality-gate.mjs
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\_audit\nv-move-plan.preview.txt
-   C:\Users\tourg\OneDrive\Masaï¿½stï¿½\SANTIS_PROMPT\prompts-loader.js
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\export-prompts.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\mega-metrics.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\nv-guard-packs.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\tools\quality-gate.mjs
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\_audit\nv-move-plan.preview.txt
+   C:\Users\tourg\OneDrive\Masaüstü\NEUROVA_PROMPT\prompts-loader.js
 
 == 6) SUMMARY ==
 Rapor Ã¼retildi: NV_MEGA_REPORT.txt

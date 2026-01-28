@@ -1,0 +1,24 @@
+
+Count Name      
+----- ----      
+   67 .js       
+   34 .html     
+   27 .md       
+   15 .json     
+    9 .py       
+    7 .txt      
+    6 .css      
+    6 .pdf      
+    5 .mjs      
+    5 .png      
+    5 .ps1      
+    4 .cjs      
+    4 .log      
+    3 .yml      
+    1 .gitignore
+    1 .env      
+    1 .bak      
+    1 .zip      
+
+
+

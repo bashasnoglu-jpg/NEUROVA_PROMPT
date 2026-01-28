@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Products — NEUROVA</title>
+  <link rel="stylesheet" href="../../NEUROVA_SITE/assets/nav.css" />
+  <link rel="stylesheet" href="./paketler.css" />
+</head>
+<body data-page="urunler">
+  <div id="nv-nav-slot"></div>
+
+  <main>
+    <section class="nv-hero">
+      <h1>Products</h1>
+      <p>Quiet Luxury Skin Bar — Ritüel sonrası 3 premium dokunuş, resepsiyondan hemen teslim.</p>
+      <div class="nv-products-cta nv-cta-row">
+        <a
+          href="https://wa.me/905348350169?text=Merhaba%20%F0%9F%91%8B%0ASize%20en%20uygun%20paketi%20%C3%B6nerebilmem%20i%C3%A7in%20birka%C3%A7%20k%C4%B1sa%20soru%20sorabilir%20miyim%3F"
+          class="nv-cta nv-cta--primary"
+          data-source="urunler"
+          data-tier="value"
+        >
+          Kişisel paket önerisi al
+        </a>
+        <a
+          href="https://wa.me/905348350169?text=Merhaba%20%F0%9F%91%8B%0APaketler%20hakk%C4%B1nda%20k%C4%B1sa%20bilgi%20almak%20istiyorum."
+          class="nv-cta nv-cta--secondary"
+          data-source="urunler"
+          data-tier="entry"
+        >
+          Hızlı bilgi al
+        </a>
+      </div>
+      <p class="nv-meta">Danışmanlık + aynı gün teslim / kurye.</p>
+      <p class="nv-meta">En çok tercih edilenler: Premium bakım ve Signature ritüeller.</p>
+    </section>
+
+    <section class="nv-pack-section" id="premium-trio">
+      <header class="nv-pack-header">
+        <h2>Premium Üçlü</h2>
+        <p>Katalog değil, uzman rafı: claim-free, glow ve nem odaklı.</p>
+      </header>
+      <div class="nv-product-grid">
+        <article class="nv-product-card" data-product="Secrets de Sothys Prestige Cream">
+          <h3>Secrets de Sothys Prestige Cream</h3>
+          <p>Kadife doku, sessiz ışıltı; akşam finali için.</p>
+          <a class="nv-wa-inline" data-wa="1" data-product="Secrets de Sothys Prestige Cream" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
+        </article>
+        <article class="nv-product-card" data-product="Youth Intensive Serum">
+          <h3>Youth Intensive Serum</h3>
+          <p>Nem + pürüzsüzlük hissi, hafif doku.</p>
+          <a class="nv-wa-inline" data-wa="1" data-product="Youth Intensive Serum" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
+        </article>
+        <article class="nv-product-card" data-product="Eye Contour Soothing Gel">
+          <h3>Eye Contour Soothing Gel</h3>
+          <p>Serinletici roll-on, ekran yorgunluğuna nazik.</p>
+          <a class="nv-wa-inline" data-wa="1" data-product="Eye Contour Soothing Gel" href="#nv-wa">WhatsApp'tan sipariş oluştur</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="nv-pack-section" id="match">
+      <header class="nv-pack-header">
+        <h2>Ritüel + Ürün Eşleşmeleri</h2>
+        <p>Satış destekleyici, karar yorgunluğu olmadan.</p>
+      </header>
+      <ul class="nv-match-list">
+        <li>Seasonal Detox &amp; Glow + Youth Intensive Serum — duştan sonra 2 pompa, gün içinde nem desteği.</li>
+      </ul>
+    </section>
+
+    <section class="nv-pack-section" id="assurance">
+      <header class="nv-pack-header">
+        <h2>Kullanım / Güvence</h2>
+        <p>Medikal vaat yok; koku hassasiyeti için tester sorabilirsiniz.</p>
+      </header>
+      <div class="nv-assurance">
+        Aynı gün resepsiyon teslimi, isterseniz kurye. Claim-free dil; sakin, premium anlatım.
+      </div>
+    </section>
+
+    <section id="nv-wa" class="nv-wa">
+      <div>
+        <h2>WhatsApp ile sipariş oluştur</h2>
+        <p>Hızlı: Ürün seç → sorular → resepsiyon teslim veya kurye.</p>
+      </div>
+      <a class="nv-cta nv-wa-link" href="#">WhatsApp'tan sipariş oluştur</a>
+    </section>
+  </main>
+
+  <script>
+    (async function () {
+      const slot = document.getElementById('nv-nav-slot');
+      if (!slot) return;
+      const res = await fetch('../../NEUROVA_SITE/nav.html', { cache: 'no-store' });
+      slot.innerHTML = await res.text();
+    })();
+  </script>
+  <script src="../../NEUROVA_SITE/wa-config.js"></script>
+  <script defer src="../../NEUROVA_SITE/wa-linker.js"></script>
+  <script defer src="./wa-click-tracker.js"></script>
+  <script defer src="./heatmap-overlay.js"></script>
+  <script src="../../NEUROVA_SITE/heatmap.js"></script>
+  <script src="../../NEUROVA_SITE/slot-macro.js"></script>
+  <script src="../../NEUROVA_SITE/assets/nav.js" defer></script>
+</body>
+</html>

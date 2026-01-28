@@ -2,8 +2,8 @@
 "use strict";
 
 /**
- * SANTIS_PROMPT Agent Fix v1.0
- * Run from SANTIS_PROMPT root:
+ * NEUROVA_PROMPT Agent Fix v1.0
+ * Run from NEUROVA_PROMPT root:
  *   node ./tools/nv-agent-fix.js
  *
  * What it does:
@@ -121,7 +121,7 @@ function main() {
 
   if (!report.ok) {
     console.log("\nNEXT STEPS:");
-    console.log("- Make sure you run this from the real SANTIS_PROMPT root (same folder that contains prompt-library.html, tools/, packs/).");
+    console.log("- Make sure you run this from the real NEUROVA_PROMPT root (same folder that contains prompt-library.html, tools/, packs/).");
     console.log("- If tools/obs-test-harness.js is missing here, move/copy the tools folder into this root.");
     process.exitCode = 1;
   } else {

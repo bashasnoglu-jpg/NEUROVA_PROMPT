@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-PACKS_DIR = ROOT / "SANTIS_PROMPT" / "packs"
+PACKS_DIR = ROOT / "NEUROVA_PROMPT" / "packs"
 MANIFEST = PACKS_DIR / "manifest.json"
 
 

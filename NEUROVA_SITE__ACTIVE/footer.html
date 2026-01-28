@@ -1,0 +1,23 @@
+﻿Evet, bu **mojibake değil**; bu direkt **dosyada “?” karakteri kalmış** (yani karakterler kaybolmuş). Bunu düzeltmek için footer’daki metni doğru TR ile yazıp dosyayı **UTF-8** kaydetmen yeterli.
+
+Şu blokla birebir değiştir:
+
+```html
+<footer class="nv-footer">
+  <div class="nv-footer__inner">
+    <p>© 2026 NEUROVA Spa &amp; Wellness</p>
+    <p>Sessizlik • Ritüel • Denge</p>
+  </div>
+</footer>
+```
+
+### Kaydetme (kritik)
+
+* Notepad: **Farklı Kaydet → UTF-8**
+* VS Code: **Save with Encoding → UTF-8**
+
+### Hızlı test
+
+Tarayıcıda hard refresh: **Ctrl + F5**.
+
+İstersen aynı şekilde `nav.html` içindeki `Face ? Sothys`, `?r?nler`, `Kurumsal ?` gibi yerleri de tek blok halinde sana “doğrusu” olarak yazayım.

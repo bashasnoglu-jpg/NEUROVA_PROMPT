@@ -4,10 +4,10 @@ const path = require("path");
 const ROOT = process.cwd();
 const IGNORE_DIRS = new Set(["node_modules",".git",".vs",".vscode","dist","build",".cache"]);
 const MUST_HAVE = [
-  "SANTIS_SITE/index.html",
-  "SANTIS_PROMPT/prompt-library.html",
-  "SANTIS_PROMPT/app.js",
-  "SANTIS_PROMPT/packs"
+  "NEUROVA_SITE/index.html",
+  "NEUROVA_PROMPT/prompt-library.html",
+  "NEUROVA_PROMPT/app.js",
+  "NEUROVA_PROMPT/packs"
 ];
 
 function exists(p){ try { fs.accessSync(p); return true; } catch { return false; } }
@@ -94,14 +94,14 @@ function main(){
     }
   }
 
-  const pl = path.join(ROOT, "SANTIS_PROMPT/prompt-library.html");
+  const pl = path.join(ROOT, "NEUROVA_PROMPT/prompt-library.html");
   if (exists(pl)){
     const t = readTextSafe(pl);
     const hasPackList = /NV_PACK_LIST/.test(t);
     const hasManifest = /manifest\.json/.test(t) || /manifest\s*:\s*/.test(t);
-    report.promptPackSignals.push({ file:"SANTIS_PROMPT/prompt-library.html", hasPackList, hasManifest });
+    report.promptPackSignals.push({ file:"NEUROVA_PROMPT/prompt-library.html", hasPackList, hasManifest });
   } else {
-    report.promptPackSignals.push({ file:"SANTIS_PROMPT/prompt-library.html", ok:false });
+    report.promptPackSignals.push({ file:"NEUROVA_PROMPT/prompt-library.html", ok:false });
   }
 
   fs.mkdirSync(path.join(ROOT,"_audit"), { recursive:true });

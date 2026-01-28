@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Pre-commit mojibake guard for SANTIS.
+Pre-commit mojibake guard for NEUROVA.
 - Blocks commits containing common Turkish encoding artefacts.
 - Verifies staged text files are UTF-8 decodable.
 - Does not modify files; fails fast with a summary.
@@ -123,7 +123,7 @@ def main() -> int:
             print("\nSkipped (binary/ignored):")
             for r in skipped:
                 print(f" - {r['path'].relative_to(ROOT)} :: {r['reason']}")
-        print("\nHint: run `python SANTIS_SITE/fix_tr_chars.py --write` to fix.")
+        print("\nHint: run `python NEUROVA_SITE/fix_tr_chars.py --write` to fix.")
         return 1
 
     if skipped:

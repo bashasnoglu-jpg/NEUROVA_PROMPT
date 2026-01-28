@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Prompt Library</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0;
+      background: #f2f2f8;
+      color: #111;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 24px auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+      flex: 1;
+      border-radius: 8px;
+      border: 1px solid #cbd5f5;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .controls button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+    }
+
+    .import-btn {
+      background: #111;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .import-btn input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #cbd5f5;
+      min-height: 110px;
+      padding: 12px;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    .prompt {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      background: #fff;
+      margin-bottom: 12px;
+      cursor: grab;
+    }
+
+    .prompt.dragging {
+      opacity: 0.6;
+      border-color: #60a5fa;
+      box-shadow: 0 10px 18px rgba(37, 99, 235, 0.25);
+    }
+
+    .prompt .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      color: #475569;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: #e0f2fe;
+      color: #075985;
+      margin-right: 6px;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .inline-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .inline-actions button {
+      border: 1px solid #cbd5f5;
+      background: #fff;
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .inline-actions button.primary {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+    }
+
+    #tagFilter {
+      max-width: 200px;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    .modal {
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      width: min(90%, 420px);
+      box-shadow: 0 20px 35px rgba(15, 23, 42, 0.35);
+    }
+
+    .modal textarea {
+      min-height: 120px;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .controls {
+        flex-direction: column;
+      }
+
+      .inline-actions {
+        flex-direction: column;
+      }
+
+      .prompt .meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Prompt Library</h1>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search prompts..." />
+      <select id="tagFilter">
+        <option value="">Filter by tag</option>
+      </select>
+      <button onclick="exportPrompts('json')">Export JSON</button>
+      <button onclick="exportPrompts('csv')">Export CSV</button>
+      <label class="import-btn">
+        Import JSON/CSV
+        <input type="file" accept=".json,.csv" onchange="importPrompts(event)" />
+      </label>
+    </div>
+
+    <textarea id="newPrompt" placeholder="Enter your prompt here..."></textarea>
+    <input type="text" id="newTags" placeholder="Add comma-separated tags (optional)" />
+    <button onclick="addPrompt()">Add Prompt</button>
+
+    <div id="promptList"></div>
+  </div>
+
+  <div id="editModal" class="modal-backdrop" onclick="hideModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <h3>Edit Prompt</h3>
+      <textarea id="editPromptText"></textarea>
+      <input id="editPromptTags" placeholder="Tags (comma separated)" />
+      <div class="modal-actions">
+        <button onclick="hideModal()">Cancel</button>
+        <button class="primary" onclick="saveEditedPrompt()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'enhancedPrompts';
+    let prompts = loadPrompts();
+    let currentEditIndex = null;
+    let dragIndex = null;
+
+    function loadPrompts() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) {
+        return [
+          { text: 'Write a short story about a time-traveling detective.', tags: ['story', 'mystery'] },
+          { text: 'Explain quantum computing in simple terms.', tags: ['tech', 'education'] },
+          { text: 'Generate 10 creative blog post ideas for a travel website.', tags: ['travel', 'marketing'] },
+          { text: 'Summarize the key points of the Agile methodology.', tags: ['business', 'workflow'] },
+          { text: 'Create a workout plan for beginners focusing on strength training.', tags: ['health'] }
+        ];
+      }
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return [];
+      }
+    }
+
+    function savePrompts() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(prompts));
+      refreshTagFilter();
+    }
+
+    function parseTags(tagString) {
+      if (!tagString) return [];
+      return tagString
+        .split(',')
+        .map(t => t.trim())
+        .filter(Boolean)
+        .reduce((unique, tag) => {
+          if (!unique.includes(tag)) unique.push(tag);
+          return unique;
+        }, []);
+    }
+
+    function renderPrompts() {
+      const filterText = document.getElementById('search').value.toLowerCase();
+      const selectedTag = document.getElementById('tagFilter').value;
+      const container = document.getElementById('promptList');
+      container.innerHTML = '';
+
+      prompts
+        .filter((prompt) => {
+          const matchesText = prompt.text.toLowerCase().includes(filterText);
+          const matchesTag = selectedTag ? prompt.tags.includes(selectedTag) : true;
+          return matchesText && matchesTag;
+        })
+        .forEach((prompt, index) => {
+          const div = document.createElement('div');
+          div.className = 'prompt';
+          div.setAttribute('draggable', 'true');
+          div.dataset.index = index;
+          div.innerHTML = `
+            <div>${prompt.text}</div>
+            <div class="meta">
+              <div>
+                ${prompt.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+              </div>
+              <div class="inline-actions">
+                <button onclick="openEditModal(${index})">Edit</button>
+                <button onclick="deletePrompt(${index})">Delete</button>
+              </div>
+            </div>
+          `;
+
+          div.addEventListener('dragstart', () => {
+            dragIndex = Number(div.dataset.index);
+            div.classList.add('dragging');
+          });
+
+          div.addEventListener('dragend', () => {
+            dragIndex = null;
+            div.classList.remove('dragging');
+          });
+
+          div.addEventListener('dragover', (event) => {
+            event.preventDefault();
+          });
+
+          div.addEventListener('drop', (event) => {
+            event.preventDefault();
+            const targetIndex = Number(div.dataset.index);
+            reorderPrompts(dragIndex, targetIndex);
+          });
+
+          container.appendChild(div);
+        });
+    }
+
+    function refreshTagFilter() {
+      const select = document.getElementById('tagFilter');
+      const tags = prompts.reduce((acc, prompt) => {
+        prompt.tags.forEach(tag => {
+          if (tag && !acc.includes(tag)) {
+            acc.push(tag);
+          }
+        });
+        return acc;
+      }, []);
+      select.innerHTML = '<option value="">Filter by tag</option>';
+      tags.sort().forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag;
+        select.appendChild(option);
+      });
+    }
+
+    function addPrompt() {
+      const text = document.getElementById('newPrompt').value.trim();
+      if (!text) {
+        alert('Prompt cannot be empty.');
+        return;
+      }
+      const tags = parseTags(document.getElementById('newTags').value);
+      prompts.push({ text, tags });
+      document.getElementById('newPrompt').value = '';
+      document.getElementById('newTags').value = '';
+      savePrompts();
+      renderPrompts();
+    }
+
+    function deletePrompt(index) {
+      if (!confirm('Delete this prompt?')) return;
+      prompts.splice(index, 1);
+      savePrompts();
+      renderPrompts();
+    }
+
+    function openEditModal(index) {
+      currentEditIndex = index;
+      const prompt = prompts[index];
+      document.getElementById('editPromptText').value = prompt.text;
+      document.getElementById('editPromptTags').value = prompt.tags.join(', ');
+      document.getElementById('editModal').style.display = 'flex';
+    }
+
+    function hideModal() {
+      document.getElementById('editModal').style.display = 'none';
+    }
+
+    function saveEditedPrompt() {
+      const text = document.getElementById('editPromptText').value.trim();
+      if (!text) return alert('Prompt cannot be empty.');
+      const tags = parseTags(document.getElementById('editPromptTags').value);
+      prompts[currentEditIndex] = { text, tags };
+      hideModal();
+      savePrompts();
+      renderPrompts();
+    }
+
+    function exportPrompts(format) {
+      const data =
+        format === 'csv'
+          ? prompts.map(prompt => `"${prompt.text.replace(/"/g, '""')}","${prompt.tags.join(';')}"`).join('\n')
+          : JSON.stringify(prompts, null, 2);
+      const blob = new Blob([data], { type: format === 'csv' ? 'text/csv' : 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `prompts.${format}`;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importPrompts(event) {
+      const file = event.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const text = e.target.result;
+          const parsed =
+            file.name.endsWith('.csv')
+              ? text
+                  .split(/[\r\n]+/)
+                  .filter(Boolean)
+                  .map(line => {
+                    const [textPart, tagsPart] = line.split(',');
+                    return {
+                      text: textPart.replace(/(^"|"$)/g, '').replace(/""/g, '"'),
+                      tags: tagsPart ? tagsPart.split(';').map(t => t.trim()).filter(Boolean) : []
+                    };
+                  })
+              : JSON.parse(text);
+          if (!Array.isArray(parsed)) throw new Error('Invalid format');
+          prompts = parsed.map(item => ({
+            text: item.text || '',
+            tags: Array.isArray(item.tags) ? item.tags : []
+          }));
+          savePrompts();
+          renderPrompts();
+        } catch (error) {
+          alert('Failed to import file. Make sure it is valid JSON or CSV.');
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    }
+
+    function reorderPrompts(from, to) {
+      if (from === null || to === null || from === to) return;
+      const [moved] = prompts.splice(from, 1);
+      prompts.splice(to, 0, moved);
+      savePrompts();
+      renderPrompts();
+    }
+
+    document.getElementById('search').addEventListener('input', renderPrompts);
+    document.getElementById('tagFilter').addEventListener('change', renderPrompts);
+
+    renderPrompts();
+    refreshTagFilter();
+  </script>
+</body>
+</html>

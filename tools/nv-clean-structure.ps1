@@ -19,7 +19,7 @@ function Move-IfExists($from, $toDir) {
 $skipBackup = $env:NV_SKIP_BACKUP -eq "1"
 Ensure-Dir ".\_backup"
 $stamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$zip = ".\_backup\SANTIS_cleanup_$stamp.zip"
+$zip = ".\_backup\NEUROVA_cleanup_$stamp.zip"
 if (-not $skipBackup -and -not (Test-Path $zip)) {
     Write-Host "BACKUP: $zip"
     $items = Get-ChildItem -Force -Path . | Where-Object { $_.Name -ne "_backup" }
@@ -29,17 +29,17 @@ if (-not $skipBackup -and -not (Test-Path $zip)) {
 }
 
 # 1) Ensure target roots
-Ensure-Dir ".\SANTIS_SITE"
-Ensure-Dir ".\SANTIS_SITE\assets"
-Ensure-Dir ".\SANTIS_SITE\assets\js"
-Ensure-Dir ".\SANTIS_SITE\assets\css"
-Ensure-Dir ".\SANTIS_SITE\assets\img"
-Ensure-Dir ".\SANTIS_SITE\assets\icons"
+Ensure-Dir ".\NEUROVA_SITE"
+Ensure-Dir ".\NEUROVA_SITE\assets"
+Ensure-Dir ".\NEUROVA_SITE\assets\js"
+Ensure-Dir ".\NEUROVA_SITE\assets\css"
+Ensure-Dir ".\NEUROVA_SITE\assets\img"
+Ensure-Dir ".\NEUROVA_SITE\assets\icons"
 
-Ensure-Dir ".\SANTIS_PROMPT"
-Ensure-Dir ".\SANTIS_PROMPT\packs"
+Ensure-Dir ".\NEUROVA_PROMPT"
+Ensure-Dir ".\NEUROVA_PROMPT\packs"
 
-# 2) Move site HTML from root to SANTIS_SITE (if present)
+# 2) Move site HTML from root to NEUROVA_SITE (if present)
 $sitePages = @(
     "index.html","hamam.html","masajlar.html","kids-family.html","face-sothys.html",
     "yoga.html","products.html","about.html","team.html","packages.html","paketler.html",
@@ -47,13 +47,13 @@ $sitePages = @(
     "wa-config.js","wa-linker.js","slot-macro.js"
 )
 foreach ($p in $sitePages) {
-    Move-IfExists ".\$p" ".\SANTIS_SITE"
+    Move-IfExists ".\$p" ".\NEUROVA_SITE"
 }
 
-# 3) Move root assets dir into SANTIS_SITE/assets (merge via robocopy)
+# 3) Move root assets dir into NEUROVA_SITE/assets (merge via robocopy)
 if (Test-Path ".\assets") {
-    Write-Host "MERGE assets -> SANTIS_SITE/assets"
-    robocopy ".\assets" ".\SANTIS_SITE\assets" /E /XC /XN /XO | Out-Null
+    Write-Host "MERGE assets -> NEUROVA_SITE/assets"
+    robocopy ".\assets" ".\NEUROVA_SITE\assets" /E /XC /XN /XO | Out-Null
     Remove-Item ".\assets" -Recurse -Force
 }
 
@@ -70,18 +70,18 @@ if (Test-Path ".\_report\focus") {
     Get-ChildItem -Path $target -Filter *.html -Recurse | Rename-Item -NewName { $_.Name + ".bak" }
 }
 
-# 5) Move prompt files to SANTIS_PROMPT
+# 5) Move prompt files to NEUROVA_PROMPT
 $promptFiles = @(
     "prompt-library.html","prompt-library-app.html","prompt-library-enhanced.html",
     "prompt-export.js","prompts-data.js","prompts-loader.js",
     "prompt-app.js","app.js","health-check.js"
 )
 foreach ($f in $promptFiles) {
-    Move-IfExists ".\$f" ".\SANTIS_PROMPT"
+    Move-IfExists ".\$f" ".\NEUROVA_PROMPT"
 }
 if (Test-Path ".\packs") {
-    Write-Host "MERGE packs -> SANTIS_PROMPT\\packs"
-    robocopy ".\packs" ".\SANTIS_PROMPT\packs" /E /XC /XN /XO | Out-Null
+    Write-Host "MERGE packs -> NEUROVA_PROMPT\\packs"
+    robocopy ".\packs" ".\NEUROVA_PROMPT\packs" /E /XC /XN /XO | Out-Null
     Remove-Item ".\packs" -Recurse -Force
 }
 

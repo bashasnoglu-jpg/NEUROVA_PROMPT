@@ -30,7 +30,7 @@ function ensureReportDir() {
 
 function buildQualityMd(summary) {
   const lines = [
-    "# SANTIS Quality Gate",
+    "# NEUROVA Quality Gate",
     `Generated: ${summary.ts}`,
     `Status: ${summary.status}`,
     `Packs: ${summary.packs.join(", ")}`,

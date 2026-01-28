@@ -1,4 +1,4 @@
-# SANTIS – Çekim Planı (Production Target)
+# NEUROVA – Çekim Planı (Production Target)
 
 Bu doküman, önceki briefing'e (shot list, SAFE notlar, kategori çalışmaları) dayanarak her katalog bölgesi için **minimum kare** ve **hero varyasyon** hedeflerini topluyor. Amaç; çekim günü ekipleri için net üretim hedefleri belirlemek ve sonrasında asset teslimi sırasında “kategori başına kaç kare?” sorusunu hemen yanıtlamak.
 
@@ -37,4 +37,4 @@ Bu dört kareyi bir araya getirerek kategori başına 4 temel asset elde edilir.
 * Hero varyasyonlar için bu planın üstünde “bonus 1-2 kare” olarak müsaade edilir ama ana teslim 4’lü set olmalı.  
 * Katalogla paralel gidildiği için asset tesliminde kategori etiketlerini (Recovery / Deep Relax / Ayurveda / Kids / Face) metadata olarak işaretlemek faydalı.
 
-Böylece SANTIS fotoğraf kütüphanesi hem sürükleyici hem de üretim olarak tekrar edilebilir olur.
+Böylece NEUROVA fotoğraf kütüphanesi hem sürükleyici hem de üretim olarak tekrar edilebilir olur.
