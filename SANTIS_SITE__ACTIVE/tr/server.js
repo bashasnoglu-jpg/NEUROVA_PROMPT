@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8001;
+const PORT = 8002;
 const MIME_TYPES = {
   '.html': 'text/html',
   '.js': 'text/javascript',
@@ -82,6 +82,7 @@ http.createServer((req, res) => {
 }).listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
+
 
 
 
